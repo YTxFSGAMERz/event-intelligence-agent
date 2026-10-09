@@ -19,7 +19,9 @@ Configured URLs in `sources.txt` are routed through the adapter registry in `sou
 - **GitHub Blog RSS:** recognized as a named official-blog feed.
 - **Generic RSS/Atom:** shared fetching and parsing for other configured public feeds.
 
-Each configured URL receives a stable source ID and a source-health record in `data/seen_events.json`. Health includes the last attempt and successful fetch, status, adapter type, duration, entry count, matching count, queued count, and failure streak. A failed run retains the last successful timestamp and last successful counts. GitHub Actions merges these health records alongside the deduplication records when persisting state.
+Each configured URL receives a stable source ID and a source-health record in `data/seen_events.json`. Health includes the access method, expected feed fields, pagination model, request timeout, minimum polling interval, rate-limit policy, last attempt and successful fetch, status, duration, entry count, matching count, queued count, and failure streak. A failed run retains the last successful timestamp and last successful counts. GitHub Actions merges these health records alongside the deduplication records when persisting state.
+
+The agent enforces a **15-minute minimum polling interval per feed**, including manual and code-push runs. Sources skipped by this guard are marked `skipped_minimum_interval`; skipping does not overwrite their last real attempt or last successful-fetch time. RSS/Atom feeds are publisher-managed, so the current adapters do not implement client-side page-number pagination.
 
 ### URL provenance and duplicate handling
 
