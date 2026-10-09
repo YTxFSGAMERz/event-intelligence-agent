@@ -223,6 +223,38 @@ class OpportunitySchemaTests(unittest.TestCase):
         self.assertEqual(updated["travel_support"]["flight"], "confirmed")
         self.assertEqual(updated["registration_status"], "OPEN (official page)")
 
+    def test_verified_remote_mode_is_saved_without_physical_address(self):
+        record = {
+            "title": "Online Student Hackathon",
+            "location": {
+                "raw": None, "mode": "unknown", "venue": None, "city": None,
+                "region": None, "country": None, "country_code": None,
+                "remote_restrictions": [],
+            },
+            "verification": {"status": "unverified", "official_url": None},
+        }
+        result = {
+            "status": "official_page_verified",
+            "verification_version": 1,
+            "official_page_verified": True,
+            "official_url": "https://organizer.example/event",
+            "source_page_url": "https://organizer.example/event",
+            "last_checked_at": "2026-10-09T12:00:00+00:00",
+            "evidence_urls": ["https://organizer.example/event"],
+            "fact_evidence": {},
+            "observed_facts": {},
+            "verified_facts": {
+                "location": {
+                    "raw": None, "mode": "remote", "venue": None, "city": None,
+                    "region": None, "country": None, "country_code": None,
+                    "remote_restrictions": [],
+                },
+            },
+        }
+        updated = apply_page_verification(record, result)
+        self.assertEqual(updated["location"]["mode"], "remote")
+        self.assertEqual(updated["verification"]["status"], "official_page_verified")
+
     def test_unofficial_discovery_page_facts_are_observations_not_verified_fields(self):
         record = {
             "title": "Example Student Scholarship Program",
