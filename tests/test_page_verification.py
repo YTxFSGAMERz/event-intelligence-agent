@@ -226,6 +226,15 @@ class PageVerificationTests(unittest.TestCase):
             due_record, now=datetime(2026, 10, 9, tzinfo=timezone.utc)
         ))
 
+    def test_explicit_no_travel_support_is_not_misreported_as_unknown(self):
+        facts = verify._travel_facts(
+            "No travel support is offered. Participants must pay their own expenses.",
+            "https://organizer.example/program",
+        )
+        self.assertEqual(facts["status"], "not_offered")
+        self.assertEqual(facts["flight"], "unknown")
+        self.assertEqual(facts["evidence"]["status"]["value"], "not_offered")
+
     def test_missing_year_does_not_get_a_synthetic_deadline(self):
         normalized, precision = verify._explicit_date("October 31")
         self.assertIsNone(normalized)
