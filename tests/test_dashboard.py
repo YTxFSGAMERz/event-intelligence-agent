@@ -116,6 +116,13 @@ class DashboardContractTests(unittest.TestCase):
             else:
                 self.assertIn(marker, self.html)
 
+    def test_observed_calendar_dates_participate_in_event_date_sort(self):
+        self.assertIn("function eventStartSortValue(e)", self.html)
+        self.assertIn("const explicitYear=raw.match", self.html)
+        self.assertIn("return Date.UTC(year,monthMap[monthKey],day)", self.html)
+        self.assertIn("sort==='event_date')list.sort((a,b)=>eventStartSortValue(a)-eventStartSortValue(b))", self.html)
+        self.assertIn("Observed schedule · unverified · ", self.html)
+
     def test_dashboard_can_render_images_and_event_details(self):
         self.assertIn("media.source_image_url", self.html)
         self.assertIn("function renderDetails(e)", self.html)
