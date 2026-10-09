@@ -929,11 +929,12 @@ def generate_opportunity_card(item: dict, categories: list[str], deadline: str,
     draw.text((106, box_y + 52), left_value, font=value_font, fill=(246, 248, 255))
     draw.text((630, box_y + 18), "REGISTRATION STATUS", font=section_font, fill=(125, 164, 205))
     draw.text((630, box_y + 52), status_value, font=value_font, fill=(115, 235, 192) if status_value.startswith("OPEN") else (246, 248, 255))
-    footer = (
-        "Listed format/location (unverified): " + event_location[:68]
-        if event_location and (event_schedule or item.get("adapter_type") == "devfolio_html")
-        else "Check the caption for the source link and verify details with the organiser."
-    )
+    if event_location and item.get("adapter_type") == "devfolio_html":
+        footer = "Listed format (unverified): " + event_location[:76]
+    elif event_location and event_schedule:
+        footer = "Listed location (unverified): " + event_location[:76]
+    else:
+        footer = "Check the caption for the source link and verify details with the organiser."
     draw.text((83, 598), footer, font=body_font, fill=(157, 174, 209))
 
     output = io.BytesIO()
