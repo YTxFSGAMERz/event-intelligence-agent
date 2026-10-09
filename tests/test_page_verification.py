@@ -191,6 +191,41 @@ class PageVerificationTests(unittest.TestCase):
         self.assertEqual(result["observed_facts"]["deadline"]["normalized"], "2026-10-31")
         self.assertEqual(result["verified_facts"], {})
 
+    def test_blocked_official_candidate_is_recorded_and_retried_soon(self):
+        article = """
+        <html><head><title>International Student Hackathon Prize Challenge 2026 News</title></head>
+        <body><h1>International Student Hackathon Prize Challenge 2026</h1>
+        <a href="https://organizer.example/events/42">Official Website</a></body></html>
+        """
+        routes = {
+            DISCOVERY_URL: FakeResponse(DISCOVERY_URL, article),
+            "https://organizer.example/events/42": FakeResponse(
+                "https://organizer.example/events/42",
+                "<html><title>Forbidden</title></html>",
+                status_code=403,
+            ),
+        }
+        result = verify.verify_opportunity_page(
+            DISCOVERY_URL, EXPECTED, budget=verify.VerificationBudget(2),
+            session=FakeSession(routes),
+        )
+        self.assertFalse(result["official_page_verified"])
+        self.assertEqual(result["status"], "official_link_candidate_unverified")
+        self.assertEqual(result["official_link_candidate"], "https://organizer.example/events/42")
+        self.assertEqual(result["candidate_page_status"], "http_error")
+        self.assertEqual(result["candidate_page_http_status"], 403)
+        self.assertEqual(result["candidate_page_error"], "http_403")
+
+        due_record = {"verification": {
+            "version": verify.VERIFICATION_VERSION,
+            "status": result["status"],
+            "candidate_page_status": result["candidate_page_status"],
+            "last_checked_at": "2026-10-07T00:00:00+00:00",
+        }}
+        self.assertTrue(verify.verification_is_due(
+            due_record, now=datetime(2026, 10, 9, tzinfo=timezone.utc)
+        ))
+
     def test_missing_year_does_not_get_a_synthetic_deadline(self):
         normalized, precision = verify._explicit_date("October 31")
         self.assertIsNone(normalized)
