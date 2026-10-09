@@ -837,6 +837,17 @@ def main() -> int:
             str(pair[1].get("first_seen_utc") or "") if isinstance(pair[1], dict) else "",
         ),
     )
+
+    # Do not issue article-resolution HTTP requests during rapid push/manual runs
+    # when every Google News feed is still inside its minimum polling interval.
+    google_news_source_due = any(
+        adapter.config.adapter_type == "google_news_rss"
+        and should_poll_source(source_health.get(adapter.config.source_id), adapter.config)
+        for adapter in adapters
+    )
+    if not google_news_source_due:
+        unresolved_records = []
+        print("Legacy URL backfill skipped: Google News feeds are inside the minimum poll interval.")
     for existing_id, existing in unresolved_records:
         if (resolution_budget.used_total >= resolution_budget.max_total
                 or resolution_budget.used_legacy >= resolution_budget.max_legacy):
