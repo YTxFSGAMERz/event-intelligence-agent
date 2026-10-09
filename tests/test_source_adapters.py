@@ -47,21 +47,61 @@ class SourceAdapterTests(unittest.TestCase):
         google = "https://news.google.com/rss/search?q=hackathon"
         hackalendar = "https://hackalendar.com/feed.xml"
         blog = "https://github.blog/changelog/feed/"
-        adapters = build_adapters([google, hackalendar, blog, google])
+        mlh = "https://mlh.com/events"
+        adapters = build_adapters([google, hackalendar, blog, mlh, google])
 
-        self.assertEqual(len(adapters), 3)
+        self.assertEqual(len(adapters), 4)
         self.assertIsInstance(adapters[0], source_adapters.GoogleNewsRSSAdapter)
         self.assertIsInstance(adapters[1], source_adapters.HackalendarRSSAdapter)
         self.assertIsInstance(adapters[2], source_adapters.OfficialBlogRSSAdapter)
+        self.assertIsInstance(adapters[3], source_adapters.MLHEventsHTMLAdapter)
         self.assertEqual(adapters[0].config.adapter_type, "google_news_rss")
         self.assertEqual(adapters[1].config.adapter_type, "hackalendar_rss")
         self.assertEqual(adapters[2].config.adapter_type, "official_blog_rss")
+        self.assertEqual(adapters[3].config.adapter_type, "mlh_events_html")
+        self.assertEqual(adapters[3].config.access_method, "public_official_mlh_events_html")
+        self.assertEqual(adapters[3].config.pagination_mode, "official_calendar_upcoming_section")
         self.assertEqual(adapters[1].config.access_method, "public_hackalendar_rss")
         self.assertEqual(adapters[1].config.pagination_mode, "catalogue_feed_upcoming_events")
         self.assertNotEqual(adapters[0].config.source_id, adapters[1].config.source_id)
         self.assertIn("Devpost", build_source_config(
             "https://news.google.com/rss/search?q=site%3Adevpost.com%2Fhackathons"
         ).name)
+
+    def test_mlh_calendar_parses_only_dated_upcoming_organizer_links(self):
+        page_url = "https://www.mlh.com/seasons/2027/events/"
+        html = b"""<!doctype html><html><body>
+        <h2>Upcoming Events</h2>
+        <h3>2026</h3>
+        <a href="https://hacknc.com/"><span>Chapel Hill, North Carolina HackNC OCT 09 - 11 Chapel Hill, North Carolina, US In-Person</span></a>
+        <a href="https://hackbios.xyz/"><span>Bhilai, Chhattisgarh HackBIOS OCT 09 - 10 Bhilai, Chhattisgarh, IN In-Person</span></a>
+        <a href="https://hackcbs.tech/"><span>New delhi, New delhi hackCBS 9.O OCT 31 - NOV 01 New delhi, IN In-Person</span></a>
+        <a href="/seasons/2027/events/"><span>Filter events OCT 10</span></a>
+        <h2>Past Events</h2>
+        <a href="https://past-event.example/"><span>Past Event OCT 03 - 04 Somewhere, US In-Person</span></a>
+        </body></html>"""
+        adapter = build_adapters(["https://mlh.com/events"])[0]
+        response = FakeResponse(page_url, html)
+        session = FakeSession(response)
+
+        result = adapter.fetch(session=session)
+
+        self.assertEqual(result.status, "success")
+        self.assertEqual(result.item_count, 3)
+        self.assertEqual([item["title"] for item in result.entries], ["HackNC", "HackBIOS", "hackCBS 9.O"])
+        self.assertEqual(result.entries[0]["link"], "https://hacknc.com")
+        self.assertIn("OCT 09 - 11", result.entries[0]["summary"])
+        self.assertIn("Calendar section year: 2026", result.entries[0]["summary"])
+        self.assertTrue(response.closed)
+        self.assertEqual(len(session.calls), 1)
+
+    def test_mlh_calendar_fails_closed_if_upcoming_section_is_missing(self):
+        adapter = build_adapters(["https://mlh.com/events"])[0]
+        response = FakeResponse("https://www.mlh.com/events", b"<html><h2>Blog</h2></html>")
+        session = FakeSession(response)
+        with self.assertRaisesRegex(RuntimeError, "Upcoming Events heading was not found"):
+            adapter.fetch(session=session)
+        self.assertTrue(response.closed)
 
     def test_targeted_student_sources_receive_descriptive_labels(self):
         scholarship_query = build_source_config(
