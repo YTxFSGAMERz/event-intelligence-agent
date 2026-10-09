@@ -28,7 +28,7 @@ class AlertContentTests(unittest.TestCase):
         )
 
         self.assertIn("Application deadline: Not found", caption)
-        self.assertIn("Event dates (calendar listing; unverified): OCT 09 - 11, 2026", caption)
+        self.assertIn("Event dates (MLH calendar listing; unverified): OCT 09 - 11, 2026", caption)
         self.assertIn(
             "Listed location (unverified): Chapel Hill, North Carolina, US In-Person",
             caption,
