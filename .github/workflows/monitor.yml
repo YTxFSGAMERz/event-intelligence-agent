@@ -101,10 +101,66 @@ jobs:
           if [[ -n "$(git status --porcelain data/seen_events.json)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/seen_events.json
-            git commit -m "chore: update event tracking state [skip ci]"
-            # Rebase the state commit if code/config was pushed while this run was scanning.
-            git fetch origin main
-            git rebase origin/main
-            git push
+            # Preserve this run's discoveries, then merge them with the latest remote state.
+            cp data/seen_events.json /tmp/local_seen_events.json
+            for attempt in 1 2 3; do
+              git fetch origin main
+              git show origin/main:data/seen_events.json > /tmp/remote_seen_events.json
+              python - <<'PY'
+          import json
+          from pathlib import Path
+
+          local_path = Path("/tmp/local_seen_events.json")
+          remote_path = Path("/tmp/remote_seen_events.json")
+          local_state = json.loads(local_path.read_text(encoding="utf-8"))
+          remote_state = json.loads(remote_path.read_text(encoding="utf-8"))
+          merged = dict(remote_state)
+          merged_seen = dict(remote_state.get("seen") or {})
+          local_seen = local_state.get("seen") or {}
+
+          for event_id, local_event in local_seen.items():
+              remote_event = merged_seen.get(event_id, {})
+              combined = dict(remote_event)
+              combined.update(local_event)
+              for field in ("first_seen_utc",):
+                  values = [value for value in (remote_event.get(field), local_event.get(field)) if value]
+                  if values:
+                      combined[field] = min(values)
+              for field in ("last_seen_utc",):
+                  values = [value for value in (remote_event.get(field), local_event.get(field)) if value]
+                  if values:
+                      combined[field] = max(values)
+              merged_seen[event_id] = combined
+
+          merged["seen"] = merged_seen
+          timestamps = [value for value in (
+              remote_state.get("updated_utc"), local_state.get("updated_utc")
+          ) if value]
+          if timestamps:
+              merged["updated_utc"] = max(timestamps)
+
+          Path("/tmp/merged_seen_events.json").write_text(
+              json.dumps(merged, indent=2, ensure_ascii=False) + "\\n",
+              encoding="utf-8",
+          )
+          PY
+              # Reset the index to the current main branch; stage only the merged state file.
+              git reset --mixed origin/main
+              cp /tmp/merged_seen_events.json data/seen_events.json
+              git add data/seen_events.json
+              if git diff --cached --quiet; then
+                echo "Tracking state is already up to date."
+                break
+              fi
+              git commit -m "chore: merge event tracking state [skip ci]"
+              if git push; then
+                echo "Tracking state saved."
+                break
+              fi
+              if [[ "$attempt" -eq 3 ]]; then
+                echo "Could not save tracking state after 3 attempts." >&2
+                exit 1
+              fi
+              echo "Remote changed during state save; retrying merge (attempt $((attempt + 1)))."
+            done
           fi
