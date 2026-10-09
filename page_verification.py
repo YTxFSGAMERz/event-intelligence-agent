@@ -24,6 +24,7 @@ MAX_HTML_BYTES = 512_000
 MAX_TEXT_CHARS = 80_000
 MAX_REDIRECTS = 4
 DEFAULT_TIMEOUT_SECONDS = 8
+VERIFICATION_VERSION = 1
 
 _TRACKING_HOSTS = {
     "news.google.com", "google.com", "www.google.com",
@@ -844,6 +845,7 @@ def verify_opportunity_page(
     if source_page.status != "success":
         return {
             "status": source_page.status,
+            "verification_version": VERIFICATION_VERSION,
             "official_page_verified": False,
             "source_page_url": source_page.final_url or discovery_url,
             "official_url": None,
@@ -924,6 +926,7 @@ def verify_opportunity_page(
     }
     return {
         "status": status,
+        "verification_version": VERIFICATION_VERSION,
         "official_page_verified": is_official,
         "source_page_url": source_page.final_url or discovery_url,
         "official_url": official_url,
@@ -944,6 +947,8 @@ def verify_opportunity_page(
 def verification_is_due(record: dict, *, now: datetime | None = None) -> bool:
     """Recheck unverified pages weekly and failed fetches daily."""
     verification = record.get("verification") if isinstance(record.get("verification"), dict) else {}
+    if int(verification.get("version") or 0) < VERIFICATION_VERSION:
+        return True
     last_checked = str(verification.get("last_checked_at") or "").strip()
     if not last_checked:
         return True
@@ -958,7 +963,15 @@ def verification_is_due(record: dict, *, now: datetime | None = None) -> bool:
         current = current.replace(tzinfo=timezone.utc)
     age_seconds = max(0, (current - parsed.astimezone(timezone.utc)).total_seconds())
     status = str(verification.get("status") or "")
-    retry_seconds = 24 * 60 * 60 if status in {
-        "http_error", "request_error", "parse_error", "url_rejected", "not_html"
-    } else 7 * 24 * 60 * 60
+    retry_seconds = 24 * 60 * 60 if (
+        status in {
+            "http_error", "request_error", "parse_error", "url_rejected",
+            "not_html", "redirect_rejected", "too_many_redirects",
+            "redirect_without_location",
+        }
+        or verification.get("last_recheck_status") in {
+            "http_error", "request_error", "parse_error", "url_rejected",
+            "not_html", "redirect_rejected", "too_many_redirects",
+        }
+    ) else 7 * 24 * 60 * 60
     return age_seconds >= retry_seconds
