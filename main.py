@@ -15,7 +15,8 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 import feedparser
 import requests
 
-from source_adapters import URLResolutionBudget, build_adapters, source_health_failure, source_health_success
+from source_adapters import (URLResolutionBudget, build_adapters, should_poll_source,
+                             source_health_failure, source_health_skipped, source_health_success)
 
 ROOT = Path(__file__).resolve().parent
 SOURCES_FILE = ROOT / "sources.txt"
@@ -787,7 +788,8 @@ def main() -> int:
         if adapter is None or adapter.config.adapter_type != "google_news_rss":
             continue
         resolved, resolution_status = resolution_budget.resolve(
-            adapter, discovered_url, timeout=TIMEOUT, user_agent=USER_AGENT, legacy=True
+            adapter, discovered_url, timeout=adapter.config.timeout_seconds,
+            user_agent=USER_AGENT, legacy=True
         )
         existing["resolution_attempts"] = attempts + 1
         existing["last_resolution_attempt_at"] = now_iso()
@@ -806,6 +808,13 @@ def main() -> int:
         config = adapter.config
         source = config.url
         previous_health = source_health.get(config.source_id, {})
+        if not should_poll_source(previous_health, config):
+            source_health[config.source_id] = source_health_skipped(previous_health, config)
+            print(
+                f"Source poll skipped by minimum interval: {config.name} "
+                f"(last network attempt {previous_health.get('last_attempt_at', 'unknown')})"
+            )
+            continue
         started = time.monotonic()
         matching_count = 0
         queued_count = 0
@@ -814,7 +823,7 @@ def main() -> int:
         print(f"Checking {config.name} [{config.adapter_type}]: {source}")
 
         try:
-            feed_result = adapter.fetch(timeout=TIMEOUT, user_agent=USER_AGENT)
+            feed_result = adapter.fetch(timeout=config.timeout_seconds, user_agent=USER_AGENT)
             for entry in feed_result.entries:
                 title = str(entry.get("title", "Untitled event")).strip()
                 discovered_link = str(entry.get("link", "")).strip()
@@ -852,7 +861,7 @@ def main() -> int:
                     continue
 
                 canonical_link, resolution_status = resolution_budget.resolve(
-                    adapter, discovered_link, timeout=TIMEOUT, user_agent=USER_AGENT
+                    adapter, discovered_link, timeout=config.timeout_seconds, user_agent=USER_AGENT
                 )
                 resolved_link = canonical_link or discovered_link
                 uid = event_id(resolved_link, title)
@@ -1048,8 +1057,24 @@ def main() -> int:
                 "source_id": event["source_id"],
                 "adapter_type": event["adapter_type"],
                 "resolution_status": event["resolution_status"],
-                "resolution_attempts": 1 if event["resolution_status"].startswith("unresolved_google_news_link") or event["resolution_status"].startswith("resolution_error") else 0,
-                "last_resolution_attempt_at": now_iso() if event["adapter_type"] == "google_news_rss" else None,
+                "resolution_attempts": 1 if (
+                    event["adapter_type"] == "google_news_rss"
+                    and event["resolution_status"] not in {
+                        "resolution_budget_deferred", "legacy_resolution_budget_deferred"
+                    }
+                    and (
+                        event["resolution_status"].startswith("unresolved_google_news_link")
+                        or event["resolution_status"].startswith("resolution_error")
+                    )
+                ) else 0,
+                "last_resolution_attempt_at": (
+                    now_iso()
+                    if event["adapter_type"] == "google_news_rss"
+                    and event["resolution_status"] not in {
+                        "resolution_budget_deferred", "legacy_resolution_budget_deferred"
+                    }
+                    else None
+                ),
                 "categories": categories,
                 "primary_category": primary,
                 "first_seen_utc": now_iso(),
