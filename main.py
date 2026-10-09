@@ -871,10 +871,14 @@ def telegram_send(text: str, image_url: str | None = None, caption: str | None =
     token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
     if not token or not chat_id:
-        print("Telegram secrets not configured; alert printed to logs instead.")
-        print(f"Image URL: {image_url or 'No image found'}")
-        print(text)
-        return
+        # Do not pretend an alert was delivered: main() records the event as seen
+        # only after telegram_send returns successfully. Raising here keeps the
+        # opportunity eligible for retry after the Telegram secrets are configured.
+        raise RuntimeError(
+            "Telegram secrets not configured; set TELEGRAM_BOT_TOKEN and "
+            "TELEGRAM_CHAT_ID, or use DRY_RUN=true for a local preview. "
+            "Alert was not delivered."
+        )
 
     if image_url:
         try:
