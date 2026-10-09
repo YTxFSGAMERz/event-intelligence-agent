@@ -125,7 +125,15 @@ jobs:
               print("Dashboard did not return an HTML page.", file=sys.stderr)
               raise SystemExit(1)
 
-          print(f"Dashboard health check passed (HTTP {status}).")
+          expected_build = "2026-10-10-source-observed-sort-v1"
+          marker = f'<meta name="event-intel-dashboard-version" content="{expected_build}">'
+          if marker.lower() not in body:
+              print(
+                  f"Dashboard health check warning: stale or unknown build; "
+                  f"expected {expected_build}; site is reachable (HTTP {status})."
+              )
+          else:
+              print(f"Dashboard health check passed (HTTP {status}; build {expected_build}).")
           PY
 
       - name: Scan configured feeds
