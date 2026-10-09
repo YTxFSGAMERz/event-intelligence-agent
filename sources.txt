@@ -17,3 +17,6 @@ https://news.google.com/rss/search?q=site%3Ablog.google%2Fcompany-news%2Foutreac
 https://hackalendar.com/feed.xml
 # Official GitHub changelog (developer program/product announcements)
 https://github.blog/changelog/feed/
+
+# Official Major League Hacking upcoming-event calendar; external organizer pages still require verification.
+https://mlh.com/events
