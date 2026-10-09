@@ -22,8 +22,13 @@ ROUNDUP_PATTERNS = (
     ),
     re.compile(
         r"\b\d+\s+(?:(?:best|top|fully funded)\s+)?"
-        r"(?:scholarships?|fellowships?|internships?|grants?|opportunities|"
-        r"programs?|competitions?|hackathons?)\b",
+        r"(?:scholarships|fellowships|internships|grants|opportunities|"
+        r"programs|competitions|hackathons)\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\b\d+\s+(?:scholarship|fellowship|internship|grant)\s+"
+        r"(?:opportunities|programs|options|schemes)\b",
         re.IGNORECASE,
     ),
     # Headlines often insert a broad subject (for example "tech") between
@@ -58,11 +63,11 @@ NON_ACTIONABLE_NEWS = re.compile(
     re.IGNORECASE,
 )
 ACTIONABLE_UPDATE = re.compile(
-    r"\b(?:deadline extended|deadline postponed|applications? (?:are )?(?:now )?open|"
-    r"opens? applications?|apply now|register now|registration (?:is )?open|"
-    r"call for applications?|call for proposals?|submissions? (?:are )?open|"
-    r"apply by|last date to apply|application deadline|registration deadline|"
-    r"applications? close|registration closes?)\b",
+    r"\b(?:deadline extended|deadline postponed|application deadline|registration deadline|"
+    r"last date(?: to apply)?|applications? (?:are )?(?:now )?open|"
+    r"applications? (?:till|until)\b|opens? applications?|apply now|register now|"
+    r"registration (?:is )?open|call for applications?|call for proposals?|"
+    r"submissions? (?:are )?open|apply by|applications? close|registration closes?)\b",
     re.IGNORECASE,
 )
 TITLE_OPPORTUNITY_SIGNAL = re.compile(
@@ -73,8 +78,6 @@ TITLE_OPPORTUNITY_SIGNAL = re.compile(
     r"call for entries|fully funded|funded travel|exchange program|exchange programme)\b",
     re.IGNORECASE,
 )
-PROGRAM_WORD = re.compile(r"\b(?:program|programme|cohort|applications?|registration|apply|register)\b", re.I)
-
 
 def assess_discovery_quality(
     title: str,
@@ -97,7 +100,6 @@ def assess_discovery_quality(
     normalized = clean_title.casefold()
     actionable = bool(ACTIONABLE_UPDATE.search(clean_title))
     title_signal = bool(TITLE_OPPORTUNITY_SIGNAL.search(clean_title))
-    context_text = f"{clean_title}\n{clean_summary}".casefold()
 
     def result(accepted: bool, status: str, reason: str) -> dict:
         return {
