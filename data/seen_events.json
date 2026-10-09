@@ -8178,7 +8178,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-09T19:56:31+00:00",
+  "updated_utc": "2026-10-09T20:01:52+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -8211,7 +8211,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:56:31+00:00",
+      "last_skipped_at": "2026-10-09T20:01:52+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 3
     },
@@ -8245,7 +8245,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:56:31+00:00",
+      "last_skipped_at": "2026-10-09T20:01:52+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 3
     },
@@ -8279,7 +8279,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:56:31+00:00",
+      "last_skipped_at": "2026-10-09T20:01:52+00:00",
       "quality_rejected_count": 2,
       "quality_rule_version": 3
     },
@@ -8313,7 +8313,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:56:31+00:00",
+      "last_skipped_at": "2026-10-09T20:01:52+00:00",
       "quality_rejected_count": 3,
       "quality_rule_version": 3
     },
@@ -8348,7 +8348,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:56:31+00:00",
+      "last_skipped_at": "2026-10-09T20:01:52+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 3
     },
@@ -8384,7 +8384,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T19:56:31+00:00",
+      "last_skipped_at": "2026-10-09T20:01:52+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 3
     },
@@ -8420,7 +8420,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 3,
-      "last_skipped_at": "2026-10-09T19:56:31+00:00"
+      "last_skipped_at": "2026-10-09T20:01:52+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -8454,7 +8454,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 3,
-      "last_skipped_at": "2026-10-09T19:56:31+00:00"
+      "last_skipped_at": "2026-10-09T20:01:52+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -8488,7 +8488,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 3,
-      "last_skipped_at": "2026-10-09T19:56:31+00:00"
+      "last_skipped_at": "2026-10-09T20:01:52+00:00"
     }
   }
 }
