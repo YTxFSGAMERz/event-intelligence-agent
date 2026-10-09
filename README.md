@@ -18,6 +18,8 @@ Configured URLs in `sources.txt` are routed through the adapter registry in `sou
 - **Google News RSS:** feed fetching plus best-effort resolution of article redirects or canonical URL tags. If resolution fails, the original discovery URL is retained and canonical URL remains unknown.
 - **Hackalendar RSS:** a human-curated upcoming-hackathon discovery feed; the feed's event page is not automatically treated as the organizer's official page.
 - **MLH official events calendar (HTML):** the adapter reads dated external links only from the calendar's Upcoming Events section, captures the section year and displayed schedule, and ignores past events and navigation links. The linked organizer page still requires separate verification.
+- **Devfolio Open & Upcoming listings (HTML):** the adapter reads current cards only from Open/Upcoming sections, keeps `Starts` dates separate from `Opens` dates, and omits Past events. These are platform listings, not proof of organizer ownership.
+- **National Scholarship Portal (HTML):** reads academic-year scheme titles, explicit student application-deadline labels, and each scheme's specific Specifications/FAQ guidance link. Deadlines remain reported portal data until checked on the relevant scheme details.
   Calendar schedule/location text is stored under `source_observed` and shown as unverified listing information; it is never promoted to canonical event dates or verified location until the organizer page confirms it.
 - **GitHub Blog RSS:** recognized as a named official-blog feed.
 - **Generic RSS/Atom:** shared fetching and parsing for other configured public feeds.
