@@ -99,18 +99,164 @@ def read_sources() -> list[str]:
     return [line.strip() for line in SOURCES_FILE.read_text(encoding="utf-8").splitlines()
             if line.strip() and not line.lstrip().startswith("#")]
 
+STATE_SCHEMA_VERSION = 1
+UNKNOWN_DEADLINE_TEXT = "Not found — verify on official page"
+
+
+def _http_url(value: object) -> str | None:
+    candidate = str(value or "").strip()
+    if not candidate.startswith(("https://", "http://")):
+        return None
+    return candidate
+
+
+def normalize_event_record(event_id_value: str, record: dict) -> dict:
+    """Add canonical schema fields without inventing dates, locations, or funding facts.
+
+    Legacy keys are retained temporarily because the Telegram sender and dashboard
+    still consume them. Migration is intentionally additive and idempotent.
+    """
+    item = dict(record or {})
+    raw_url = _http_url(item.get("url"))
+    parsed_host = (urlsplit(raw_url).hostname or "").lower() if raw_url else ""
+    is_discovery_redirect = parsed_host in {"news.google.com", "www.google.com"}
+    canonical_url = _http_url(item.get("canonical_url"))
+    if canonical_url is None and raw_url and not is_discovery_redirect:
+        canonical_url = clean_url(raw_url)
+
+    legacy_deadline = str(item.get("deadline") or "").strip()
+    if legacy_deadline.lower() in {"", UNKNOWN_DEADLINE_TEXT.lower(), "not found"}:
+        legacy_deadline = ""
+    deadline_status = item.get("deadline_status")
+    if deadline_status not in {"verified", "unverified", "unknown", "not_applicable"}:
+        deadline_status = "unverified" if legacy_deadline else "unknown"
+
+    location = item.get("location")
+    if not isinstance(location, dict):
+        location = {
+            "raw": None,
+            "mode": "unknown",
+            "venue": None,
+            "city": None,
+            "region": None,
+            "country": None,
+            "country_code": None,
+            "remote_restrictions": [],
+        }
+
+    reward = item.get("reward")
+    if not isinstance(reward, dict):
+        reward = {
+            "type": "unknown",
+            "amount_min": None,
+            "amount_max": None,
+            "currency": None,
+            "description": None,
+            "evidence_url": None,
+        }
+
+    travel_support = item.get("travel_support")
+    if not isinstance(travel_support, dict):
+        travel_support = {
+            "status": "unknown",
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "maximum_amount": None,
+            "currency": None,
+            "conditions": [],
+            "evidence_url": None,
+        }
+
+    verification = item.get("verification")
+    if not isinstance(verification, dict):
+        verification = {
+            "status": "unverified",
+            "official_url": canonical_url,
+            "evidence_urls": [],
+            "last_checked_at": None,
+            "deadline_checked_at": None,
+            "eligibility_checked_at": None,
+            "funding_checked_at": None,
+            "notes": ["Migrated from the legacy feed tracker; official details have not been verified."],
+        }
+
+    item.update({
+        "schema_version": STATE_SCHEMA_VERSION,
+        "id": str(item.get("id") or event_id_value),
+        "title": str(item.get("title") or "Untitled opportunity"),
+        "summary": str(item.get("summary") or ""),
+        "organizer": item.get("organizer"),
+        "canonical_url": canonical_url,
+        "discovered_url": raw_url,
+        "source_feed_url": _http_url(item.get("source")),
+        "application_open_at": item.get("application_open_at"),
+        "application_deadline": item.get("application_deadline"),
+        "application_deadline_raw": item.get("application_deadline_raw") or legacy_deadline or None,
+        "deadline_status": deadline_status,
+        "deadline_timezone": item.get("deadline_timezone"),
+        "event_start_at": item.get("event_start_at"),
+        "event_end_at": item.get("event_end_at"),
+        "event_timezone": item.get("event_timezone"),
+        "date_precision": item.get("date_precision") or "unknown",
+        "opportunity_status": item.get("opportunity_status") or "unknown",
+        "location": location,
+        "eligibility": item.get("eligibility") if isinstance(item.get("eligibility"), dict) else {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": None,
+            "age_max": None,
+            "requirements": [],
+            "evidence_url": None,
+        },
+        "reward": reward,
+        "travel_support": travel_support,
+        "media": item.get("media") if isinstance(item.get("media"), dict) else {
+            "source_image_url": _http_url(item.get("image_url")),
+            "generated_image_url": None,
+        },
+        "verification": verification,
+        "content_hash": item.get("content_hash"),
+        "last_material_change_at": item.get("last_material_change_at"),
+    })
+    return item
+
+
+def normalize_state(state: dict) -> dict:
+    """Migrate old tracking records to the additive v1 schema."""
+    normalized = dict(state or {})
+    seen = normalized.get("seen")
+    if not isinstance(seen, dict):
+        seen = {}
+    normalized["seen"] = {
+        str(event_id_value): normalize_event_record(str(event_id_value), record)
+        for event_id_value, record in seen.items()
+        if isinstance(record, dict)
+    }
+    normalized["schema_version"] = STATE_SCHEMA_VERSION
+    return normalized
+
+
 def read_state() -> dict:
     try:
         data = json.loads(STATE_FILE.read_text(encoding="utf-8"))
         if isinstance(data.get("seen"), dict):
-            return data
+            return normalize_state(data)
     except (OSError, json.JSONDecodeError):
         pass
-    return {"seen": {}}
+    return {"schema_version": STATE_SCHEMA_VERSION, "seen": {}}
+
 
 def write_state(state: dict) -> None:
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
-    STATE_FILE.write_text(json.dumps(state, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    normalized = normalize_state(state)
+    normalized["updated_utc"] = now_iso()
+    STATE_FILE.write_text(json.dumps(normalized, indent=2, ensure_ascii=False) + "\\n", encoding="utf-8")
 
 def matching_categories(text: str) -> list[str]:
     low = text.lower()
@@ -760,8 +906,9 @@ def main() -> int:
                 )
                 continue
 
-            seen[event["uid"]] = {
+            record = {
                 "title": title,
+                "summary": event["summary"],
                 "url": clean_url(link),
                 "image_url": image_url or "",
                 "source": event["source"],
@@ -771,8 +918,26 @@ def main() -> int:
                 "last_seen_utc": now_iso(),
                 "deadline": deadline,
                 "registration_status": reg_status,
+                "registration_status_evidence": reg_evidence,
                 "link_status": link_status,
+                "link_status_evidence": link_evidence,
+                "discovered_url": clean_url(link),
+                "source_feed_url": event["source"],
+                "application_deadline_raw": None if deadline == UNKNOWN_DEADLINE_TEXT else deadline,
+                "deadline_status": "unknown" if deadline == UNKNOWN_DEADLINE_TEXT else "unverified",
+                "opportunity_status": "unknown",
+                "verification": {
+                    "status": "unverified",
+                    "official_url": None,
+                    "evidence_urls": [],
+                    "last_checked_at": None,
+                    "deadline_checked_at": None,
+                    "eligibility_checked_at": None,
+                    "funding_checked_at": None,
+                    "notes": ["Discovered via a feed; official details have not yet been verified."],
+                },
             }
+            seen[event["uid"]] = normalize_event_record(event["uid"], record)
             discovered += 1
 
     state["updated_utc"] = now_iso()
