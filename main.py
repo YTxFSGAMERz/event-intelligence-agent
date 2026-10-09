@@ -759,7 +759,14 @@ def main() -> int:
     # Backfill unresolved legacy Google News links in small batches. This does not
     # create alerts or change the stable dictionary IDs; it only enriches provenance.
     resolutions_this_run = 0
-    for existing_id, existing in list(seen.items()):
+    unresolved_records = sorted(
+        seen.items(),
+        key=lambda pair: (
+            int(pair[1].get("resolution_attempts") or 0) if isinstance(pair[1], dict) else 99,
+            str(pair[1].get("first_seen_utc") or "") if isinstance(pair[1], dict) else "",
+        ),
+    )
+    for existing_id, existing in unresolved_records:
         if resolutions_this_run >= MAX_URL_RESOLUTIONS_PER_RUN:
             break
         if not isinstance(existing, dict) or existing.get("canonical_url"):
