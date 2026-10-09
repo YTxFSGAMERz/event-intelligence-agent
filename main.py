@@ -16,6 +16,7 @@ import feedparser
 import requests
 
 from page_verification import VerificationBudget, verification_is_due, verify_opportunity_page
+from opportunity_quality import assess_discovery_quality
 from source_adapters import (URLResolutionBudget, build_adapters, should_poll_source,
                              source_health_failure, source_health_skipped, source_health_success)
 
@@ -25,9 +26,9 @@ STATE_FILE = ROOT / "data" / "seen_events.json"
 USER_AGENT = "EventIntelligenceAgent/0.1 (personal event research; respectful feed polling)"
 TIMEOUT = 10
 MAX_ALERTS_PER_SOURCE_PER_RUN = 1
-MAX_URL_RESOLUTIONS_PER_RUN = 4
-MAX_LEGACY_URL_RESOLUTIONS_PER_RUN = 1
-MAX_URL_RESOLUTION_ATTEMPTS = 3
+MAX_URL_RESOLUTIONS_PER_RUN = 6
+MAX_LEGACY_URL_RESOLUTIONS_PER_RUN = 2
+MAX_URL_RESOLUTION_ATTEMPTS = 5
 MAX_PAGE_VERIFICATIONS_PER_RUN = 2
 MAX_PAGE_FETCHES_PER_RUN = 4
 TELEGRAM_MIN_INTERVAL_SECONDS = 1.1
@@ -36,17 +37,25 @@ _LAST_TELEGRAM_REQUEST = 0.0
 KEYWORDS = {
     "hackathons_buildathons": ["hackathon", "hack day", "coding challenge", "buildathon"],
     "competitions_challenges": ["competition", "contest", "challenge", "olympiad", "call for entries"],
-    "prizes_cash_rewards": ["cash prize", "prize pool", "prizes", "winner", "cash reward", "cash rewards",
-                            "prize money", "reward"],
-    "swag_gadgets": ["swag", "merchandise", "giveaway", "gadget", "laptop", "phone", "hardware", "free goodies"],
-    "funded_travel_abroad": ["travel grant", "travel support", "travel stipend", "flight", "airfare",
-                             "accommodation covered", "fully funded", "funded travel", "travel scholarship",
-                             "exchange program", "international travel support"],
+    # Require a meaningful prize phrase: generic mentions of a "winner" or "reward"
+    # were matching unrelated articles and general consumer promotions.
+    "prizes_cash_rewards": ["cash prize", "prize pool", "cash reward", "cash rewards",
+                            "prize money", "prizes worth", "cash award", "prize fund",
+                            "hardware prize", "winner takes all"],
+    "swag_gadgets": ["swag", "merchandise", "giveaway", "hardware prize", "free gadgets",
+                     "free laptop", "free phone", "free goodies", "sticker pack"],
+    # Do not match the standalone word "flight": it appears in many unrelated stories.
+    "funded_travel_abroad": ["travel grant", "travel support", "travel stipend", "flight reimbursement",
+                             "flights covered", "airfare covered", "airfare reimbursement",
+                             "travel costs covered", "travel expenses covered", "accommodation covered",
+                             "fully funded", "funded travel", "travel scholarship", "exchange program",
+                             "international travel support"],
     "scholarships_fellowships": ["scholarship", "fellowship", "bursary", "stipend", "tuition waiver",
                                  "tuition fee", "financial aid", "education grant"],
+    # Early-bird offers and generic registration announcements are not necessarily free.
     "free_tickets_registration": ["free registration", "free ticket", "no registration fee", "free entry",
-                                  "early bird", "early-bird", "registration opens", "free pass"],
-    "open_source_programs": ["open source", "student program", "student ambassador", "summer of code",
+                                  "free pass", "complimentary pass", "ticket fee waived"],
+    "open_source_programs": ["open source", "student ambassador", "summer of code",
                              "developer student clubs", "open-source program", "mentorship program"],
     "tech_events_conferences": ["tech fest", "technology festival", "student festival", "conference",
                                 "summit", "developer conference", "technology meetup"],
@@ -198,6 +207,12 @@ def normalize_event_record(event_id_value: str, record: dict) -> dict:
         "id": str(item.get("id") or event_id_value),
         "title": str(item.get("title") or "Untitled opportunity"),
         "summary": str(item.get("summary") or ""),
+        "discovery_quality": item.get("discovery_quality") if isinstance(item.get("discovery_quality"), dict) else {
+            "accepted": None,
+            "status": "unknown",
+            "reason": "No discovery-quality assessment was recorded for this legacy item.",
+            "rule_version": 1,
+        },
         "organizer": item.get("organizer"),
         "canonical_url": canonical_url,
         "discovered_url": discovered_url,
@@ -1130,6 +1145,7 @@ def main() -> int:
             continue
         started = time.monotonic()
         matching_count = 0
+        quality_rejected_count = 0
         queued_count = 0
         alerts_attempted = 0
         alert_limit_logged = False
@@ -1199,6 +1215,21 @@ def main() -> int:
                         existing["discovered_url"] = clean_url(discovered_link)
                     continue
 
+                quality = assess_discovery_quality(
+                    title,
+                    summary,
+                    categories,
+                    adapter_type=config.adapter_type,
+                )
+                if not quality["accepted"]:
+                    quality_rejected_count += 1
+                    if quality_rejected_count <= 5:
+                        print(
+                            f"Discovery quality gate: skipped {title!r}; "
+                            f"status={quality['status']}; reason={quality['reason']}"
+                        )
+                    continue
+
                 normalized_canonical = clean_url(canonical_link) if canonical_link else ""
                 if normalized_canonical and normalized_canonical in pending_url_index:
                     print(f"Duplicate canonical URL in this scan; skipped: {title}")
@@ -1217,6 +1248,7 @@ def main() -> int:
                     "entry": dict(entry),
                     "categories": categories,
                     "primary_category": primary,
+                    "discovery_quality": quality,
                     "source": source,
                     "source_id": config.source_id,
                     "source_name": config.name,
@@ -1227,13 +1259,16 @@ def main() -> int:
                 alerts_attempted += 1
                 queued_count += 1
 
-            source_health[config.source_id] = source_health_success(
+            health_record = source_health_success(
                 previous_health, config, feed_result, matching_count, queued_count
             )
+            health_record["quality_rejected_count"] = quality_rejected_count
+            health_record["quality_rule_version"] = 1
+            source_health[config.source_id] = health_record
             print(
                 f"Source health: success; entries={feed_result.item_count}; "
-                f"matching={matching_count}; queued={queued_count}; "
-                f"duration={feed_result.duration_ms}ms"
+                f"matching={matching_count}; quality_rejected={quality_rejected_count}; "
+                f"queued={queued_count}; duration={feed_result.duration_ms}ms"
             )
         except Exception as exc:
             feed_errors += 1
@@ -1412,6 +1447,12 @@ def main() -> int:
                 ),
                 "categories": categories,
                 "primary_category": primary,
+                "discovery_quality": event.get("discovery_quality") or {
+                    "accepted": True,
+                    "status": "specific_opportunity",
+                    "reason": "Accepted by the discovery quality gate.",
+                    "rule_version": 1,
+                },
                 "first_seen_utc": now_iso(),
                 "last_seen_utc": now_iso(),
                 "deadline": deadline,
