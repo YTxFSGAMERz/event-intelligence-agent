@@ -820,6 +820,7 @@ def apply_page_verification(record: dict, result: dict) -> dict:
     now_checked = result.get("last_checked_at")
     if result_status != "skipped_budget" and now_checked:
         verification["last_checked_at"] = now_checked
+        verification["version"] = int(result.get("verification_version") or 1)
     verification["source_page_url"] = result.get("source_page_url") or verification.get("source_page_url")
     verification["official_link_candidate"] = result.get("official_link_candidate") or verification.get("official_link_candidate")
     verification["official_link_reason"] = result.get("official_link_reason") or verification.get("official_link_reason")
@@ -925,6 +926,15 @@ def apply_page_verification(record: dict, result: dict) -> dict:
     return target
 
 
+def _is_google_news_wrapper(value: object) -> bool:
+    try:
+        return (urlsplit(str(value or "").strip()).hostname or "").lower() in {
+            "news.google.com", "www.google.com"
+        }
+    except ValueError:
+        return False
+
+
 def _verification_target(record: dict) -> str | None:
     verification = record.get("verification") if isinstance(record.get("verification"), dict) else {}
     # Once identified, the organizer's official URL is the best refresh target.
@@ -935,7 +945,7 @@ def _verification_target(record: dict) -> str | None:
         record.get("discovered_url"),
     )
     for candidate in candidates:
-        if _http_url(candidate):
+        if _http_url(candidate) and not _is_google_news_wrapper(candidate):
             return str(candidate).strip()
     return None
 
@@ -949,7 +959,30 @@ def verify_due_opportunities(pending_events: list[dict], seen: dict) -> int:
     targets: list[tuple[str, dict, str]] = []
     if pending_events:
         first = pending_events[0]
-        targets.append(("pending", first, first.get("canonical_link") or first.get("link") or ""))
+        pending_target = first.get("canonical_link") or first.get("link") or ""
+        if _is_google_news_wrapper(pending_target):
+            # A Google News wrapper is a discovery pointer, not an event page.
+            # Avoid spending verification requests until the source resolver finds
+            # a publisher URL; the item remains eligible for a later retry.
+            first["verification_result"] = {
+                "status": "awaiting_source_resolution",
+                "verification_version": 1,
+                "official_page_verified": False,
+                "source_page_url": None,
+                "official_url": None,
+                "official_link_candidate": None,
+                "official_link_reason": None,
+                "last_checked_at": None,
+                "duration_ms": 0,
+                "error": "Google News wrapper has not resolved to a publisher page.",
+                "evidence_urls": [],
+                "observed_facts": {},
+                "fact_evidence": {},
+                "verified_facts": {},
+            }
+            print(f"Page verification deferred for {first.get('title')!r}: awaiting publisher URL resolution.")
+        elif pending_target:
+            targets.append(("pending", first, pending_target))
 
     pending_ids = {str(event.get("uid") or "") for event in pending_events}
     existing_candidates = []
