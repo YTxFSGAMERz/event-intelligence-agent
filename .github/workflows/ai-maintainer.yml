@@ -30,7 +30,7 @@ jobs:
       - name: Check whether the OpenAI API key is configured
         id: api
         env:
-          OPENAI_API_KEY: \${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         shell: bash
         run: |
           if [[ -z "$OPENAI_API_KEY" ]]; then
@@ -62,7 +62,7 @@ jobs:
         id: codex
         uses: openai/codex-action@v1
         with:
-          openai-api-key: \${{ secrets.OPENAI_API_KEY }}
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
           permission-profile: ":workspace"
           prompt-file: ".github/AI_MAINTAINER_PROMPT.md"
 
@@ -83,7 +83,7 @@ jobs:
         if: steps.api.outputs.configured == 'true' && steps.guard.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
-          token: \${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: automation/ai-maintenance
           add-paths: |
             main.py
