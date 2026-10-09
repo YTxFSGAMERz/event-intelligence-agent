@@ -81,6 +81,14 @@ New normalized fields include:
 - Existing records are migrated additively. The legacy fields remain available, and the `schema_version` field identifies the normalized record version.
 - `last_seen_utc` means the item was observed in a feed; it does **not** mean its deadline, eligibility, or funding was verified at that time.
 
+## Discovery quality and source coverage (Phase 5)
+
+The agent now applies an explainable quality gate before spending a Google News URL-resolution request. It rejects obvious opportunity roundup/listicle headlines, non-actionable results/rules stories, and items whose opportunity keywords only appear in generic supporting text. Named opportunities and concrete application, registration, and deadline updates are retained. The decision and reason are stored as `discovery_quality`, and the latest per-feed `quality_rejected_count` is visible in source-health data. This is a transparent rule-based triage system, not an AI accuracy score.
+
+The matcher no longer treats generic words such as standalone `winner`, `reward`, `flight`, `laptop`, or `early bird` as sufficient evidence for prize, travel, gadget, or free-ticket categories. The resolver budget is six URL attempts per workflow run, reserving up to two for legacy Google News records while allowing four for newly found records; individual legacy records can receive up to five bounded attempts before the agent stops retrying them.
+
+Two targeted discovery searches were added: one restricted to National Scholarship Portal pages and one to Google's Student Programs announcements. They are still **Google News discovery feeds**, not direct official feeds, so discovered URLs must pass normal resolution and verification. The National Scholarship Portal currently lists AY 2026–27 scholarship application timelines, and Google describes its Student Programs page as covering scholarships, internships, events and programs. See [National Scholarship Portal](https://scholarships.gov.in/Students) and [Google Student Programs](https://blog.google/company-news/outreach-and-initiatives/student-programs/).
+
 ## Web dashboard (Phase 4)
 
 The live dashboard is available at https://event-intelligence-dashboard-indol.vercel.app and is served from `dashboard/index.html`. It reads the public tracker at `data/seen_events.json` and refreshes automatically every five minutes.
