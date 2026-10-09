@@ -16,7 +16,8 @@ ROOT = Path(__file__).resolve().parent
 SOURCES_FILE = ROOT / "sources.txt"
 STATE_FILE = ROOT / "data" / "seen_events.json"
 USER_AGENT = "EventIntelligenceAgent/0.1 (personal event research; respectful feed polling)"
-TIMEOUT = 15
+TIMEOUT = 10
+MAX_ALERTS_PER_SOURCE_PER_RUN = 1
 
 KEYWORDS = {
     "hackathon": ["hackathon", "hack day", "coding challenge", "buildathon"],
@@ -185,12 +186,20 @@ def main() -> int:
         return 0
 
     for source in sources:
+        alerts_attempted = 0
         print(f"Checking feed: {source}")
         try:
-            feed = feedparser.parse(source, request_headers={"User-Agent": USER_AGENT})
+            feed_response = requests.get(source, timeout=TIMEOUT, headers={"User-Agent": USER_AGENT})
+            feed_response.raise_for_status()
+            feed = feedparser.parse(feed_response.content)
             if getattr(feed, "bozo", False) and not feed.entries:
                 raise RuntimeError(str(getattr(feed, "bozo_exception", "invalid feed")))
             for entry in feed.entries:
+                if alerts_attempted >= MAX_ALERTS_PER_SOURCE_PER_RUN:
+                    print(
+                        f"Per-source alert limit reached for {source}; remaining new items will be checked on a future run."
+                    )
+                    break
                 title = str(entry.get("title", "Untitled event")).strip()
                 link = str(entry.get("link", "")).strip()
                 summary = str(entry.get("summary", entry.get("description", "")))
@@ -207,6 +216,7 @@ def main() -> int:
                     seen[uid]["last_seen_utc"] = now_iso()
                     continue
 
+                alerts_attempted += 1
                 deadline = extract_deadline(content)
                 reg_status, reg_evidence = registration_status(content)
                 link_status, link_evidence = check_link(link)
