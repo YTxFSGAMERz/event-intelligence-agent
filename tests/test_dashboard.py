@@ -90,6 +90,17 @@ class DashboardContractTests(unittest.TestCase):
         ):
             self.assertIn(marker, self.html)
 
+    def test_quality_filter_hides_flagged_by_default_but_keeps_review_paths(self):
+        self.assertIn('id="qualityFilter"', self.html)
+        self.assertIn('<option value="accepted" selected>', self.html)
+        self.assertIn('<option value="flagged">Flagged by quality rules</option>', self.html)
+        self.assertIn('<option value="unknown">Not quality-assessed</option>', self.html)
+        self.assertIn('<option value="all">Include all quality states</option>', self.html)
+        self.assertIn("function qualityState(e)", self.html)
+        self.assertIn("function qualityLabel(e)", self.html)
+        self.assertIn("qualityState(e)===quality", self.html)
+        self.assertIn("discovery_quality_reason:", self.html)
+
     def test_dashboard_can_render_images_and_event_details(self):
         self.assertIn("media.source_image_url", self.html)
         self.assertIn("function renderDetails(e)", self.html)
