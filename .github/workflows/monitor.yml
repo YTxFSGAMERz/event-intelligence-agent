@@ -97,6 +97,37 @@ jobs:
           print("Telegram connectivity test passed; Telegram accepted the test message.")
           PY
 
+      - name: Check deployed dashboard
+        run: |
+          python - <<'PY'
+          import sys
+          import urllib.error
+          import urllib.request
+
+          url = "https://event-intelligence-dashboard-indol.vercel.app/"
+          request = urllib.request.Request(
+              url,
+              headers={"User-Agent": "event-intelligence-agent-healthcheck/1.0"},
+          )
+          try:
+              with urllib.request.urlopen(request, timeout=20) as response:
+                  status = response.status
+                  content_type = response.headers.get("Content-Type", "")
+                  body = response.read(1000000).decode("utf-8", errors="replace").lower()
+          except (urllib.error.URLError, TimeoutError) as exc:
+              print(f"Dashboard health check failed: {type(exc).__name__}", file=sys.stderr)
+              raise SystemExit(1)
+
+          if status != 200:
+              print(f"Dashboard returned HTTP {status}", file=sys.stderr)
+              raise SystemExit(1)
+          if "text/html" not in content_type.lower() or "<html" not in body:
+              print("Dashboard did not return an HTML page.", file=sys.stderr)
+              raise SystemExit(1)
+
+          print(f"Dashboard health check passed (HTTP {status}).")
+          PY
+
       - name: Scan configured feeds
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
