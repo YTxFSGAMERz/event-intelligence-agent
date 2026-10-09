@@ -1,4 +1,5 @@
 # Public RSS feeds used by Phase 1.
+# Google News queries are limited to recent results; verify all dates and eligibility on official pages.
 # Google News RSS queries help discover pages; always verify each opportunity on its official page.
 # Devpost hackathons
 https://news.google.com/rss/search?q=site%3Adevpost.com%2Fhackathons+hackathon+registration+prize+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen
