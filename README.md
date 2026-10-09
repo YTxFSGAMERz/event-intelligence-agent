@@ -39,6 +39,27 @@ The scanner continues through the feed after reaching its per-source alert cap, 
 
 The current registry uses public RSS/Atom feeds and ordinary redirect/canonical-page checks. It does not bypass access controls or anti-bot mechanisms.
 
+## Official-page verification (Phase 3)
+
+The verification module is `page_verification.py`. It fetches public HTML pages with a maximum 512 KB per page, a short timeout, a four-hop redirect ceiling, per-redirect URL checks, and no more than four page fetches across two records per workflow run. Google News wrapper URLs are not treated as event pages while they remain unresolved; the system waits for a publisher URL instead.
+
+### What it extracts
+
+- Schema.org Event JSON-LD: event name, start/end dates, explicit timezone offsets, organizer, online/in-person/hybrid mode, structured location and event status. Field meanings follow [Schema.org Event](https://schema.org/Event) and [Google's event structured-data guidance](https://developers.google.com/search/docs/appearance/structured-data/event).
+- Explicit application/registration deadline labels and deadline metadata. A normalized deadline is saved as verified only when the page passes the official-page checks and the date includes an explicit year. A date without a year remains raw/unknown; the system does not infer a year or timezone.
+- Explicit eligibility text and travel-support wording for flights, transport, accommodation, meals and visa support. Component-level outcomes are recorded as `confirmed`, `possible`, `not_offered` or `unknown`, with evidence snippets and source URLs.
+- Explicit registration phrases such as “applications are open” or “registration closed”.
+
+### Verification states and trust boundary
+
+- `official_page_verified`: the page is identified by an explicit organizer/official-site link or a matching structured Event that points to an organizer URL on the same site. Extracted facts are merged into the canonical fields with evidence.
+- `structured_event_source_page_checked` and `source_page_checked`: the discovery page was readable, but the official organizer page was not established. Extracted content stays under `verification.observed_facts`; it does not silently become verified deadline/location/funding data.
+- `official_link_candidate_found` / `official_link_candidate_unverified`: an outbound CTA was found but the destination did not satisfy the official-page check.
+- `awaiting_source_resolution`: the only URL is an unresolved Google News wrapper; no page fetch is spent on the wrapper.
+- HTTP, redirect and parse failures are recorded separately. Successful checks are scheduled for recheck after seven days; fetch failures can retry after a day. A verification-version change schedules older records for a bounded recheck.
+
+The page parser does not log in, solve CAPTCHAs, bypass anti-bot checks, submit applications or infer official status from reachability alone. Unsupported facts remain unknown. The first live check successfully parsed a structured event listing from Hackalendar, but because the discovery listing is not itself the organizer's page, its facts remain under observed evidence until the registration link is verified.
+
 ## Canonical opportunity schema (v1)
 
 The tracker uses an additive, versioned schema. Legacy keys such as `url`, `deadline`, `registration_status`, `image_url`, and `source` remain temporarily for compatibility with the Telegram workflow and dashboard.
