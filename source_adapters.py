@@ -13,7 +13,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from typing import Any
-from urllib.parse import parse_qs, urlsplit, urlunsplit
+from urllib.parse import parse_qs, urljoin, urlsplit, urlunsplit
 
 import feedparser
 import requests
@@ -95,11 +95,152 @@ class CanonicalLinkParser(HTMLParser):
                 self.urls.append(attrs_dict["content"])
 
 
+
+MLH_MONTH = r"(?:JAN(?:UARY)?|FEB(?:RUARY)?|MAR(?:CH)?|APR(?:IL)?|MAY|JUN(?:E)?|JUL(?:Y)?|AUG(?:UST)?|SEP(?:T(?:EMBER)?)?|OCT(?:OBER)?|NOV(?:EMBER)?|DEC(?:EMBER)?)"
+MLH_EVENT_DATE_RE = re.compile(
+    r"\b" + MLH_MONTH + r"\s+\d{1,2}"
+    r"(?:\s*-\s*(?:" + MLH_MONTH + r"\s+)?\d{1,2})?"
+    r"(?:,\s*\d{4})?\b",
+    re.IGNORECASE,
+)
+MLH_REGION_NAMES = (
+    "British Columbia", "North Carolina", "South Carolina", "West Virginia",
+    "New Brunswick", "Nova Scotia", "Prince Edward Island", "Newfoundland and Labrador",
+    "County Durham", "Chhattisgarh", "Timiș", "Coahuila", "Ontario", "Quebec",
+    "Alberta", "Manitoba", "Saskatchewan", "New York", "New Delhi", "Rhode Island",
+    "Massachusetts", "Pennsylvania", "Mississippi", "North Dakota", "South Dakota",
+    "New Hampshire", "New Jersey", "New Mexico", "Connecticut", "California",
+    "Colorado", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois",
+    "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland",
+    "Michigan", "Minnesota", "Missouri", "Montana", "Nebraska", "Nevada", "Ohio",
+    "Oklahoma", "Oregon", "Tennessee", "Texas", "Utah", "Vermont", "Virginia",
+    "Washington", "Wisconsin", "Wyoming", "Arizona", "Arkansas", "Alabama", "Alaska",
+    "Auckland", "London", "England", "Spain", "BC", "ON", "AB", "NS", "QC", "CA",
+    "SC", "TX", "WI", "PA", "MD", "NC", "MA", "GA", "TN", "CT", "RI", "VA",
+    "IL", "FL", "NJ", "CO", "AZ", "UT", "WA", "NY", "IN", "GB",
+)
+_MLH_REGION_RE = re.compile(
+    r",\s*(?:" + "|".join(
+        re.escape(name) for name in sorted(set(MLH_REGION_NAMES), key=len, reverse=True)
+    ) + r")\s+(?P<title>.+)$",
+    re.IGNORECASE,
+)
+
+
+class MLHUpcomingEventsParser(HTMLParser):
+    """Extract dated external links from the official MLH Upcoming Events section."""
+
+    HEADING_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6"}
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.in_upcoming = False
+        self.saw_upcoming_heading = False
+        self.current_year: int | None = None
+        self._heading_tag: str | None = None
+        self._heading_parts: list[str] = []
+        self._anchor: dict | None = None
+        self.events: list[dict] = []
+        self._seen_links: set[str] = set()
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attrs_dict = {key.lower(): (value or "").strip() for key, value in attrs}
+        tag = tag.lower()
+        if tag in self.HEADING_TAGS:
+            self._heading_tag = tag
+            self._heading_parts = []
+        if tag == "a":
+            self._anchor = {
+                "href": attrs_dict.get("href", ""),
+                "aria_label": attrs_dict.get("aria-label", ""),
+                "title_attr": attrs_dict.get("title", ""),
+                "parts": [],
+            }
+
+    def handle_data(self, data: str) -> None:
+        if self._heading_tag:
+            self._heading_parts.append(data)
+        if self._anchor is not None:
+            self._anchor["parts"].append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        tag = tag.lower()
+        if self._heading_tag == tag:
+            heading = re.sub(r"\s+", " ", " ".join(self._heading_parts)).strip().casefold()
+            if heading == "upcoming events":
+                self.in_upcoming = True
+                self.saw_upcoming_heading = True
+                self.current_year = None
+            elif heading == "past events":
+                self.in_upcoming = False
+                self.current_year = None
+            elif self.in_upcoming and re.fullmatch(r"20\d{2}", heading):
+                self.current_year = int(heading)
+            self._heading_tag = None
+            self._heading_parts = []
+
+        if tag != "a" or self._anchor is None:
+            return
+        anchor = self._anchor
+        self._anchor = None
+        if not self.in_upcoming:
+            return
+
+        visible = re.sub(r"\s+", " ", " ".join(anchor["parts"])).strip()
+        date_match = MLH_EVENT_DATE_RE.search(visible)
+        if not date_match:
+            return
+
+        link = normalize_http_url(urljoin("https://www.mlh.com/", anchor.get("href", "")))
+        if not link:
+            return
+        parts = urlsplit(link)
+        host = (parts.hostname or "").lower()
+        if host == "mlh.com" or host.endswith(".mlh.com") or parts.username or parts.password:
+            return
+        if link in self._seen_links:
+            return
+
+        prefix = visible[:date_match.start()].strip(" \t-–—|·:")
+        region_match = _MLH_REGION_RE.search(prefix)
+        title = (region_match.group("title") if region_match else prefix).strip(" ,:–—-|")
+        if not title:
+            title = anchor.get("aria_label") or anchor.get("title_attr") or visible
+        title = re.sub(r"\s+", " ", title).strip()[:180]
+        if not title:
+            return
+
+        suffix = visible[date_match.end():].strip(" \t-–—|·:")
+        date_text = date_match.group(0).strip()
+        year_text = str(self.current_year) if self.current_year else "year not provided by calendar"
+        summary = (
+            "Official MLH upcoming hackathon/event calendar listing. "
+            f"Calendar section year: {year_text}. Displayed schedule: {date_text}. "
+            f"Listing text: {visible}. Location/format text: {suffix or 'not separately labelled'}. "
+            "The linked organizer page remains the source of eligibility, exact schedule, prizes and application rules."
+        )
+        self.events.append({
+            "title": title,
+            "link": link,
+            "summary": summary,
+            "event_date_text": date_text,
+            "calendar_year": self.current_year,
+            "location_text": suffix,
+            "source_listing": "MLH Upcoming Events Calendar",
+        })
+        self._seen_links.add(link)
+
+
 def _resolve_source_type(url: str) -> tuple[str, str]:
     host = _host(url)
     parts = urlsplit(url)
     if host in {"hackalendar.com", "www.hackalendar.com"} and parts.path.rstrip("/") == "/feed.xml":
         return "hackalendar_rss", "Hackalendar · Upcoming Hackathons"
+    if host in {"mlh.com", "www.mlh.com"} and (
+        parts.path.rstrip("/") == "/events"
+        or re.fullmatch(r"/seasons/\d{4}/events", parts.path.rstrip("/"))
+    ):
+        return "mlh_events_html", "MLH · Upcoming Events Calendar"
     if host == "news.google.com" and parts.path.startswith("/rss/"):
         query = (parse_qs(parts.query).get("q") or [""])[0].lower()
         if "devpost.com" in query:
@@ -138,6 +279,10 @@ def build_source_config(url: str) -> SourceConfig:
         expected_fields = ("title", "link", "summary", "published", "updated", "author", "media")
         pagination_mode = "publisher_feed_managed"
         access_method = "public_official_blog_rss"
+    elif adapter_type == "mlh_events_html":
+        expected_fields = ("title", "link", "summary", "event_date_text", "calendar_year", "location_text")
+        pagination_mode = "official_calendar_upcoming_section"
+        access_method = "public_official_mlh_events_html"
     else:
         expected_fields = ("title", "link", "summary", "description", "published", "updated", "media")
         pagination_mode = "publisher_feed_managed"
@@ -274,6 +419,59 @@ class OfficialBlogRSSAdapter(RSSSourceAdapter):
     """RSS adapter for the configured official GitHub Blog feed."""
 
 
+
+
+class MLHEventsHTMLAdapter(RSSSourceAdapter):
+    """Fetch the public official MLH events calendar without authentication."""
+
+    MAX_HTML_BYTES = 3_000_000
+
+    def fetch(
+        self,
+        timeout: int = 10,
+        user_agent: str = "EventIntelligenceAgent/0.2 (personal event research; respectful feed polling)",
+        session: Any = requests,
+    ) -> FeedResult:
+        started = time.monotonic()
+        fetched_at = utc_now()
+        response = session.get(
+            self.config.url,
+            allow_redirects=True,
+            timeout=timeout,
+            headers={"User-Agent": user_agent},
+            stream=True,
+        )
+        try:
+            response.raise_for_status()
+            chunks: list[bytes] = []
+            size = 0
+            for chunk in response.iter_content(chunk_size=8192):
+                if not chunk:
+                    continue
+                size += len(chunk)
+                if size > self.MAX_HTML_BYTES:
+                    raise RuntimeError("MLH calendar HTML exceeded the 3 MB safety limit")
+                chunks.append(chunk)
+            page_html = b"".join(chunks).decode(getattr(response, "encoding", None) or "utf-8", errors="replace")
+            parser = MLHUpcomingEventsParser()
+            parser.feed(page_html)
+            if not parser.saw_upcoming_heading:
+                raise RuntimeError("MLH calendar changed: Upcoming Events heading was not found")
+            if not parser.events:
+                raise RuntimeError("MLH calendar parser found no dated organizer links in Upcoming Events")
+            return FeedResult(
+                entries=parser.events,
+                status="success",
+                item_count=len(parser.events),
+                duration_ms=round((time.monotonic() - started) * 1000),
+                fetched_at_utc=fetched_at,
+            )
+        finally:
+            closer = getattr(response, "close", None)
+            if callable(closer):
+                closer()
+
+
 class GenericRSSAdapter(RSSSourceAdapter):
     """Default adapter for other permitted RSS/Atom feeds."""
 
@@ -282,6 +480,7 @@ ADAPTER_REGISTRY: dict[str, type[RSSSourceAdapter]] = {
     "google_news_rss": GoogleNewsRSSAdapter,
     "hackalendar_rss": HackalendarRSSAdapter,
     "official_blog_rss": OfficialBlogRSSAdapter,
+    "mlh_events_html": MLHEventsHTMLAdapter,
     "rss_atom": GenericRSSAdapter,
 }
 
