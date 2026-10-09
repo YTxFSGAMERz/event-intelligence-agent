@@ -115,6 +115,28 @@ class PageVerificationTests(unittest.TestCase):
         )
         self.assertEqual(denied.status, "redirect_rejected")
 
+    def test_organizers_site_cta_is_recognized_as_explicit_official_link(self):
+        html = """
+        <html><head><title>International Student Hackathon Prize Challenge 2026</title></head>
+        <body><h1>International Student Hackathon Prize Challenge 2026</h1>
+        <a href="https://organizer.example/events/42">Enter on the organiser’s site</a>
+        </body></html>
+        """
+        page = verify.PageFetch(
+            "https://publisher.example/news/42",
+            "https://publisher.example/news/42",
+            "success",
+            200,
+            html=html,
+        )
+        facts = verify._extract_facts(page, EXPECTED)
+        candidate, reason, explicit = verify._candidate_official_link(
+            facts, page.final_url
+        )
+        self.assertEqual(candidate, "https://organizer.example/events/42")
+        self.assertIn("organiser", reason.lower())
+        self.assertTrue(explicit)
+
     def test_official_anchor_and_schema_org_event_extract_verified_facts(self):
         article = """
         <html><head><title>International Student Hackathon Prize Challenge 2026 News</title>
