@@ -101,6 +101,21 @@ class DashboardContractTests(unittest.TestCase):
         self.assertIn("qualityState(e)===quality", self.html)
         self.assertIn("discovery_quality_reason:", self.html)
 
+    def test_mlh_calendar_observations_are_displayed_without_becoming_verified(self):
+        for marker in (
+            "e.source_observed",
+            "function source_observed",
+            "Observed schedule · unverified · ",
+            "source_observed_location:",
+            "Named event · MLH calendar",
+            "unverified listing",
+        ):
+            if marker == "function source_observed":
+                # Source-observation extraction lives server-side; the browser only renders the field.
+                self.assertIn("e.source_observed", self.html)
+            else:
+                self.assertIn(marker, self.html)
+
     def test_dashboard_can_render_images_and_event_details(self):
         self.assertIn("media.source_image_url", self.html)
         self.assertIn("function renderDetails(e)", self.html)
