@@ -63,6 +63,24 @@ class SourceAdapterTests(unittest.TestCase):
             "https://news.google.com/rss/search?q=site%3Adevpost.com%2Fhackathons"
         ).name)
 
+    def test_targeted_student_sources_receive_descriptive_labels(self):
+        scholarship_query = build_source_config(
+            "https://news.google.com/rss/search?q=site%3Ascholarships.gov.in+student"
+        )
+        student_program_query = build_source_config(
+            "https://news.google.com/rss/search?q=site%3Ablog.google%2Fcompany-news%2Foutreach-and-initiatives%2Fstudent-programs+student"
+        )
+        self.assertEqual(
+            scholarship_query.name,
+            "Google News · National Scholarship Portal",
+        )
+        self.assertEqual(
+            student_program_query.name,
+            "Google News · Google Student Programs",
+        )
+        self.assertEqual(scholarship_query.adapter_type, "google_news_rss")
+        self.assertEqual(student_program_query.adapter_type, "google_news_rss")
+
     def test_normalize_url_removes_tracking_parameters(self):
         result = normalize_http_url("HTTPS://Example.org/event/?utm_source=test&ref=feed&id=12#details")
         self.assertEqual(result, "https://example.org/event?id=12")
