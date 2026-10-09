@@ -1,4 +1,5 @@
 import unittest
+from datetime import datetime, timezone
 
 import source_adapters
 from source_adapters import (
@@ -134,6 +135,48 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIsNone(resolved)
         self.assertEqual(status, "unresolved_google_news_link")
 
+    def test_source_metadata_describes_access_fields_timeout_and_poll_interval(self):
+        config = build_source_config(
+            "https://news.google.com/rss/search?q=site%3Adevpost.com%2Fhackathons"
+        )
+        self.assertEqual(config.access_method, "public_google_news_rss")
+        self.assertIn("title", config.expected_fields)
+        self.assertIn("link", config.expected_fields)
+        self.assertIn("media", config.expected_fields)
+        self.assertEqual(config.timeout_seconds, 10)
+        self.assertEqual(config.minimum_interval_seconds, 900)
+        self.assertIn("feed_managed", config.pagination_mode)
+
+    def test_minimum_poll_interval_is_enforced_using_last_real_attempt(self):
+        config = build_source_config("https://example.org/feed.xml")
+        now = datetime(2026, 10, 9, 10, 20, tzinfo=timezone.utc)
+        recent = {"last_attempt_at": "2026-10-09T10:10:00+00:00"}
+        old = {"last_attempt_at": "2026-10-09T10:00:00+00:00"}
+        malformed = {"last_attempt_at": "not-a-date"}
+
+        self.assertFalse(source_adapters.should_poll_source(recent, config, now=now))
+        self.assertTrue(source_adapters.should_poll_source(old, config, now=now))
+        self.assertTrue(source_adapters.should_poll_source(malformed, config, now=now))
+        self.assertTrue(source_adapters.should_poll_source({}, config, now=now))
+
+    def test_skipped_poll_preserves_last_attempt_and_last_success(self):
+        config = build_source_config("https://example.org/feed.xml")
+        previous = {
+            "last_attempt_at": "2026-10-09T10:00:00+00:00",
+            "last_success_at": "2026-10-09T10:00:00+00:00",
+            "last_success_items_seen": 19,
+        }
+        skipped = source_adapters.source_health_skipped(
+            previous, config, skipped_at="2026-10-09T10:05:00+00:00"
+        )
+        self.assertEqual(skipped["last_status"], "skipped_minimum_interval")
+        self.assertEqual(skipped["last_attempt_at"], previous["last_attempt_at"])
+        self.assertEqual(skipped["last_success_at"], previous["last_success_at"])
+        self.assertEqual(skipped["last_success_items_seen"], 19)
+        self.assertEqual(skipped["last_skipped_at"], "2026-10-09T10:05:00+00:00")
+        self.assertEqual(skipped["timeout_seconds"], 10)
+        self.assertEqual(skipped["minimum_interval_seconds"], 900)
+
     def test_url_resolution_budget_bounds_requests_and_reserves_new_items(self):
         adapter = build_adapters(["https://news.google.com/rss/search?q=test"])[0]
         budget = source_adapters.URLResolutionBudget(max_total=2, max_legacy=1)
@@ -205,6 +248,10 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(successful["last_success_at"], result.fetched_at_utc)
         self.assertEqual(successful["last_status"], "success")
         self.assertEqual(successful["last_success_items_seen"], 0)
+        self.assertEqual(successful["access_method"], config.access_method)
+        self.assertEqual(successful["expected_fields"], list(config.expected_fields))
+        self.assertEqual(successful["timeout_seconds"], config.timeout_seconds)
+        self.assertEqual(successful["minimum_interval_seconds"], config.minimum_interval_seconds)
 
 
 if __name__ == "__main__":
