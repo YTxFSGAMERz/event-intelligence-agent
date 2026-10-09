@@ -3049,16 +3049,94 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "official_link_candidate_found",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://hackalendar.com/e/signalpost-2026",
+          "https://builderr.ai/challenges/signalpost"
+        ],
+        "last_checked_at": "2026-10-09T11:19:15+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "source_page_url": "https://hackalendar.com/e/signalpost-2026",
+        "official_link_candidate": "https://builderr.ai/challenges/signalpost",
+        "official_link_reason": "outbound_anchor:Enter on the organiser’s site; destination relevance/ownership not established",
+        "candidate_page_status": "success",
+        "page_title": "Signalpost",
+        "last_check_error": null,
+        "last_check_duration_ms": 1619,
+        "observed_facts": {
+          "page_role": "structured_event_listing",
+          "page_title": "Signalpost",
+          "description": "Signalpost is a challenge to build an agent that finds company information online, given a Norwegian company's organisation number, searching permitted public sources and showing where each fact came from.\n\nEntrants must submit at least 1,000 completed company profiles chosen from the supplied list, along with their agent's repository link, exact commit hash, and one command to run it. The starting list covers 411,160 eligible Norwegian companies with 2025 annual-account records, and the agent must work from a company number, including ones it has not researched before.\n\nEntries are scored out of 100 points across coverage, accuracy, correct updating, summary usefulness and ease of use, and must also meet minimum requirements including at least 65/100 overall and 21/35 coverage, plus 60% weighted recall and 95% precision on company matching.\n\nThe main challenge offers $2,000 in prizes split $1,200, $500 and $300 for first, second and third place, plus a separate $500 JBOX bonus split $250, $150 and $100 for qualifying agents built with JBOX.",
+          "organizer": "Builderr",
+          "event_start_at": "2026-08-23",
+          "event_end_at": "2026-10-21",
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": null,
+            "mode": "remote",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        },
+        "fact_evidence": {
+          "event_start_at": {
+            "value": "2026-08-23",
+            "source_url": "https://hackalendar.com/e/signalpost-2026",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.startDate=2026-08-23"
+          },
+          "event_end_at": {
+            "value": "2026-10-21",
+            "source_url": "https://hackalendar.com/e/signalpost-2026",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.endDate=2026-10-21"
+          },
+          "organizer": {
+            "value": "Builderr",
+            "source_url": "https://hackalendar.com/e/signalpost-2026",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.organizer.name=Builderr"
+          }
+        }
       },
       "schema_version": 1,
       "id": "cd9fa24c7b8eb7b7c810",
@@ -3646,7 +3724,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-09T11:17:52+00:00",
+  "updated_utc": "2026-10-09T11:19:17+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -3679,7 +3757,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:17:52+00:00"
+      "last_skipped_at": "2026-10-09T11:19:15+00:00"
     },
     "4ae1d4cb1873b219": {
       "source_id": "4ae1d4cb1873b219",
@@ -3711,7 +3789,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:17:52+00:00"
+      "last_skipped_at": "2026-10-09T11:19:15+00:00"
     },
     "7c5c4d34b1a8fdc9": {
       "source_id": "7c5c4d34b1a8fdc9",
@@ -3743,7 +3821,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:17:52+00:00"
+      "last_skipped_at": "2026-10-09T11:19:15+00:00"
     },
     "56da5ebaefc91f25": {
       "source_id": "56da5ebaefc91f25",
@@ -3775,7 +3853,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:17:52+00:00"
+      "last_skipped_at": "2026-10-09T11:19:15+00:00"
     },
     "105b071f37b46d64": {
       "source_id": "105b071f37b46d64",
@@ -3808,7 +3886,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:17:52+00:00"
+      "last_skipped_at": "2026-10-09T11:19:15+00:00"
     },
     "7c33d1ecedb854aa": {
       "source_id": "7c33d1ecedb854aa",
@@ -3842,7 +3920,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T11:17:52+00:00"
+      "last_skipped_at": "2026-10-09T11:19:15+00:00"
     }
   }
 }
