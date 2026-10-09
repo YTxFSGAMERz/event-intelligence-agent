@@ -5,10 +5,86 @@
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNME9wb0tvWnBIbjlwU3k3cGlIZjhSYmR5Q2ppenZuTVRTRUstSWJFMkdURlBOVlNUR1A5NHdldk94ckFpOGNQclFkUU9aQU1yLUpwLW1aSGJSNTczbElsNlV6Si1uRGFhNi0yLTh6X3RBRlIydlo3OHVEWjFidHNZNFhYTHlSeXFoYXR4dzlaelJrODJkTnc?oc=5",
       "source": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:06:59+00:00",
-      "last_seen_utc": "2026-10-09T07:41:27+00:00",
+      "last_seen_utc": "2026-10-09T10:17:47+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "48c1677272581fd7c194",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNME9wb0tvWnBIbjlwU3k3cGlIZjhSYmR5Q2ppenZuTVRTRUstSWJFMkdURlBOVlNUR1A5NHdldk94ckFpOGNQclFkUU9aQU1yLUpwLW1aSGJSNTczbElsNlV6Si1uRGFhNi0yLTh6X3RBRlIydlo3OHVEWjFidHNZNFhYTHlSeXFoYXR4dzlaelJrODJkTnc?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     },
     "2498ccdafad4195c70bc": {
       "title": "Ambassador’s Scholarship for Bhutanese Students in India - fundsforNGOs - Grants and Resources for Sustainability",
@@ -18,7 +94,83 @@
       "last_seen_utc": "2026-10-09T07:41:28+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "2498ccdafad4195c70bc",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOV1dGT0ZtUVlZTlpaTnktLUF1bm93bTl2NHFnWTFtMUlGOHVVeV9WTlpNQVFCOUVyTmtBVnhPSWQzRVhrWmZoOWR0MmMzdEVoTmNYbkdHaDJZNGRUTVc4cG5uMXdtMkRvN01KYzJtaE80d28tdjhGcnNfdS1GY2daMGZ6SUx1UlRlVXc5WmRnYXFCblk0VmVyOF9MWEFyYXPSAaQBQVVfeXFMTzFUaEp2MUZhdHhTYnJGVzVzVHRJX2NMc05GN2lEUEZEWFgxQkU3ZlFjU2d2UTVmZkEzOXlMcTk0ZHR3U2pWM0VHVTRvVFJ5dEJiZDhWRmVyREp2OXFPbDNwQlRFZmxvT05wOTlwbm1MSDJaMUg5cldjdER2TldHb0FkazFXdm5JV3FHV0U1MzhYNURTVW1pWVVoM2xBbVFkdzZ1SDU?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     },
     "c8656308d119706e39b8": {
       "title": "Scholarships for Indian students to study in England, Wales, Scotland and Ireland - Education Times",
@@ -26,10 +178,86 @@
       "image_url": "",
       "source": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:13:23+00:00",
-      "last_seen_utc": "2026-10-09T07:41:28+00:00",
+      "last_seen_utc": "2026-10-09T10:17:48+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "c8656308d119706e39b8",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNdFZhU2R1QzFHVTh0RmNxb3cycHBVWngwMkRrbTNxNE9rWjEzclkzT09faktYWkxUUWpOenBXeElXYW9FeTNQbkg2bm9CeHdKbjJObGZDZW15UnJCa1JGc2dkVWRlSGVUTThoSksyOFNnRlUtc0NfYlY5OTd5NmJ2X05MUTFpV3c2aTBJT3BLaDNfNVRMN3JYby1tOEVxN25ldHFlNEtfTmxfUnpCakp3cHhJNzFjVWJhbDBUVmpiYlFucllDa1RfSG1UbEc1WVk3dDBnM3BFV2VtNlgwSmg5LS1Haw?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     },
     "fb972294a1373de5aa6d": {
       "title": "Top Scholarships in Germany For Indian Students 2027 - Shiksha.com",
@@ -37,10 +265,86 @@
       "image_url": "",
       "source": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:13:25+00:00",
-      "last_seen_utc": "2026-10-09T07:41:28+00:00",
+      "last_seen_utc": "2026-10-09T10:17:48+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "fb972294a1373de5aa6d",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPMFlUaVFkbFp2ZHVsOTBsb0tkcnJZdW1pUGZQMnBLVzVRa0hmZFZwcVoxWXJwQUdpYWVPbEw5SVJkclI1YVVfYl9abVpicmN1eVplOXBUQUEwOGJ5S1hjMWlxMmFMaHNiQnVxZFJJZ2JkcFg3VUVJZld0N1VvVnpKcGpR?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     },
     "d03cea6e706747f3bc03": {
       "title": "GIST Scholarship 2027: Fully Funded Master’s and PhD in South Korea - Global South Opportunities",
@@ -48,10 +352,86 @@
       "image_url": "",
       "source": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:14:31+00:00",
-      "last_seen_utc": "2026-10-09T07:41:27+00:00",
+      "last_seen_utc": "2026-10-09T10:17:47+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "d03cea6e706747f3bc03",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBHcmg0ZElLUVRpRkFNR0NoZEpwOGZLbGhUWnlrWE85YmpZdlhaSGxqTWQ0MnlHelotX1VEeUtiOUZWbFBKcHRfcERPbUxfV0hkZml1TzZ2blUtdHZ1Xzh5U1lBMlZOeUp6?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     },
     "097339d3e2ca22c077eb": {
       "title": "NMMSS Scholarship deadline extended: Fresh, renewal applications open till Oct 31 - India Today",
@@ -59,10 +439,86 @@
       "image_url": "",
       "source": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:14:33+00:00",
-      "last_seen_utc": "2026-10-09T07:41:28+00:00",
+      "last_seen_utc": "2026-10-09T10:17:48+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "097339d3e2ca22c077eb",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdUR5S2RrandZbjBmbFYxb25Ka2FINXpvMDk1M0dMb1BaMmFaTmVEVUtKbnl4aDhsTnhQaTRwUTljcmFRcmw0NU0walUzZ3cyc2NPY1F2ZGt0eW9ncGJFZzFyQW5IVGN1Y3BLV041d1JKX3BzQXl4eWdUN3l5NmhIZWlDR28tZ2RhOE9nRWlFVjl6bzhTZDM2aVdjc2tMWWRJMDlvUE1TeTE0UzZxZDNlWkNjQ1BxanJwaThzbWlqaXpfQzBYQkxTLWNuaDRleG40bkFOSjZBN0l3M2FrS1BOZ2Z5Vk9HWnlSOWd0Ynd5b9IB9AFBVV95cUxOUmdaNFA2UW8tdmtLNGpyRHc1UFh2N2NRZUVUQzFabGRZYlpMdUcyUXVvZjA3SUpVUjY3WTczUHQyQzhtRVU3MmJhQ0JLWTZpOE0wNGFwQzYxdE1lVnM2OWVMbHhnd3V3bDF5eW5McFZGM0NBRE9FQ2hXX3F3MF9vM0NXTHdzTEFSQXJ1b01HRDZTMk9BNk1Kd09tSG1Ib1hqeFNTbU9ISTY4YjBmbjhOWFNIWUpUendRVUlRa1lGS1BGXzg2NWVVSTBFc18zTHFfMV9JZXJYc0FBb3hhQko5dnFQb2RWajBTc01FQWlaT25OLVBx?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     },
     "75c871eb8e7b8dceaa22": {
       "title": "Britain’s University of Oxford Offers Scholarships to Students from Low-Income Countries - Al-Fanar Media",
@@ -70,10 +526,86 @@
       "image_url": "",
       "source": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:15:23+00:00",
-      "last_seen_utc": "2026-10-09T07:41:27+00:00",
+      "last_seen_utc": "2026-10-09T10:17:47+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "75c871eb8e7b8dceaa22",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQR1dqS0VscmpWNEZHTDBnZ0JzaXRwZXhZcldyQUVOeXVoakRrcjB5bGhOT21MUU05TnIwOFptWGc4RTVoNll2dGt1cUp5Y3ZxWkxLV3RVSmNoejRKa0RILUdGZnlxaEZoMXdnMnlUYXJpaVhxTV8zbXFfUjhLLXdRV19QYXFvNHpyZUNVNV9ZSmZxSFFFT2NFMlFzYjlUVm1VQlVRNWU2MVZCN2wyMkhfUjA5c0hTT281U05NSjEtcy05d25mdVE?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     },
     "0ab24bc038a3fda02782": {
       "title": "Government Scholarship Rules 2026-27 Revised: Check New NSP Rules - PW",
@@ -81,10 +613,86 @@
       "image_url": "",
       "source": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:15:25+00:00",
-      "last_seen_utc": "2026-10-09T07:41:28+00:00",
+      "last_seen_utc": "2026-10-09T10:17:48+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "0ab24bc038a3fda02782",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNWXRyVFdzQUR0ZTFWald5d2RHX1U3ZFpJWkNxQ29FOEI0X0ZGSzJzR29KVmR5UjRRemVMY2FXUmRkTVRHbGE3ZXZNS3VRdlZacUFYampzTS1iS0tmbDBkX2tqc3hpMHFMMDFMVHdkTFR0VjdSaTRZUFV1U19EVTIyVExIOVZxYlB3Q0J4MWpkZFAwZw?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     },
     "6234e3c18f812c3412e2": {
       "title": "Best Fully Funded Scholarships for Study Abroad 2026-27 - Shiksha.com",
@@ -97,10 +705,86 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T07:39:12+00:00",
-      "last_seen_utc": "2026-10-09T07:41:27+00:00",
+      "last_seen_utc": "2026-10-09T10:17:47+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "6234e3c18f812c3412e2",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPNDNaRUFucWpoQkp0MFM3SkRULTltRjRtTE9MUkxCTG1KVjVFQjBDLU1GMmpLVUdxWlk2YnBhdGthcHN5cUplajJmU1pqaFRjVHR3LXJvUFFsYllrbTBPZklKWkVwSVRQcDU3ZTl2ZEZLUGhvZjZaaUdjLXV3cXdBN3hmSjlBdElaR2ZjVzJOV2tRVzlPLUVfdVVJSm5UQTNmbmMwT19LUmdrd2RjOWllTXhLVEctM2NsUm5RZA?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     },
     "b9e033091547a26a5417": {
       "title": "NMMSS 2026-27: Education Ministry extends scholarship application deadline to October 31; check eligibili - The Times of India",
@@ -112,10 +796,86 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T07:39:14+00:00",
-      "last_seen_utc": "2026-10-09T07:41:28+00:00",
+      "last_seen_utc": "2026-10-09T10:17:48+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "b9e033091547a26a5417",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxPOE5vcXk1NVNKQ0xheFlEcTM2RGZnYXZfMElsVnRRWUhvMWV3Z2piYTFKQ0F0dWppOFhhaTlPU0ZuU3FUNTNrcTd3X192VUNBRVdua3ctTVZCTmx0R1JJT2JoQkhycjhqZS1Qcm9GYjRfU1hXRFl3NjlxbENlcHViQnNuMS0tMktoLXFEZURhZ0NZRkVZUDdhYm9YaUJDQTF4NV9OeUE3QktxOEVQVFFrR21nRVBHSlU3cTVsVWZjMUxCQ1Q0N2NESlY1aGdmc3VuSnBmYmtKcllmRl9SSnB1M2xPUWMzMVd4NHdsN2hMbmROVzFGRkZheWRYempFcWtHX0M1WkZKNk1ZZ2o4cHJJNmhRU2tveDZPenE0djJyaDRHTkhYb3FhSNIBrgJBVV95cUxOVDdrVVp2S3dTNVI1bmpUWlRFaTBiM0laTElZOGVLdWJlMkdIQTBYZmZwZGRtd2djZ2p0QWswdGVGNGJTbldZTVk0bEZZNENPSklwblpUTGY5NFN3bzhKNUhkM25YM1NfTU1NN3N5U2RXSTd5ZGYzWFhtODRkR0FRU3hKWW1kWW9tdjZ5WlJhOVQzNTg5Z3gzbGZWLXJNUmFMUUpuUmpwZ3JnLTNYLWFRakIzbXFyNGZGVmF4R1J6eXpFME5scTVDZXltMV96dmM5eGNtNGR6YlFQSVRONko1SEJUWlNrQmlBUlJST0EtVDVpVzFTYURoYWxrTUROSXZHclpudUswMVRzSVQ5V0NYWEQ5bkVURVRDcFFMTWY4NjhiSjdJVkpjLU90aGlrZw?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     },
     "0720fe51fb3c1de1c32f": {
       "title": "ASUC Grants & Scholarships to award $250K, application closes Friday - dailycal.org",
@@ -130,7 +890,83 @@
       "last_seen_utc": "2026-10-09T07:41:27+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "0720fe51fb3c1de1c32f",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOSHVZQXVodEdqWmk0b1FCV0x1R2gyZFJNMlhIekpOMlFRLVFONGNCNGl1Y0xSSEtCMWtfV1RmdVNaZlA2M0toSW1QUFN5aTBPcTdCWkNvNDJhVzByYkp6a1RZbTVzOWhkRkNtdE5RcU92X080Rkk4dURNeWRCcDdUakxGRkYzenl6OXZJZkRvOExSaVJKZVhJT0pRQ0ZmY29rWjRhQjdER3ZGOE04MVlOTERpNWdFbjRyLVlDNUtPSnhqOVAzZ1Vpc0VITlFLLXNyZXFsQ3BPcjVPRUxIcEx0UWVWS1ZhWFc0cWRlVw?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     },
     "09b8e186c242ef386918": {
       "title": "From Rs 12,000 to full course fees: 8 scholarship opportunities students should not miss before the deadline - Organiser Weekly",
@@ -142,10 +978,86 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T07:40:37+00:00",
-      "last_seen_utc": "2026-10-09T07:41:28+00:00",
+      "last_seen_utc": "2026-10-09T10:17:48+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "09b8e186c242ef386918",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPWlV5X0pmLU1LLVZIcW50d3FuU29IQmdRNGNfY3BYazkxTlJ4SjFBTmFETkZaTlhESDJHcFYzeVdJNFdBTFVkanRVMDRDUjNyNWswN0tGVUpNUWMycXpLaXZOd05hdnY2S0FzVG1NVnlxeDZNUEZYRWlWSGRleTctZnVDY3h6cnhiZHEtYkR1S3BpT283ODluQjdhMjVVU1JsMEJlNGgtNGY3RlRlN3R5MTVILUtKcFZETGJDaHdRNmpaS2xjTE5JUm14QVYtTHdGMndUVUwzbTF6dHNpVFRKTFotdmpnc1ZCV3fSAe8BQVVfeXFMUFZ0RjdQZXpSa2ozOUUwb1M1c1NQaXNUcmE1UzhYWjdISDNxQy1zT3NvWTlHMmprWWFpNzg0ODcwZUdfYW5zZDVrX1NjNDdaMnZnVDZOTzRUaXRpNFJVUFQyaHNfODRBYXhyWDRqUWFfR1BvcTlqdmozNTIwbkk2V3dUTTYwT0l0aUJZaTlTdmxTcDNYX21tQm91SngzbE94NEZwTTk5ZzNha3kzRFhIYS1RM2xTSjFtLTVGcmZBTU1WRGxiem1FRnZZX2hHemlPQ1JDZktCSWJDT0lLOGNnanpDbk1rVFRsSkdaRzlmX0E?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     },
     "b4e18407e0caffe0217a": {
       "title": "Indian Government Scholarships for Studying Abroad in 2027-28 - Shiksha.com",
@@ -157,10 +1069,86 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T07:41:31+00:00",
-      "last_seen_utc": "2026-10-09T07:41:31+00:00",
+      "last_seen_utc": "2026-10-09T10:17:48+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "b4e18407e0caffe0217a",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQc2JJSTZVQVc3aEZXLWN4NEtheGxINGpyNkRjd0I5MkJJQ29ZdkxKR2N0TVFqMS1jU0dIMm5lMlhlaEJWdk94RjJQUVFKdVlxVGhxU3VmS0d4cnUza0FwWUNDaXV4Q3VKODlUR0E1Q01OVHlmdW9nSkwtcEtVREt1V2piUnZXaFN0c09ZX3JPVUYyRWFURDl6YzlVWUo5eHl3cm9pOGRUUlQ?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     },
     "097bd0de2475e0b6c4c1": {
       "title": "List of USA Colleges Offering Financial Aid for International Students 2027 (Updated) - Shiksha.com",
@@ -172,11 +1160,273 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T07:41:33+00:00",
-      "last_seen_utc": "2026-10-09T07:41:33+00:00",
+      "last_seen_utc": "2026-10-09T10:17:47+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
-      "link_status": "REACHABLE"
+      "link_status": "REACHABLE",
+      "schema_version": 1,
+      "id": "097bd0de2475e0b6c4c1",
+      "summary": "",
+      "organizer": null,
+      "canonical_url": null,
+      "discovered_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNSFdvQzh4VUd0Q0d5RWczcXNyRlFFcmhnNEtxcTVDWk9rTEdUZ1RwZDhFY1VqMXBSd1YxZ2tkc2RXY2FkZkVXcUlFNXM0bEN0bGZPVGl1Nmpaa05sLTItU3RhLTkzbWNjdFo2N2pmbEVzbVBRblIyMTNXSUZfOTFoNFNqeDNvRkVvSWZzcUFPNHJjeEY0NF92ZlNfaHZ6bVFWZlR0WTlwWlgxWnVwTjU4bEpjX3hSQXNNMlJmWS1fVkluVm8?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_open_at": null,
+      "application_deadline": null,
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "opportunity_status": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Migrated from the legacy feed tracker; official details have not been verified."
+        ]
+      },
+      "content_hash": null,
+      "last_material_change_at": null
+    },
+    "b2838b950514448a5194": {
+      "title": "Scholarships closing October 31, 2026: Check eligibility, amount and how to apply - Education Times",
+      "summary": " Scholarships closing October 31, 2026: Check eligibility, amount and how to apply    Education Times ",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNQ2phSFFHX2h2OXp6dXEzVlFQWEhrMkRZdmpPSmdMTHlveVBmVkcwVUhLdUZ2bnFPYnlnU2RNYmZtTjg0ZzFlOHJDcnpNeEUtZ1VmdTRoMWNqLW56UDJoX0xZTG90Z2VoS2xtcGdibDVJS3M5dE5VdXhYbV9pcGZObzFoVUpLMW11c3lTTFlCYkFGZzhDX2g5SWltQUVUZ3hCWFhaNGVtaWNUX3RTYlFaMW92TExLWU9xQXRiVjk5akRxbG5ZSWVaaFh2M2xEUXZqeFB4d1oydWh6SFhlSW5zTTZ3?oc=5",
+      "image_url": "",
+      "source": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "categories": [
+        "scholarships_fellowships"
+      ],
+      "primary_category": "scholarships_fellowships",
+      "first_seen_utc": "2026-10-09T10:17:51+00:00",
+      "last_seen_utc": "2026-10-09T10:17:51+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNQ2phSFFHX2h2OXp6dXEzVlFQWEhrMkRZdmpPSmdMTHlveVBmVkcwVUhLdUZ2bnFPYnlnU2RNYmZtTjg0ZzFlOHJDcnpNeEUtZ1VmdTRoMWNqLW56UDJoX0xZTG90Z2VoS2xtcGdibDVJS3M5dE5VdXhYbV9pcGZObzFoVUpLMW11c3lTTFlCYkFGZzhDX2g5SWltQUVUZ3hCWFhaNGVtaWNUX3RTYlFaMW92TExLWU9xQXRiVjk5akRxbG5ZSWVaaFh2M2xEUXZqeFB4d1oydWh6SFhlSW5zTTZ3?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; official details have not yet been verified."
+        ]
+      },
+      "schema_version": 1,
+      "id": "b2838b950514448a5194",
+      "organizer": null,
+      "canonical_url": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null
+    },
+    "cd9fb7eee3ba696e513e": {
+      "title": "Tanzania secures 150 Algeria scholarships for top STEM students - The Citizen",
+      "summary": " Tanzania secures 150 Algeria scholarships for top STEM students    The Citizen ",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNUG9nMzVZVkNVQnM3azlMd1Y1dU1VRzFzdjlvRmxuTC1lSm5BdDdWZTRlUi04TEJXUjEzSDhaeEY0NHIxOU5JUTBsdHlkNEJWRURya1BiT1NSekw3YUQxQ0kwOHhrQnJ3cm9NVWxOb1hfV1JNWXRLLW5ZY2piZm9uemQ5S0V4eC1rUlpZM09IOU9ZNF9ZSFNzNEhqYnJjczVSb1RGSEFNeG5SWlNia2pROFNNSWVTdmtxSVdJMzBOUWU?oc=5",
+      "image_url": "",
+      "source": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "categories": [
+        "scholarships_fellowships"
+      ],
+      "primary_category": "scholarships_fellowships",
+      "first_seen_utc": "2026-10-09T10:17:52+00:00",
+      "last_seen_utc": "2026-10-09T10:17:52+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNUG9nMzVZVkNVQnM3azlMd1Y1dU1VRzFzdjlvRmxuTC1lSm5BdDdWZTRlUi04TEJXUjEzSDhaeEY0NHIxOU5JUTBsdHlkNEJWRURya1BiT1NSekw3YUQxQ0kwOHhrQnJ3cm9NVWxOb1hfV1JNWXRLLW5ZY2piZm9uemQ5S0V4eC1rUlpZM09IOU9ZNF9ZSFNzNEhqYnJjczVSb1RGSEFNeG5SWlNia2pROFNNSWVTdmtxSVdJMzBOUWU?oc=5",
+      "source_feed_url": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; official details have not yet been verified."
+        ]
+      },
+      "schema_version": 1,
+      "id": "cd9fb7eee3ba696e513e",
+      "organizer": null,
+      "canonical_url": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     }
   },
-  "updated_utc": "2026-10-09T07:41:33+00:00"
+  "updated_utc": "2026-10-09T10:17:52+00:00"
 }
