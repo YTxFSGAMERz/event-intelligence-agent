@@ -4,7 +4,9 @@ from datetime import datetime, timezone
 
 from main import (
     UNKNOWN_DEADLINE_TEXT,
+    apply_page_verification,
     find_existing_event_id,
+    _verification_target,
     normalize_event_record,
     normalize_state,
     normalize_title_key,
@@ -122,6 +124,156 @@ class OpportunitySchemaTests(unittest.TestCase):
         )
         self.assertEqual(record["discovered_urls"], ["https://events.example/event"])
         self.assertEqual(record["resolved_urls"], ["https://events.example/event"])
+
+    def test_official_page_facts_update_canonical_fields_with_evidence(self):
+        record = {
+            "title": "Example Student Hackathon Prize Challenge",
+            "url": "https://publisher.example/article",
+            "canonical_url": "https://publisher.example/article",
+            "deadline": UNKNOWN_DEADLINE_TEXT,
+            "application_deadline": None,
+            "deadline_status": "unknown",
+            "location": {"raw": None, "mode": "unknown", "city": None},
+            "eligibility": {"status": "unknown", "requirements": []},
+            "travel_support": {"status": "unknown", "flight": "unknown"},
+            "verification": {"status": "unverified", "official_url": None, "evidence_urls": []},
+        }
+        official = "https://organizer.example/events/1"
+        result = {
+            "status": "official_page_verified",
+            "verification_version": 1,
+            "official_page_verified": True,
+            "official_url": official,
+            "source_page_url": "https://publisher.example/article",
+            "official_link_reason": "outbound_anchor:Official Website",
+            "last_checked_at": "2026-10-09T12:00:00+00:00",
+            "evidence_urls": [official],
+            "observed_facts": {},
+            "fact_evidence": {
+                "application_deadline_raw": {
+                    "value": "October 31, 2026",
+                    "source_url": official,
+                    "method": "explicit_deadline_label",
+                    "snippet": "Application deadline: October 31, 2026.",
+                }
+            },
+            "verified_facts": {
+                "organizer": "Example Foundation",
+                "event_start_at": "2026-11-14T09:00:00+05:30",
+                "event_end_at": "2026-11-15T18:00:00+05:30",
+                "event_timezone": "UTC+05:30",
+                "opportunity_status": "unknown",
+                "location": {
+                    "raw": "Pune, Maharashtra, India",
+                    "mode": "in_person",
+                    "venue": "Innovation Centre",
+                    "city": "Pune",
+                    "region": "Maharashtra",
+                    "country": "India",
+                    "country_code": "IN",
+                    "remote_restrictions": [],
+                },
+                "deadline": {
+                    "raw": "October 31, 2026",
+                    "normalized": "2026-10-31",
+                    "precision": "date",
+                    "snippet": "Application deadline: October 31, 2026.",
+                    "source_url": official,
+                },
+                "eligibility": {
+                    "status": "found",
+                    "requirements": ["Eligibility: Open to undergraduate students."],
+                    "countries": [],
+                    "education_levels": [],
+                    "study_years": [],
+                    "fields_of_study": [],
+                    "age_min": None,
+                    "age_max": None,
+                    "evidence_url": official,
+                },
+                "travel_support": {
+                    "status": "confirmed",
+                    "flight": "confirmed",
+                    "accommodation": "confirmed",
+                    "meals": "not_offered",
+                    "visa_support": "unknown",
+                    "transport_reimbursement": "unknown",
+                    "conditions": [],
+                    "maximum_amount": None,
+                    "currency": None,
+                    "evidence_url": official,
+                },
+                "registration_status": "open",
+                "registration_status_evidence": "Applications are open.",
+                "image_url": None,
+            },
+        }
+
+        updated = apply_page_verification(record, result)
+        self.assertEqual(updated["url"], official)
+        self.assertEqual(updated["verification"]["official_url"], official)
+        self.assertEqual(updated["verification"]["status"], "official_page_verified")
+        self.assertEqual(updated["verification"]["version"], 1)
+        self.assertEqual(updated["application_deadline"], "2026-10-31")
+        self.assertEqual(updated["application_deadline_raw"], "October 31, 2026")
+        self.assertEqual(updated["deadline_status"], "verified")
+        self.assertEqual(updated["location"]["city"], "Pune")
+        self.assertEqual(updated["event_start_at"], "2026-11-14T09:00:00+05:30")
+        self.assertEqual(updated["eligibility"]["status"], "verified")
+        self.assertEqual(updated["travel_support"]["flight"], "confirmed")
+        self.assertEqual(updated["registration_status"], "OPEN (official page)")
+
+    def test_unofficial_discovery_page_facts_are_observations_not_verified_fields(self):
+        record = {
+            "title": "Example Student Scholarship Program",
+            "url": "https://publisher.example/article",
+            "application_deadline": None,
+            "deadline_status": "unknown",
+            "location": {"raw": None, "mode": "unknown", "city": None},
+            "verification": {"status": "unverified", "official_url": None, "evidence_urls": []},
+        }
+        result = {
+            "status": "source_page_checked",
+            "verification_version": 1,
+            "official_page_verified": False,
+            "official_url": None,
+            "source_page_url": "https://publisher.example/article",
+            "last_checked_at": "2026-10-09T12:00:00+00:00",
+            "evidence_urls": ["https://publisher.example/article"],
+            "observed_facts": {
+                "deadline": {"raw": "October 31, 2026", "normalized": "2026-10-31"},
+                "location": {"mode": "remote", "city": None},
+                "travel_support": {"status": "confirmed", "flight": "confirmed"},
+            },
+            "fact_evidence": {},
+            "verified_facts": {},
+        }
+        updated = apply_page_verification(record, result)
+        self.assertIsNone(updated["application_deadline"])
+        self.assertEqual(updated["deadline_status"], "unknown")
+        self.assertEqual(updated["location"]["mode"], "unknown")
+        self.assertEqual(updated["verification"]["status"], "source_page_checked")
+        self.assertEqual(
+            updated["verification"]["observed_facts"]["travel_support"]["flight"],
+            "confirmed",
+        )
+        self.assertIsNone(updated["verification"]["official_url"])
+
+    def test_unresolved_google_news_wrapper_is_not_used_as_verification_target(self):
+        self.assertIsNone(_verification_target({
+            "url": "https://news.google.com/rss/articles/abc?oc=5",
+            "discovered_url": "https://news.google.com/rss/articles/abc?oc=5",
+            "verification": {"official_url": None},
+        }))
+        self.assertEqual(
+            _verification_target({
+                "url": "https://news.google.com/rss/articles/abc?oc=5",
+                "canonical_url": "https://publisher.example/articles/42",
+                "discovered_url": "https://news.google.com/rss/articles/abc?oc=5",
+                "verification": {"official_url": None},
+            }),
+            "https://publisher.example/articles/42",
+        )
 
     def test_legacy_keys_are_preserved_and_migration_is_idempotent(self):
         legacy = {
