@@ -825,6 +825,8 @@ def apply_page_verification(record: dict, result: dict) -> dict:
     verification["official_link_candidate"] = result.get("official_link_candidate") or verification.get("official_link_candidate")
     verification["official_link_reason"] = result.get("official_link_reason") or verification.get("official_link_reason")
     verification["candidate_page_status"] = result.get("candidate_page_status") or verification.get("candidate_page_status")
+    verification["candidate_page_error"] = result.get("candidate_page_error")
+    verification["candidate_page_http_status"] = result.get("candidate_page_http_status")
     verification["page_title"] = result.get("page_title") or verification.get("page_title")
     verification["last_check_error"] = result.get("error")
     verification["last_check_duration_ms"] = result.get("duration_ms")
