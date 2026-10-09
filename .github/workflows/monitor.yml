@@ -8,6 +8,7 @@ on:
     paths:
       - ".github/workflows/monitor.yml"
       - "main.py"
+      - "opportunity_quality.py"
       - "source_adapters.py"
       - "page_verification.py"
       - "tests/**"
