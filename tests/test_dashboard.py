@@ -78,6 +78,18 @@ class DashboardContractTests(unittest.TestCase):
         self.assertIn(r"if(/^[=+\-@\t\r]/.test(raw))", self.html)
         self.assertIn("raw.replace(", self.html)
 
+    def test_estimated_result_type_and_information_coverage(self):
+        for marker in (
+            'id="contentShapeFilter"',
+            "function contentShape(e)",
+            "function contentShapeLabel(e)",
+            "function informationCoverage(e)",
+            "Details '+coverage+'/7",
+            "sort==='coverage'",
+            "Result type is estimated from the headline",
+        ):
+            self.assertIn(marker, self.html)
+
     def test_dashboard_can_render_images_and_event_details(self):
         self.assertIn("media.source_image_url", self.html)
         self.assertIn("function renderDetails(e)", self.html)
