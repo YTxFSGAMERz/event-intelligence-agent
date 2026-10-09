@@ -16,6 +16,7 @@ A lightweight Python starter that checks configured public RSS/Atom feeds every 
 Configured URLs in `sources.txt` are routed through the adapter registry in `source_adapters.py`. The registry currently supports:
 
 - **Google News RSS:** feed fetching plus best-effort resolution of article redirects or canonical URL tags. If resolution fails, the original discovery URL is retained and canonical URL remains unknown.
+- **Hackalendar RSS:** a human-curated upcoming-hackathon discovery feed; the feed's event page is not automatically treated as the organizer's official page.
 - **GitHub Blog RSS:** recognized as a named official-blog feed.
 - **Generic RSS/Atom:** shared fetching and parsing for other configured public feeds.
 
@@ -28,7 +29,8 @@ The agent enforces a **15-minute minimum polling interval per feed**, including 
 - `discovered_url` stores the URL found in the feed.
 - `canonical_url` stores a normalized resolved publisher-page URL when one is available. It is **not** automatically considered the organizer's official page.
 - `verification.official_url` remains unknown until a separate official-source verification step is implemented.
-- Resolved URLs are used for cross-feed deduplication where possible. Existing legacy records remain compatible and are not re-alerted just because their ID predates URL resolution.
+- Resolved URLs are used for cross-feed deduplication where possible. Specific exact-title matches are also merged when the title is sufficiently descriptive and the existing record was first seen within the last 90 days; short/generic titles and older records are not deduplicated by title alone.
+- When sources converge on one record, source IDs, source labels, feed URLs, discovery URLs and resolved URLs are retained in deduplicated alias lists. Existing legacy records remain compatible and are not re-alerted just because their ID predates URL resolution.
 - If a Google News redirect cannot be resolved, the system keeps the discovery link and records the resolution status instead of fabricating a canonical URL.
 
 Google News URL decoding is bounded to **four attempts per workflow run**, with at most **one legacy-record backfill** so historical records cannot use the entire budget before new discoveries. If the budget is exhausted, the event is still retained with its discovery URL and a `resolution_budget_deferred` status; later runs can retry it. Ordinary direct RSS links do not consume this resolution budget.
