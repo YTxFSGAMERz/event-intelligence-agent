@@ -16,7 +16,7 @@ import feedparser
 import requests
 
 from page_verification import VerificationBudget, verification_is_due, verify_opportunity_page
-from opportunity_quality import assess_discovery_quality
+from opportunity_quality import RULE_VERSION as DISCOVERY_QUALITY_RULE_VERSION, assess_discovery_quality
 from source_adapters import (URLResolutionBudget, build_adapters, should_poll_source,
                              source_health_failure, source_health_skipped, source_health_success)
 
@@ -289,6 +289,78 @@ def matching_categories(text: str) -> list[str]:
     found = [category for category, terms in KEYWORDS.items()
              if any(term in low for term in terms)]
     return found
+
+
+
+
+def refresh_existing_discovery_quality(seen: dict) -> dict:
+    """Re-evaluate older saved records when quality rules change.
+
+    This is additive: no opportunity record is deleted. Weak records are labelled
+    so the dashboard can hide them by default while preserving manual review.
+    Existing official-page verification takes precedence over a headline heuristic.
+    """
+    stats = {"total": 0, "rechecked": 0, "already_current": 0}
+    for record in seen.values():
+        if not isinstance(record, dict):
+            continue
+        stats["total"] += 1
+        old_quality = record.get("discovery_quality")
+        verification = record.get("verification") or {}
+        official_verified = (
+            str(verification.get("status") or "").lower() == "official_page_verified"
+            and bool(_http_url(verification.get("official_url")))
+        )
+        current_quality = (
+            isinstance(old_quality, dict)
+            and old_quality.get("rule_version") == DISCOVERY_QUALITY_RULE_VERSION
+            and isinstance(old_quality.get("accepted"), bool)
+        )
+        if current_quality and not (official_verified and not old_quality.get("accepted")):
+            stats["already_current"] += 1
+            continue
+
+        title = str(record.get("title") or "")
+        summary = str(record.get("summary") or "")
+        categories = record.get("categories")
+        if not isinstance(categories, list) or not categories:
+            categories = matching_categories(f"{title}\n{summary}")
+        adapter_type = str(record.get("adapter_type") or "")
+        assessment = assess_discovery_quality(
+            title,
+            summary,
+            categories,
+            adapter_type=adapter_type,
+        )
+        if official_verified:
+            assessment.update({
+                "accepted": True,
+                "status": "official_source_verified",
+                "reason": (
+                    "The opportunity already has an officially verified page; "
+                    "a headline-only quality heuristic cannot suppress it."
+                ),
+                "official_verification_override": True,
+            })
+        record["discovery_quality"] = assessment
+        record["quality_rule_version"] = DISCOVERY_QUALITY_RULE_VERSION
+        record["quality_checked_at_utc"] = now_iso()
+        stats["rechecked"] += 1
+
+    stats["accepted"] = sum(
+        1 for record in seen.values()
+        if isinstance(record, dict)
+        and isinstance(record.get("discovery_quality"), dict)
+        and record["discovery_quality"].get("accepted") is True
+    )
+    stats["flagged"] = sum(
+        1 for record in seen.values()
+        if isinstance(record, dict)
+        and isinstance(record.get("discovery_quality"), dict)
+        and record["discovery_quality"].get("accepted") is False
+    )
+    stats["unknown"] = stats["total"] - stats["accepted"] - stats["flagged"]
+    return stats
 
 
 def primary_category(categories: list[str], title: str = "") -> str:
@@ -1079,7 +1151,17 @@ def main() -> int:
         max_legacy=MAX_LEGACY_URL_RESOLUTIONS_PER_RUN,
     )
 
-    # Backfill at most one unresolved legacy Google News link per run so that
+    quality_backfill = refresh_existing_discovery_quality(seen)
+    print(
+        "Discovery quality backfill: "
+        f"rechecked={quality_backfill['rechecked']}; "
+        f"current={quality_backfill['already_current']}; "
+        f"accepted={quality_backfill['accepted']}; "
+        f"flagged={quality_backfill['flagged']}; "
+        f"unknown={quality_backfill['unknown']}"
+    )
+
+    # Backfill at most two unresolved legacy Google News links per run so that
     # historical records cannot starve URL resolution for new discoveries.
     unresolved_records = sorted(
         seen.items(),
@@ -1266,7 +1348,7 @@ def main() -> int:
                 previous_health, config, feed_result, matching_count, queued_count
             )
             health_record["quality_rejected_count"] = quality_rejected_count
-            health_record["quality_rule_version"] = 1
+            health_record["quality_rule_version"] = DISCOVERY_QUALITY_RULE_VERSION
             source_health[config.source_id] = health_record
             print(
                 f"Source health: success; entries={feed_result.item_count}; "
