@@ -625,7 +625,7 @@
       "content_hash": null,
       "last_material_change_at": null,
       "resolution_attempts": 1,
-      "last_resolution_attempt_at": "2026-10-09T10:55:37+00:00",
+      "last_resolution_attempt_at": "2026-10-09T10:55:50+00:00",
       "resolution_status": "unresolved_google_news_link"
     },
     "0ab24bc038a3fda02782": {
@@ -3008,9 +3008,109 @@
       },
       "content_hash": null,
       "last_material_change_at": null
+    },
+    "cd9fa24c7b8eb7b7c810": {
+      "title": "Signalpost — Online, 23 Aug – 21 Oct 2026",
+      "summary": " 23 Aug – 21 Oct 2026  · Online Organiser: Builderr Signalpost is a challenge to build an agent that finds company information online, given a Norwegian company's organisation number, searching permitted public sources and showing where each fact came from.\n\nEntrants must submit at least 1,000 completed company profiles chosen from the supplied list, along with their agent's repository link, exact commit hash, and one command to run it. The starting list covers 411,160 eligible Norwegian companies with 2025 annual-account records, and the agent must work from a company number, including ones it has not researched before.\n\nEntries are scored out of 100 points across coverage, accuracy, correct updating, summary usefulness and ease of use, and must also meet minimum requirements including at least 65/100 overall and 21/35 coverage, plus 60% weighted recall and 95% precision on company matching.\n\nThe main challenge offers $2,000 in prizes split $1,200, $500 and $300 for first, second and third place, plus a separate $500 JBOX bonus split $250, $150 and $100 for qualifying agents built with JBOX.  Register on the organiser's own page ",
+      "url": "https://hackalendar.com/e/signalpost-2026",
+      "image_url": "https://hackalendar.com/org/builderr-86f5204c303c2e01.webp",
+      "source": "https://hackalendar.com/feed.xml",
+      "source_name": "Hackalendar · Upcoming Hackathons",
+      "source_id": "7c33d1ecedb854aa",
+      "adapter_type": "hackalendar_rss",
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "competitions_challenges",
+        "prizes_cash_rewards"
+      ],
+      "primary_category": "competitions_challenges",
+      "first_seen_utc": "2026-10-09T10:55:56+00:00",
+      "last_seen_utc": "2026-10-09T10:55:56+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://hackalendar.com/e/signalpost-2026",
+      "canonical_url": "https://hackalendar.com/e/signalpost-2026",
+      "source_feed_url": "https://hackalendar.com/feed.xml",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ]
+      },
+      "schema_version": 1,
+      "id": "cd9fa24c7b8eb7b7c810",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": "https://hackalendar.com/org/builderr-86f5204c303c2e01.webp",
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null
     }
   },
-  "updated_utc": "2026-10-09T10:55:37+00:00",
+  "updated_utc": "2026-10-09T10:55:56+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -3043,7 +3143,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:55:37+00:00"
+      "last_skipped_at": "2026-10-09T10:55:50+00:00"
     },
     "4ae1d4cb1873b219": {
       "source_id": "4ae1d4cb1873b219",
@@ -3075,7 +3175,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:55:37+00:00"
+      "last_skipped_at": "2026-10-09T10:55:50+00:00"
     },
     "7c5c4d34b1a8fdc9": {
       "source_id": "7c5c4d34b1a8fdc9",
@@ -3107,7 +3207,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:55:37+00:00"
+      "last_skipped_at": "2026-10-09T10:55:50+00:00"
     },
     "56da5ebaefc91f25": {
       "source_id": "56da5ebaefc91f25",
@@ -3139,7 +3239,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:55:37+00:00"
+      "last_skipped_at": "2026-10-09T10:55:50+00:00"
     },
     "105b071f37b46d64": {
       "source_id": "105b071f37b46d64",
@@ -3172,7 +3272,40 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:55:37+00:00"
+      "last_skipped_at": "2026-10-09T10:55:52+00:00"
+    },
+    "7c33d1ecedb854aa": {
+      "source_id": "7c33d1ecedb854aa",
+      "name": "Hackalendar · Upcoming Hackathons",
+      "url": "https://hackalendar.com/feed.xml",
+      "adapter_type": "hackalendar_rss",
+      "access_method": "public_hackalendar_rss",
+      "expected_fields": [
+        "title",
+        "link",
+        "summary",
+        "description",
+        "published",
+        "updated",
+        "category",
+        "guid"
+      ],
+      "pagination_mode": "catalogue_feed_upcoming_events",
+      "timeout_seconds": 10,
+      "minimum_interval_seconds": 900,
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_attempt_at": "2026-10-09T10:55:50+00:00",
+      "last_success_at": "2026-10-09T10:55:50+00:00",
+      "last_status": "success",
+      "last_error": null,
+      "last_duration_ms": 1308,
+      "items_seen": 15,
+      "matching_items": 15,
+      "new_items": 1,
+      "last_success_items_seen": 15,
+      "last_success_matching_items": 15,
+      "last_success_new_items": 1,
+      "failure_streak": 0
     }
   }
 }
