@@ -752,8 +752,17 @@ def _extract_facts(page: PageFetch, expected_title: str) -> dict:
 
 def _candidate_official_link(facts: dict, base_url: str) -> tuple[str | None, str | None, bool]:
     """Select a relevant external CTA; only explicit official-site labels are strong evidence."""
-    explicit_patterns = re.compile(r"\b(official (?:event )?(?:website|site)|event website|organizer website|organiser website|official homepage)\b", re.I)
-    action_patterns = re.compile(r"\b(apply|apply now|register|registration|application|participate|submit|join|event page|website|learn more|tickets|sign up)\b", re.I)
+    explicit_patterns = re.compile(
+        r"\b(official (?:event )?(?:website|site)|event website|"
+        r"organizer(?:['’]s)? (?:website|site)|organiser(?:['’]s)? (?:website|site)|"
+        r"official homepage|official event page)\b",
+        re.I,
+    )
+    action_patterns = re.compile(
+        r"\b(apply|apply now|register|registration|application|participate|submit|join|"
+        r"enter|event page|view event|view details|website|learn more|tickets|sign up)\b",
+        re.I,
+    )
     choices = []
     base_host = _host(base_url)
     for anchor in facts.get("anchors", []):
