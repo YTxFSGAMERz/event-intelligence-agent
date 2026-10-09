@@ -134,6 +134,55 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIsNone(resolved)
         self.assertEqual(status, "unresolved_google_news_link")
 
+    def test_url_resolution_budget_bounds_requests_and_reserves_new_items(self):
+        adapter = build_adapters(["https://news.google.com/rss/search?q=test"])[0]
+        budget = source_adapters.URLResolutionBudget(max_total=2, max_legacy=1)
+        session = FakeSession(FakeResponse("https://publisher.example/legacy"))
+
+        resolved, status = budget.resolve(
+            adapter, "https://news.google.com/rss/articles/legacy",
+            session=session, legacy=True,
+        )
+        self.assertEqual(resolved, "https://publisher.example/legacy")
+        self.assertEqual(status, "redirect_resolved")
+        self.assertEqual(budget.used_total, 1)
+        self.assertEqual(budget.used_legacy, 1)
+
+        deferred_legacy, legacy_status = budget.resolve(
+            adapter, "https://news.google.com/rss/articles/older",
+            session=session, legacy=True,
+        )
+        self.assertIsNone(deferred_legacy)
+        self.assertEqual(legacy_status, "legacy_resolution_budget_deferred")
+        self.assertEqual(budget.used_total, 1)
+
+        session.response = FakeResponse("https://publisher.example/new")
+        resolved_new, new_status = budget.resolve(
+            adapter, "https://news.google.com/rss/articles/new",
+            session=session, legacy=False,
+        )
+        self.assertEqual(resolved_new, "https://publisher.example/new")
+        self.assertEqual(new_status, "redirect_resolved")
+        self.assertEqual(budget.used_total, 2)
+
+        deferred_new, budget_status = budget.resolve(
+            adapter, "https://news.google.com/rss/articles/another",
+            session=session,
+        )
+        self.assertIsNone(deferred_new)
+        self.assertEqual(budget_status, "resolution_budget_deferred")
+        self.assertEqual(budget.used_total, 2)
+
+    def test_direct_rss_links_do_not_consume_google_resolution_budget(self):
+        adapter = build_adapters(["https://example.org/feed.xml"])[0]
+        budget = source_adapters.URLResolutionBudget(max_total=1, max_legacy=1)
+        resolved, status = budget.resolve(
+            adapter, "https://publisher.example/event/?utm_source=rss"
+        )
+        self.assertEqual(resolved, "https://publisher.example/event")
+        self.assertEqual(status, "direct_link")
+        self.assertEqual(budget.used_total, 0)
+
     def test_source_health_failure_keeps_last_success(self):
         config = build_source_config("https://example.org/feed.xml")
         previous = {
