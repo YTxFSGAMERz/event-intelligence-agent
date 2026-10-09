@@ -48,6 +48,12 @@ class DashboardContractTests(unittest.TestCase):
         self.assertIn("last_success_at", self.html)
         self.assertIn("failure_streak", self.html)
 
+    def test_unverified_deadlines_and_travel_claims_stay_labeled(self):
+        self.assertIn("Reported deadline · ", self.html)
+        self.assertIn("function travelLabel(e)", self.html)
+        self.assertIn(" · unverified", self.html)
+        self.assertIn("Reported: support confirmed", self.html)
+
     def test_dashboard_can_render_images_and_event_details(self):
         self.assertIn("media.source_image_url", self.html)
         self.assertIn("function renderDetails(e)", self.html)
