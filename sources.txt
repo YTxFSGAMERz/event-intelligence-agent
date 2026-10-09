@@ -20,3 +20,9 @@ https://github.blog/changelog/feed/
 
 # Official Major League Hacking upcoming-event calendar; external organizer pages still require verification.
 https://mlh.com/events
+
+# Devfolio Open/Upcoming event-platform listings. These are not organizer verification.
+https://devfolio.co/explore
+
+# Official National Scholarship Portal active scheme list (academic year 2026-27).
+https://scholarships.gov.in/All-Scholarships
