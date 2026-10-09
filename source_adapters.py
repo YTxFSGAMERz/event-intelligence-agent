@@ -157,18 +157,29 @@ class RSSSourceAdapter:
         user_agent: str = "EventIntelligenceAgent/0.2 (personal event research; respectful feed polling)",
         session: Any = requests,
     ) -> tuple[str | None, str]:
-        """Resolve discovery redirects when useful; never label the result as verified."""
+        """Return a normalized direct link; specialized adapters may override this."""
+        normalized = normalize_http_url(item_url)
+        return (normalized, "direct_link") if normalized else (None, "invalid_url")
+
+
+class GoogleNewsRSSAdapter(RSSSourceAdapter):
+    """Resolve modern Google News wrapper URLs where possible."""
+
+    def resolve_item_url(
+        self,
+        item_url: str,
+        timeout: int = 10,
+        user_agent: str = "EventIntelligenceAgent/0.2 (personal event research; respectful feed polling)",
+        session: Any = requests,
+    ) -> tuple[str | None, str]:
         normalized = normalize_http_url(item_url)
         if not normalized:
             return None, "invalid_url"
 
-        if self.config.adapter_type != "google_news_rss":
-            return normalized, "direct_link"
-
         # Modern Google News article IDs no longer reliably contain a decodable
-        # publisher URL, and ordinary requests often stay on news.google.com.
-        # Use the small, MIT-licensed decoder when installed; tests inject a
-        # fake HTTP session and therefore exercise the deterministic fallback path.
+        # publisher URL. Ordinary requests also often stay on news.google.com.
+        # Use the MIT-licensed decoder when installed, then fall back to redirect
+        # and canonical-tag checks. Resolution never confirms official status.
         if _decode_google_news is not None and session is requests:
             try:
                 decoded = _decode_google_news(normalized, timeout=timeout)
@@ -177,8 +188,6 @@ class RSSSourceAdapter:
                     if resolved and _host(resolved) not in {"news.google.com", "www.google.com"}:
                         return resolved, "decoder_resolved"
             except Exception:
-                # Fall through to redirect/canonical-tag resolution. The original
-                # discovery URL is retained by the caller if both methods fail.
                 pass
 
         response = None
@@ -196,8 +205,7 @@ class RSSSourceAdapter:
 
             parser = CanonicalLinkParser()
             prefix = bytearray()
-            iterator = response.iter_content(chunk_size=8192)
-            for chunk in iterator:
+            for chunk in response.iter_content(chunk_size=8192):
                 if not chunk:
                     continue
                 prefix.extend(chunk)
@@ -222,8 +230,23 @@ class RSSSourceAdapter:
                     pass
 
 
+class OfficialBlogRSSAdapter(RSSSourceAdapter):
+    """RSS adapter for the configured official GitHub Blog feed."""
+
+
+class GenericRSSAdapter(RSSSourceAdapter):
+    """Default adapter for other permitted RSS/Atom feeds."""
+
+
+ADAPTER_REGISTRY: dict[str, type[RSSSourceAdapter]] = {
+    "google_news_rss": GoogleNewsRSSAdapter,
+    "official_blog_rss": OfficialBlogRSSAdapter,
+    "rss_atom": GenericRSSAdapter,
+}
+
+
 def build_adapters(source_urls: list[str]) -> list[RSSSourceAdapter]:
-    """Create one specialized adapter per configured source URL, preserving order."""
+    """Select an adapter by source type while preserving config order and uniqueness."""
     adapters: list[RSSSourceAdapter] = []
     seen: set[str] = set()
     for raw_url in source_urls:
@@ -231,7 +254,9 @@ def build_adapters(source_urls: list[str]) -> list[RSSSourceAdapter]:
         if not url or url in seen:
             continue
         seen.add(url)
-        adapters.append(RSSSourceAdapter(build_source_config(url)))
+        config = build_source_config(url)
+        adapter_class = ADAPTER_REGISTRY.get(config.adapter_type, GenericRSSAdapter)
+        adapters.append(adapter_class(config))
     return adapters
 
 
