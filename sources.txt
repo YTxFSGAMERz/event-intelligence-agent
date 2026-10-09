@@ -9,6 +9,10 @@ https://news.google.com/rss/search?q=site%3Amlh.io+hackathon+student+registratio
 https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen
 # Recent student scholarship announcements (limit the search to recent news, not the portal's old archive pages)
 https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen
+# Recent scholarship applications reported by the National Scholarship Portal (discovery via Google News, not a direct official feed)
+https://news.google.com/rss/search?q=site%3Ascholarships.gov.in+scholarship+student+application+deadline+-top+-best+-guide+-list+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen
+# Google Student Programs announcements: scholarships, internships and student opportunities
+https://news.google.com/rss/search?q=site%3Ablog.google%2Fcompany-news%2Foutreach-and-initiatives%2Fstudent-programs+student+scholarship+internship+applications+-top+-best+-guide+-list+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen
 # Human-curated upcoming hackathons from Hackalendar (discovery only; verify on organizer page)
 https://hackalendar.com/feed.xml
 # Official GitHub changelog (developer program/product announcements)
