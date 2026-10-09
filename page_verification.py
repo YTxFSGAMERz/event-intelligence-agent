@@ -555,8 +555,8 @@ def _travel_facts(text: str, page_url: str) -> dict:
     elif any(facts.get(k) == "possible" for k in components):
         overall = "possible"
     elif re.search(
-        r"\\b(no travel support|travel support is not (?:offered|available|provided)|"
-        r"travel (?:costs|expenses) (?:are )?not covered|travel is not funded)\\b",
+        r"\b(no travel support|travel support is not (?:offered|available|provided)|"
+        r"travel (?:costs|expenses) (?:are )?not covered|travel is not funded)\b",
         text,
         re.I,
     ):
@@ -566,8 +566,8 @@ def _travel_facts(text: str, page_url: str) -> dict:
             "source_url": page_url,
             "snippet": next((
                 sentence[:280] for sentence in sentences
-                if re.search(r"\\b(no travel support|travel support is not (?:offered|available|provided)|"
-                             r"travel (?:costs|expenses) (?:are )?not covered|travel is not funded)\\b",
+                if re.search(r"\b(no travel support|travel support is not (?:offered|available|provided)|"
+                             r"travel (?:costs|expenses) (?:are )?not covered|travel is not funded)\b",
                              sentence, re.I)
             ), "Explicit page statement says travel support is not offered."),
             "method": "explicit_page_text",
