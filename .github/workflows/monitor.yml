@@ -140,7 +140,7 @@ jobs:
               merged["updated_utc"] = max(timestamps)
 
           Path("/tmp/merged_seen_events.json").write_text(
-              json.dumps(merged, indent=2, ensure_ascii=False) + "\\n",
+              json.dumps(merged, indent=2, ensure_ascii=False) + "\n",
               encoding="utf-8",
           )
           PY
