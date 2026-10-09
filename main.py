@@ -121,6 +121,12 @@ def check_link(url: str) -> tuple[str, str]:
     except requests.RequestException as exc:
         return "COULD NOT VERIFY", type(exc).__name__
 
+class TelegramRateLimitError(RuntimeError):
+    def __init__(self, retry_after: int):
+        self.retry_after = retry_after
+        super().__init__(f"Telegram rate limit reached; retry after {retry_after}s")
+
+
 def telegram_send(text: str) -> None:
     if os.getenv("DRY_RUN", "").lower() == "true":
         print("\n--- DRY RUN TELEGRAM MESSAGE ---\n" + text + "\n--- END ---")
@@ -149,6 +155,13 @@ def telegram_send(text: str) -> None:
     if not response.ok or not payload.get("ok"):
         error_code = payload.get("error_code", response.status_code)
         description = payload.get("description", "Telegram API did not confirm message delivery")
+        if error_code == 429:
+            parameters = payload.get("parameters") or {}
+            try:
+                retry_after = max(1, int(parameters.get("retry_after", 60)))
+            except (TypeError, ValueError):
+                retry_after = 60
+            raise TelegramRateLimitError(retry_after)
         raise RuntimeError(f"Telegram API error {error_code}: {description}")
 
 def build_alert(item: dict, categories: list[str], deadline: str,
@@ -179,6 +192,7 @@ def main() -> int:
     discovered = 0
     feed_errors = 0
     telegram_errors = 0
+    telegram_rate_limited = False
 
     if not sources:
         print("No sources configured. Add public RSS/Atom URLs to sources.txt.")
@@ -225,6 +239,16 @@ def main() -> int:
                                     link_status, link_evidence)
                 try:
                     telegram_send(alert)
+                except TelegramRateLimitError as exc:
+                    telegram_errors += 1
+                    telegram_rate_limited = True
+                    print(
+                        f"Telegram rate limit reached; stopping this run's alert delivery. "
+                        f"Retry after {exc.retry_after}s; remaining alerts are deferred.",
+                        file=sys.stderr,
+                    )
+                    # Do not mark this event as seen; retry after Telegram's cooldown.
+                    break
                 except Exception as exc:
                     telegram_errors += 1
                     print(
@@ -245,6 +269,9 @@ def main() -> int:
                     "link_status": link_status,
                 }
                 discovered += 1
+
+            if telegram_rate_limited:
+                break
         except Exception as exc:
             feed_errors += 1
             print(f"Feed error ({source}): {type(exc).__name__}: {exc}", file=sys.stderr)
