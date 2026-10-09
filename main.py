@@ -131,15 +131,24 @@ def telegram_send(text: str) -> None:
         print(text)
         return
     endpoint = f"https://api.telegram.org/bot{token}/sendMessage"
-    response = requests.post(endpoint, json={
-        "chat_id": chat_id,
-        "text": text[:4000],
-        "disable_web_page_preview": True,
-    }, timeout=TIMEOUT)
-    response.raise_for_status()
-    payload = response.json()
-    if not payload.get("ok"):
-        raise RuntimeError("Telegram API did not confirm message delivery")
+    try:
+        response = requests.post(endpoint, json={
+            "chat_id": chat_id,
+            "text": text[:4000],
+            "disable_web_page_preview": True,
+        }, timeout=TIMEOUT)
+    except requests.RequestException as exc:
+        # Never include the request URL in the exception: it contains the bot token.
+        raise RuntimeError(f"Telegram request failed ({type(exc).__name__})") from None
+
+    try:
+        payload = response.json()
+    except ValueError:
+        payload = {}
+    if not response.ok or not payload.get("ok"):
+        error_code = payload.get("error_code", response.status_code)
+        description = payload.get("description", "Telegram API did not confirm message delivery")
+        raise RuntimeError(f"Telegram API error {error_code}: {description}")
 
 def build_alert(item: dict, categories: list[str], deadline: str,
                 reg_status: str, reg_evidence: str, link_status: str, link_evidence: str) -> str:
@@ -168,6 +177,7 @@ def main() -> int:
     seen = state.setdefault("seen", {})
     discovered = 0
     feed_errors = 0
+    telegram_errors = 0
 
     if not sources:
         print("No sources configured. Add public RSS/Atom URLs to sources.txt.")
@@ -203,7 +213,17 @@ def main() -> int:
                 item = {"title": title, "link": link, "summary": summary}
                 alert = build_alert(item, categories, deadline, reg_status, reg_evidence,
                                     link_status, link_evidence)
-                telegram_send(alert)
+                try:
+                    telegram_send(alert)
+                except Exception as exc:
+                    telegram_errors += 1
+                    print(
+                        f"Telegram delivery error for {title!r}: {type(exc).__name__}: {exc}",
+                        file=sys.stderr,
+                    )
+                    # Do not mark failed notifications as seen; a later run can retry them.
+                    continue
+
                 seen[uid] = {
                     "title": title,
                     "url": clean_url(link),
@@ -221,9 +241,12 @@ def main() -> int:
 
     state["updated_utc"] = now_iso()
     write_state(state)
-    print(f"Done. New matching events: {discovered}; feed errors: {feed_errors}; total tracked: {len(seen)}")
-    # Fail the run if all feeds failed, but don't fail just because one source was down.
-    if feed_errors == len(sources):
+    print(
+        f"Done. New matching events: {discovered}; feed errors: {feed_errors}; "
+        f"Telegram delivery errors: {telegram_errors}; total tracked: {len(seen)}"
+    )
+    # Fail visibly when every feed fails or any Telegram alert cannot be delivered.
+    if feed_errors == len(sources) or telegram_errors:
         return 1
     return 0
 
