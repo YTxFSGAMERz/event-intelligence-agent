@@ -81,6 +81,22 @@ New normalized fields include:
 - Existing records are migrated additively. The legacy fields remain available, and the `schema_version` field identifies the normalized record version.
 - `last_seen_utc` means the item was observed in a feed; it does **not** mean its deadline, eligibility, or funding was verified at that time.
 
+## Web dashboard (Phase 4)
+
+The live dashboard is available at https://event-intelligence-dashboard-indol.vercel.app and is served from `dashboard/index.html`. It reads the public tracker at `data/seen_events.json` and refreshes automatically every five minutes.
+
+### Dashboard features
+
+- **Trust-aware verification:** records are labelled as officially verified, official-link candidates needing review, checked discovery pages, waiting for source resolution, or not checked. A record counts as officially verified only when the verifier reports `official_page_verified` and provides an HTTP(S) `official_url`.
+- **Opportunity cards:** source images, discovery summaries, event schedule signals, registration status, location, reward mentions, and an expandable view of eligibility, travel-support components, verification notes, and evidence links.
+- **Search and filters:** categories, registration status, verification state, event format, country, travel-support state, eligibility detail availability, and sorting by verified deadline, event date, or title.
+- **Source health:** per-feed latest known status, last attempt and last success, adapter type, entries seen, matches, queued items, failure streak, and reported error.
+- **Saved opportunities:** saved cards are kept in the visitor's local browser storage; they are not uploaded to the agent or shared between devices.
+
+Unverified discovery-page facts are explicitly labelled as unverified. A page being readable, an outbound organizer-link candidate being found, or a source image being present does not establish official ownership. Missing deadline, location, eligibility, reward, or travel-support data remain unknown rather than being guessed. The dashboard is a research aid, not an application or booking service.
+
+The dashboard test checks its live-feed binding, trust-state controls, evidence rendering, filtering controls, and source-health panel: `python -m unittest discover -s tests -v`.
+
 ## Important limits
 - GitHub Actions scheduled workflows are best-effort, not exact timers; runs may be delayed. GitHub documents a minimum schedule interval of 5 minutes, and scheduled workflows run from the default branch. See https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows
 - RSS feeds are only as good as their publishers. Add official feeds and public announcement sources you trust.
