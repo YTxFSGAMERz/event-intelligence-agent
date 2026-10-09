@@ -11,6 +11,26 @@ A lightweight Python starter that checks configured public RSS/Atom feeds every 
 - Checks the event URL is reachable and labels that check separately from registration availability.
 - Sends Telegram alerts for newly discovered matching entries.
 
+## Source adapter registry (Phase 2)
+
+Configured URLs in `sources.txt` are routed through the adapter registry in `source_adapters.py`. The registry currently supports:
+
+- **Google News RSS:** feed fetching plus best-effort resolution of article redirects or canonical URL tags. If resolution fails, the original discovery URL is retained and canonical URL remains unknown.
+- **GitHub Blog RSS:** recognized as a named official-blog feed.
+- **Generic RSS/Atom:** shared fetching and parsing for other configured public feeds.
+
+Each configured URL receives a stable source ID and a source-health record in `data/seen_events.json`. Health includes the last attempt and successful fetch, status, adapter type, duration, entry count, matching count, queued count, and failure streak. A failed run retains the last successful timestamp and last successful counts. GitHub Actions merges these health records alongside the deduplication records when persisting state.
+
+### URL provenance and duplicate handling
+
+- `discovered_url` stores the URL found in the feed.
+- `canonical_url` stores a normalized resolved publisher-page URL when one is available. It is **not** automatically considered the organizer's official page.
+- `verification.official_url` remains unknown until a separate official-source verification step is implemented.
+- Resolved URLs are used for cross-feed deduplication where possible. Existing legacy records remain compatible and are not re-alerted just because their ID predates URL resolution.
+- If a Google News redirect cannot be resolved, the system keeps the discovery link and records the resolution status instead of fabricating a canonical URL.
+
+The current registry uses public RSS/Atom feeds and ordinary redirect/canonical-page checks. It does not bypass access controls or anti-bot mechanisms.
+
 ## Canonical opportunity schema (v1)
 
 The tracker uses an additive, versioned schema. Legacy keys such as `url`, `deadline`, `registration_status`, `image_url`, and `source` remain temporarily for compatibility with the Telegram workflow and dashboard.
