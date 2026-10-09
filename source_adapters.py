@@ -106,6 +106,10 @@ def _resolve_source_type(url: str) -> tuple[str, str]:
             label = "Google News · Devpost"
         elif "mlh.io" in query:
             label = "Google News · MLH"
+        elif "scholarships.gov.in" in query:
+            label = "Google News · National Scholarship Portal"
+        elif "blog.google" in query and "student-programs" in query:
+            label = "Google News · Google Student Programs"
         elif "travel grant" in query or "fully funded" in query:
             label = "Google News · Funded travel"
         elif "scholarship" in query:
