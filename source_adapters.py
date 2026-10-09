@@ -18,6 +18,11 @@ from urllib.parse import parse_qs, urlsplit, urlunsplit
 import feedparser
 import requests
 
+try:
+    from googlenewsdecoder import gnewsdecoder as _decode_google_news
+except ImportError:  # Keep ordinary RSS sources functional if the optional decoder is unavailable.
+    _decode_google_news = None
+
 
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
@@ -159,6 +164,22 @@ class RSSSourceAdapter:
 
         if self.config.adapter_type != "google_news_rss":
             return normalized, "direct_link"
+
+        # Modern Google News article IDs no longer reliably contain a decodable
+        # publisher URL, and ordinary requests often stay on news.google.com.
+        # Use the small, MIT-licensed decoder when installed; tests inject a
+        # fake HTTP session and therefore exercise the deterministic fallback path.
+        if _decode_google_news is not None and session is requests:
+            try:
+                decoded = _decode_google_news(normalized, timeout=timeout)
+                if isinstance(decoded, dict) and decoded.get("success"):
+                    resolved = normalize_http_url(decoded.get("decoded_url"))
+                    if resolved and _host(resolved) not in {"news.google.com", "www.google.com"}:
+                        return resolved, "decoder_resolved"
+            except Exception:
+                # Fall through to redirect/canonical-tag resolution. The original
+                # discovery URL is retained by the caller if both methods fail.
+                pass
 
         response = None
         try:
