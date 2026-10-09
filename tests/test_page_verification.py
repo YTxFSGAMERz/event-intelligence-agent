@@ -199,14 +199,17 @@ class PageVerificationTests(unittest.TestCase):
     def test_verification_due_policy_retries_failures_sooner(self):
         now = datetime(2026, 10, 9, tzinfo=timezone.utc)
         recent_failure = {"verification": {
+            "version": verify.VERIFICATION_VERSION,
             "status": "request_error",
             "last_checked_at": "2026-10-08T00:00:00+00:00",
         }}
         recent_page = {"verification": {
+            "version": verify.VERIFICATION_VERSION,
             "status": "source_page_checked",
             "last_checked_at": "2026-10-08T00:00:00+00:00",
         }}
         week_old_page = {"verification": {
+            "version": verify.VERIFICATION_VERSION,
             "status": "source_page_checked",
             "last_checked_at": "2026-10-01T00:00:00+00:00",
         }}
