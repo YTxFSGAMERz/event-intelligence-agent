@@ -445,7 +445,7 @@
       "content_hash": null,
       "last_material_change_at": null,
       "resolution_attempts": 1,
-      "last_resolution_attempt_at": "2026-10-09T10:52:17+00:00",
+      "last_resolution_attempt_at": "2026-10-09T10:52:44+00:00",
       "resolution_status": "unresolved_google_news_link"
     },
     "097339d3e2ca22c077eb": {
@@ -3004,7 +3004,7 @@
       "last_material_change_at": null
     }
   },
-  "updated_utc": "2026-10-09T10:52:26+00:00",
+  "updated_utc": "2026-10-09T10:52:44+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -3014,9 +3014,9 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T10:52:17+00:00",
       "last_success_at": "2026-10-09T10:52:17+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
-      "last_duration_ms": 209,
+      "last_duration_ms": 193,
       "items_seen": 0,
       "matching_items": 0,
       "new_items": 0,
@@ -3036,7 +3036,8 @@
       "pagination_mode": "google_news_feed_managed_recent_results",
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
-      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent"
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_skipped_at": "2026-10-09T10:52:44+00:00"
     },
     "4ae1d4cb1873b219": {
       "source_id": "4ae1d4cb1873b219",
@@ -3045,9 +3046,9 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T10:52:18+00:00",
       "last_success_at": "2026-10-09T10:52:18+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
-      "last_duration_ms": 211,
+      "last_duration_ms": 210,
       "items_seen": 0,
       "matching_items": 0,
       "new_items": 0,
@@ -3067,7 +3068,8 @@
       "pagination_mode": "google_news_feed_managed_recent_results",
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
-      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent"
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_skipped_at": "2026-10-09T10:52:44+00:00"
     },
     "7c5c4d34b1a8fdc9": {
       "source_id": "7c5c4d34b1a8fdc9",
@@ -3076,9 +3078,9 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T10:52:18+00:00",
       "last_success_at": "2026-10-09T10:52:18+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
-      "last_duration_ms": 401,
+      "last_duration_ms": 472,
       "items_seen": 55,
       "matching_items": 50,
       "new_items": 1,
@@ -3098,7 +3100,8 @@
       "pagination_mode": "google_news_feed_managed_recent_results",
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
-      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent"
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_skipped_at": "2026-10-09T10:52:44+00:00"
     },
     "56da5ebaefc91f25": {
       "source_id": "56da5ebaefc91f25",
@@ -3107,9 +3110,9 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T10:52:18+00:00",
       "last_success_at": "2026-10-09T10:52:18+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
-      "last_duration_ms": 606,
+      "last_duration_ms": 523,
       "items_seen": 68,
       "matching_items": 51,
       "new_items": 1,
@@ -3129,7 +3132,8 @@
       "pagination_mode": "google_news_feed_managed_recent_results",
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
-      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent"
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_skipped_at": "2026-10-09T10:52:44+00:00"
     },
     "105b071f37b46d64": {
       "source_id": "105b071f37b46d64",
@@ -3138,9 +3142,9 @@
       "adapter_type": "official_blog_rss",
       "last_attempt_at": "2026-10-09T10:52:19+00:00",
       "last_success_at": "2026-10-09T10:52:19+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
-      "last_duration_ms": 346,
+      "last_duration_ms": 2394,
       "items_seen": 10,
       "matching_items": 0,
       "new_items": 0,
@@ -3161,7 +3165,8 @@
       "pagination_mode": "publisher_feed_managed",
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
-      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent"
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_skipped_at": "2026-10-09T10:52:44+00:00"
     }
   }
 }
