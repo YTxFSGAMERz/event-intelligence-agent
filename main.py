@@ -28,7 +28,9 @@ TIMEOUT = 10
 MAX_ALERTS_PER_SOURCE_PER_RUN = 1
 MAX_URL_RESOLUTIONS_PER_RUN = 6
 MAX_LEGACY_URL_RESOLUTIONS_PER_RUN = 2
-MAX_URL_RESOLUTION_ATTEMPTS = 5
+MAX_URL_RESOLUTION_ATTEMPTS = 8
+URL_RESOLUTION_RETRY_BASE_SECONDS = 6 * 60 * 60
+URL_RESOLUTION_RETRY_MAX_SECONDS = 7 * 24 * 60 * 60
 MAX_PAGE_VERIFICATIONS_PER_RUN = 2
 MAX_PAGE_FETCHES_PER_RUN = 4
 TELEGRAM_MIN_INTERVAL_SECONDS = 1.1
@@ -283,6 +285,54 @@ def write_state(state: dict) -> None:
     normalized = normalize_state(state)
     normalized["updated_utc"] = now_iso()
     STATE_FILE.write_text(json.dumps(normalized, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+
+def url_resolution_retry_delay_seconds(attempts: int) -> int:
+    """Exponential backoff for failed Google News wrapper resolution attempts."""
+    try:
+        count = max(0, int(attempts))
+    except (TypeError, ValueError):
+        count = 0
+    if count <= 0:
+        return 0
+    delay = URL_RESOLUTION_RETRY_BASE_SECONDS * (2 ** (count - 1))
+    return min(delay, URL_RESOLUTION_RETRY_MAX_SECONDS)
+
+
+def url_resolution_retry_is_due(
+    record: dict,
+    now: datetime | None = None,
+) -> bool:
+    """Avoid retrying an unresolved link on every 15-minute workflow run."""
+    item = record if isinstance(record, dict) else {}
+    try:
+        attempts = max(0, int(item.get("resolution_attempts") or 0))
+    except (TypeError, ValueError):
+        attempts = 0
+
+    if attempts >= MAX_URL_RESOLUTION_ATTEMPTS:
+        return False
+    if attempts <= 0:
+        return True
+
+    last_attempt = str(item.get("last_resolution_attempt_at") or "").strip()
+    if not last_attempt:
+        return True
+    try:
+        parsed = datetime.fromisoformat(last_attempt.replace("Z", "+00:00"))
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+    except ValueError:
+        # Bad legacy timestamps must not permanently strand an unresolved record.
+        return True
+
+    current = now or datetime.now(timezone.utc)
+    if current.tzinfo is None:
+        current = current.replace(tzinfo=timezone.utc)
+    elapsed = (current - parsed.astimezone(timezone.utc)).total_seconds()
+    return elapsed >= url_resolution_retry_delay_seconds(attempts)
+
 
 def matching_categories(text: str) -> list[str]:
     low = text.lower()
@@ -1191,7 +1241,7 @@ def main() -> int:
         if (urlsplit(discovered_url).hostname or "").lower() != "news.google.com":
             continue
         attempts = int(existing.get("resolution_attempts") or 0)
-        if attempts >= MAX_URL_RESOLUTION_ATTEMPTS:
+        if not url_resolution_retry_is_due(existing):
             continue
         source_url = str(existing.get("source_feed_url") or existing.get("source") or "").strip()
         adapter = adapters_by_url.get(source_url)
