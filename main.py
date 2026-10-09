@@ -15,6 +15,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 import feedparser
 import requests
 
+from page_verification import VerificationBudget, verification_is_due, verify_opportunity_page
 from source_adapters import (URLResolutionBudget, build_adapters, should_poll_source,
                              source_health_failure, source_health_skipped, source_health_success)
 
@@ -27,6 +28,8 @@ MAX_ALERTS_PER_SOURCE_PER_RUN = 1
 MAX_URL_RESOLUTIONS_PER_RUN = 4
 MAX_LEGACY_URL_RESOLUTIONS_PER_RUN = 1
 MAX_URL_RESOLUTION_ATTEMPTS = 3
+MAX_PAGE_VERIFICATIONS_PER_RUN = 2
+MAX_PAGE_FETCHES_PER_RUN = 4
 TELEGRAM_MIN_INTERVAL_SECONDS = 1.1
 _LAST_TELEGRAM_REQUEST = 0.0
 
@@ -801,6 +804,193 @@ def remember_source_alias(
     add_unique("discovered_urls", str(record.get("discovered_url") or record.get("url") or ""))
     add_unique("discovered_urls", clean_url(discovered_url))
     add_unique("resolved_urls", clean_url(resolved_url) if resolved_url else None)
+
+
+def apply_page_verification(record: dict, result: dict) -> dict:
+    """Merge verified facts, keeping unverified page observations separate."""
+    target = dict(record or {})
+    old_verification = target.get("verification")
+    verification = dict(old_verification) if isinstance(old_verification, dict) else {}
+    prior_official_url = verification.get("official_url")
+    prior_was_verified = (
+        verification.get("status") == "official_page_verified" and bool(prior_official_url)
+    )
+
+    result_status = str(result.get("status") or "unknown")
+    now_checked = result.get("last_checked_at")
+    if result_status != "skipped_budget" and now_checked:
+        verification["last_checked_at"] = now_checked
+    verification["source_page_url"] = result.get("source_page_url") or verification.get("source_page_url")
+    verification["official_link_candidate"] = result.get("official_link_candidate") or verification.get("official_link_candidate")
+    verification["official_link_reason"] = result.get("official_link_reason") or verification.get("official_link_reason")
+    verification["candidate_page_status"] = result.get("candidate_page_status") or verification.get("candidate_page_status")
+    verification["page_title"] = result.get("page_title") or verification.get("page_title")
+    verification["last_check_error"] = result.get("error")
+    verification["last_check_duration_ms"] = result.get("duration_ms")
+    verification["evidence_urls"] = list(dict.fromkeys(
+        list(verification.get("evidence_urls") or []) + list(result.get("evidence_urls") or [])
+    ))
+    if result.get("observed_facts"):
+        verification["observed_facts"] = result["observed_facts"]
+    if result.get("fact_evidence"):
+        evidence = dict(verification.get("fact_evidence") or {})
+        evidence.update(result["fact_evidence"])
+        verification["fact_evidence"] = evidence
+
+    if result.get("official_page_verified") and result.get("official_url"):
+        verification["status"] = "official_page_verified"
+        verification["official_url"] = result["official_url"]
+        verification["official_link_reason"] = result.get("official_link_reason")
+        verification["last_verified_at"] = now_checked
+        verified = result.get("verified_facts") or {}
+        for field in ("organizer", "event_start_at", "event_end_at", "event_timezone", "opportunity_status"):
+            value = verified.get(field)
+            if value not in (None, "", "unknown"):
+                target[field] = value
+        location = verified.get("location")
+        if isinstance(location, dict) and any(
+            location.get(key) for key in ("raw", "venue", "city", "region", "country", "country_code")
+        ):
+            merged_location = dict(target.get("location") or {})
+            for key, value in location.items():
+                if value not in (None, "", [], "unknown"):
+                    merged_location[key] = value
+            target["location"] = merged_location
+
+        deadline = verified.get("deadline")
+        if isinstance(deadline, dict) and deadline.get("normalized"):
+            target["application_deadline"] = deadline["normalized"]
+            target["application_deadline_raw"] = deadline.get("raw")
+            target["deadline_status"] = "verified"
+            target["date_precision"] = deadline.get("precision") or "date"
+            target["deadline_timezone"] = deadline.get("timezone")
+            # Keep the dashboard and Telegram fallback compatible with the verified date.
+            target["deadline"] = deadline.get("raw") or deadline["normalized"]
+            verification["deadline_checked_at"] = now_checked
+        elif isinstance(deadline, dict) and deadline.get("raw"):
+            # Preserve an official-page claim even when there is no safe, explicit year.
+            target["application_deadline_raw"] = deadline.get("raw")
+            target["deadline_status"] = "unknown"
+            target["application_deadline"] = None
+
+        eligibility = verified.get("eligibility")
+        if isinstance(eligibility, dict) and eligibility.get("requirements"):
+            merged_eligibility = dict(target.get("eligibility") or {})
+            merged_eligibility.update(eligibility)
+            merged_eligibility["status"] = "verified"
+            merged_eligibility["evidence_url"] = result.get("official_url")
+            target["eligibility"] = merged_eligibility
+            verification["eligibility_checked_at"] = now_checked
+
+        travel = verified.get("travel_support")
+        if isinstance(travel, dict) and travel.get("status") != "unknown":
+            merged_travel = dict(target.get("travel_support") or {})
+            merged_travel.update(travel)
+            merged_travel["evidence_url"] = result.get("official_url")
+            target["travel_support"] = merged_travel
+            verification["funding_checked_at"] = now_checked
+
+        media = dict(target.get("media") or {})
+        if verified.get("image_url") and _http_url(verified["image_url"]):
+            media["source_image_url"] = verified["image_url"]
+            target["image_url"] = verified["image_url"]
+        target["media"] = media
+        target["canonical_url"] = target.get("canonical_url") or result.get("source_page_url")
+        target["url"] = result["official_url"]
+        target["link_status"] = target.get("link_status") or "NOT CHECKED"
+    elif prior_was_verified:
+        # Do not revoke a prior successful official verification just because a later
+        # fetch was unavailable or an aggregator temporarily changed its markup.
+        verification["status"] = "official_page_verified"
+        verification["official_url"] = prior_official_url
+        verification["last_recheck_status"] = result_status
+        verification.setdefault("notes", []).append(
+            f"Recheck on {now_checked or 'unknown time'} did not reconfirm the official page."
+        )
+    else:
+        verification["status"] = result_status
+        verification["official_url"] = None
+
+    target["verification"] = verification
+    return target
+
+
+def _verification_target(record: dict) -> str | None:
+    verification = record.get("verification") if isinstance(record.get("verification"), dict) else {}
+    # Once identified, the organizer's official URL is the best refresh target.
+    candidates = (
+        verification.get("official_url"),
+        record.get("canonical_url"),
+        record.get("url"),
+        record.get("discovered_url"),
+    )
+    for candidate in candidates:
+        if _http_url(candidate):
+            return str(candidate).strip()
+    return None
+
+
+def verify_due_opportunities(pending_events: list[dict], seen: dict) -> int:
+    """Verify at most two records and four pages per workflow run."""
+    budget = VerificationBudget(max_pages=MAX_PAGE_FETCHES_PER_RUN)
+    checked = 0
+
+    # Always prioritize one newly discovered opportunity, then backfill one record.
+    targets: list[tuple[str, dict, str]] = []
+    if pending_events:
+        first = pending_events[0]
+        targets.append(("pending", first, first.get("canonical_link") or first.get("link") or ""))
+
+    pending_ids = {str(event.get("uid") or "") for event in pending_events}
+    existing_candidates = []
+    for existing_id, record in seen.items():
+        if not isinstance(record, dict) or str(existing_id) in pending_ids:
+            continue
+        if not verification_is_due(record):
+            continue
+        target_url = _verification_target(record)
+        if not target_url:
+            continue
+        first_seen = str(record.get("first_seen_utc") or "")
+        existing_candidates.append((first_seen, str(existing_id), record, target_url))
+    existing_candidates.sort(key=lambda item: item[0], reverse=True)
+    if existing_candidates and len(targets) < MAX_PAGE_VERIFICATIONS_PER_RUN:
+        _, existing_id, record, target_url = existing_candidates[0]
+        targets.append((existing_id, record, target_url))
+
+    for key, record, target_url in targets[:MAX_PAGE_VERIFICATIONS_PER_RUN]:
+        title = str(record.get("title") or "Untitled opportunity")
+        if not target_url:
+            continue
+        before = budget.pages_used
+        result = verify_opportunity_page(
+            target_url,
+            title,
+            budget=budget,
+            timeout=min(TIMEOUT, 8),
+        )
+        after = budget.pages_used
+        if key == "pending":
+            record["verification_result"] = result
+            if result.get("official_page_verified") and result.get("official_url"):
+                # Use the organizer page in the new alert, but keep feed/source URLs separately.
+                record["link"] = result["official_url"]
+        else:
+            verified_record = apply_page_verification(record, result)
+            seen[key] = verified_record
+        if result.get("status") == "skipped_budget":
+            print(f"Verification deferred for {title!r}: page budget exhausted.")
+        else:
+            checked += 1
+            print(
+                f"Page verification: {title!r}; status={result.get('status')}; "
+                f"pages_fetched={after - before}; official_page={bool(result.get('official_page_verified'))}"
+            )
+    print(
+        f"Verification pass complete: records_checked={checked}; "
+        f"page_fetches_used={budget.pages_used}/{budget.max_pages}."
+    )
+    return checked
 
 
 def main() -> int:
