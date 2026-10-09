@@ -165,3 +165,45 @@ Each alert shows:
 - **Evidence**: the short feed text that triggered the status
 
 Do not treat automated status detection as definitive. Always verify on the organizer's official page.
+
+## Operations and first-run verification
+
+A green GitHub Actions run means the job completed; it does **not** by itself prove Telegram accepted a message or that every feed returned useful results.
+
+### 1. Configure Telegram delivery
+
+In the repository's **Settings → Secrets and variables → Actions**, add these repository secrets:
+
+- `TELEGRAM_BOT_TOKEN`: the token issued by BotFather. Treat it like a password.
+- `TELEGRAM_CHAT_ID`: the destination chat ID. Start the bot or add it to the intended chat as required by Telegram.
+
+Never put either value in `sources.txt`, source code, workflow YAML, dashboard files, or issue comments.
+
+### 2. Send a safe connectivity test
+
+1. Open [Actions → Event Intelligence Agent](https://github.com/YTxFSGAMERz/event-intelligence-agent/actions/workflows/monitor.yml).
+2. Choose **Run workflow** on `main`.
+3. Enable **Send a Telegram connectivity test before scanning** (`send_test_alert`).
+4. Inspect the **Test Telegram delivery** step. A pass means Telegram accepted the test message; confirm that it arrived in the intended chat too.
+
+The test is opt-in and sends only a short diagnostic message. Normal scheduled runs do not send this test alert.
+
+### 3. Diagnose a run that sent no opportunity alerts
+
+Check the run in this order:
+
+1. **Scan configured feeds** — look for missing configuration, fetch failures, zero entries, or zero matches.
+2. **Telegram secrets** — if the test step reports missing secrets, add or correct both repository secrets and rerun the opt-in test.
+3. **New-item deduplication** — an event already recorded in `data/seen_events.json` is intentionally not sent again.
+4. **Alert limits and cooldowns** — the scanner deliberately caps alerts per source/run and respects the per-feed polling interval.
+5. **Persist deduplication state** — confirm state was saved so future runs can reliably avoid duplicate notifications.
+6. **Dashboard freshness** — the dashboard reads the public state file from the default branch; a recent deployment does not guarantee fresh feed data.
+
+A reachable event page is not proof that registration is open. Treat unknown deadlines, eligibility, prizes, and travel support as unverified until supported by evidence from the organizer's official page.
+
+### 4. Routine health checks
+
+- Review the [latest workflow runs](https://github.com/YTxFSGAMERz/event-intelligence-agent/actions) for recurring feed failures, not just the overall green/red status.
+- Review the dashboard's source-health section for last successful fetches and failure streaks.
+- Keep the configured source list focused on useful, public feeds; respect publisher terms, rate limits, and access controls.
+
