@@ -533,7 +533,10 @@
         ]
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "resolution_attempts": 1,
+      "last_resolution_attempt_at": "2026-10-09T10:52:58+00:00",
+      "resolution_status": "unresolved_google_news_link"
     },
     "75c871eb8e7b8dceaa22": {
       "title": "Britain’s University of Oxford Offers Scholarships to Students from Low-Income Countries - Al-Fanar Media",
@@ -3004,7 +3007,7 @@
       "last_material_change_at": null
     }
   },
-  "updated_utc": "2026-10-09T10:52:44+00:00",
+  "updated_utc": "2026-10-09T10:52:58+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -3037,7 +3040,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:52:44+00:00"
+      "last_skipped_at": "2026-10-09T10:52:58+00:00"
     },
     "4ae1d4cb1873b219": {
       "source_id": "4ae1d4cb1873b219",
@@ -3069,7 +3072,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:52:44+00:00"
+      "last_skipped_at": "2026-10-09T10:52:58+00:00"
     },
     "7c5c4d34b1a8fdc9": {
       "source_id": "7c5c4d34b1a8fdc9",
@@ -3101,7 +3104,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:52:44+00:00"
+      "last_skipped_at": "2026-10-09T10:52:58+00:00"
     },
     "56da5ebaefc91f25": {
       "source_id": "56da5ebaefc91f25",
@@ -3133,7 +3136,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:52:44+00:00"
+      "last_skipped_at": "2026-10-09T10:52:58+00:00"
     },
     "105b071f37b46d64": {
       "source_id": "105b071f37b46d64",
@@ -3166,7 +3169,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:52:44+00:00"
+      "last_skipped_at": "2026-10-09T10:52:58+00:00"
     }
   }
 }
