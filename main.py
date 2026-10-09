@@ -852,7 +852,8 @@ def apply_page_verification(record: dict, result: dict) -> dict:
                 target[field] = value
         location = verified.get("location")
         if isinstance(location, dict) and any(
-            location.get(key) for key in ("raw", "venue", "city", "region", "country", "country_code")
+            location.get(key) for key in ("raw", "mode", "venue", "city", "region", "country", "country_code")
+            if location.get(key) not in (None, "", "unknown", [])
         ):
             merged_location = dict(target.get("location") or {})
             for key, value in location.items():
