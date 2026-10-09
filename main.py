@@ -594,6 +594,24 @@ class TelegramRateLimitError(RuntimeError):
         super().__init__(f"Telegram rate limit reached; retry after {retry_after}s")
 
 
+def telegram_configuration_error() -> str | None:
+    """Return a safe, actionable error when live Telegram delivery is not configured."""
+    if os.getenv("DRY_RUN", "").strip().lower() == "true":
+        return None
+    missing = [
+        name for name in ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID")
+        if not os.getenv(name, "").strip()
+    ]
+    if not missing:
+        return None
+    return (
+        "Telegram delivery is not configured; missing environment variable(s): "
+        + ", ".join(missing)
+        + ". Add them as GitHub Actions repository secrets. "
+        "No discovery run was started, so events will not be marked as delivered."
+    )
+
+
 def telegram_api_call(token: str, method: str, payload: dict, files: dict | None = None) -> dict:
     global _LAST_TELEGRAM_REQUEST
     # Keep messages to the same private chat spaced out to reduce flood-control errors.
@@ -763,13 +781,14 @@ def telegram_send(text: str, image_url: str | None = None, caption: str | None =
         print("--- END ---")
         return
 
+    configuration_error = telegram_configuration_error()
+    if configuration_error:
+        # Never treat a log-only fallback as successful delivery: the caller must
+        # leave the event unseen so it can be retried after configuration is fixed.
+        raise RuntimeError(configuration_error)
+
     token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
-    if not token or not chat_id:
-        print("Telegram secrets not configured; alert printed to logs instead.")
-        print(f"Image URL: {image_url or 'No image found'}")
-        print(text)
-        return
 
     if image_url:
         try:
@@ -1178,17 +1197,24 @@ def verify_due_opportunities(pending_events: list[dict], seen: dict) -> int:
 
 def main() -> int:
     sources = read_sources()
+    if not sources:
+        print("No sources configured. Add public RSS/Atom URLs to sources.txt.")
+        print("No network discovery was performed.")
+        return 0
+
+    configuration_error = telegram_configuration_error()
+    if configuration_error:
+        print(configuration_error, file=sys.stderr)
+        return 2
+
+    # Validate delivery before loading/mutating tracking state or polling feeds.
+    # Otherwise a log-only alert could be marked seen and never reach Telegram.
     state = read_state()
     seen = state.setdefault("seen", {})
     feed_errors = 0
     telegram_errors = 0
     telegram_rate_limited = False
     pending_events: list[dict] = []
-
-    if not sources:
-        print("No sources configured. Add public RSS/Atom URLs to sources.txt.")
-        print("No network discovery was performed.")
-        return 0
 
     # Discovery pass: adapters normalize fetching while source-specific behavior
     # (such as resolving Google News redirect links) stays outside the alert logic.
