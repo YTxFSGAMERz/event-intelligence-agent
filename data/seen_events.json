@@ -4189,8 +4189,8 @@
     "579ad1f3966a0f642c71": {
       "title": "Stripe x Briefcase: AI FinTech London Hackathon — London, 15 Oct 2026",
       "summary": " 15 Oct 2026  · London · In person · London, United Kingdom Organiser: Briefcase AI Agents in Fintech - Evening Hackathon\n150 developers. One evening. Central London.\nBuild autonomous AI agents that handle real financial operations - agents that don't just analyse money, but move it. Ship a working prototype in three hours and demo it live to judges from Stripe, Meta, and the 10 Downing Street AI Team.\n📅 Schedule\n5:15 PM - Doors open & registration\n5:45 PM - Opening: mission briefing, tracks and scoring explained\n6:00 PM - Hacking begins. Go solo or team up (max 4 per team)\n7:30 PM - 🍕 Pizza - keep building\n9:00 PM - Code freeze. Submit via the event page\n9:05 PM - Judging & finalist selection\n9:30 PM - Finalist demos\n9:50 PM - Awards\n10:00 PM - Close\n🚀 Why Join?\nShip something real - walk out with a working fintech AI agent you built in one evening\nWin £2,000 - cash prize for the overall winner\nStripe credits - £5k, £3k, and £1k in credits for track winners\nSide quests - bonus prizes for creative builds beyond the main tracks\nMeet your next co-founder - 150 of London's sharpest AI and fintech builders in one room\n🎯 Tracks\nTwo tracks, revealed at the opening briefing. One hint: your agent will be handling real money movement - think autonomy, policy, and auditability. Plus bonus side quests for builds that go off-script.\n🧑‍💻 Who Should Come?\nDevelopers, ML engineers, and technical founders who want to build with AI agents in fintech. Come with a team of up to 4, or join solo and pair up on the night.\nBring: your laptop, a charger, and an idea (optional - tracks will spark plenty).\n⚖️ Judges\nJan Stehlik - Briefcase\nFionn O Colmain - Stripe\nDavid Gelberg - 10 Downing Street AI Team\nDominic Hudson - AI at Meta\nAkash Bajwa - Earlybird\n🤝 Hosted By\nBriefcase × Stripe\nSponsors: Briefcase, Stripe,  Cognee\nBriefcase: First AI native ledger\nStripe: Payment provider\nCognee: Open Source Memory Platform for Agents\nOrganisers: Jan Stehlik (Briefcase) & Fionn O Colmain (Stripe)  Register on the organiser's own page ",
-      "url": "https://hackalendar.com/e/stripe-briefcase-ai-fintech-london-hackathon-2026",
-      "image_url": "https://hackalendar.com/cover/stripe-briefcase-ai-fintech-london-hackathon-2026-800.webp",
+      "url": "https://luma.com/3k1pazop",
+      "image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/dy/e5b3092b-b1eb-4174-9dad-4272000990ad.png",
       "source": "https://hackalendar.com/feed.xml",
       "source_name": "Hackalendar · Upcoming Hackathons",
       "source_id": "7c33d1ecedb854aa",
@@ -4219,35 +4219,133 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
-        "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "status": "official_page_verified",
+        "official_url": "https://luma.com/3k1pazop",
+        "evidence_urls": [
+          "https://hackalendar.com/e/stripe-briefcase-ai-fintech-london-hackathon-2026",
+          "https://lu.ma/3k1pazop",
+          "https://luma.com/3k1pazop"
+        ],
+        "last_checked_at": "2026-10-09T13:44:24+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://hackalendar.com/e/stripe-briefcase-ai-fintech-london-hackathon-2026",
+        "official_link_candidate": "https://lu.ma/3k1pazop",
+        "official_link_reason": "outbound_anchor:Enter on the organiser’s site",
+        "candidate_page_status": "success",
+        "candidate_page_error": null,
+        "candidate_page_http_status": 200,
+        "page_title": "Stripe x Briefcase: AI FinTech London Hackathon",
+        "last_check_error": null,
+        "last_check_duration_ms": 994,
+        "observed_facts": {
+          "page_role": "structured_event_listing",
+          "page_title": "Stripe x Briefcase: AI FinTech London Hackathon",
+          "description": "AI Agents in Fintech - Evening Hackathon\n150 developers. One evening. Central London.\nBuild autonomous AI agents that handle real financial operations - agents that don't just analyse money, but move it. Ship a working prototype in three hours and demo it live to judges from Stripe, Meta, and the 10 Downing Street AI Team.\n📅 Schedule\n5:15 PM - Doors open & registration\n5:45 PM - Opening: mission briefing, tracks and scoring explained\n6:00 PM - Hacking begins. Go solo or team up (max 4 per team)\n7:30 PM - 🍕 Pizza - keep building\n9:00 PM - Code freeze. Submit via the event page\n9:05 PM - Judging & finalist selection\n9:30 PM - Finalist demos\n9:50 PM - Awards\n10:00 PM - Close\n🚀 Why Join?\nShip something real - walk out with a working fintech AI agent you built in one evening\nWin £2,000 - cash prize for the overall winner\nStripe credits - £5k, £3k, and £1k in credits for track winners\nSide quests - bonus prizes for creative builds beyond the main tracks\nMeet your next co-founder - 150 of London's sharpest AI and fintech builders in one room\n🎯 Tracks\nTwo tracks, revealed at the opening briefing. One hint: your agent will be handling real money movement - think autonomy, policy, and auditability. Plus bonus side quests for builds that go off-script.\n🧑‍💻 Who Should Come?\nDevelopers, ML engineers, and technical founders who want to build with AI agents in fintech. Come with a team of up to 4, or join solo and pair up on the night.\nBring: your laptop, a charger, and an idea (optional - ",
+          "organizer": "Briefcase",
+          "event_start_at": "2026-10-15T17:15:00.000+01:00",
+          "event_end_at": "2026-10-15T22:00:00.000+01:00",
+          "event_timezone": "UTC+01:00",
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": "London, United Kingdom, London, England, GB",
+            "mode": "in_person",
+            "venue": "London, United Kingdom",
+            "city": "London",
+            "region": "England",
+            "country": "GB",
+            "country_code": "GB",
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/dy/e5b3092b-b1eb-4174-9dad-4272000990ad.png"
+        },
+        "fact_evidence": {
+          "event_start_at": {
+            "value": "2026-10-15T17:15:00.000+01:00",
+            "source_url": "https://luma.com/3k1pazop",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.startDate=2026-10-15T17:15:00.000+01:00"
+          },
+          "event_end_at": {
+            "value": "2026-10-15T22:00:00.000+01:00",
+            "source_url": "https://luma.com/3k1pazop",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.endDate=2026-10-15T22:00:00.000+01:00"
+          },
+          "organizer": {
+            "value": "Briefcase",
+            "source_url": "https://luma.com/3k1pazop",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.organizer.name=Briefcase"
+          },
+          "location": {
+            "value": {
+              "raw": "London, United Kingdom, London, England, GB",
+              "mode": "in_person",
+              "venue": "London, United Kingdom",
+              "city": "London",
+              "region": "England",
+              "country": "GB",
+              "country_code": "GB",
+              "remote_restrictions": []
+            },
+            "source_url": "https://luma.com/3k1pazop",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.location / eventAttendanceMode"
+          }
+        },
+        "last_verified_at": "2026-10-09T13:44:24+00:00"
       },
       "schema_version": 1,
       "id": "579ad1f3966a0f642c71",
-      "organizer": null,
+      "organizer": "Briefcase",
       "application_open_at": null,
       "application_deadline": null,
       "deadline_timezone": null,
-      "event_start_at": null,
-      "event_end_at": null,
-      "event_timezone": null,
+      "event_start_at": "2026-10-15T17:15:00.000+01:00",
+      "event_end_at": "2026-10-15T22:00:00.000+01:00",
+      "event_timezone": "UTC+01:00",
       "date_precision": "unknown",
       "location": {
-        "raw": null,
-        "mode": "unknown",
-        "venue": null,
-        "city": null,
-        "region": null,
-        "country": null,
-        "country_code": null,
+        "raw": "London, United Kingdom, London, England, GB",
+        "mode": "in_person",
+        "venue": "London, United Kingdom",
+        "city": "London",
+        "region": "England",
+        "country": "GB",
+        "country_code": "GB",
         "remote_restrictions": []
       },
       "eligibility": {
@@ -4282,7 +4380,7 @@
         "evidence_url": null
       },
       "media": {
-        "source_image_url": "https://hackalendar.com/cover/stripe-briefcase-ai-fintech-london-hackathon-2026-800.webp",
+        "source_image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/dy/e5b3092b-b1eb-4174-9dad-4272000990ad.png",
         "generated_image_url": null
       },
       "content_hash": null,
@@ -4646,7 +4744,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-09T13:42:34+00:00",
+  "updated_utc": "2026-10-09T13:44:25+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -4656,7 +4754,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T13:42:21+00:00",
       "last_success_at": "2026-10-09T13:42:21+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 174,
       "items_seen": 0,
@@ -4679,7 +4777,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:24:45+00:00"
+      "last_skipped_at": "2026-10-09T13:44:24+00:00"
     },
     "4ae1d4cb1873b219": {
       "source_id": "4ae1d4cb1873b219",
@@ -4688,7 +4786,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T13:42:21+00:00",
       "last_success_at": "2026-10-09T13:42:21+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 189,
       "items_seen": 0,
@@ -4711,7 +4809,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:24:45+00:00"
+      "last_skipped_at": "2026-10-09T13:44:24+00:00"
     },
     "7c5c4d34b1a8fdc9": {
       "source_id": "7c5c4d34b1a8fdc9",
@@ -4720,7 +4818,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T13:42:21+00:00",
       "last_success_at": "2026-10-09T13:42:21+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 407,
       "items_seen": 55,
@@ -4743,7 +4841,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:24:45+00:00"
+      "last_skipped_at": "2026-10-09T13:44:24+00:00"
     },
     "56da5ebaefc91f25": {
       "source_id": "56da5ebaefc91f25",
@@ -4752,7 +4850,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T13:42:22+00:00",
       "last_success_at": "2026-10-09T13:42:22+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 568,
       "items_seen": 68,
@@ -4775,7 +4873,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:24:45+00:00"
+      "last_skipped_at": "2026-10-09T13:44:24+00:00"
     },
     "105b071f37b46d64": {
       "source_id": "105b071f37b46d64",
@@ -4784,7 +4882,7 @@
       "adapter_type": "official_blog_rss",
       "last_attempt_at": "2026-10-09T13:42:24+00:00",
       "last_success_at": "2026-10-09T13:42:24+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 429,
       "items_seen": 10,
@@ -4808,7 +4906,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:24:45+00:00"
+      "last_skipped_at": "2026-10-09T13:44:24+00:00"
     },
     "7c33d1ecedb854aa": {
       "source_id": "7c33d1ecedb854aa",
@@ -4832,7 +4930,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-09T13:42:23+00:00",
       "last_success_at": "2026-10-09T13:42:23+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1698,
       "items_seen": 15,
@@ -4842,7 +4940,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T11:24:45+00:00"
+      "last_skipped_at": "2026-10-09T13:44:24+00:00"
     }
   }
 }
