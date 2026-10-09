@@ -177,7 +177,7 @@ def normalize_event_record(event_id_value: str, record: dict) -> dict:
     if not isinstance(verification, dict):
         verification = {
             "status": "unverified",
-            "official_url": canonical_url,
+            "official_url": None,
             "evidence_urls": [],
             "last_checked_at": None,
             "deadline_checked_at": None,
