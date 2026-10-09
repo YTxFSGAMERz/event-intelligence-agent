@@ -45,14 +45,19 @@ class FakeSession:
 class SourceAdapterTests(unittest.TestCase):
     def test_registry_selects_specialized_adapters_and_deduplicates(self):
         google = "https://news.google.com/rss/search?q=hackathon"
+        hackalendar = "https://hackalendar.com/feed.xml"
         blog = "https://github.blog/changelog/feed/"
-        adapters = build_adapters([google, blog, google])
+        adapters = build_adapters([google, hackalendar, blog, google])
 
-        self.assertEqual(len(adapters), 2)
+        self.assertEqual(len(adapters), 3)
         self.assertIsInstance(adapters[0], source_adapters.GoogleNewsRSSAdapter)
-        self.assertIsInstance(adapters[1], source_adapters.OfficialBlogRSSAdapter)
+        self.assertIsInstance(adapters[1], source_adapters.HackalendarRSSAdapter)
+        self.assertIsInstance(adapters[2], source_adapters.OfficialBlogRSSAdapter)
         self.assertEqual(adapters[0].config.adapter_type, "google_news_rss")
-        self.assertEqual(adapters[1].config.adapter_type, "official_blog_rss")
+        self.assertEqual(adapters[1].config.adapter_type, "hackalendar_rss")
+        self.assertEqual(adapters[2].config.adapter_type, "official_blog_rss")
+        self.assertEqual(adapters[1].config.access_method, "public_hackalendar_rss")
+        self.assertEqual(adapters[1].config.pagination_mode, "catalogue_feed_upcoming_events")
         self.assertNotEqual(adapters[0].config.source_id, adapters[1].config.source_id)
         self.assertIn("Devpost", build_source_config(
             "https://news.google.com/rss/search?q=site%3Adevpost.com%2Fhackathons"
