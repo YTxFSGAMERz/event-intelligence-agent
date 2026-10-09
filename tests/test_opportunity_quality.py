@@ -49,6 +49,24 @@ class OpportunityQualityTests(unittest.TestCase):
         self.assertTrue(result["accepted"])
         self.assertEqual(result["status"], "actionable_update")
 
+    def test_keeps_school_grade_scholarship_exam_with_application_deadline(self):
+        result = assess_discovery_quality(
+            "NMMSS 2026: Delhi Class 8 scholarship exam on December 5, applications till October 5",
+            "Students in Class 8 can apply for the examination.",
+            ["scholarships_fellowships"],
+        )
+        self.assertTrue(result["accepted"])
+        self.assertEqual(result["status"], "actionable_update")
+
+    def test_rejects_ranked_roundup_with_subject_words_between_number_and_type(self):
+        result = assess_discovery_quality(
+            "10 best tech internships students should apply for",
+            "A list of internships from several organizations.",
+            ["internships_training"],
+        )
+        self.assertFalse(result["accepted"])
+        self.assertEqual(result["status"], "roundup_or_listicle")
+
     def test_rejects_results_only_news(self):
         result = assess_discovery_quality(
             "Scholarship results announced for 2026",
