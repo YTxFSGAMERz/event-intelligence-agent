@@ -7739,7 +7739,7 @@
           "https://lu.ma/9rkl3mrp",
           "https://luma.com/9rkl3mrp"
         ],
-        "last_checked_at": "2026-10-09T19:51:47+00:00",
+        "last_checked_at": "2026-10-09T19:52:02+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
@@ -7755,7 +7755,7 @@
         "candidate_page_http_status": 200,
         "page_title": "VIBENIGHT #2 : Hackathon AI Safety",
         "last_check_error": null,
-        "last_check_duration_ms": 1292,
+        "last_check_duration_ms": 981,
         "observed_facts": {
           "page_role": "structured_event_listing",
           "page_title": "VIBENIGHT #2 : Hackathon AI Safety",
@@ -7845,7 +7845,7 @@
             "snippet": "'dark' : 'light') : preferredTheme); })(); // https://gist.github.com/paulirish/1579671 (function() { var lastTime = 0; if (!window.requestAnimationFrame) { window.requestAnimationFrame = window['webkitRequestAnimationFrame']; window.cancelAnimationFrame = window['webkitCancelAni"
           }
         },
-        "last_verified_at": "2026-10-09T19:51:47+00:00"
+        "last_verified_at": "2026-10-09T19:52:02+00:00"
       },
       "schema_version": 1,
       "id": "13fc322dc192694f0bda",
@@ -8178,7 +8178,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-09T19:51:48+00:00",
+  "updated_utc": "2026-10-09T19:52:03+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -8211,7 +8211,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:51:47+00:00",
+      "last_skipped_at": "2026-10-09T19:52:02+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 3
     },
@@ -8245,7 +8245,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:51:47+00:00",
+      "last_skipped_at": "2026-10-09T19:52:02+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 3
     },
@@ -8279,7 +8279,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:51:47+00:00",
+      "last_skipped_at": "2026-10-09T19:52:02+00:00",
       "quality_rejected_count": 2,
       "quality_rule_version": 3
     },
@@ -8313,7 +8313,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:51:47+00:00",
+      "last_skipped_at": "2026-10-09T19:52:02+00:00",
       "quality_rejected_count": 3,
       "quality_rule_version": 3
     },
@@ -8348,7 +8348,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:51:47+00:00",
+      "last_skipped_at": "2026-10-09T19:52:02+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 3
     },
@@ -8384,7 +8384,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T19:51:47+00:00",
+      "last_skipped_at": "2026-10-09T19:52:02+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 3
     },
@@ -8420,7 +8420,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 3,
-      "last_skipped_at": "2026-10-09T19:51:47+00:00"
+      "last_skipped_at": "2026-10-09T19:52:02+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -8454,7 +8454,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 3,
-      "last_skipped_at": "2026-10-09T19:51:47+00:00"
+      "last_skipped_at": "2026-10-09T19:52:02+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -8488,7 +8488,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 3,
-      "last_skipped_at": "2026-10-09T19:51:47+00:00"
+      "last_skipped_at": "2026-10-09T19:52:02+00:00"
     }
   }
 }
