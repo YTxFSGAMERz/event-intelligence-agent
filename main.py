@@ -417,11 +417,77 @@ def refresh_existing_discovery_quality(seen: dict) -> dict:
 
 
 def source_observed_facts(event: dict) -> dict:
-    """Keep calendar-only facts separate from organizer-verified canonical fields."""
-    if str(event.get("adapter_type") or "") != "mlh_events_html":
-        return {}
+    """Keep source-listing details separate from organizer-verified canonical fields."""
+    adapter_type = str(event.get("adapter_type") or "")
     entry = event.get("entry")
     if not isinstance(entry, dict):
+        return {}
+
+    source_name = str(event.get("source_name") or "")
+    source_url = _http_url(event.get("source")) or ""
+    observed_at = now_iso()
+
+    if adapter_type == "devfolio_html":
+        event_date = str(entry.get("event_date_text") or "").strip()
+        application_open = str(entry.get("application_open_date_text") or "").strip()
+        format_raw = str(entry.get("format_text") or "").strip()
+        format_lower = format_raw.casefold()
+        if "online" in format_lower or "remote" in format_lower:
+            mode = "remote"
+        elif "offline" in format_lower or "in-person" in format_lower or "in person" in format_lower:
+            mode = "in_person"
+        elif "hybrid" in format_lower:
+            mode = "mixed"
+        else:
+            mode = "unknown"
+        if not event_date and not application_open and not format_raw and not entry.get("listing_status"):
+            return {}
+        return {
+            "source_kind": "platform_listing",
+            "source_name": source_name or "Devfolio · Open & Upcoming Hackathons",
+            "source_url": source_url or "https://devfolio.co/explore",
+            "observed_at_utc": observed_at,
+            "listing_status": entry.get("listing_status"),
+            "schedule": {
+                "raw": event_date or None,
+                "confidence": "observed_unverified",
+            },
+            "application_open_date": {
+                "raw": application_open or None,
+                "confidence": "observed_unverified",
+            },
+            "location": {
+                "raw": format_raw or None,
+                "mode": mode,
+                "venue": None,
+                "city": None,
+                "region": None,
+                "country": None,
+                "country_code": None,
+                "confidence": "observed_unverified",
+            },
+        }
+
+    if adapter_type == "nsp_scholarships_html":
+        deadline_raw = str(entry.get("deadline_raw") or "").strip()
+        deadline_display = str(entry.get("deadline_display") or "").strip()
+        return {
+            "source_kind": "official_portal_listing",
+            "source_name": source_name or "National Scholarship Portal · Schemes",
+            "source_url": source_url or "https://scholarships.gov.in/All-Scholarships",
+            "observed_at_utc": observed_at,
+            "academic_year": entry.get("academic_year") or "2026-27",
+            "application_deadline": {
+                "raw": deadline_raw or None,
+                "display": deadline_display or None,
+                "label": "Student Application Open till",
+                "confidence": "observed_unverified",
+            },
+            "scheme_details_url": _http_url(entry.get("specifications_url")) or _http_url(event.get("link")),
+            "faq_url": _http_url(entry.get("faq_url")),
+        }
+
+    if adapter_type != "mlh_events_html":
         return {}
 
     schedule_raw = str(entry.get("event_date_text") or "").strip()
@@ -459,9 +525,9 @@ def source_observed_facts(event: dict) -> dict:
         return {}
     return {
         "source_kind": "official_calendar_listing",
-        "source_name": str(event.get("source_name") or "MLH · Upcoming Events Calendar"),
-        "source_url": _http_url(event.get("source")) or "https://mlh.com/events",
-        "observed_at_utc": now_iso(),
+        "source_name": source_name or "MLH · Upcoming Events Calendar",
+        "source_url": source_url or "https://mlh.com/events",
+        "observed_at_utc": observed_at,
         "schedule": {
             "raw": schedule_raw or None,
             "calendar_year": calendar_year,
@@ -478,7 +544,6 @@ def source_observed_facts(event: dict) -> dict:
             "confidence": "observed_unverified",
         },
     }
-
 
 def backfill_missing_source_observations(seen: dict) -> int:
     """Recover explicitly labelled MLH calendar details from summaries saved before this schema existed."""
@@ -846,19 +911,27 @@ def generate_opportunity_card(item: dict, categories: list[str], deadline: str,
     deadline_value = (deadline or "Not found — verify on official page")[:42]
     event_schedule = re.sub(r"\s+", " ", str(item.get("event_schedule") or "")).strip()
     event_location = re.sub(r"\s+", " ", str(item.get("event_location") or "")).strip()
+    reported_deadline = re.sub(r"\s+", " ", str(item.get("reported_deadline") or "")).strip()
     status_value = (reg_status or "UNKNOWN")[:35]
     box_y = 464
     draw.rounded_rectangle((82, box_y, 580, 579), radius=20, fill=(18, 31, 61), outline=(42, 68, 111), width=1)
     draw.rounded_rectangle((604, box_y, 1117, 579), radius=20, fill=(18, 31, 61), outline=(42, 68, 111), width=1)
-    left_label = "EVENT DATES · UNVERIFIED" if event_schedule else "APPLICATION DEADLINE"
-    left_value = event_schedule[:42] if event_schedule else deadline_value
+    if event_schedule:
+        left_label = "EVENT DATES · UNVERIFIED"
+        left_value = event_schedule[:42]
+    elif reported_deadline:
+        left_label = "REPORTED DEADLINE · VERIFY"
+        left_value = reported_deadline[:42]
+    else:
+        left_label = "APPLICATION DEADLINE"
+        left_value = deadline_value
     draw.text((106, box_y + 18), left_label, font=section_font, fill=(125, 164, 205))
     draw.text((106, box_y + 52), left_value, font=value_font, fill=(246, 248, 255))
     draw.text((630, box_y + 18), "REGISTRATION STATUS", font=section_font, fill=(125, 164, 205))
     draw.text((630, box_y + 52), status_value, font=value_font, fill=(115, 235, 192) if status_value.startswith("OPEN") else (246, 248, 255))
     footer = (
-        "Listed location (unverified): " + event_location[:76]
-        if event_schedule and event_location
+        "Listed format/location (unverified): " + event_location[:68]
+        if event_location and (event_schedule or item.get("adapter_type") == "devfolio_html")
         else "Check the caption for the source link and verify details with the organiser."
     )
     draw.text((83, 598), footer, font=body_font, fill=(157, 174, 209))
@@ -924,7 +997,7 @@ def telegram_send(text: str, image_url: str | None = None, caption: str | None =
 
 def build_photo_caption(item: dict, categories: list[str], deadline: str,
                         reg_status: str, primary: str | None = None) -> str:
-    """Build a compact caption with application deadlines distinct from calendar dates."""
+    """Build a compact caption with source dates kept separate from application deadlines."""
     title = re.sub(r"\s+", " ", item.get("title", "Untitled event")).strip()[:180]
     summary = re.sub(r"\s+", " ", item.get("summary", "")).strip()
     url = item.get("link", "").strip()
@@ -934,23 +1007,37 @@ def build_photo_caption(item: dict, categories: list[str], deadline: str,
     url_text = url[:400]
     event_schedule = re.sub(r"\s+", " ", str(item.get("event_schedule") or "")).strip()[:70]
     event_location = re.sub(r"\s+", " ", str(item.get("event_location") or "")).strip()[:115]
+    reported_deadline = re.sub(r"\s+", " ", str(item.get("reported_deadline") or "")).strip()[:90]
 
     bucket = category_label(primary or primary_category(categories, title))
+    if reported_deadline:
+        deadline_line = f"📅 Reported application deadline ({item.get('reported_deadline_source') or 'source listing'}; unverified): {reported_deadline}"
+    else:
+        deadline_line = f"📅 Application deadline: {deadline_text}"
+
     lines = [
         f"🆕 {title}",
         f"📂 {bucket}",
         f"🏷️ Tags: {categories_text}",
-        f"📅 Application deadline: {deadline_text}",
+        deadline_line,
     ]
+    if item.get("application_open_date"):
+        lines.append(
+            f"📨 Applications open (Devfolio listing; unverified): {str(item['application_open_date'])[:40]}"
+        )
     if event_schedule:
-        lines.append(f"🗓️ Event dates (calendar listing; unverified): {event_schedule}")
+        source_label = "Devfolio listing" if item.get("adapter_type") == "devfolio_html" else "MLH calendar listing"
+        lines.append(f"🗓️ Event dates ({source_label}; unverified): {event_schedule}")
     if event_schedule and event_location:
-        lines.append(f"📍 Listed location (unverified): {event_location}")
+        location_label = "listed format" if item.get("adapter_type") == "devfolio_html" else "listed location"
+        lines.append(f"📍 {location_label.title()} (unverified): {event_location}")
+    elif item.get("adapter_type") == "devfolio_html" and event_location:
+        lines.append(f"📍 Format as listed (unverified): {event_location}")
     lines.extend([
         f"🎟️ Registration: {status_text}",
         f"🔗 {url_text}",
         "",
-        "Verify eligibility, event dates, fees and location on the official organizer page.",
+        "Verify eligibility, dates, fees and rules on the official scheme/event or organizer page.",
     ])
     fixed = "\n".join(lines)
     room = max(0, 1000 - len(fixed))
@@ -973,17 +1060,33 @@ def build_alert(item: dict, categories: list[str], deadline: str,
         summary = summary[:497] + "..."
     event_schedule = re.sub(r"\s+", " ", str(item.get("event_schedule") or "")).strip()
     event_location = re.sub(r"\s+", " ", str(item.get("event_location") or "")).strip()
+    reported_deadline = re.sub(r"\s+", " ", str(item.get("reported_deadline") or "")).strip()
     lines = [
         "🆕 EVENT OPPORTUNITY",
         "",
         title,
         f"Categories: {', '.join(categories)}",
-        f"Application deadline: {deadline or 'Not found — verify on official page'}",
     ]
+    if reported_deadline:
+        lines.append(
+            f"Reported application deadline ({item.get('reported_deadline_source') or 'source listing'}; unverified): {reported_deadline}"
+        )
+    else:
+        lines.append(f"Application deadline: {deadline or 'Not found — verify on official page'}")
+
+    if item.get("application_open_date"):
+        lines.append(
+            f"Applications open (Devfolio listing; unverified): {str(item['application_open_date'])}"
+        )
     if event_schedule:
-        lines.append(f"Event dates (MLH calendar listing; unverified): {event_schedule}")
+        source_label = "Devfolio listing" if item.get("adapter_type") == "devfolio_html" else "MLH calendar listing"
+        lines.append(f"Event dates ({source_label}; unverified): {event_schedule}")
     if event_schedule and event_location:
-        lines.append(f"Listed location (unverified): {event_location}")
+        location_label = "Listed format" if item.get("adapter_type") == "devfolio_html" else "Listed location"
+        lines.append(f"{location_label} (unverified): {event_location}")
+    elif item.get("adapter_type") == "devfolio_html" and event_location:
+        lines.append(f"Format as listed (unverified): {event_location}")
+
     lines.extend([
         f"Registration status: {reg_status}",
         f"Status evidence: {reg_evidence}",
@@ -994,7 +1097,7 @@ def build_alert(item: dict, categories: list[str], deadline: str,
         f"Official/source link: {url}",
         "",
         f"First detected (UTC): {now_iso()}",
-        "Note: verify eligibility, event dates, fees and location on the official organizer page.",
+        "Note: verify eligibility, application deadlines, dates, fees and location on the official page.",
     ])
     return "\n".join(lines)
 
@@ -1636,6 +1739,7 @@ def main() -> int:
                 "link": link,
                 "summary": event["summary"],
                 "adapter_type": event.get("adapter_type", ""),
+                "source_name": event.get("source_name", ""),
             }
             entry_metadata = event.get("entry") if isinstance(event.get("entry"), dict) else {}
             if event.get("adapter_type") == "mlh_events_html":
@@ -1647,6 +1751,15 @@ def main() -> int:
                     else event_date_text
                 )
                 item["event_location"] = str(entry_metadata.get("location_text") or "").strip()
+            elif event.get("adapter_type") == "devfolio_html":
+                event_date_text = str(entry_metadata.get("event_date_text") or "").strip()
+                if event_date_text:
+                    item["event_schedule"] = f"Starts {event_date_text}"
+                item["event_location"] = str(entry_metadata.get("format_text") or "").strip()
+                item["application_open_date"] = str(entry_metadata.get("application_open_date_text") or "").strip()
+            elif event.get("adapter_type") == "nsp_scholarships_html":
+                item["reported_deadline"] = str(entry_metadata.get("deadline_display") or entry_metadata.get("deadline_raw") or "").strip()
+                item["reported_deadline_source"] = "National Scholarship Portal listing"
 
             try:
                 image_url = extract_event_image(event["entry"], link, event["raw_summary"])
