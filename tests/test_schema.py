@@ -120,10 +120,7 @@ class OpportunitySchemaTests(unittest.TestCase):
             record["source_feeds"],
             ["https://source-a.example/feed.xml", "https://source-b.example/feed.xml"],
         )
-        self.assertEqual(record["discovered_urls"], [
-            "https://events.example/event",
-            "https://events.example/event",
-        ])
+        self.assertEqual(record["discovered_urls"], ["https://events.example/event"])
         self.assertEqual(record["resolved_urls"], ["https://events.example/event"])
 
     def test_legacy_keys_are_preserved_and_migration_is_idempotent(self):
