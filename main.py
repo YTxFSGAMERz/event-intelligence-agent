@@ -890,6 +890,16 @@ def apply_page_verification(record: dict, result: dict) -> dict:
             target["travel_support"] = merged_travel
             verification["funding_checked_at"] = now_checked
 
+        registration_status = verified.get("registration_status")
+        if registration_status in {"open", "closed"}:
+            target["registration_status"] = (
+                "OPEN (official page)" if registration_status == "open"
+                else "CLOSED (official page)"
+            )
+            target["registration_status_evidence"] = (
+                verified.get("registration_status_evidence") or "Explicit status phrase on official page."
+            )
+
         media = dict(target.get("media") or {})
         if verified.get("image_url") and _http_url(verified["image_url"]):
             media["source_image_url"] = verified["image_url"]
@@ -1286,6 +1296,16 @@ def main() -> int:
 
             deadline = extract_deadline(f"{title}\n{event['summary']}")
             reg_status, reg_evidence = registration_status(f"{title}\n{event['summary']}")
+            verification_result = event.get("verification_result") or {}
+            verified_facts = verification_result.get("verified_facts") or {}
+            if verification_result.get("official_page_verified"):
+                official_deadline = verified_facts.get("deadline")
+                if isinstance(official_deadline, dict) and official_deadline.get("normalized"):
+                    deadline = official_deadline.get("raw") or official_deadline["normalized"]
+                official_registration = verified_facts.get("registration_status")
+                if official_registration in {"open", "closed"}:
+                    reg_status = "OPEN (official page)" if official_registration == "open" else "CLOSED (official page)"
+                    reg_evidence = verified_facts.get("registration_status_evidence") or "Explicit status phrase on official page."
             link_status, link_evidence = check_link(link)
             alert = build_alert(
                 item, categories, deadline, reg_status, reg_evidence, link_status, link_evidence
