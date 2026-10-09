@@ -60,6 +60,12 @@ class SourceConfig:
     name: str
     url: str
     adapter_type: str
+    access_method: str = "public_rss_atom"
+    expected_fields: tuple[str, ...] = ("title", "link", "summary", "published")
+    pagination_mode: str = "feed_managed_no_client_pagination"
+    timeout_seconds: int = 10
+    minimum_interval_seconds: int = 900
+    rate_limit_policy: str = "minimum_poll_interval_enforced_by_agent"
 
 
 @dataclass
@@ -114,7 +120,27 @@ def build_source_config(url: str) -> SourceConfig:
     source_url = str(url or "").strip()
     adapter_type, name = _resolve_source_type(source_url)
     source_id = hashlib.sha256(source_url.encode("utf-8")).hexdigest()[:16]
-    return SourceConfig(source_id=source_id, name=name, url=source_url, adapter_type=adapter_type)
+    if adapter_type == "google_news_rss":
+        expected_fields = ("title", "link", "summary", "published", "source", "media")
+        pagination_mode = "google_news_feed_managed_recent_results"
+        access_method = "public_google_news_rss"
+    elif adapter_type == "official_blog_rss":
+        expected_fields = ("title", "link", "summary", "published", "updated", "author", "media")
+        pagination_mode = "publisher_feed_managed"
+        access_method = "public_official_blog_rss"
+    else:
+        expected_fields = ("title", "link", "summary", "description", "published", "updated", "media")
+        pagination_mode = "publisher_feed_managed"
+        access_method = "public_rss_or_atom"
+    return SourceConfig(
+        source_id=source_id,
+        name=name,
+        url=source_url,
+        adapter_type=adapter_type,
+        access_method=access_method,
+        expected_fields=expected_fields,
+        pagination_mode=pagination_mode,
+    )
 
 
 class RSSSourceAdapter:
@@ -301,6 +327,48 @@ class URLResolutionBudget:
         )
 
 
+def should_poll_source(previous: dict | None, config: SourceConfig,
+                      now: datetime | None = None) -> bool:
+    """Enforce a minimum gap between real network attempts, including push/manual runs."""
+    old = dict(previous or {})
+    last_attempt = str(old.get("last_attempt_at") or "").strip()
+    if not last_attempt:
+        return True
+    try:
+        parsed = datetime.fromisoformat(last_attempt.replace("Z", "+00:00"))
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+    except ValueError:
+        # An invalid legacy timestamp should not permanently prevent source polling.
+        return True
+    current = now or datetime.now(timezone.utc)
+    if current.tzinfo is None:
+        current = current.replace(tzinfo=timezone.utc)
+    elapsed = (current - parsed.astimezone(timezone.utc)).total_seconds()
+    return elapsed >= config.minimum_interval_seconds
+
+
+def source_health_skipped(previous: dict | None, config: SourceConfig,
+                          skipped_at: str | None = None) -> dict:
+    """Record a throttled run without pretending an HTTP request or successful fetch occurred."""
+    old = dict(previous or {})
+    old.update({
+        "source_id": config.source_id,
+        "name": config.name,
+        "url": config.url,
+        "adapter_type": config.adapter_type,
+        "access_method": config.access_method,
+        "expected_fields": list(config.expected_fields),
+        "pagination_mode": config.pagination_mode,
+        "timeout_seconds": config.timeout_seconds,
+        "minimum_interval_seconds": config.minimum_interval_seconds,
+        "rate_limit_policy": config.rate_limit_policy,
+        "last_status": "skipped_minimum_interval",
+        "last_skipped_at": skipped_at or utc_now(),
+    })
+    return old
+
+
 def source_health_success(previous: dict | None, config: SourceConfig, result: FeedResult,
                           matching_count: int, new_count: int) -> dict:
     """Return source health while retaining historical last-success metadata."""
@@ -310,6 +378,12 @@ def source_health_success(previous: dict | None, config: SourceConfig, result: F
         "name": config.name,
         "url": config.url,
         "adapter_type": config.adapter_type,
+        "access_method": config.access_method,
+        "expected_fields": list(config.expected_fields),
+        "pagination_mode": config.pagination_mode,
+        "timeout_seconds": config.timeout_seconds,
+        "minimum_interval_seconds": config.minimum_interval_seconds,
+        "rate_limit_policy": config.rate_limit_policy,
         "last_attempt_at": result.fetched_at_utc,
         "last_success_at": result.fetched_at_utc,
         "last_status": "success",
@@ -335,6 +409,12 @@ def source_health_failure(previous: dict | None, config: SourceConfig, error: Ex
         "name": config.name,
         "url": config.url,
         "adapter_type": config.adapter_type,
+        "access_method": config.access_method,
+        "expected_fields": list(config.expected_fields),
+        "pagination_mode": config.pagination_mode,
+        "timeout_seconds": config.timeout_seconds,
+        "minimum_interval_seconds": config.minimum_interval_seconds,
+        "rate_limit_policy": config.rate_limit_policy,
         "last_attempt_at": attempted_at or utc_now(),
         "last_status": "failure",
         "last_error": type(error).__name__,
