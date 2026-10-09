@@ -92,7 +92,7 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -100,8 +100,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "2498ccdafad4195c70bc": {
       "title": "Ambassador’s Scholarship for Bhutanese Students in India - fundsforNGOs - Grants and Resources for Sustainability",
@@ -195,15 +195,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "c8656308d119706e39b8": {
       "title": "Scholarships for Indian students to study in England, Wales, Scotland and Ireland - Education Times",
@@ -298,15 +298,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline aggregates destinations rather than identifying one application.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "fb972294a1373de5aa6d": {
       "title": "Top Scholarships in Germany For Indian Students 2027 - Shiksha.com",
@@ -401,15 +401,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "d03cea6e706747f3bc03": {
       "title": "GIST Scholarship 2027: Fully Funded Master’s and PhD in South Korea - Global South Opportunities",
@@ -504,7 +504,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -512,8 +512,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "097339d3e2ca22c077eb": {
       "title": "NMMSS Scholarship deadline extended: Fresh, renewal applications open till Oct 31 - India Today",
@@ -608,15 +608,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "75c871eb8e7b8dceaa22": {
       "title": "Britain’s University of Oxford Offers Scholarships to Students from Low-Income Countries - Al-Fanar Media",
@@ -711,15 +711,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "0ab24bc038a3fda02782": {
       "title": "Government Scholarship Rules 2026-27 Revised: Check New NSP Rules - PW",
@@ -814,15 +814,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "6234e3c18f812c3412e2": {
       "title": "Best Fully Funded Scholarships for Study Abroad 2026-27 - Shiksha.com",
@@ -922,7 +922,7 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -930,8 +930,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "b9e033091547a26a5417": {
       "title": "NMMSS 2026-27: Education Ministry extends scholarship application deadline to October 31; check eligibili - The Times of India",
@@ -1030,15 +1030,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "0720fe51fb3c1de1c32f": {
       "title": "ASUC Grants & Scholarships to award $250K, application closes Friday - dailycal.org",
@@ -1137,15 +1137,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "09b8e186c242ef386918": {
       "title": "From Rs 12,000 to full course fees: 8 scholarship opportunities students should not miss before the deadline - Organiser Weekly",
@@ -1244,15 +1244,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "b4e18407e0caffe0217a": {
       "title": "Indian Government Scholarships for Studying Abroad in 2027-28 - Shiksha.com",
@@ -1351,15 +1351,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "097bd0de2475e0b6c4c1": {
       "title": "List of USA Colleges Offering Financial Aid for International Students 2027 (Updated) - Shiksha.com",
@@ -1458,15 +1458,15 @@
         "accepted": false,
         "status": "low_specificity",
         "reason": "Opportunity keywords only appear in supporting text; headline lacks an opportunity signal.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "b2838b950514448a5194": {
       "title": "Scholarships closing October 31, 2026: Check eligibility, amount and how to apply - Education Times",
@@ -1564,7 +1564,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -1574,8 +1574,8 @@
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T19:04:35+00:00",
       "resolution_status": "unresolved_google_news_link",
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "cd9fb7eee3ba696e513e": {
       "title": "Tanzania secures 150 Algeria scholarships for top STEM students - The Citizen",
@@ -1673,7 +1673,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -1683,8 +1683,8 @@
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T19:04:35+00:00",
       "resolution_status": "unresolved_google_news_link",
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "e56a2c28e388f18f6c71": {
       "title": "Open Call for School Students Scholarship Program (India) - fundsforNGOs - Grants and Resources for Sustainability",
@@ -1782,15 +1782,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00",
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00",
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T19:32:58+00:00",
       "resolution_status": "unresolved_google_news_link"
@@ -1892,7 +1892,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -1900,8 +1900,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00",
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00",
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T19:32:58+00:00",
       "resolution_status": "unresolved_google_news_link"
@@ -2007,7 +2007,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -2015,8 +2015,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "d360c43f36f3ca1ace6d": {
       "title": "UP Scholarship 2026-27 applications close soon at scholarship.up.gov.in; check key dates and direct link - The Times of India",
@@ -2118,15 +2118,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "0659b6333791d1a90e15": {
       "title": "Aditya Birla Capital Scholarship Programme 2026-27 for Girls: Get up to ₹60,000, check details and how to apply - Education Times",
@@ -2228,15 +2228,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "2a3cee09b1ecd3a7fdfa": {
       "title": "Application for the Jill Sanders Memorial Scholarship 2026 Now Open: CAD 20,000 for African Health Technology Assessment Professionals - Global South Opportunities",
@@ -2338,15 +2338,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "f831481768986d843ac0": {
       "title": "Top 10 UK Scholarships for Indian students 2026 - Shiksha.com",
@@ -2448,15 +2448,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "b3446ae33fd087f627b7": {
       "title": "University College London (UCL) is Offering 50 Fully Funded PhDs in the UK — £26,022 Stipend + Tuition Fees for 4 Years: Open to Home & International Applicants - Global South Opportunities",
@@ -2559,7 +2559,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -2567,8 +2567,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "b742228d80c8fd25ebf7": {
       "title": "University of Surrey SEDarc PhD Studentships 2027 – Fully Funded UK PhD Opportunities - Global South Opportunities",
@@ -2670,15 +2670,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "funded_travel_abroad"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "7e85ef681e609272cfee": {
       "title": "Top Scholarships after 12th for Indian Students to Study Abroad in 2027 - Shiksha.com",
@@ -2780,15 +2780,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "ccf705e1b3f9021fa246": {
       "title": "Call for Applications: NVIDIA Graduate Fellowship 2027–2028 | PhD Students Worldwide Can Receive Up to $60,000 - Global South Opportunities",
@@ -2892,15 +2892,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "2fe28de9eae32af3326e": {
       "title": "Top PhD Scholarships for Indian Students to Study Abroad in 2027-28 - Shiksha.com",
@@ -3004,15 +3004,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "ff80a00d5b68dac26647": {
       "title": "DAAD Scholarship 2026-27 for Indian Students: Eligibility & Amount - Shiksha.com",
@@ -3116,15 +3116,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "6475887d2c93c2ebbae1": {
       "title": "Wellington Doctoral Scholarship 2026: Fully Funded PhD Opportunity in New Zealand - Global South Opportunities",
@@ -3229,7 +3229,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -3237,8 +3237,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "9f1787c3e214794f0f5a": {
       "title": "Concentrix Scholarship Program 2026-27: Eligibility, Benefits, Documents and How to Apply - College Mentor",
@@ -3342,15 +3342,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "f37b0812f8670da348ff": {
       "title": "US South Pacific Scholarship 2027: Study in Hawaii on a Fully Funded Scholarship — Bachelor’s & Master’s Students Can Apply - Global South Opportunities",
@@ -3455,7 +3455,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -3463,8 +3463,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "cd9fa24c7b8eb7b7c810": {
       "title": "Signalpost — Online, 23 Aug – 21 Oct 2026",
@@ -3648,7 +3648,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
@@ -3656,8 +3656,8 @@
           "prizes_cash_rewards"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "e55db4f92cbd01c94ab6": {
       "title": "Nebius x NVIDIA Global AI Hackathon — Online, 26 Aug – 30 Oct 2026",
@@ -3857,7 +3857,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -3866,8 +3866,8 @@
           "open_source_programs"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "c4888ab2c50d34980f8c": {
       "title": "US Embassy opens applications for fully funded YES Programme 2027 - The Business Standard",
@@ -4040,15 +4040,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "funded_travel_abroad"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "084a093563ee5bf27c94": {
       "title": "Scholarship for 12th Class Students 2026-27: Government and Private Schemes, Eligibility, Amount and How to Apply - Shiksha.com",
@@ -4219,15 +4219,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "01d22a68766e35af4a48": {
       "title": "Barcelona AI Hackathon — Barcelona, 9–10 Oct 2026",
@@ -4454,7 +4454,7 @@
         "accepted": true,
         "status": "official_source_verified",
         "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -4466,8 +4466,8 @@
         ],
         "official_verification_override": true
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "f915fc66f72cd475a773": {
       "title": "Motsepe Foundation Bursary 2027: Fully Funded University Funding for South African Students - Global South Opportunities",
@@ -4593,7 +4593,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -4601,8 +4601,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "d352d16582d04efb47f8": {
       "title": "UP Scholarship 2026-27: Eligibility for financial assistance, important dates, and more - The Indian Express",
@@ -4718,15 +4718,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "579ad1f3966a0f642c71": {
       "title": "Stripe x Briefcase: AI FinTech London Hackathon — London, 15 Oct 2026",
@@ -4946,7 +4946,7 @@
         "accepted": true,
         "status": "official_source_verified",
         "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -4957,8 +4957,8 @@
         ],
         "official_verification_override": true
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "d0e42c83043f545b1390": {
       "title": "IIT Madras MS by Research Admissions 2026: Applications open under AARDO MoU; check eligibility and scholarship - EdexLive",
@@ -5083,15 +5083,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "3c497d9bcd6c40774b8f": {
       "title": "MEXT Scholarship 2026-27: Eligibility, Amount, Important Dates and Application Process - Shiksha.com",
@@ -5207,15 +5207,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "6bb39ab2ec7c014dc6ed": {
       "title": "Tata Capital Pankh Scholarship 2026-27: Check Last Date, Eligibility, Amount and Apply Online - Shiksha.com",
@@ -5331,15 +5331,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "044a3b3d18e55bbfb73c": {
       "title": "Real-Time Video Agents Hack - LDN — London, 17 Oct 2026",
@@ -5557,7 +5557,7 @@
         "accepted": true,
         "status": "official_source_verified",
         "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
@@ -5566,8 +5566,8 @@
         ],
         "official_verification_override": true
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "808d54d46cb50129e23b": {
       "title": "FAWEZA–Mastercard Foundation TEVET Bursary 2027 | 200 Fully Funded STEM Bursaries in Zambia - Global South Opportunities",
@@ -5693,7 +5693,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -5701,8 +5701,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "4c8997e9a4ade693b9d2": {
       "title": "NSP ICAR Undergraduate National Talent Scholarship (NTS-UG) 2026: Know Eligibility and How to Apply - College Mentor",
@@ -5818,15 +5818,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "b396b35bff130b491836": {
       "title": "Agentic Hackathon: From Research to Commerce — Berlin, 19 Oct 2026",
@@ -6046,7 +6046,7 @@
         "accepted": true,
         "status": "official_source_verified",
         "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -6057,8 +6057,8 @@
         ],
         "official_verification_override": true
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "b5441ad4ec8b11ba70d9": {
       "title": "New & upcoming hackathons - Devpost",
@@ -6183,15 +6183,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "hackathons_buildathons"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "f7566c2d6b54c3967b9d": {
       "title": "HongKong Fellowships for International Students - Academia Mag",
@@ -6307,15 +6307,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "6a2f2bb84ff67ddfc9ed": {
       "title": "LIC Scholarship 2026-27: Apply Online, Check Eligibility, Amount and Last Date - Shiksha.com",
@@ -6431,15 +6431,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "dac1b99de94ef1bdd9cb": {
       "title": "Lovable x EF x WWB 🪄 Hackathon — London, 24 Oct 2026",
@@ -6463,7 +6463,7 @@
         "accepted": true,
         "status": "official_source_verified",
         "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -6668,8 +6668,8 @@
       "resolved_urls": [
         "https://hackalendar.com/e/lovable-ef-wwb-hackathon-london-2026"
       ],
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "e957cb40b392528ddee7": {
       "title": "Russian Embassy announces 70 fully-funded scholarships for Kenyan students - Citizen Digital",
@@ -6691,7 +6691,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -6801,8 +6801,8 @@
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUEQ3ZDl5b1BkX0EzZXZBalQ0QVM3cFdac0MyVnlsWEtJaXRiaEktQmJaVWFLa1IyZW90aldULWFqLVNFMjU2VGRQX2h6UF9SVkZNX2IyT0hDSGw1REFhcU5yMFRXeDV5ZUpCRERiR3pCTm9TOFh1Q29RQncxVHk3WGJ0NTctaVR4M1hEcXZIVkRpWXB0SEl2ODJwSDJJck15MzQ2dndBQ19SRjBlX0hhcnBELUM?oc=5"
       ],
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "22aa6133f0a7e9eac5fa": {
       "title": "Social Justice Ministry’s SETU NSP App Simplifies Scholarship Access for Students - PIB",
@@ -6824,7 +6824,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -6925,8 +6925,8 @@
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMifEFVX3lxTE4wWmRORXFQd1NYblNGdURBSzBBTlVXZGE1YU9kR2xQZkZkaWxEdzQtREY0ajE5RmpQU1MtcGJKZWYwMnZSZHRTb3NuT19KMTZSSnhnaGNxcEN4WDFoUS1XdFJpNGxPLUEtQUZ5M1V1VXlUUzlMRXZtUHV3Q1o?oc=5"
       ],
-      "quality_rule_version": 2,
-      "quality_checked_at_utc": "2026-10-09T19:32:58+00:00"
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "277f2047eba7160a71b8": {
       "title": "DevDay Exchange Community: Paris — Paris, 26 Oct 2026",
@@ -6946,14 +6946,15 @@
       "primary_category": "hackathons_buildathons",
       "discovery_quality": {
         "accepted": true,
-        "status": "specific_opportunity",
-        "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "status": "official_source_verified",
+        "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
+        "rule_version": 3,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
           "hackathons_buildathons"
-        ]
+        ],
+        "official_verification_override": true
       },
       "first_seen_utc": "2026-10-09T19:32:29+00:00",
       "last_seen_utc": "2026-10-09T19:33:04+00:00",
@@ -7149,7 +7150,9 @@
       ],
       "resolved_urls": [
         "https://hackalendar.com/e/devday-exchange-community-hackathon-paris-2026"
-      ]
+      ],
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "ebc543d7d72cbfc009d9": {
       "title": "KMTC Announces Fully Funded Scholarships for Specialised Health Training - Parents Africa",
@@ -7172,7 +7175,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -7282,7 +7285,9 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMioAFBVV95cUxNc2w1VzZ0cUNjZndkaTVQekp5YUdNTnNFYWVqc29WU0x1b2k1aVdkQVRtWUlRcDJhbVV1Wi1Jakd2S0FMR01XU1N2STB5S2hhWGNyWHZlRlhpRkxpc2xrZVBaXzFwWGtHMHh0MXpJcWJIWVBoMHpacmxSLUx5QlFoemN1WmYzWHRHQnZyaUc4dlNYNDFKaVpPUlR2OVVVRzVy?oc=5"
-      ]
+      ],
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
     },
     "d6796dc02071e8aa91a9": {
       "title": "UP Scholarship 2026-27: Applications open for UG, PG, diploma students at scholarship.up.gov.in - Careers360",
@@ -7304,7 +7309,7 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 2,
+        "rule_version": 3,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
@@ -7404,10 +7409,205 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRlpvb054d1pEZW9wdUt5dHNqRFVRd1ZkV0VfT3AxZEFZeDR1Q1Z5SFNmZ3lKLXhrTHJWUnBjZ21mYnRXc2lLdW5CYko2blNTeGFvYUxIc0hhNUtFWVZ4Y0pFT192a1Z0eDZ6WUIydEFXcEVtYmIza2tFSFBsX19VTVVXcmF6UWplV1NWRFdPSzlIMG50Rmx4U1lOR2VQTmlvYU84aDFxLUtVVl94WTRaUWZOZ2dpOHAtYTVVUExDTU1iVXJ4MW00VHZiRjVIN3BXbW5vcW1QdXhtM0V1X2xYVW1Bd3F6d9IB6wFBVV95cUxQUDlQYWphNE53SmcwTUZPLUZtWThoN1NYSEd2aHZncTlfM0ZpUDJuZzcyNGJfeFZjRGRScFozV19oT001YjBBem8tbExhVjFXZWxTNUYzY3JUaHltY19POThPdThkWHdOTWt1c3BOTG54MnItOVVPMkJHQnNGdENIdEpOU056TGNxem10cFJiQnpBQjVwWkVqWTZLTUVrSEJnY3R5dElOUVptZm5BT2g4WTlzbTVrd1NkeXQ5V2pyNUN5azlQVk5MUTBsbWtLd3pJWnFPTjkybTVCSVVpeldWODZMRjFzVmRzSmNz?oc=5"
+      ],
+      "quality_rule_version": 3,
+      "quality_checked_at_utc": "2026-10-09T19:46:47+00:00"
+    },
+    "9ac69a17a6eb752e5f93": {
+      "title": "HackNC",
+      "summary": "Official MLH upcoming hackathon/event calendar listing. Calendar section year: 2026. Displayed schedule: OCT 09 - 11. Listing text: Chapel Hill , North Carolina HackNC OCT 09 - 11 Chapel Hill, North Carolina, US In-Person. Location/format text: Chapel Hill, North Carolina, US In-Person. The linked organizer page remains the source of eligibility, exact schedule, prizes and application rules.",
+      "url": "https://hacknc.com",
+      "image_url": "https://hacknc.com/opengraph-image.jpg?opengraph-image.0radmg6ffl3t4.jpg",
+      "source": "https://mlh.com/events",
+      "source_name": "MLH · Upcoming Events Calendar",
+      "source_id": "b3f5804da716f048",
+      "adapter_type": "mlh_events_html",
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "hackathons_buildathons"
+      ],
+      "primary_category": "hackathons_buildathons",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 3,
+        "title_signal": false,
+        "actionable_update": false,
+        "matched_categories": [
+          "hackathons_buildathons"
+        ]
+      },
+      "first_seen_utc": "2026-10-09T19:46:52+00:00",
+      "last_seen_utc": "2026-10-09T19:46:52+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://hacknc.com",
+      "canonical_url": "https://hacknc.com",
+      "source_feed_url": "https://mlh.com/events",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "source_page_checked",
+        "official_url": null,
+        "evidence_urls": [
+          "https://hacknc.com"
+        ],
+        "last_checked_at": "2026-10-09T19:46:49+00:00",
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ],
+        "version": 1,
+        "source_page_url": "https://hacknc.com",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": "HackNC 2026",
+        "last_check_error": null,
+        "last_check_duration_ms": 290,
+        "observed_facts": {
+          "page_role": "possible_event_page",
+          "page_title": "HackNC 2026",
+          "description": "October 9-11 @ UNC - Registration closed",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "closed",
+          "registration_status_evidence": "HackNC 2026 menu about resources schedule portal October 9–11 · Fetzer Gym HackNC 2026 0 days : 00 hrs : 00 min : 00 sec registration closed What is HackNC ?",
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        },
+        "fact_evidence": {
+          "registration_status": {
+            "value": "closed",
+            "source_url": "https://hacknc.com",
+            "method": "explicit_page_text",
+            "snippet": "HackNC 2026 menu about resources schedule portal October 9–11 · Fetzer Gym HackNC 2026 0 days : 00 hrs : 00 min : 00 sec registration closed What is HackNC ?"
+          }
+        }
+      },
+      "schema_version": 1,
+      "id": "9ac69a17a6eb752e5f93",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": "https://hacknc.com/opengraph-image.jpg?opengraph-image.0radmg6ffl3t4.jpg",
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "b3f5804da716f048"
+      ],
+      "source_names": [
+        "MLH · Upcoming Events Calendar"
+      ],
+      "source_feeds": [
+        "https://mlh.com/events"
+      ],
+      "discovered_urls": [
+        "https://hacknc.com"
+      ],
+      "resolved_urls": [
+        "https://hacknc.com"
       ]
     }
   },
-  "updated_utc": "2026-10-09T19:45:44+00:00",
+  "updated_utc": "2026-10-09T19:46:52+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -7440,7 +7640,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:45:44+00:00",
+      "last_skipped_at": "2026-10-09T19:46:47+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 2
     },
@@ -7474,7 +7674,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:45:44+00:00",
+      "last_skipped_at": "2026-10-09T19:46:47+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 2
     },
@@ -7508,7 +7708,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:45:44+00:00",
+      "last_skipped_at": "2026-10-09T19:46:47+00:00",
       "quality_rejected_count": 2,
       "quality_rule_version": 2
     },
@@ -7542,7 +7742,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:45:44+00:00",
+      "last_skipped_at": "2026-10-09T19:46:47+00:00",
       "quality_rejected_count": 4,
       "quality_rule_version": 2
     },
@@ -7577,7 +7777,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:45:44+00:00",
+      "last_skipped_at": "2026-10-09T19:46:47+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 2
     },
@@ -7613,7 +7813,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T19:45:44+00:00",
+      "last_skipped_at": "2026-10-09T19:46:47+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 2
     },
@@ -7649,7 +7849,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 2,
-      "last_skipped_at": "2026-10-09T19:45:44+00:00"
+      "last_skipped_at": "2026-10-09T19:46:47+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -7683,7 +7883,40 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 2,
-      "last_skipped_at": "2026-10-09T19:45:44+00:00"
+      "last_skipped_at": "2026-10-09T19:46:47+00:00"
+    },
+    "b3f5804da716f048": {
+      "source_id": "b3f5804da716f048",
+      "name": "MLH · Upcoming Events Calendar",
+      "url": "https://mlh.com/events",
+      "adapter_type": "mlh_events_html",
+      "access_method": "public_official_mlh_events_html",
+      "expected_fields": [
+        "title",
+        "link",
+        "summary",
+        "event_date_text",
+        "calendar_year",
+        "location_text"
+      ],
+      "pagination_mode": "official_calendar_upcoming_section",
+      "timeout_seconds": 10,
+      "minimum_interval_seconds": 900,
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_attempt_at": "2026-10-09T19:46:47+00:00",
+      "last_success_at": "2026-10-09T19:46:47+00:00",
+      "last_status": "success",
+      "last_error": null,
+      "last_duration_ms": 1728,
+      "items_seen": 71,
+      "matching_items": 71,
+      "new_items": 1,
+      "last_success_items_seen": 71,
+      "last_success_matching_items": 71,
+      "last_success_new_items": 1,
+      "failure_streak": 0,
+      "quality_rejected_count": 0,
+      "quality_rule_version": 3
     }
   }
 }
