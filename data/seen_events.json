@@ -3228,12 +3228,13 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "structured_event_source_page_checked",
+        "status": "official_link_candidate_unverified",
         "official_url": null,
         "evidence_urls": [
-          "https://hackalendar.com/e/nebius-nvidia-global-ai-hackathon-2026"
+          "https://hackalendar.com/e/nebius-nvidia-global-ai-hackathon-2026",
+          "https://nebiusglobalaihackathon.devpost.com/"
         ],
-        "last_checked_at": "2026-10-09T11:17:52+00:00",
+        "last_checked_at": "2026-10-09T11:21:24+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
@@ -3241,12 +3242,12 @@
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
         ],
         "source_page_url": "https://hackalendar.com/e/nebius-nvidia-global-ai-hackathon-2026",
-        "official_link_candidate": null,
-        "official_link_reason": null,
-        "candidate_page_status": null,
+        "official_link_candidate": "https://nebiusglobalaihackathon.devpost.com/",
+        "official_link_reason": "outbound_anchor:Enter on the organiser’s site",
+        "candidate_page_status": "http_error",
         "page_title": "Nebius x NVIDIA Global AI Hackathon",
         "last_check_error": null,
-        "last_check_duration_ms": 104,
+        "last_check_duration_ms": 197,
         "observed_facts": {
           "page_role": "structured_event_listing",
           "page_title": "Nebius x NVIDIA Global AI Hackathon",
@@ -3314,7 +3315,8 @@
             "method": "schema_org_event",
             "snippet": "JSON-LD Event.organizer.name=Devpost, Inc."
           }
-        }
+        },
+        "version": 1
       },
       "schema_version": 1,
       "id": "e55db4f92cbd01c94ab6",
@@ -3724,7 +3726,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-09T11:19:34+00:00",
+  "updated_utc": "2026-10-09T11:21:24+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -3757,7 +3759,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:19:33+00:00"
+      "last_skipped_at": "2026-10-09T11:21:24+00:00"
     },
     "4ae1d4cb1873b219": {
       "source_id": "4ae1d4cb1873b219",
@@ -3789,7 +3791,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:19:33+00:00"
+      "last_skipped_at": "2026-10-09T11:21:24+00:00"
     },
     "7c5c4d34b1a8fdc9": {
       "source_id": "7c5c4d34b1a8fdc9",
@@ -3821,7 +3823,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:19:33+00:00"
+      "last_skipped_at": "2026-10-09T11:21:24+00:00"
     },
     "56da5ebaefc91f25": {
       "source_id": "56da5ebaefc91f25",
@@ -3853,7 +3855,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:19:33+00:00"
+      "last_skipped_at": "2026-10-09T11:21:24+00:00"
     },
     "105b071f37b46d64": {
       "source_id": "105b071f37b46d64",
@@ -3886,7 +3888,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:19:33+00:00"
+      "last_skipped_at": "2026-10-09T11:21:24+00:00"
     },
     "7c33d1ecedb854aa": {
       "source_id": "7c33d1ecedb854aa",
@@ -3920,7 +3922,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T11:19:33+00:00"
+      "last_skipped_at": "2026-10-09T11:21:24+00:00"
     }
   }
 }
