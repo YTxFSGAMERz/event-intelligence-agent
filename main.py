@@ -209,6 +209,7 @@ def normalize_event_record(event_id_value: str, record: dict) -> dict:
         "id": str(item.get("id") or event_id_value),
         "title": str(item.get("title") or "Untitled opportunity"),
         "summary": str(item.get("summary") or ""),
+        "source_observed": item.get("source_observed") if isinstance(item.get("source_observed"), dict) else {},
         "discovery_quality": item.get("discovery_quality") if isinstance(item.get("discovery_quality"), dict) else {
             "accepted": None,
             "status": "unknown",
@@ -411,6 +412,110 @@ def refresh_existing_discovery_quality(seen: dict) -> dict:
     )
     stats["unknown"] = stats["total"] - stats["accepted"] - stats["flagged"]
     return stats
+
+
+
+
+def source_observed_facts(event: dict) -> dict:
+    """Keep calendar-only facts separate from organizer-verified canonical fields."""
+    if str(event.get("adapter_type") or "") != "mlh_events_html":
+        return {}
+    entry = event.get("entry")
+    if not isinstance(entry, dict):
+        return {}
+
+    schedule_raw = str(entry.get("event_date_text") or "").strip()
+    year_value = entry.get("calendar_year")
+    try:
+        calendar_year = int(year_value) if year_value is not None else None
+    except (TypeError, ValueError):
+        calendar_year = None
+
+    location_raw = str(entry.get("location_text") or "").strip()
+    location_lower = location_raw.casefold()
+    if "in-person" in location_lower or "in person" in location_lower:
+        mode = "in_person"
+    elif "online" in location_lower or "virtual" in location_lower or "remote" in location_lower:
+        mode = "remote"
+    elif "hybrid" in location_lower:
+        mode = "mixed"
+    else:
+        mode = "unknown"
+
+    country_codes = {
+        "US": "United States",
+        "IN": "India",
+        "CA": "Canada",
+        "GB": "United Kingdom",
+        "MX": "Mexico",
+        "RO": "Romania",
+        "ES": "Spain",
+    }
+    country_match = re.search(r",\s*(US|IN|CA|GB|MX|RO|ES)(?:\s|$)", location_raw, re.IGNORECASE)
+    country_code = country_match.group(1).upper() if country_match else None
+    country = country_codes.get(country_code) if country_code else None
+
+    if not schedule_raw and not location_raw:
+        return {}
+    return {
+        "source_kind": "official_calendar_listing",
+        "source_name": str(event.get("source_name") or "MLH · Upcoming Events Calendar"),
+        "source_url": _http_url(event.get("source")) or "https://mlh.com/events",
+        "observed_at_utc": now_iso(),
+        "schedule": {
+            "raw": schedule_raw or None,
+            "calendar_year": calendar_year,
+            "confidence": "observed_unverified",
+        },
+        "location": {
+            "raw": location_raw or None,
+            "mode": mode,
+            "venue": None,
+            "city": None,
+            "region": None,
+            "country": country,
+            "country_code": country_code,
+            "confidence": "observed_unverified",
+        },
+    }
+
+
+def backfill_missing_source_observations(seen: dict) -> int:
+    """Recover explicitly labelled MLH calendar details from summaries saved before this schema existed."""
+    enriched = 0
+    for record_id, record in seen.items():
+        if not isinstance(record, dict):
+            continue
+        if str(record.get("adapter_type") or "") != "mlh_events_html":
+            continue
+        if record.get("source_observed"):
+            continue
+        summary = str(record.get("summary") or "")
+        year_match = re.search(r"Calendar section year:\s*(20\d{2})", summary)
+        date_match = re.search(r"Displayed schedule:\s*([^.]+)", summary)
+        location_match = re.search(
+            r"Location/format text:\s*(.+?)(?:\.\s*The linked organizer page|$)",
+            summary,
+        )
+        entry = {
+            "event_date_text": date_match.group(1).strip() if date_match else None,
+            "calendar_year": int(year_match.group(1)) if year_match else None,
+            "location_text": location_match.group(1).strip() if location_match else None,
+        }
+        observed = source_observed_facts({
+            "adapter_type": "mlh_events_html",
+            "source_name": record.get("source_name"),
+            "source": record.get("source_feed_url") or record.get("source"),
+            "entry": entry,
+        })
+        if observed:
+            observed["migration_note"] = (
+                "Recovered from a saved MLH calendar summary; it remains unverified organizer information."
+            )
+            record["source_observed"] = observed
+            seen[record_id] = normalize_event_record(str(record_id), record)
+            enriched += 1
+    return enriched
 
 
 def primary_category(categories: list[str], title: str = "") -> str:
@@ -1201,6 +1306,10 @@ def main() -> int:
         max_legacy=MAX_LEGACY_URL_RESOLUTIONS_PER_RUN,
     )
 
+    source_observation_backfill = backfill_missing_source_observations(seen)
+    if source_observation_backfill:
+        print(f"Recovered MLH calendar observations for existing records: {source_observation_backfill}.")
+
     quality_backfill = refresh_existing_discovery_quality(seen)
     print(
         "Discovery quality backfill: "
@@ -1564,6 +1673,7 @@ def main() -> int:
                 "source_name": event["source_name"],
                 "source_id": event["source_id"],
                 "adapter_type": event["adapter_type"],
+                "source_observed": source_observed_facts(event),
                 "resolution_status": event["resolution_status"],
                 "resolution_attempts": 1 if (
                     event["adapter_type"] == "google_news_rss"
