@@ -11,6 +11,27 @@ A lightweight Python starter that checks configured public RSS/Atom feeds every 
 - Checks the event URL is reachable and labels that check separately from registration availability.
 - Sends Telegram alerts for newly discovered matching entries.
 
+## Canonical opportunity schema (v1)
+
+The tracker uses an additive, versioned schema. Legacy keys such as `url`, `deadline`, `registration_status`, `image_url`, and `source` remain temporarily for compatibility with the Telegram workflow and dashboard.
+
+New normalized fields include:
+
+- **Identity and provenance:** `id`, `canonical_url`, `discovered_url`, `source_feed_url`, `organizer`, and `summary`.
+- **Separate timelines:** `application_open_at`, `application_deadline`, `application_deadline_raw`, `deadline_status`, `deadline_timezone`, `event_start_at`, `event_end_at`, `event_timezone`, and `date_precision`.
+- **Location:** raw location, mode (`in_person`, `remote`, `hybrid`, or `unknown`), venue, city, region, country, country code, and remote restrictions.
+- **Eligibility and value:** structured eligibility requirements, reward amounts/currency, and travel-support details for flights, transport reimbursement, accommodation, meals, visa support, conditions, and evidence URLs.
+- **Verification:** official URL, evidence URLs, last-checked timestamps, content hash, and material-change timestamp.
+
+### Data integrity rules
+
+- Missing dates stay `null`; no synthetic deadline or event date is generated.
+- A deadline extracted from a feed is **unverified** until checked against an official source.
+- A Google News redirect is retained as `discovered_url`, not mislabelled as the event's canonical/official URL.
+- Unknown location, eligibility, prize value, and travel support remain explicitly unknown; absence of evidence does not mean support is unavailable.
+- Existing records are migrated additively. The legacy fields remain available, and the `schema_version` field identifies the normalized record version.
+- `last_seen_utc` means the item was observed in a feed; it does **not** mean its deadline, eligibility, or funding was verified at that time.
+
 ## Important limits
 - GitHub Actions scheduled workflows are best-effort, not exact timers; runs may be delayed. GitHub documents a minimum schedule interval of 5 minutes, and scheduled workflows run from the default branch. See https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows
 - RSS feeds are only as good as their publishers. Add official feeds and public announcement sources you trust.
