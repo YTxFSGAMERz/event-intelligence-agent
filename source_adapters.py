@@ -260,6 +260,47 @@ def build_adapters(source_urls: list[str]) -> list[RSSSourceAdapter]:
     return adapters
 
 
+class URLResolutionBudget:
+    """Bound costly Google News link-resolution requests across one scan.
+
+    Legacy backfill gets its own small allowance so old records cannot consume
+    the entire budget before newly discovered opportunities are processed.
+    Direct RSS links are normalized without spending this network-request budget.
+    """
+
+    def __init__(self, max_total: int = 4, max_legacy: int = 1) -> None:
+        self.max_total = max(0, int(max_total))
+        self.max_legacy = max(0, min(int(max_legacy), self.max_total))
+        self.used_total = 0
+        self.used_legacy = 0
+
+    def resolve(
+        self,
+        adapter: RSSSourceAdapter,
+        item_url: str,
+        *,
+        timeout: int = 10,
+        user_agent: str = "EventIntelligenceAgent/0.2 (personal event research; respectful feed polling)",
+        session: Any = requests,
+        legacy: bool = False,
+    ) -> tuple[str | None, str]:
+        if adapter.config.adapter_type != "google_news_rss":
+            return adapter.resolve_item_url(
+                item_url, timeout=timeout, user_agent=user_agent, session=session
+            )
+        if self.used_total >= self.max_total:
+            return None, "resolution_budget_deferred"
+        if legacy and self.used_legacy >= self.max_legacy:
+            return None, "legacy_resolution_budget_deferred"
+
+        self.used_total += 1
+        if legacy:
+            self.used_legacy += 1
+        return adapter.resolve_item_url(
+            item_url, timeout=timeout, user_agent=user_agent, session=session
+        )
+
+
 def source_health_success(previous: dict | None, config: SourceConfig, result: FeedResult,
                           matching_count: int, new_count: int) -> dict:
     """Return source health while retaining historical last-success metadata."""
