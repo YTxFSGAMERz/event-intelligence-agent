@@ -713,7 +713,10 @@
         ]
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "resolution_attempts": 1,
+      "last_resolution_attempt_at": "2026-10-09T10:56:18+00:00",
+      "resolution_status": "unresolved_google_news_link"
     },
     "6234e3c18f812c3412e2": {
       "title": "Best Fully Funded Scholarships for Study Abroad 2026-27 - Shiksha.com",
@@ -3110,7 +3113,7 @@
       "last_material_change_at": null
     }
   },
-  "updated_utc": "2026-10-09T10:55:56+00:00",
+  "updated_utc": "2026-10-09T10:56:18+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -3143,7 +3146,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:55:50+00:00"
+      "last_skipped_at": "2026-10-09T10:56:18+00:00"
     },
     "4ae1d4cb1873b219": {
       "source_id": "4ae1d4cb1873b219",
@@ -3175,7 +3178,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:55:50+00:00"
+      "last_skipped_at": "2026-10-09T10:56:18+00:00"
     },
     "7c5c4d34b1a8fdc9": {
       "source_id": "7c5c4d34b1a8fdc9",
@@ -3207,7 +3210,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:55:50+00:00"
+      "last_skipped_at": "2026-10-09T10:56:18+00:00"
     },
     "56da5ebaefc91f25": {
       "source_id": "56da5ebaefc91f25",
@@ -3239,7 +3242,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:55:50+00:00"
+      "last_skipped_at": "2026-10-09T10:56:18+00:00"
     },
     "105b071f37b46d64": {
       "source_id": "105b071f37b46d64",
@@ -3272,7 +3275,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:55:52+00:00"
+      "last_skipped_at": "2026-10-09T10:56:18+00:00"
     },
     "7c33d1ecedb854aa": {
       "source_id": "7c33d1ecedb854aa",
@@ -3296,7 +3299,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-09T10:55:50+00:00",
       "last_success_at": "2026-10-09T10:55:50+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1308,
       "items_seen": 15,
@@ -3305,7 +3308,8 @@
       "last_success_items_seen": 15,
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
-      "failure_streak": 0
+      "failure_streak": 0,
+      "last_skipped_at": "2026-10-09T10:56:18+00:00"
     }
   }
 }
