@@ -11,6 +11,7 @@ from main import (
     normalize_state,
     normalize_title_key,
     remember_source_alias,
+    source_observed_facts,
 )
 
 
@@ -32,6 +33,39 @@ class OpportunitySchemaTests(unittest.TestCase):
         self.assertEqual(event["deadline_status"], "unknown")
         self.assertEqual(event["location"]["mode"], "unknown")
         self.assertEqual(event["travel_support"]["status"], "unknown")
+        self.assertEqual(event["verification"]["status"], "unverified")
+
+    def test_mlh_calendar_observations_remain_separate_from_verified_facts(self):
+        observed = source_observed_facts({
+            "adapter_type": "mlh_events_html",
+            "source_name": "MLH · Upcoming Events Calendar",
+            "source": "https://mlh.com/events",
+            "entry": {
+                "event_date_text": "OCT 09 - 11",
+                "calendar_year": 2026,
+                "location_text": "Chapel Hill, North Carolina, US In-Person",
+            },
+        })
+
+        self.assertEqual(observed["schedule"]["raw"], "OCT 09 - 11")
+        self.assertEqual(observed["schedule"]["calendar_year"], 2026)
+        self.assertEqual(observed["schedule"]["confidence"], "observed_unverified")
+        self.assertEqual(observed["location"]["raw"], "Chapel Hill, North Carolina, US In-Person")
+        self.assertEqual(observed["location"]["mode"], "in_person")
+        self.assertEqual(observed["location"]["country"], "United States")
+        self.assertEqual(observed["location"]["confidence"], "observed_unverified")
+
+        event = normalize_event_record("mlh-hacknc", {
+            "title": "HackNC",
+            "url": "https://hacknc.com",
+            "source": "https://mlh.com/events",
+            "adapter_type": "mlh_events_html",
+            "source_observed": observed,
+        })
+        self.assertEqual(event["source_observed"], observed)
+        self.assertEqual(event["location"]["mode"], "unknown")
+        self.assertIsNone(event["event_start_at"])
+        self.assertIsNone(event["event_end_at"])
         self.assertEqual(event["verification"]["status"], "unverified")
 
     def test_direct_url_is_not_mislabeled_as_verified(self):
