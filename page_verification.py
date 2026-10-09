@@ -869,6 +869,8 @@ def verify_opportunity_page(
     official_candidate = None
     official_reason = "same_page_schema_org_organizer" if source_is_official else None
     candidate_status = None
+    candidate_error = None
+    candidate_http_status = None
     duration = source_page.duration_ms
     candidate_url, candidate_reason, explicit_official = _candidate_official_link(
         source_facts, source_page.final_url or discovery_url
@@ -882,6 +884,8 @@ def verify_opportunity_page(
         )
         duration += candidate_page.duration_ms
         candidate_status = candidate_page.status
+        candidate_error = candidate_page.error
+        candidate_http_status = candidate_page.http_status
         if candidate_page.status == "success":
             candidate_facts = _extract_facts(candidate_page, expected_title)
             candidate_is_official = _facts_are_official(
@@ -933,6 +937,8 @@ def verify_opportunity_page(
         "official_link_candidate": official_candidate,
         "official_link_reason": official_reason,
         "candidate_page_status": candidate_status,
+        "candidate_page_error": candidate_error,
+        "candidate_page_http_status": candidate_http_status,
         "page_title": selected_facts.get("page_title"),
         "last_checked_at": checked_at,
         "duration_ms": duration,
@@ -963,15 +969,13 @@ def verification_is_due(record: dict, *, now: datetime | None = None) -> bool:
         current = current.replace(tzinfo=timezone.utc)
     age_seconds = max(0, (current - parsed.astimezone(timezone.utc)).total_seconds())
     status = str(verification.get("status") or "")
+    transient_failures = {
+        "http_error", "request_error", "parse_error", "url_rejected", "not_html",
+        "redirect_rejected", "too_many_redirects", "redirect_without_location",
+    }
     retry_seconds = 24 * 60 * 60 if (
-        status in {
-            "http_error", "request_error", "parse_error", "url_rejected",
-            "not_html", "redirect_rejected", "too_many_redirects",
-            "redirect_without_location",
-        }
-        or verification.get("last_recheck_status") in {
-            "http_error", "request_error", "parse_error", "url_rejected",
-            "not_html", "redirect_rejected", "too_many_redirects",
-        }
+        status in transient_failures
+        or verification.get("candidate_page_status") in transient_failures
+        or verification.get("last_recheck_status") in transient_failures
     ) else 7 * 24 * 60 * 60
     return age_seconds >= retry_seconds
