@@ -13,7 +13,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from typing import Any
-from urllib.parse import urlsplit, urlunsplit
+from urllib.parse import parse_qs, urlsplit, urlunsplit
 
 import feedparser
 import requests
@@ -86,9 +86,21 @@ class CanonicalLinkParser(HTMLParser):
 
 def _resolve_source_type(url: str) -> tuple[str, str]:
     host = _host(url)
-    if host == "news.google.com" and urlsplit(url).path.startswith("/rss/"):
-        return "google_news_rss", "Google News RSS"
-    if host in {"github.blog", "www.github.blog"} and urlsplit(url).path.endswith("/feed/"):
+    parts = urlsplit(url)
+    if host == "news.google.com" and parts.path.startswith("/rss/"):
+        query = (parse_qs(parts.query).get("q") or [""])[0].lower()
+        if "devpost.com" in query:
+            label = "Google News · Devpost"
+        elif "mlh.io" in query:
+            label = "Google News · MLH"
+        elif "travel grant" in query or "fully funded" in query:
+            label = "Google News · Funded travel"
+        elif "scholarship" in query:
+            label = "Google News · Scholarships"
+        else:
+            label = "Google News RSS"
+        return "google_news_rss", label
+    if host in {"github.blog", "www.github.blog"} and parts.path.endswith("/feed/"):
         return "official_blog_rss", "GitHub Blog RSS"
     return "rss_atom", f"RSS/Atom · {host or 'unknown host'}"
 
@@ -219,6 +231,9 @@ def source_health_success(previous: dict | None, config: SourceConfig, result: F
         "items_seen": result.item_count,
         "matching_items": int(matching_count),
         "new_items": int(new_count),
+        "last_success_items_seen": result.item_count,
+        "last_success_matching_items": int(matching_count),
+        "last_success_new_items": int(new_count),
         "failure_streak": 0,
     })
     return old
