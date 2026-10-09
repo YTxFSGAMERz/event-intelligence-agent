@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+from html import unescape
 import re
 import sys
 from datetime import datetime, timezone
@@ -397,12 +398,12 @@ def main() -> int:
                 link = str(entry.get("link", "")).strip()
                 raw_summary = str(entry.get("summary", entry.get("description", "")))
                 # Keep raw summary briefly for thumbnail extraction, then create safe plain text.
-                image_url = extract_event_image(entry, link, raw_summary)
                 summary = unescape(re.sub(r"<[^>]+>", " ", raw_summary))
                 content = f"{title}\n{summary}"
                 categories = matching_categories(content)
                 if not categories:
                     continue
+                image_url = extract_event_image(entry, link, raw_summary)
                 uid = event_id(link, title)
                 if uid in seen:
                     # Keep last-seen timestamp without re-alerting on every run.
