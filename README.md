@@ -90,6 +90,8 @@ The live dashboard is available at https://event-intelligence-dashboard-indol.ve
 - **Trust-aware verification:** records are labelled as officially verified, official-link candidates needing review, checked discovery pages, waiting for source resolution, or not checked. A record counts as officially verified only when the verifier reports `official_page_verified` and provides an HTTP(S) `official_url`.
 - **Opportunity cards:** source images, discovery summaries, event schedule signals, registration status, location, reward mentions, and an expandable view of eligibility, travel-support components, verification notes, and evidence links.
 - **Search and filters:** categories, registration status, verification state, event format, country, travel-support state, eligibility detail availability, and sorting by verified deadline, event date, or title.
+- **Multi-category browsing:** each event is searchable from every category assigned by the tracker, and category counts reflect all assigned labels rather than just the primary category.
+- **Paged results and exports:** results are paginated in groups of 12. CSV and JSON exports include the current filtered result set, provenance and trust labels; CSV fields beginning with spreadsheet formula characters are neutralized.
 - **Source health:** per-feed latest known status, last attempt and last success, adapter type, entries seen, matches, queued items, failure streak, and reported error.
 - **Saved opportunities:** saved cards are kept in the visitor's local browser storage; they are not uploaded to the agent or shared between devices.
 
