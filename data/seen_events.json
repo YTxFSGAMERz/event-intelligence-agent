@@ -6060,8 +6060,8 @@
     "dac1b99de94ef1bdd9cb": {
       "title": "Lovable x EF x WWB 🪄 Hackathon — London, 24 Oct 2026",
       "summary": " 24 Oct 2026  · London · In person · Entrepreneurs First Organiser: Women Who Build 🪄 This event is part of the broader WWB Founder Fellowship, running from 10-28 October in London.\nIf you’d like to be considered, tell us a little about yourself and apply below 🚀💜\nhttps://tally.so/r/Y5Geyz\n\nWomen Who Build 🪄 is a fast-growing European initiative on a mission to open the worlds of entrepreneurship and venture building to bold, curious women - from students to early-career talent.\nThe WWB Founde4r Fellowship 2026 is a 3-week programme designed to give Fellows hands-on exposure to how companies are built, from first principles to traction.\nAlongside founder and investor-led masterclasses, practical startup sessions and a final pitch challenge, we're partnering with Lovable and Entrepreneurs First to host an exclusive 10-hour hackathon.\nThe goal?\nTurn real-world problems into working AI-powered solutions – from identifying and validating an idea to building a prototype and pitching it. Gain the confidence, skills and experience to become a builder, regardless of your coding experience or whether you already have a startup idea.  Register on the organiser's own page ",
-      "url": "https://hackalendar.com/e/lovable-ef-wwb-hackathon-london-2026",
-      "image_url": "https://hackalendar.com/cover/lovable-ef-wwb-hackathon-london-2026-800.webp",
+      "url": "https://luma.com/i80uoluz",
+      "image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/m7/ea84881a-bbfe-4bf4-92ac-0c23411eede2.png",
       "source": "https://hackalendar.com/feed.xml",
       "source_name": "Hackalendar · Upcoming Hackathons",
       "source_id": "7c33d1ecedb854aa",
@@ -6102,35 +6102,133 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
-        "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "status": "official_page_verified",
+        "official_url": "https://luma.com/i80uoluz",
+        "evidence_urls": [
+          "https://hackalendar.com/e/lovable-ef-wwb-hackathon-london-2026",
+          "https://lu.ma/i80uoluz",
+          "https://luma.com/i80uoluz"
+        ],
+        "last_checked_at": "2026-10-09T19:05:48+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://hackalendar.com/e/lovable-ef-wwb-hackathon-london-2026",
+        "official_link_candidate": "https://lu.ma/i80uoluz",
+        "official_link_reason": "outbound_anchor:Enter on the organiser’s site",
+        "candidate_page_status": "success",
+        "candidate_page_error": null,
+        "candidate_page_http_status": 200,
+        "page_title": "Lovable x EF x WWB 🪄 Hackathon",
+        "last_check_error": null,
+        "last_check_duration_ms": 586,
+        "observed_facts": {
+          "page_role": "structured_event_listing",
+          "page_title": "Lovable x EF x WWB 🪄 Hackathon",
+          "description": "This event is part of the broader WWB Founder Fellowship, running from 10-28 October in London.\nIf you’d like to be considered, tell us a little about yourself and apply below 🚀💜\nhttps://tally.so/r/Y5Geyz\n\nWomen Who Build 🪄 is a fast-growing European initiative on a mission to open the worlds of entrepreneurship and venture building to bold, curious women - from students to early-career talent.\nThe WWB Founde4r Fellowship 2026 is a 3-week programme designed to give Fellows hands-on exposure to how companies are built, from first principles to traction.\nAlongside founder and investor-led masterclasses, practical startup sessions and a final pitch challenge, we're partnering with Lovable and Entrepreneurs First to host an exclusive 10-hour hackathon.\nThe goal?\nTurn real-world problems into working AI-powered solutions – from identifying and validating an idea to building a prototype and pitching it. Gain the confidence, skills and experience to become a builder, regardless of your coding experience or whether you already have a startup idea.",
+          "organizer": "Women Who Build 🪄",
+          "event_start_at": "2026-10-24T09:00:00.000+01:00",
+          "event_end_at": "2026-10-24T20:00:00.000+01:00",
+          "event_timezone": "UTC+01:00",
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": "Entrepreneurs First, London, England, GB",
+            "mode": "in_person",
+            "venue": "Entrepreneurs First",
+            "city": "London",
+            "region": "England",
+            "country": "GB",
+            "country_code": "GB",
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/m7/ea84881a-bbfe-4bf4-92ac-0c23411eede2.png"
+        },
+        "fact_evidence": {
+          "event_start_at": {
+            "value": "2026-10-24T09:00:00.000+01:00",
+            "source_url": "https://luma.com/i80uoluz",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.startDate=2026-10-24T09:00:00.000+01:00"
+          },
+          "event_end_at": {
+            "value": "2026-10-24T20:00:00.000+01:00",
+            "source_url": "https://luma.com/i80uoluz",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.endDate=2026-10-24T20:00:00.000+01:00"
+          },
+          "organizer": {
+            "value": "Women Who Build 🪄",
+            "source_url": "https://luma.com/i80uoluz",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.organizer.name=Women Who Build 🪄"
+          },
+          "location": {
+            "value": {
+              "raw": "Entrepreneurs First, London, England, GB",
+              "mode": "in_person",
+              "venue": "Entrepreneurs First",
+              "city": "London",
+              "region": "England",
+              "country": "GB",
+              "country_code": "GB",
+              "remote_restrictions": []
+            },
+            "source_url": "https://luma.com/i80uoluz",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.location / eventAttendanceMode"
+          }
+        },
+        "last_verified_at": "2026-10-09T19:05:48+00:00"
       },
       "schema_version": 1,
       "id": "dac1b99de94ef1bdd9cb",
-      "organizer": null,
+      "organizer": "Women Who Build 🪄",
       "application_open_at": null,
       "application_deadline": null,
       "deadline_timezone": null,
-      "event_start_at": null,
-      "event_end_at": null,
-      "event_timezone": null,
+      "event_start_at": "2026-10-24T09:00:00.000+01:00",
+      "event_end_at": "2026-10-24T20:00:00.000+01:00",
+      "event_timezone": "UTC+01:00",
       "date_precision": "unknown",
       "location": {
-        "raw": null,
-        "mode": "unknown",
-        "venue": null,
-        "city": null,
-        "region": null,
-        "country": null,
-        "country_code": null,
+        "raw": "Entrepreneurs First, London, England, GB",
+        "mode": "in_person",
+        "venue": "Entrepreneurs First",
+        "city": "London",
+        "region": "England",
+        "country": "GB",
+        "country_code": "GB",
         "remote_restrictions": []
       },
       "eligibility": {
@@ -6165,7 +6263,7 @@
         "evidence_url": null
       },
       "media": {
-        "source_image_url": "https://hackalendar.com/cover/lovable-ef-wwb-hackathon-london-2026-800.webp",
+        "source_image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/m7/ea84881a-bbfe-4bf4-92ac-0c23411eede2.png",
         "generated_image_url": null
       },
       "content_hash": null,
@@ -6440,7 +6538,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-09T19:04:50+00:00",
+  "updated_utc": "2026-10-09T19:05:48+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -6450,7 +6548,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T19:04:35+00:00",
       "last_success_at": "2026-10-09T19:04:35+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 290,
       "items_seen": 1,
@@ -6473,7 +6571,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T14:04:55+00:00",
+      "last_skipped_at": "2026-10-09T19:05:48+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 1
     },
@@ -6484,7 +6582,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T19:04:36+00:00",
       "last_success_at": "2026-10-09T19:04:36+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 219,
       "items_seen": 0,
@@ -6507,7 +6605,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T14:04:55+00:00",
+      "last_skipped_at": "2026-10-09T19:05:48+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 1
     },
@@ -6518,7 +6616,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T19:04:36+00:00",
       "last_success_at": "2026-10-09T19:04:36+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 448,
       "items_seen": 57,
@@ -6541,7 +6639,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T14:04:55+00:00",
+      "last_skipped_at": "2026-10-09T19:05:48+00:00",
       "quality_rejected_count": 2,
       "quality_rule_version": 1
     },
@@ -6552,7 +6650,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T19:04:36+00:00",
       "last_success_at": "2026-10-09T19:04:36+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 441,
       "items_seen": 68,
@@ -6575,7 +6673,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T14:04:55+00:00",
+      "last_skipped_at": "2026-10-09T19:05:48+00:00",
       "quality_rejected_count": 6,
       "quality_rule_version": 1
     },
@@ -6586,7 +6684,7 @@
       "adapter_type": "official_blog_rss",
       "last_attempt_at": "2026-10-09T19:04:41+00:00",
       "last_success_at": "2026-10-09T19:04:41+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 180,
       "items_seen": 10,
@@ -6610,7 +6708,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T14:04:55+00:00",
+      "last_skipped_at": "2026-10-09T19:05:48+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 1
     },
@@ -6636,7 +6734,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-09T19:04:37+00:00",
       "last_success_at": "2026-10-09T19:04:37+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 3132,
       "items_seen": 15,
@@ -6646,7 +6744,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T14:04:55+00:00",
+      "last_skipped_at": "2026-10-09T19:05:48+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 1
     },
@@ -6670,7 +6768,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-09T19:04:37+00:00",
       "last_success_at": "2026-10-09T19:04:37+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 179,
       "items_seen": 0,
@@ -6681,7 +6779,8 @@
       "last_success_new_items": 0,
       "failure_streak": 0,
       "quality_rejected_count": 0,
-      "quality_rule_version": 1
+      "quality_rule_version": 1,
+      "last_skipped_at": "2026-10-09T19:05:48+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -6703,7 +6802,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-09T19:04:37+00:00",
       "last_success_at": "2026-10-09T19:04:37+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 193,
       "items_seen": 0,
@@ -6714,7 +6813,8 @@
       "last_success_new_items": 0,
       "failure_streak": 0,
       "quality_rejected_count": 0,
-      "quality_rule_version": 1
+      "quality_rule_version": 1,
+      "last_skipped_at": "2026-10-09T19:05:48+00:00"
     }
   }
 }
