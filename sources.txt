@@ -1,5 +1,12 @@
-# Add one public RSS/Atom feed URL per line.
-# Prefer official event organizers, student programs, hackathon platforms,
-# open-source communities, and scholarship/fellowship announcement feeds.
-# The agent intentionally starts with no hard-coded third-party feeds:
-# add feeds you have checked and are allowed to access.
+# Public RSS feeds used by Phase 1.
+# Google News RSS queries help discover pages; always verify each opportunity on its official page.
+# Devpost hackathons
+https://news.google.com/rss/search?q=site%3Adevpost.com%2Fhackathons+hackathon+registration+prize&hl=en-IN&gl=IN&ceid=IN%3Aen
+# Major League Hacking student hackathons
+https://news.google.com/rss/search?q=site%3Amlh.io+hackathon+student+registration&hl=en-IN&gl=IN&ceid=IN%3Aen
+# Student travel grants and funded technology programs
+https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology&hl=en-IN&gl=IN&ceid=IN%3Aen
+# Indian government scholarships
+https://news.google.com/rss/search?q=site%3Ascholarships.gov.in+scholarship+deadline&hl=en-IN&gl=IN&ceid=IN%3Aen
+# Official GitHub changelog (developer program/product announcements)
+https://github.blog/changelog/feed/
