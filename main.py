@@ -22,16 +22,41 @@ TIMEOUT = 10
 MAX_ALERTS_PER_SOURCE_PER_RUN = 1
 
 KEYWORDS = {
-    "hackathon": ["hackathon", "hack day", "coding challenge", "buildathon"],
-    "tech_fest": ["tech fest", "technology festival", "student festival", "conference", "summit"],
-    "prizes": ["cash prize", "prize pool", "prizes", "award", "winner"],
-    "swag_gadgets": ["swag", "merchandise", "giveaway", "gadget", "laptop", "phone", "hardware"],
-    "funded_travel": ["travel grant", "travel support", "travel stipend", "flight", "airfare",
-                      "accommodation covered", "fully funded", "funded travel", "scholarship"],
-    "student_open_source": ["open source", "student", "fellowship", "scholarship", "student program"],
-    "free_registration": ["free registration", "free ticket", "no registration fee", "free entry",
-                          "early bird", "early-bird", "registration opens"],
+    "hackathons_buildathons": ["hackathon", "hack day", "coding challenge", "buildathon"],
+    "competitions_challenges": ["competition", "contest", "challenge", "olympiad", "call for entries"],
+    "prizes_cash_rewards": ["cash prize", "prize pool", "prizes", "winner", "cash reward", "cash rewards",
+                            "prize money", "reward"],
+    "swag_gadgets": ["swag", "merchandise", "giveaway", "gadget", "laptop", "phone", "hardware", "free goodies"],
+    "funded_travel_abroad": ["travel grant", "travel support", "travel stipend", "flight", "airfare",
+                             "accommodation covered", "fully funded", "funded travel", "travel scholarship",
+                             "exchange program", "international travel support"],
+    "scholarships_fellowships": ["scholarship", "fellowship", "bursary", "stipend", "tuition waiver",
+                                 "tuition fee", "financial aid", "education grant"],
+    "free_tickets_registration": ["free registration", "free ticket", "no registration fee", "free entry",
+                                  "early bird", "early-bird", "registration opens", "free pass"],
+    "open_source_programs": ["open source", "student program", "student ambassador", "summer of code",
+                             "developer student clubs", "open-source program", "mentorship program"],
+    "tech_events_conferences": ["tech fest", "technology festival", "student festival", "conference",
+                                "summit", "developer conference", "technology meetup"],
+    "internships_training": ["internship", "internships", "apprenticeship", "trainee program",
+                             "training program", "fellowship application"],
 }
+
+CATEGORY_LABELS = {
+    "hackathons_buildathons": "Hackathons & Buildathons",
+    "competitions_challenges": "Competitions & Challenges",
+    "prizes_cash_rewards": "Cash Prizes & Rewards",
+    "swag_gadgets": "Swag, Gadgets & Giveaways",
+    "funded_travel_abroad": "Fully Funded Travel & Study Abroad",
+    "scholarships_fellowships": "Scholarships & Fellowships",
+    "free_tickets_registration": "Free Tickets & Registration",
+    "open_source_programs": "Open Source & Student Programs",
+    "tech_events_conferences": "Tech Events & Conferences",
+    "internships_training": "Internships & Training",
+}
+
+CATEGORY_ORDER = list(CATEGORY_LABELS)
+
 ALL_TERMS = sorted({term for terms in KEYWORDS.values() for term in terms}, key=len, reverse=True)
 
 DEADLINE_PATTERNS = [
@@ -86,7 +111,33 @@ def write_state(state: dict) -> None:
 
 def matching_categories(text: str) -> list[str]:
     low = text.lower()
-    return [category for category, terms in KEYWORDS.items() if any(term in low for term in terms)]
+    found = [category for category, terms in KEYWORDS.items()
+             if any(term in low for term in terms)]
+    return found
+
+
+def primary_category(categories: list[str], title: str = "") -> str:
+    """Assign one display bucket while retaining every matching tag on the event."""
+    title_low = title.lower()
+    # Scholarships/fellowships should not be filed under general travel just because
+    # a scholarship headline also says "fully funded".
+    if ("scholarships_fellowships" in categories and any(
+        term in title_low for term in ("scholarship", "fellowship", "bursary", "stipend")
+    )):
+        return "scholarships_fellowships"
+    if ("funded_travel_abroad" in categories and any(
+        term in title_low for term in ("travel grant", "travel support", "fully funded travel",
+                                       "study abroad", "exchange program", "international travel")
+    )):
+        return "funded_travel_abroad"
+    for category in CATEGORY_ORDER:
+        if category in categories:
+            return category
+    return categories[0] if categories else "tech_events_conferences"
+
+
+def category_label(category: str) -> str:
+    return CATEGORY_LABELS.get(category, category.replace("_", " ").title())
 
 def extract_deadline(text: str) -> str:
     for pattern in DEADLINE_PATTERNS:
@@ -276,7 +327,7 @@ def telegram_api_call(token: str, method: str, payload: dict, files: dict | None
 
 
 def generate_opportunity_card(item: dict, categories: list[str], deadline: str,
-                              reg_status: str) -> bytes:
+                              reg_status: str, primary: str | None = None) -> bytes:
     """Create a polished, readable PNG opportunity card when no source image exists."""
     import io
     from PIL import Image, ImageDraw, ImageFont
@@ -333,9 +384,10 @@ def generate_opportunity_card(item: dict, categories: list[str], deadline: str,
     chip_font = get_font(16, True)
     body_font = get_font(20)
 
-    draw.rounded_rectangle((82, 70, 435, 111), radius=18, fill=(20, 54, 83))
+    draw.rounded_rectangle((82, 70, 690, 111), radius=18, fill=(20, 54, 83))
     draw.text((101, 80), "EVENT INTELLIGENCE  /  NEW FIND", font=eyebrow_font, fill=(104, 235, 239))
-    draw.text((82, 135), "OPPORTUNITY ALERT", font=get_font(22, True), fill=(170, 185, 222))
+    bucket = category_label(primary or primary_category(categories, item.get("title", "")))
+    draw.text((82, 135), bucket.upper()[:62], font=get_font(20, True), fill=(170, 185, 222))
 
     title = re.sub(r"\s+", " ", item.get("title", "Untitled opportunity")).strip()
     title = title[:155]
@@ -452,7 +504,7 @@ def telegram_send(text: str, image_url: str | None = None, caption: str | None =
 
 
 def build_photo_caption(item: dict, categories: list[str], deadline: str,
-                        reg_status: str) -> str:
+                        reg_status: str, primary: str | None = None) -> str:
     """Build a compact caption that fits Telegram's 1,024-character photo-caption limit."""
     title = re.sub(r"\s+", " ", item.get("title", "Untitled event")).strip()
     summary = re.sub(r"\s+", " ", item.get("summary", "")).strip()
@@ -463,9 +515,11 @@ def build_photo_caption(item: dict, categories: list[str], deadline: str,
     status_text = reg_status[:60]
     url_text = url[:400]
 
+    bucket = category_label(primary or primary_category(categories, title))
     fixed = (
         f"🆕 {title}\n"
-        f"🏷️ {categories_text}\n"
+        f"📂 {bucket}\n"
+        f"🏷️ Tags: {categories_text}\n"
         f"📅 Deadline: {deadline_text}\n"
         f"🎟️ Registration: {status_text}\n"
         f"🔗 {url_text}\n\n"
@@ -507,16 +561,18 @@ def main() -> int:
     sources = read_sources()
     state = read_state()
     seen = state.setdefault("seen", {})
-    discovered = 0
     feed_errors = 0
     telegram_errors = 0
     telegram_rate_limited = False
+    pending_events: list[dict] = []
 
     if not sources:
         print("No sources configured. Add public RSS/Atom URLs to sources.txt.")
         print("No network discovery was performed.")
         return 0
 
+    # Discovery pass: gather new entries before sending so the Telegram output can
+    # be grouped and sorted by category instead of following feed-source order.
     for source in sources:
         alerts_attempted = 0
         print(f"Checking feed: {source}")
@@ -526,97 +582,198 @@ def main() -> int:
             feed = feedparser.parse(feed_response.content)
             if getattr(feed, "bozo", False) and not feed.entries:
                 raise RuntimeError(str(getattr(feed, "bozo_exception", "invalid feed")))
+
             for entry in feed.entries:
-                if alerts_attempted >= MAX_ALERTS_PER_SOURCE_PER_RUN:
-                    print(
-                        f"Per-source alert limit reached for {source}; remaining new items will be checked on a future run."
-                    )
-                    break
                 title = str(entry.get("title", "Untitled event")).strip()
                 link = str(entry.get("link", "")).strip()
                 raw_summary = str(entry.get("summary", entry.get("description", "")))
-                # Keep raw summary briefly for thumbnail extraction, then create safe plain text.
                 summary = unescape(re.sub(r"<[^>]+>", " ", raw_summary))
                 content = f"{title}\n{summary}"
                 categories = matching_categories(content)
                 if not categories:
                     continue
+
                 uid = event_id(link, title)
                 if uid in seen:
-                    # Keep last-seen timestamp without re-alerting on every run.
                     seen[uid]["last_seen_utc"] = now_iso()
                     continue
 
-                image_url = extract_event_image(entry, link, raw_summary)
-                alerts_attempted += 1
-                deadline = extract_deadline(content)
-                reg_status, reg_evidence = registration_status(content)
-                link_status, link_evidence = check_link(link)
-                item = {"title": title, "link": link, "summary": summary}
-                alert = build_alert(item, categories, deadline, reg_status, reg_evidence,
-                                    link_status, link_evidence)
-                photo_caption = build_photo_caption(item, categories, deadline, reg_status)
-                try:
-                    fallback_card = generate_opportunity_card(item, categories, deadline, reg_status)
-                except Exception as exc:
+                if alerts_attempted >= MAX_ALERTS_PER_SOURCE_PER_RUN:
                     print(
-                        f"Could not generate a fallback opportunity card ({type(exc).__name__}); "
-                        "a text alert will be used if no source image is available.",
-                        file=sys.stderr,
+                        f"Per-source alert limit reached for {source}; "
+                        "remaining new items will be checked on a future run."
                     )
-                    fallback_card = None
+                    break
+
+                primary = primary_category(categories, title)
+                pending_events.append({
+                    "uid": uid,
+                    "title": title,
+                    "link": link,
+                    "summary": summary,
+                    "raw_summary": raw_summary,
+                    "entry": dict(entry),
+                    "categories": categories,
+                    "primary_category": primary,
+                    "source": source,
+                })
+                alerts_attempted += 1
+
+        except Exception as exc:
+            feed_errors += 1
+            print(f"Feed error ({source}): {type(exc).__name__}: {exc}", file=sys.stderr)
+
+    # One item appears once in the stream, under a primary bucket, with all tags
+    # preserved on the photo card and caption.
+    pending_events.sort(key=lambda event: (
+        CATEGORY_ORDER.index(event["primary_category"])
+        if event["primary_category"] in CATEGORY_ORDER else len(CATEGORY_ORDER),
+        event["title"].casefold(),
+    ))
+
+    # Digest header gives a quick category-by-category inventory for this scan.
+    if pending_events:
+        category_counts: dict[str, int] = {}
+        for event in pending_events:
+            key = event["primary_category"]
+            category_counts[key] = category_counts.get(key, 0) + 1
+        digest_lines = [
+            f"🧭 OPPORTUNITY DIGEST  •  {datetime.now(timezone.utc).strftime('%d %b %Y %H:%M UTC')}",
+            f"New opportunities found: {len(pending_events)}",
+            "",
+        ]
+        for category in CATEGORY_ORDER:
+            if category_counts.get(category):
+                digest_lines.append(
+                    f"• {category_label(category)}: {category_counts[category]}"
+                )
+        try:
+            telegram_send("\n".join(digest_lines))
+        except TelegramRateLimitError as exc:
+            telegram_errors += 1
+            telegram_rate_limited = True
+            print(
+                f"Telegram rate limit reached while sending category digest; "
+                f"retry after {exc.retry_after}s. Event cards deferred.",
+                file=sys.stderr,
+            )
+        except Exception as exc:
+            telegram_errors += 1
+            print(f"Telegram digest error: {type(exc).__name__}: {exc}", file=sys.stderr)
+
+    discovered = 0
+    current_category: str | None = None
+    if not telegram_rate_limited:
+        for event in pending_events:
+            primary = event["primary_category"]
+            if primary != current_category:
+                group_count = sum(1 for candidate in pending_events
+                                  if candidate["primary_category"] == primary)
                 try:
                     telegram_send(
-                        alert, image_url=image_url, caption=photo_caption, fallback_card=fallback_card
+                        f"📂 {category_label(primary).upper()}  •  {group_count} "
+                        f"{'opportunity' if group_count == 1 else 'opportunities'}"
                     )
                 except TelegramRateLimitError as exc:
                     telegram_errors += 1
                     telegram_rate_limited = True
                     print(
-                        f"Telegram rate limit reached; stopping this run's alert delivery. "
-                        f"Retry after {exc.retry_after}s; remaining alerts are deferred.",
+                        f"Telegram rate limit reached at category {category_label(primary)}; "
+                        f"retry after {exc.retry_after}s. Remaining categories deferred.",
                         file=sys.stderr,
                     )
-                    # Do not mark this event as seen; retry after Telegram's cooldown.
                     break
                 except Exception as exc:
                     telegram_errors += 1
                     print(
-                        f"Telegram delivery error for {title!r}: {type(exc).__name__}: {exc}",
+                        f"Telegram category heading error ({category_label(primary)}): "
+                        f"{type(exc).__name__}: {exc}",
                         file=sys.stderr,
                     )
-                    # Do not mark failed notifications as seen; a later run can retry them.
-                    continue
+                current_category = primary
 
-                seen[uid] = {
-                    "title": title,
-                    "url": clean_url(link),
-                    "image_url": image_url or "",
-                    "source": source,
-                    "first_seen_utc": now_iso(),
-                    "last_seen_utc": now_iso(),
-                    "deadline": deadline,
-                    "registration_status": reg_status,
-                    "link_status": link_status,
-                }
-                discovered += 1
+            title = event["title"]
+            link = event["link"]
+            categories = event["categories"]
+            item = {"title": title, "link": link, "summary": event["summary"]}
 
-            if telegram_rate_limited:
+            try:
+                image_url = extract_event_image(event["entry"], link, event["raw_summary"])
+            except Exception as exc:
+                image_url = None
+                print(
+                    f"Image lookup failed for {title!r} ({type(exc).__name__}); "
+                    "a generated card will be used.",
+                    file=sys.stderr,
+                )
+
+            deadline = extract_deadline(f"{title}\n{event['summary']}")
+            reg_status, reg_evidence = registration_status(f"{title}\n{event['summary']}")
+            link_status, link_evidence = check_link(link)
+            alert = build_alert(
+                item, categories, deadline, reg_status, reg_evidence, link_status, link_evidence
+            )
+            photo_caption = build_photo_caption(
+                item, categories, deadline, reg_status, primary=primary
+            )
+            try:
+                fallback_card = generate_opportunity_card(
+                    item, categories, deadline, reg_status, primary=primary
+                )
+            except Exception as exc:
+                print(
+                    f"Could not generate a fallback opportunity card ({type(exc).__name__}); "
+                    "text will be used only if no source image is available.",
+                    file=sys.stderr,
+                )
+                fallback_card = None
+
+            try:
+                telegram_send(
+                    alert, image_url=image_url, caption=photo_caption, fallback_card=fallback_card
+                )
+            except TelegramRateLimitError as exc:
+                telegram_errors += 1
+                telegram_rate_limited = True
+                print(
+                    f"Telegram rate limit reached while sending {title!r}; "
+                    f"retry after {exc.retry_after}s. This and remaining opportunities will retry later.",
+                    file=sys.stderr,
+                )
                 break
-        except Exception as exc:
-            feed_errors += 1
-            print(f"Feed error ({source}): {type(exc).__name__}: {exc}", file=sys.stderr)
+            except Exception as exc:
+                telegram_errors += 1
+                print(
+                    f"Telegram delivery error for {title!r}: {type(exc).__name__}: {exc}",
+                    file=sys.stderr,
+                )
+                continue
+
+            seen[event["uid"]] = {
+                "title": title,
+                "url": clean_url(link),
+                "image_url": image_url or "",
+                "source": event["source"],
+                "categories": categories,
+                "primary_category": primary,
+                "first_seen_utc": now_iso(),
+                "last_seen_utc": now_iso(),
+                "deadline": deadline,
+                "registration_status": reg_status,
+                "link_status": link_status,
+            }
+            discovered += 1
 
     state["updated_utc"] = now_iso()
     write_state(state)
     print(
-        f"Done. New matching events: {discovered}; feed errors: {feed_errors}; "
-        f"Telegram delivery errors: {telegram_errors}; total tracked: {len(seen)}"
+        f"Done. New matching events sent: {discovered}; queued this run: {len(pending_events)}; "
+        f"feed errors: {feed_errors}; Telegram errors: {telegram_errors}; total tracked: {len(seen)}"
     )
-    # Fail visibly when every feed fails or any Telegram alert cannot be delivered.
     if feed_errors == len(sources) or telegram_errors:
         return 1
     return 0
+
 
 if __name__ == "__main__":
     raise SystemExit(main())
