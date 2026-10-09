@@ -58,7 +58,7 @@ The verification module is `page_verification.py`. It fetches public HTML pages 
 - `awaiting_source_resolution`: the only URL is an unresolved Google News wrapper; no page fetch is spent on the wrapper.
 - HTTP, redirect and parse failures are recorded separately. Successful checks are scheduled for recheck after seven days; fetch failures can retry after a day. A verification-version change schedules older records for a bounded recheck.
 
-The page parser does not log in, solve CAPTCHAs, bypass anti-bot checks, submit applications or infer official status from reachability alone. Unsupported facts remain unknown. The first live check successfully parsed a structured event listing from Hackalendar, but because the discovery listing is not itself the organizer's page, its facts remain under observed evidence until the registration link is verified.
+The page parser does not log in, solve CAPTCHAs, bypass anti-bot checks, submit applications or infer official status from reachability alone. Unsupported facts remain unknown. In a live test, Hackalendar's structured listing was parsed and its “Enter on the organiser's site” link was identified. The linked Devpost page returned an HTTP error to the automation runner, so the link is retained as an unverified candidate and the listing's dates/location remain observations rather than verified organizer facts. Candidate fetch status and HTTP error details are stored to guide later rechecks.
 
 ## Canonical opportunity schema (v1)
 
