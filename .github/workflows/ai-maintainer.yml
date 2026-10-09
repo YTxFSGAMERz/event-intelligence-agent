@@ -1,0 +1,113 @@
+name: AI Event App Maintainer
+
+on:
+  # Each run is a fresh, short-lived AI coding session. GitHub scheduling is best-effort.
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: ai-event-app-maintainer
+  cancel-in-progress: false
+
+jobs:
+  maintain:
+    name: Inspect, improve, test, and propose
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          # Do not leave a write-capable GitHub token in the checkout for the AI agent.
+          persist-credentials: false
+
+      - name: Check whether the OpenAI API key is configured
+        id: api
+        env:
+          OPENAI_API_KEY: \${{ secrets.OPENAI_API_KEY }}
+        shell: bash
+        run: |
+          if [[ -z "$OPENAI_API_KEY" ]]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            {
+              echo "### AI maintenance is not enabled yet"
+              echo
+              echo "Add the repository Actions secret OPENAI_API_KEY to enable the scheduled coding agent."
+              echo "OpenAI API usage is billed separately from a ChatGPT subscription."
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "::warning::OPENAI_API_KEY is not configured; skipping AI coding."
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Python
+        if: steps.api.outputs.configured == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install app dependencies for validation
+        if: steps.api.outputs.configured == 'true'
+        run: python -m pip install -r requirements.txt
+
+      - name: Run Codex maintenance session
+        if: steps.api.outputs.configured == 'true'
+        id: codex
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: \${{ secrets.OPENAI_API_KEY }}
+          permission-profile: ":workspace"
+          prompt-file: ".github/AI_MAINTAINER_PROMPT.md"
+
+      - name: Enforce change policy
+        if: steps.api.outputs.configured == 'true'
+        id: guard
+        run: python tools/ai_maintenance_guard.py
+
+      - name: Compile Python modules
+        if: steps.api.outputs.configured == 'true' && steps.guard.outputs.changed == 'true'
+        run: python -m compileall -q main.py opportunity_quality.py source_adapters.py page_verification.py
+
+      - name: Run regression tests
+        if: steps.api.outputs.configured == 'true' && steps.guard.outputs.changed == 'true'
+        run: python -m unittest discover -s tests -v
+
+      - name: Create or update a draft pull request
+        if: steps.api.outputs.configured == 'true' && steps.guard.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: \${{ secrets.GITHUB_TOKEN }}
+          branch: automation/ai-maintenance
+          add-paths: |
+            main.py
+            opportunity_quality.py
+            source_adapters.py
+            page_verification.py
+            dashboard/index.html
+            tests/**
+          commit-message: "fix: propose tested AI maintenance improvements"
+          title: "AI maintenance: tested event app improvements"
+          body: |
+            This draft pull request was prepared by the scheduled AI maintenance workflow.
+
+            The workflow only proposes changes in the app and tests allowlist. It runs the Python compile check, repository unit tests, and a separate change-policy gate before updating this PR.
+
+            Please review the diff and CI results before merging. AI-generated changes are not deployed automatically.
+          draft: true
+          delete-branch: false
+
+      - name: Record no-change cycle
+        if: steps.api.outputs.configured == 'true' && steps.guard.outputs.changed == 'false'
+        run: |
+          {
+            echo "### AI maintenance"
+            echo
+            echo "The agent found no high-confidence improvement worth proposing in this cycle. No files were changed."
+          } >> "$GITHUB_STEP_SUMMARY"
