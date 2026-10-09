@@ -29,6 +29,10 @@ Each configured URL receives a stable source ID and a source-health record in `d
 - Resolved URLs are used for cross-feed deduplication where possible. Existing legacy records remain compatible and are not re-alerted just because their ID predates URL resolution.
 - If a Google News redirect cannot be resolved, the system keeps the discovery link and records the resolution status instead of fabricating a canonical URL.
 
+Google News URL decoding is bounded to **four attempts per workflow run**, with at most **one legacy-record backfill** so historical records cannot use the entire budget before new discoveries. If the budget is exhausted, the event is still retained with its discovery URL and a `resolution_budget_deferred` status; later runs can retry it. Ordinary direct RSS links do not consume this resolution budget.
+
+The scanner continues through the feed after reaching its per-source alert cap, so matching counts and last-seen timestamps cover the full feed while new alerts remain limited. The `new_items` source-health field represents items queued for alerting, not a guarantee Telegram delivery succeeded.
+
 The current registry uses public RSS/Atom feeds and ordinary redirect/canonical-page checks. It does not bypass access controls or anti-bot mechanisms.
 
 ## Canonical opportunity schema (v1)
