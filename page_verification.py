@@ -599,10 +599,19 @@ def _extract_facts(page: PageFetch, expected_title: str) -> dict:
         organizer_url = _url_from(organizer_obj)
         event_start = str(event_node.get("startDate")).strip() if event_node.get("startDate") else None
         event_end = str(event_node.get("endDate")).strip() if event_node.get("endDate") else None
-        # Timezone is populated only when encoded in the actual date string.
+        # Preserve an explicitly stated UTC/offset; never guess from the server locale.
         for date_value in (event_start, event_end):
-            if date_value and (date_value.endswith("Z") or re.search(r"[+-]\d{2}:?\d{2}$", date_value)):
-                event_timezone = "explicit_in_source"
+            if not date_value:
+                continue
+            if date_value.endswith("Z"):
+                event_timezone = "UTC"
+                break
+            offset = re.search(r"([+-]\d{2}:?\d{2})$", date_value)
+            if offset:
+                raw_offset = offset.group(1)
+                if len(raw_offset) == 5 and ":" not in raw_offset:
+                    raw_offset = raw_offset[:3] + ":" + raw_offset[3:]
+                event_timezone = "UTC" + raw_offset
                 break
         location = _location_facts(event_node, str(event_node.get("eventAttendanceMode") or ""), body_text)
         event_status = str(event_node.get("eventStatus") or "").casefold()
@@ -636,6 +645,39 @@ def _extract_facts(page: PageFetch, expected_title: str) -> dict:
                 "value": location, "source_url": page.final_url, "method": "schema_org_event",
                 "snippet": "JSON-LD Event.location / eventAttendanceMode",
             }
+
+    registration_status = "unknown"
+    registration_evidence = None
+    sentences = _sentence_candidates(body_text)
+    closed_patterns = (
+        r"\bregistration (?:is )?closed\b", r"\bapplications? (?:are )?closed\b",
+        r"\bapplications? have closed\b", r"\bregistration ended\b",
+        r"\bno longer accepting applications\b", r"\bapplications? are no longer accepted\b",
+        r"\bsold out\b", r"\bfully booked\b",
+    )
+    open_patterns = (
+        r"\bregistration (?:is )?open\b", r"\bapplications? (?:are )?open\b",
+        r"\bapply now\b", r"\bregister now\b", r"\bapplications? are being accepted\b",
+        r"\baccepting applications\b", r"\bregistration is live\b",
+    )
+    for sentence in sentences:
+        if any(re.search(pattern, sentence, re.I) for pattern in closed_patterns):
+            registration_status = "closed"
+            registration_evidence = sentence[:280]
+            break
+    if registration_status == "unknown":
+        for sentence in sentences:
+            if any(re.search(pattern, sentence, re.I) for pattern in open_patterns):
+                registration_status = "open"
+                registration_evidence = sentence[:280]
+                break
+    if registration_evidence:
+        field_evidence["registration_status"] = {
+            "value": registration_status,
+            "source_url": page.final_url,
+            "method": "explicit_page_text",
+            "snippet": registration_evidence,
+        }
 
     if not location:
         location = {
@@ -692,6 +734,8 @@ def _extract_facts(page: PageFetch, expected_title: str) -> dict:
         "event_end_at": event_end,
         "event_timezone": event_timezone,
         "opportunity_status": opportunity_status or "unknown",
+        "registration_status": registration_status,
+        "registration_status_evidence": registration_evidence,
         "location": location,
         "deadline": deadline,
         "deadline_status": deadline_status,
@@ -796,7 +840,7 @@ def verify_opportunity_page(
             "official_url": None,
             "official_link_candidate": None,
             "official_link_reason": None,
-            "last_checked_at": checked_at,
+            "last_checked_at": None if source_page.status == "skipped_budget" else checked_at,
             "duration_ms": source_page.duration_ms,
             "error": source_page.error,
             "evidence_urls": _evidence_urls(source_page.final_url, discovery_url),
@@ -860,6 +904,8 @@ def verify_opportunity_page(
         "event_end_at": selected_facts.get("event_end_at"),
         "event_timezone": selected_facts.get("event_timezone"),
         "opportunity_status": selected_facts.get("opportunity_status"),
+        "registration_status": selected_facts.get("registration_status"),
+        "registration_status_evidence": selected_facts.get("registration_status_evidence"),
         "location": selected_facts.get("location"),
         "deadline": selected_facts.get("deadline"),
         "deadline_status": selected_facts.get("deadline_status"),
