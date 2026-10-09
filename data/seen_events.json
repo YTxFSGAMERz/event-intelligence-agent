@@ -6109,7 +6109,7 @@
           "https://lu.ma/i80uoluz",
           "https://luma.com/i80uoluz"
         ],
-        "last_checked_at": "2026-10-09T19:05:48+00:00",
+        "last_checked_at": "2026-10-09T19:06:02+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
@@ -6125,7 +6125,7 @@
         "candidate_page_http_status": 200,
         "page_title": "Lovable x EF x WWB 🪄 Hackathon",
         "last_check_error": null,
-        "last_check_duration_ms": 586,
+        "last_check_duration_ms": 761,
         "observed_facts": {
           "page_role": "structured_event_listing",
           "page_title": "Lovable x EF x WWB 🪄 Hackathon",
@@ -6209,7 +6209,7 @@
             "snippet": "JSON-LD Event.location / eventAttendanceMode"
           }
         },
-        "last_verified_at": "2026-10-09T19:05:48+00:00"
+        "last_verified_at": "2026-10-09T19:06:02+00:00"
       },
       "schema_version": 1,
       "id": "dac1b99de94ef1bdd9cb",
@@ -6538,7 +6538,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-09T19:05:48+00:00",
+  "updated_utc": "2026-10-09T19:06:03+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -6571,7 +6571,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:05:48+00:00",
+      "last_skipped_at": "2026-10-09T19:06:02+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 1
     },
@@ -6605,7 +6605,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:05:48+00:00",
+      "last_skipped_at": "2026-10-09T19:06:02+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 1
     },
@@ -6639,7 +6639,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:05:48+00:00",
+      "last_skipped_at": "2026-10-09T19:06:02+00:00",
       "quality_rejected_count": 2,
       "quality_rule_version": 1
     },
@@ -6673,7 +6673,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:05:48+00:00",
+      "last_skipped_at": "2026-10-09T19:06:02+00:00",
       "quality_rejected_count": 6,
       "quality_rule_version": 1
     },
@@ -6708,7 +6708,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:05:48+00:00",
+      "last_skipped_at": "2026-10-09T19:06:02+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 1
     },
@@ -6744,7 +6744,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T19:05:48+00:00",
+      "last_skipped_at": "2026-10-09T19:06:02+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 1
     },
@@ -6780,7 +6780,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 1,
-      "last_skipped_at": "2026-10-09T19:05:48+00:00"
+      "last_skipped_at": "2026-10-09T19:06:02+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -6814,7 +6814,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 1,
-      "last_skipped_at": "2026-10-09T19:05:48+00:00"
+      "last_skipped_at": "2026-10-09T19:06:02+00:00"
     }
   }
 }
