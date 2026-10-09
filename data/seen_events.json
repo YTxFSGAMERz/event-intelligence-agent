@@ -3150,16 +3150,93 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "structured_event_source_page_checked",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://hackalendar.com/e/nebius-nvidia-global-ai-hackathon-2026"
+        ],
+        "last_checked_at": "2026-10-09T11:17:52+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "source_page_url": "https://hackalendar.com/e/nebius-nvidia-global-ai-hackathon-2026",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "page_title": "Nebius x NVIDIA Global AI Hackathon",
+        "last_check_error": null,
+        "last_check_duration_ms": 104,
+        "observed_facts": {
+          "page_role": "structured_event_listing",
+          "page_title": "Nebius x NVIDIA Global AI Hackathon",
+          "description": "Welcome to the Nebius x NVIDIA Global AI Hackathon\n\nBuild a working AI system on open, independent infrastructure, and own the whole thing. The NVIDIA x Nebius Global AI Hackathon is for AI builders, ML engineers, founders, and anyone shipping practical, high-performance AI. You'll build with NVIDIA open source models served on Nebius through Nebius Token Factory, on high performance GPU infrastructure. Experiment with new ideas, push the boundaries of open source AI, and submit a project for a chance to win prizes and recognition.\n\nJoin fellow builders for technical onboarding, casual workshops, team formation, focused build time, and feedback as you participate in the Global AI Hackathon. Find your nearby city/event here!",
+          "organizer": "Devpost, Inc.",
+          "event_start_at": "2026-08-26T00:00:00.000Z",
+          "event_end_at": "2026-10-30T23:59:59.999Z",
+          "event_timezone": "UTC",
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": null,
+            "mode": "remote",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        },
+        "fact_evidence": {
+          "event_start_at": {
+            "value": "2026-08-26T00:00:00.000Z",
+            "source_url": "https://hackalendar.com/e/nebius-nvidia-global-ai-hackathon-2026",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.startDate=2026-08-26T00:00:00.000Z"
+          },
+          "event_end_at": {
+            "value": "2026-10-30T23:59:59.999Z",
+            "source_url": "https://hackalendar.com/e/nebius-nvidia-global-ai-hackathon-2026",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.endDate=2026-10-30T23:59:59.999Z"
+          },
+          "organizer": {
+            "value": "Devpost, Inc.",
+            "source_url": "https://hackalendar.com/e/nebius-nvidia-global-ai-hackathon-2026",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.organizer.name=Devpost, Inc."
+          }
+        }
       },
       "schema_version": 1,
       "id": "e55db4f92cbd01c94ab6",
@@ -3569,7 +3646,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-09T11:17:30+00:00",
+  "updated_utc": "2026-10-09T11:17:52+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -3602,7 +3679,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:17:29+00:00"
+      "last_skipped_at": "2026-10-09T11:17:52+00:00"
     },
     "4ae1d4cb1873b219": {
       "source_id": "4ae1d4cb1873b219",
@@ -3634,7 +3711,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:17:29+00:00"
+      "last_skipped_at": "2026-10-09T11:17:52+00:00"
     },
     "7c5c4d34b1a8fdc9": {
       "source_id": "7c5c4d34b1a8fdc9",
@@ -3666,7 +3743,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:17:29+00:00"
+      "last_skipped_at": "2026-10-09T11:17:52+00:00"
     },
     "56da5ebaefc91f25": {
       "source_id": "56da5ebaefc91f25",
@@ -3698,7 +3775,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:17:29+00:00"
+      "last_skipped_at": "2026-10-09T11:17:52+00:00"
     },
     "105b071f37b46d64": {
       "source_id": "105b071f37b46d64",
@@ -3731,7 +3808,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:17:29+00:00"
+      "last_skipped_at": "2026-10-09T11:17:52+00:00"
     },
     "7c33d1ecedb854aa": {
       "source_id": "7c33d1ecedb854aa",
@@ -3765,7 +3842,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T11:17:29+00:00"
+      "last_skipped_at": "2026-10-09T11:17:52+00:00"
     }
   }
 }
