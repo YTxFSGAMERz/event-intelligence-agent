@@ -256,7 +256,7 @@ def write_state(state: dict) -> None:
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     normalized = normalize_state(state)
     normalized["updated_utc"] = now_iso()
-    STATE_FILE.write_text(json.dumps(normalized, indent=2, ensure_ascii=False) + "\\n", encoding="utf-8")
+    STATE_FILE.write_text(json.dumps(normalized, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 def matching_categories(text: str) -> list[str]:
     low = text.lower()
