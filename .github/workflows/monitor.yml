@@ -9,6 +9,7 @@ on:
       - ".github/workflows/monitor.yml"
       - "main.py"
       - "source_adapters.py"
+      - "page_verification.py"
       - "tests/**"
       - "requirements.txt"
       - "sources.txt"
