@@ -94,7 +94,29 @@ class OpportunityQualityTests(unittest.TestCase):
         )
         self.assertTrue(result["accepted"])
         self.assertEqual(result["status"], "specific_opportunity")
-        self.assertEqual(result["rule_version"], 3)
+        self.assertEqual(result["rule_version"], 4)
+
+    def test_keeps_named_nsp_scheme_with_portal_deadline(self):
+        result = assess_discovery_quality(
+            "AICTE - Swanath Scholarship Scheme (Technical Degree)",
+            "National Scholarship Portal (NSP), academic year 2026-27; official listing, scheme details not independently verified. Student application deadline: October 31, 2026.",
+            ["scholarships_fellowships"],
+            adapter_type="nsp_scholarships_html",
+        )
+        self.assertTrue(result["accepted"])
+        self.assertEqual(result["status"], "specific_opportunity")
+        self.assertEqual(result["rule_version"], 4)
+
+    def test_keeps_named_devfolio_open_hackathon(self):
+        result = assess_discovery_quality(
+            "Wild Bugs",
+            "Devfolio platform listing; not independently verified as an organizer page. Listing section: Open. Schedule/status as displayed: Starts 14/10/26. Format as displayed: Online.",
+            ["hackathons_buildathons"],
+            adapter_type="devfolio_html",
+        )
+        self.assertTrue(result["accepted"])
+        self.assertEqual(result["status"], "specific_opportunity")
+        self.assertEqual(result["rule_version"], 4)
 
     def test_quality_result_has_a_rule_version_and_a_reason(self):
         result = assess_discovery_quality(
