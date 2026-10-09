@@ -3264,16 +3264,73 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "source_page_checked",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://news.google.com/rss/articles/CBMipwFBVV95cUxQMlUzN2RJS1ZySVJfMEJVNjEwcXVQOW85NFpoNGZNbkJwS2QyQ0NMdUNmb3drZ2VWTHlwbDVhZXhySllSLUhtT3FORVFLVG42U0pQTlJiMmU5U3p6cTdhV2daNXo2R0ljUG5SMnozWjFfWE5TS2NxN3RmUi0yRG9pYy1QTE9tQldCT2p1RU14NHZuSlVKTXJzNll3ODhjWTNpNU1IWENTTQ?oc=5&hl=en-US&gl=US&ceid=US:en"
+        ],
+        "last_checked_at": "2026-10-09T11:17:29+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "source_page_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQMlUzN2RJS1ZySVJfMEJVNjEwcXVQOW85NFpoNGZNbkJwS2QyQ0NMdUNmb3drZ2VWTHlwbDVhZXhySllSLUhtT3FORVFLVG42U0pQTlJiMmU5U3p6cTdhV2daNXo2R0ljUG5SMnozWjFfWE5TS2NxN3RmUi0yRG9pYy1QTE9tQldCT2p1RU14NHZuSlVKTXJzNll3ODhjWTNpNU1IWENTTQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "page_title": null,
+        "last_check_error": null,
+        "last_check_duration_ms": 195,
+        "observed_facts": {
+          "page_role": "discovery_or_unrelated_page",
+          "page_title": "",
+          "description": "",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        }
       },
       "schema_version": 1,
       "id": "c4888ab2c50d34980f8c",
@@ -3512,7 +3569,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-09T11:16:17+00:00",
+  "updated_utc": "2026-10-09T11:17:30+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -3545,7 +3602,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:16:16+00:00"
+      "last_skipped_at": "2026-10-09T11:17:29+00:00"
     },
     "4ae1d4cb1873b219": {
       "source_id": "4ae1d4cb1873b219",
@@ -3577,7 +3634,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:16:16+00:00"
+      "last_skipped_at": "2026-10-09T11:17:29+00:00"
     },
     "7c5c4d34b1a8fdc9": {
       "source_id": "7c5c4d34b1a8fdc9",
@@ -3609,7 +3666,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:16:16+00:00"
+      "last_skipped_at": "2026-10-09T11:17:29+00:00"
     },
     "56da5ebaefc91f25": {
       "source_id": "56da5ebaefc91f25",
@@ -3641,7 +3698,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:16:16+00:00"
+      "last_skipped_at": "2026-10-09T11:17:29+00:00"
     },
     "105b071f37b46d64": {
       "source_id": "105b071f37b46d64",
@@ -3674,7 +3731,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T11:16:16+00:00"
+      "last_skipped_at": "2026-10-09T11:17:29+00:00"
     },
     "7c33d1ecedb854aa": {
       "source_id": "7c33d1ecedb854aa",
@@ -3708,7 +3765,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T11:16:16+00:00"
+      "last_skipped_at": "2026-10-09T11:17:29+00:00"
     }
   }
 }
