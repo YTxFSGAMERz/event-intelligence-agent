@@ -231,11 +231,294 @@ class MLHUpcomingEventsParser(HTMLParser):
         self._seen_links.add(link)
 
 
+
+DEVFOLIO_DATE_RE = re.compile(r"\b(?P<label>starts|opens)\s+(?P<date>\d{1,2}/\d{1,2}/\d{2,4})\b", re.IGNORECASE)
+
+
+class DevfolioExploreParser(HTMLParser):
+    """Parse only Devfolio's Open and Upcoming hackathon sections."""
+
+    HEADING_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6"}
+    META_TEXT = re.compile(
+        r"^(?:hackathon|theme|no restrictions|online|offline|hybrid|open|upcoming|past|"
+        r"apply now|remind me|live|starts?\s+\d{1,2}/\d{1,2}/\d{2,4}|"
+        r"opens?\s+\d{1,2}/\d{1,2}/\d{2,4}|\+\s*[\d,]+\s+participating)$",
+        re.IGNORECASE,
+    )
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.section = ""
+        self.saw_open = False
+        self.saw_upcoming = False
+        self._heading_tag: str | None = None
+        self._heading_parts: list[str] = []
+        self._anchor: dict | None = None
+        self._current: dict | None = None
+        self.events: list[dict] = []
+        self._seen_links: set[str] = set()
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attrs_dict = {key.lower(): (value or "").strip() for key, value in attrs}
+        tag = tag.lower()
+        if tag in self.HEADING_TAGS:
+            self._heading_tag = tag
+            self._heading_parts = []
+        if tag == "a":
+            self._anchor = {
+                "href": attrs_dict.get("href", ""),
+                "aria_label": attrs_dict.get("aria-label", ""),
+                "title_attr": attrs_dict.get("title", ""),
+                "parts": [],
+            }
+
+    def handle_data(self, data: str) -> None:
+        if self._heading_tag:
+            self._heading_parts.append(data)
+        elif self._anchor is None and self._current is not None:
+            self._current["parts"].append(data)
+        if self._anchor is not None:
+            self._anchor["parts"].append(data)
+
+    def _finish_current(self) -> None:
+        current = self._current
+        self._current = None
+        if not current:
+            return
+        parts = [re.sub(r"\s+", " ", str(value or "")).strip() for value in current.get("parts", [])]
+        visible = re.sub(r"\s+", " ", " ".join(part for part in parts if part)).strip()
+        date_match = DEVFOLIO_DATE_RE.search(visible)
+        event_date = (
+            date_match.group("date")
+            if date_match and date_match.group("label").casefold() == "starts"
+            else None
+        )
+        application_open_date = (
+            date_match.group("date")
+            if date_match and date_match.group("label").casefold() == "opens"
+            else None
+        )
+        live = bool(re.search(r"\blive\b", visible, re.IGNORECASE))
+        format_match = re.search(r"\b(online|offline|hybrid)\b", visible, re.IGNORECASE)
+        format_text = format_match.group(1).capitalize() if format_match else ""
+        if not event_date and not application_open_date and not live and not visible:
+            return
+
+        section = str(current.get("section") or "")
+        schedule_text = (
+            f"Starts {event_date}" if event_date
+            else f"Applications open {application_open_date}" if application_open_date
+            else "Currently live; start date not shown" if live
+            else "Schedule not shown"
+        )
+        summary_bits = [
+            "Devfolio platform listing; not independently verified as an organizer page.",
+            f"Listing section: {section.title()}.",
+            f"Schedule/status as displayed: {schedule_text}.",
+        ]
+        if format_text:
+            summary_bits.append(f"Format as displayed: {format_text}.")
+        if visible:
+            summary_bits.append(f"Listing text: {visible[:500]}.")
+        summary_bits.append("Confirm eligibility, exact timing, prizes and application rules on the event page.")
+        self.events.append({
+            "title": current["title"],
+            "link": current["link"],
+            "summary": " ".join(summary_bits),
+            "listing_status": section,
+            "event_date_text": event_date,
+            "application_open_date_text": application_open_date,
+            "live": live,
+            "format_text": format_text,
+            "source_listing": "Devfolio Open & Upcoming Hackathons",
+        })
+
+    def handle_endtag(self, tag: str) -> None:
+        tag = tag.lower()
+        if self._heading_tag == tag:
+            heading = re.sub(r"\s+", " ", " ".join(self._heading_parts)).strip().casefold()
+            if heading in {"open", "upcoming", "past"}:
+                self._finish_current()
+                self.section = heading
+                if heading == "open":
+                    self.saw_open = True
+                elif heading == "upcoming":
+                    self.saw_upcoming = True
+            self._heading_tag = None
+            self._heading_parts = []
+
+        if tag != "a" or self._anchor is None:
+            return
+        anchor = self._anchor
+        self._anchor = None
+        if self.section not in {"open", "upcoming"}:
+            return
+        link = normalize_http_url(urljoin("https://devfolio.co/explore/", anchor.get("href", "")))
+        if not link:
+            return
+        parts = urlsplit(link)
+        host = (parts.hostname or "").lower()
+        if not host.endswith(".devfolio.co") or parts.username or parts.password:
+            return
+        if link in self._seen_links:
+            return
+
+        anchor_parts = [re.sub(r"\s+", " ", str(value or "")).strip() for value in anchor["parts"]]
+        title = next((part for part in anchor_parts if part and not self.META_TEXT.fullmatch(part)), "")
+        if not title:
+            title = anchor.get("aria_label") or anchor.get("title_attr") or ""
+        title = re.sub(r"\s+", " ", title).strip()[:180]
+        if not title:
+            return
+
+        self._finish_current()
+        self._current = {
+            "title": title,
+            "link": link,
+            "section": self.section,
+            # Some cards place metadata inside the title link; retain all later text nodes.
+            "parts": anchor_parts[1:],
+        }
+        self._seen_links.add(link)
+
+    def close(self) -> None:
+        super().close()
+        self._finish_current()
+
+
+NSP_DEADLINE_RE = re.compile(
+    r"Student\s+Application\s+Open\s+till(?:\s*\(for\s+Renewal\))?\s*:?\s*(\d{2}-\d{2}-\d{4})",
+    re.IGNORECASE,
+)
+
+
+class NSPScholarshipListParser(HTMLParser):
+    """Extract titled schemes and their specific Specifications/FAQ links from NSP."""
+
+    GENERAL_HEADINGS = {"students", "schemes on nsp", "public", "institutes", "officers"}
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self._heading_tag: str | None = None
+        self._heading_parts: list[str] = []
+        self._current: dict | None = None
+        self._anchor: dict | None = None
+        self.entries: list[dict] = []
+        self.saw_scheme_heading = False
+        self._seen_detail_links: set[str] = set()
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attrs_dict = {key.lower(): (value or "").strip() for key, value in attrs}
+        tag = tag.lower()
+        if tag == "h6":
+            self._heading_tag = tag
+            self._heading_parts = []
+        if tag == "a":
+            self._anchor = {"href": attrs_dict.get("href", ""), "parts": []}
+
+    def handle_data(self, data: str) -> None:
+        if self._heading_tag:
+            self._heading_parts.append(data)
+        elif self._current is not None and self._anchor is None:
+            self._current["text_parts"].append(data)
+        if self._anchor is not None:
+            self._anchor["parts"].append(data)
+
+    def _finish_current(self) -> None:
+        current = self._current
+        self._current = None
+        if not current:
+            return
+        detail_url = current.get("specifications_url") or current.get("faq_url")
+        if not detail_url or detail_url in self._seen_detail_links:
+            return
+        listing_text = re.sub(
+            r"\s+", " ", " ".join(str(part or "") for part in current.get("text_parts", []))
+        ).strip()
+        raw_deadline_match = NSP_DEADLINE_RE.search(listing_text)
+        raw_deadline = raw_deadline_match.group(1) if raw_deadline_match else None
+        display_deadline = None
+        if raw_deadline:
+            try:
+                parsed = datetime.strptime(raw_deadline, "%d-%m-%Y")
+                display_deadline = parsed.strftime("%B %d, %Y")
+            except ValueError:
+                display_deadline = None
+
+        deadline_text = (
+            f"Student application deadline: {display_deadline} (listed as {raw_deadline}; unverified against scheme details)."
+            if display_deadline
+            else "Student application deadline was not parsed from the current listing; verify on the portal."
+        )
+        specification_url = current.get("specifications_url")
+        faq_url = current.get("faq_url")
+        summary_bits = [
+            "National Scholarship Portal (NSP), academic year 2026-27; official listing, scheme details not independently verified.",
+            deadline_text,
+            "Official portal listing: https://scholarships.gov.in/All-Scholarships.",
+        ]
+        if specification_url:
+            summary_bits.append(f"Specifications document: {specification_url}.")
+        if faq_url:
+            summary_bits.append(f"FAQ: {faq_url}.")
+        summary_bits.append("Check the official portal for current application status, eligibility, required documents and applicable scheme rules.")
+        self.entries.append({
+            "title": current["title"],
+            "link": detail_url,
+            "summary": " ".join(summary_bits),
+            "deadline_raw": raw_deadline,
+            "deadline_display": display_deadline,
+            "listing_text": listing_text[:1200],
+            "academic_year": "2026-27",
+            "source_listing_url": "https://scholarships.gov.in/All-Scholarships",
+            "specifications_url": specification_url,
+            "faq_url": faq_url,
+            "source_listing": "National Scholarship Portal",
+        })
+        self._seen_detail_links.add(detail_url)
+
+    def handle_endtag(self, tag: str) -> None:
+        tag = tag.lower()
+        if self._heading_tag == tag:
+            heading = re.sub(r"\s+", " ", " ".join(self._heading_parts)).strip()
+            self._finish_current()
+            if heading and heading.casefold() not in self.GENERAL_HEADINGS:
+                self._current = {
+                    "title": heading,
+                    "text_parts": [],
+                    "specifications_url": None,
+                    "faq_url": None,
+                }
+                self.saw_scheme_heading = True
+            self._heading_tag = None
+            self._heading_parts = []
+
+        if tag == "a" and self._anchor is not None:
+            anchor = self._anchor
+            self._anchor = None
+            if not self._current:
+                return
+            label = re.sub(r"\s+", " ", " ".join(anchor["parts"])).strip().casefold()
+            url = normalize_http_url(urljoin("https://scholarships.gov.in/All-Scholarships", anchor.get("href", "")))
+            if not url:
+                return
+            host = (urlsplit(url).hostname or "").lower()
+            if host not in {"scholarships.gov.in", "www.scholarships.gov.in"}:
+                return
+            if "specification" in label:
+                self._current["specifications_url"] = url
+            elif "faq" in label:
+                self._current["faq_url"] = url
+
 def _resolve_source_type(url: str) -> tuple[str, str]:
     host = _host(url)
     parts = urlsplit(url)
     if host in {"hackalendar.com", "www.hackalendar.com"} and parts.path.rstrip("/") == "/feed.xml":
         return "hackalendar_rss", "Hackalendar · Upcoming Hackathons"
+    if host in {"devfolio.co", "www.devfolio.co"} and parts.path.rstrip("/").lower() == "/explore":
+        return "devfolio_html", "Devfolio · Open & Upcoming Hackathons"
+    if host in {"scholarships.gov.in", "www.scholarships.gov.in"} and parts.path.rstrip("/").lower() in {"/all-scholarships", "/students"}:
+        return "nsp_scholarships_html", "National Scholarship Portal · Schemes"
     if host in {"mlh.com", "www.mlh.com"} and (
         parts.path.rstrip("/") == "/events"
         or re.fullmatch(r"/seasons/\d{4}/events", parts.path.rstrip("/"))
@@ -283,6 +566,14 @@ def build_source_config(url: str) -> SourceConfig:
         expected_fields = ("title", "link", "summary", "event_date_text", "calendar_year", "location_text")
         pagination_mode = "official_calendar_upcoming_section"
         access_method = "public_official_mlh_events_html"
+    elif adapter_type == "devfolio_html":
+        expected_fields = ("title", "link", "summary", "listing_status", "event_date_text", "application_open_date_text", "format_text")
+        pagination_mode = "platform_open_upcoming_sections"
+        access_method = "public_devfolio_explore_html"
+    elif adapter_type == "nsp_scholarships_html":
+        expected_fields = ("title", "link", "summary", "deadline_raw", "deadline_display", "specifications_url", "faq_url")
+        pagination_mode = "portal_scheme_list_current_year"
+        access_method = "public_official_nsp_scholarship_html"
     else:
         expected_fields = ("title", "link", "summary", "description", "published", "updated", "media")
         pagination_mode = "publisher_feed_managed"
@@ -472,6 +763,111 @@ class MLHEventsHTMLAdapter(RSSSourceAdapter):
                 closer()
 
 
+class DevfolioExploreHTMLAdapter(RSSSourceAdapter):
+    """Parse Devfolio's current Open and Upcoming hackathon cards."""
+
+    MAX_HTML_BYTES = 4_000_000
+
+    def fetch(
+        self,
+        timeout: int = 10,
+        user_agent: str = "EventIntelligenceAgent/0.2 (personal event research; respectful feed polling)",
+        session: Any = requests,
+    ) -> FeedResult:
+        started = time.monotonic()
+        fetched_at = utc_now()
+        response = session.get(
+            self.config.url,
+            allow_redirects=True,
+            timeout=timeout,
+            headers={"User-Agent": user_agent},
+            stream=True,
+        )
+        try:
+            response.raise_for_status()
+            chunks: list[bytes] = []
+            size = 0
+            for chunk in response.iter_content(chunk_size=8192):
+                if not chunk:
+                    continue
+                size += len(chunk)
+                if size > self.MAX_HTML_BYTES:
+                    raise RuntimeError("Devfolio explore HTML exceeded the 4 MB safety limit")
+                chunks.append(chunk)
+            page_html = b"".join(chunks).decode(getattr(response, "encoding", None) or "utf-8", errors="replace")
+            parser = DevfolioExploreParser()
+            parser.feed(page_html)
+            parser.close()
+            if not (parser.saw_open or parser.saw_upcoming):
+                raise RuntimeError("Devfolio page changed: Open/Upcoming sections were not found")
+            if not parser.events:
+                raise RuntimeError("Devfolio parser found no event cards in Open/Upcoming sections")
+            return FeedResult(
+                entries=parser.events,
+                status="success",
+                item_count=len(parser.events),
+                duration_ms=round((time.monotonic() - started) * 1000),
+                fetched_at_utc=fetched_at,
+            )
+        finally:
+            closer = getattr(response, "close", None)
+            if callable(closer):
+                closer()
+
+
+class NSPScholarshipHTMLAdapter(RSSSourceAdapter):
+    """Parse official NSP scholarship schemes and their specific Specifications/FAQ links."""
+
+    MAX_HTML_BYTES = 4_000_000
+
+    def fetch(
+        self,
+        timeout: int = 10,
+        user_agent: str = "EventIntelligenceAgent/0.2 (personal event research; respectful portal polling)",
+        session: Any = requests,
+    ) -> FeedResult:
+        started = time.monotonic()
+        fetched_at = utc_now()
+        response = session.get(
+            self.config.url,
+            allow_redirects=True,
+            timeout=timeout,
+            headers={"User-Agent": user_agent},
+            stream=True,
+        )
+        try:
+            response.raise_for_status()
+            chunks: list[bytes] = []
+            size = 0
+            for chunk in response.iter_content(chunk_size=8192):
+                if not chunk:
+                    continue
+                size += len(chunk)
+                if size > self.MAX_HTML_BYTES:
+                    raise RuntimeError("NSP scholarship listing exceeded the 4 MB safety limit")
+                chunks.append(chunk)
+            page_html = b"".join(chunks).decode(getattr(response, "encoding", None) or "utf-8", errors="replace")
+            parser = NSPScholarshipListParser()
+            parser.feed(page_html)
+            parser.close()
+            parser._finish_current()
+            if not parser.saw_scheme_heading:
+                raise RuntimeError("NSP page changed: scheme headings were not found")
+            if not parser.entries:
+                raise RuntimeError("NSP parser found no schemes with specific official guidance links")
+            return FeedResult(
+                entries=parser.entries,
+                status="success",
+                item_count=len(parser.entries),
+                duration_ms=round((time.monotonic() - started) * 1000),
+                fetched_at_utc=fetched_at,
+            )
+        finally:
+            closer = getattr(response, "close", None)
+            if callable(closer):
+                closer()
+
+
 class GenericRSSAdapter(RSSSourceAdapter):
     """Default adapter for other permitted RSS/Atom feeds."""
 
@@ -481,6 +877,8 @@ ADAPTER_REGISTRY: dict[str, type[RSSSourceAdapter]] = {
     "hackalendar_rss": HackalendarRSSAdapter,
     "official_blog_rss": OfficialBlogRSSAdapter,
     "mlh_events_html": MLHEventsHTMLAdapter,
+    "devfolio_html": DevfolioExploreHTMLAdapter,
+    "nsp_scholarships_html": NSPScholarshipHTMLAdapter,
     "rss_atom": GenericRSSAdapter,
 }
 
