@@ -23,6 +23,8 @@ STATE_FILE = ROOT / "data" / "seen_events.json"
 USER_AGENT = "EventIntelligenceAgent/0.1 (personal event research; respectful feed polling)"
 TIMEOUT = 10
 MAX_ALERTS_PER_SOURCE_PER_RUN = 1
+MAX_URL_RESOLUTIONS_PER_RUN = 2
+MAX_URL_RESOLUTION_ATTEMPTS = 3
 TELEGRAM_MIN_INTERVAL_SECONDS = 1.1
 _LAST_TELEGRAM_REQUEST = 0.0
 
@@ -751,7 +753,43 @@ def main() -> int:
     # (such as resolving Google News redirect links) stays outside the alert logic.
     source_health = state.setdefault("source_health", {})
     adapters = build_adapters(sources)
+    adapters_by_url = {adapter.config.url: adapter for adapter in adapters}
     pending_url_index: dict[str, str] = {}
+
+    # Backfill unresolved legacy Google News links in small batches. This does not
+    # create alerts or change the stable dictionary IDs; it only enriches provenance.
+    resolutions_this_run = 0
+    for existing_id, existing in list(seen.items()):
+        if resolutions_this_run >= MAX_URL_RESOLUTIONS_PER_RUN:
+            break
+        if not isinstance(existing, dict) or existing.get("canonical_url"):
+            continue
+        discovered_url = str(existing.get("discovered_url") or existing.get("url") or "").strip()
+        if (urlsplit(discovered_url).hostname or "").lower() != "news.google.com":
+            continue
+        attempts = int(existing.get("resolution_attempts") or 0)
+        if attempts >= MAX_URL_RESOLUTION_ATTEMPTS:
+            continue
+        source_url = str(existing.get("source_feed_url") or existing.get("source") or "").strip()
+        adapter = adapters_by_url.get(source_url)
+        if adapter is None or adapter.config.adapter_type != "google_news_rss":
+            continue
+        resolved, resolution_status = adapter.resolve_item_url(
+            discovered_url, timeout=TIMEOUT, user_agent=USER_AGENT
+        )
+        existing["resolution_attempts"] = attempts + 1
+        existing["last_resolution_attempt_at"] = now_iso()
+        existing["resolution_status"] = resolution_status
+        resolutions_this_run += 1
+        if resolved:
+            existing["canonical_url"] = clean_url(resolved)
+            existing["url"] = clean_url(resolved)
+            print(f"Resolved legacy Google News link for: {existing.get('title', existing_id)}")
+        else:
+            print(
+                f"Could not resolve legacy Google News link "
+                f"({existing.get('title', existing_id)}): {resolution_status}"
+            )
 
     for adapter in adapters:
         config = adapter.config
@@ -994,6 +1032,8 @@ def main() -> int:
                 "source_id": event["source_id"],
                 "adapter_type": event["adapter_type"],
                 "resolution_status": event["resolution_status"],
+                "resolution_attempts": 1 if event["resolution_status"].startswith("unresolved_google_news_link") or event["resolution_status"].startswith("resolution_error") else 0,
+                "last_resolution_attempt_at": now_iso() if event["adapter_type"] == "google_news_rss" else None,
                 "categories": categories,
                 "primary_category": primary,
                 "first_seen_utc": now_iso(),
