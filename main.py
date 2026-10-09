@@ -15,7 +15,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 import feedparser
 import requests
 
-from source_adapters import build_adapters, source_health_failure, source_health_success
+from source_adapters import URLResolutionBudget, build_adapters, source_health_failure, source_health_success
 
 ROOT = Path(__file__).resolve().parent
 SOURCES_FILE = ROOT / "sources.txt"
@@ -23,7 +23,8 @@ STATE_FILE = ROOT / "data" / "seen_events.json"
 USER_AGENT = "EventIntelligenceAgent/0.1 (personal event research; respectful feed polling)"
 TIMEOUT = 10
 MAX_ALERTS_PER_SOURCE_PER_RUN = 1
-MAX_URL_RESOLUTIONS_PER_RUN = 2
+MAX_URL_RESOLUTIONS_PER_RUN = 4
+MAX_LEGACY_URL_RESOLUTIONS_PER_RUN = 1
 MAX_URL_RESOLUTION_ATTEMPTS = 3
 TELEGRAM_MIN_INTERVAL_SECONDS = 1.1
 _LAST_TELEGRAM_REQUEST = 0.0
@@ -755,10 +756,13 @@ def main() -> int:
     adapters = build_adapters(sources)
     adapters_by_url = {adapter.config.url: adapter for adapter in adapters}
     pending_url_index: dict[str, str] = {}
+    resolution_budget = URLResolutionBudget(
+        max_total=MAX_URL_RESOLUTIONS_PER_RUN,
+        max_legacy=MAX_LEGACY_URL_RESOLUTIONS_PER_RUN,
+    )
 
-    # Backfill unresolved legacy Google News links in small batches. This does not
-    # create alerts or change the stable dictionary IDs; it only enriches provenance.
-    resolutions_this_run = 0
+    # Backfill at most one unresolved legacy Google News link per run so that
+    # historical records cannot starve URL resolution for new discoveries.
     unresolved_records = sorted(
         seen.items(),
         key=lambda pair: (
@@ -767,7 +771,8 @@ def main() -> int:
         ),
     )
     for existing_id, existing in unresolved_records:
-        if resolutions_this_run >= MAX_URL_RESOLUTIONS_PER_RUN:
+        if (resolution_budget.used_total >= resolution_budget.max_total
+                or resolution_budget.used_legacy >= resolution_budget.max_legacy):
             break
         if not isinstance(existing, dict) or existing.get("canonical_url"):
             continue
@@ -781,13 +786,12 @@ def main() -> int:
         adapter = adapters_by_url.get(source_url)
         if adapter is None or adapter.config.adapter_type != "google_news_rss":
             continue
-        resolved, resolution_status = adapter.resolve_item_url(
-            discovered_url, timeout=TIMEOUT, user_agent=USER_AGENT
+        resolved, resolution_status = resolution_budget.resolve(
+            adapter, discovered_url, timeout=TIMEOUT, user_agent=USER_AGENT, legacy=True
         )
         existing["resolution_attempts"] = attempts + 1
         existing["last_resolution_attempt_at"] = now_iso()
         existing["resolution_status"] = resolution_status
-        resolutions_this_run += 1
         if resolved:
             existing["canonical_url"] = clean_url(resolved)
             existing["url"] = clean_url(resolved)
@@ -806,6 +810,7 @@ def main() -> int:
         matching_count = 0
         queued_count = 0
         alerts_attempted = 0
+        alert_limit_logged = False
         print(f"Checking {config.name} [{config.adapter_type}]: {source}")
 
         try:
@@ -836,14 +841,18 @@ def main() -> int:
                     continue
 
                 if alerts_attempted >= MAX_ALERTS_PER_SOURCE_PER_RUN:
-                    print(
-                        f"Per-source alert limit reached for {source}; "
-                        "remaining new items will be checked on a future run."
-                    )
-                    break
+                    if not alert_limit_logged:
+                        print(
+                            f"Per-source alert limit reached for {source}; "
+                            "remaining new items will be checked on a future run."
+                        )
+                        alert_limit_logged = True
+                    # Continue inspecting the feed so health counts and last-seen
+                    # timestamps cover the full feed without queuing more alerts.
+                    continue
 
-                canonical_link, resolution_status = adapter.resolve_item_url(
-                    discovered_link, timeout=TIMEOUT, user_agent=USER_AGENT
+                canonical_link, resolution_status = resolution_budget.resolve(
+                    adapter, discovered_link, timeout=TIMEOUT, user_agent=USER_AGENT
                 )
                 resolved_link = canonical_link or discovered_link
                 uid = event_id(resolved_link, title)
