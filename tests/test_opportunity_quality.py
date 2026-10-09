@@ -85,6 +85,17 @@ class OpportunityQualityTests(unittest.TestCase):
         self.assertFalse(result["accepted"])
         self.assertEqual(result["status"], "low_specificity")
 
+    def test_keeps_name_only_event_from_curated_mlh_calendar(self):
+        result = assess_discovery_quality(
+            "HackNC",
+            "Official MLH upcoming hackathon/event calendar listing. Calendar section year: 2026.",
+            ["hackathons_buildathons"],
+            adapter_type="mlh_events_html",
+        )
+        self.assertTrue(result["accepted"])
+        self.assertEqual(result["status"], "specific_opportunity")
+        self.assertEqual(result["rule_version"], 3)
+
     def test_quality_result_has_a_rule_version_and_a_reason(self):
         result = assess_discovery_quality(
             "A real example student hackathon",
@@ -92,7 +103,7 @@ class OpportunityQualityTests(unittest.TestCase):
             ["hackathons_buildathons"],
         )
         self.assertTrue(result["accepted"])
-        self.assertEqual(result["rule_version"], 2)
+        self.assertEqual(result["rule_version"], 3)
         self.assertTrue(result["reason"])
         self.assertIn("matched_categories", result)
 
