@@ -3457,7 +3457,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-09T11:15:03+00:00",
+  "updated_utc": "2026-10-09T11:15:55+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -3467,7 +3467,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T11:14:51+00:00",
       "last_success_at": "2026-10-09T11:14:51+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 220,
       "items_seen": 0,
@@ -3490,7 +3490,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:57:58+00:00"
+      "last_skipped_at": "2026-10-09T11:15:55+00:00"
     },
     "4ae1d4cb1873b219": {
       "source_id": "4ae1d4cb1873b219",
@@ -3499,7 +3499,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T11:14:51+00:00",
       "last_success_at": "2026-10-09T11:14:51+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 217,
       "items_seen": 0,
@@ -3522,7 +3522,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:57:58+00:00"
+      "last_skipped_at": "2026-10-09T11:15:55+00:00"
     },
     "7c5c4d34b1a8fdc9": {
       "source_id": "7c5c4d34b1a8fdc9",
@@ -3531,7 +3531,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T11:14:52+00:00",
       "last_success_at": "2026-10-09T11:14:52+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 516,
       "items_seen": 55,
@@ -3554,7 +3554,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:57:58+00:00"
+      "last_skipped_at": "2026-10-09T11:15:55+00:00"
     },
     "56da5ebaefc91f25": {
       "source_id": "56da5ebaefc91f25",
@@ -3563,7 +3563,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T11:14:52+00:00",
       "last_success_at": "2026-10-09T11:14:52+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 437,
       "items_seen": 68,
@@ -3586,7 +3586,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:57:58+00:00"
+      "last_skipped_at": "2026-10-09T11:15:55+00:00"
     },
     "105b071f37b46d64": {
       "source_id": "105b071f37b46d64",
@@ -3595,7 +3595,7 @@
       "adapter_type": "official_blog_rss",
       "last_attempt_at": "2026-10-09T11:14:53+00:00",
       "last_success_at": "2026-10-09T11:14:53+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 160,
       "items_seen": 10,
@@ -3619,7 +3619,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T10:57:58+00:00"
+      "last_skipped_at": "2026-10-09T11:15:55+00:00"
     },
     "7c33d1ecedb854aa": {
       "source_id": "7c33d1ecedb854aa",
@@ -3643,7 +3643,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-09T11:14:53+00:00",
       "last_success_at": "2026-10-09T11:14:53+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 186,
       "items_seen": 15,
@@ -3653,7 +3653,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T10:57:58+00:00"
+      "last_skipped_at": "2026-10-09T11:15:55+00:00"
     }
   }
 }
