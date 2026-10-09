@@ -6,6 +6,7 @@ import os
 from html import unescape
 import re
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from html.parser import HTMLParser
@@ -20,6 +21,8 @@ STATE_FILE = ROOT / "data" / "seen_events.json"
 USER_AGENT = "EventIntelligenceAgent/0.1 (personal event research; respectful feed polling)"
 TIMEOUT = 10
 MAX_ALERTS_PER_SOURCE_PER_RUN = 1
+TELEGRAM_MIN_INTERVAL_SECONDS = 1.1
+_LAST_TELEGRAM_REQUEST = 0.0
 
 KEYWORDS = {
     "hackathons_buildathons": ["hackathon", "hack day", "coding challenge", "buildathon"],
@@ -298,6 +301,14 @@ class TelegramRateLimitError(RuntimeError):
 
 
 def telegram_api_call(token: str, method: str, payload: dict, files: dict | None = None) -> dict:
+    global _LAST_TELEGRAM_REQUEST
+    # Keep messages to the same private chat spaced out to reduce flood-control errors.
+    elapsed = time.monotonic() - _LAST_TELEGRAM_REQUEST
+    wait_seconds = TELEGRAM_MIN_INTERVAL_SECONDS - elapsed
+    if wait_seconds > 0:
+        time.sleep(wait_seconds)
+    _LAST_TELEGRAM_REQUEST = time.monotonic()
+
     endpoint = f"https://api.telegram.org/bot{token}/{method}"
     try:
         if files:
