@@ -10,7 +10,7 @@ import re
 from typing import Iterable
 
 
-RULE_VERSION = 2
+RULE_VERSION = 3
 
 ROUNDUP_PATTERNS = (
     re.compile(
@@ -141,7 +141,7 @@ def assess_discovery_quality(
 
     # Do not treat broad words from an article body as sufficient when the headline
     # itself says nothing about a program, application, event or award.
-    if not title_signal and not actionable and adapter_type != "hackalendar_rss":
+    if not title_signal and not actionable and adapter_type not in {"hackalendar_rss", "mlh_events_html"}:
         return result(
             False, "low_specificity",
             "Opportunity keywords only appear in supporting text; headline lacks an opportunity signal.",
@@ -154,7 +154,7 @@ def assess_discovery_quality(
             "Headline contains a concrete application, registration, or deadline action.",
         )
 
-    if title_signal or adapter_type == "hackalendar_rss":
+    if title_signal or adapter_type in {"hackalendar_rss", "mlh_events_html"}:
         return result(
             True, "specific_opportunity",
             "Headline identifies an opportunity or a curated event listing.",
