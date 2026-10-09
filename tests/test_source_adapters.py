@@ -8,6 +8,7 @@ from source_adapters import (
     source_health_failure,
     source_health_success,
 )
+import source_adapters
 
 
 class FakeResponse:
@@ -54,6 +55,24 @@ class SourceAdapterTests(unittest.TestCase):
     def test_normalize_url_removes_tracking_parameters(self):
         result = normalize_http_url("HTTPS://Example.org/event/?utm_source=test&ref=feed&id=12#details")
         self.assertEqual(result, "https://example.org/event?id=12")
+
+    def test_google_news_decoder_resolves_modern_encoded_urls(self):
+        adapter = source_adapters.RSSSourceAdapter(
+            build_source_config("https://news.google.com/rss/search?q=hackathon")
+        )
+        original = source_adapters._decode_google_news
+        try:
+            source_adapters._decode_google_news = lambda url, timeout: {
+                "success": True,
+                "decoded_url": "https://publisher.example/articles/123?utm_source=test",
+            }
+            resolved, status = adapter.resolve_item_url(
+                "https://news.google.com/rss/articles/encoded"
+            )
+        finally:
+            source_adapters._decode_google_news = original
+        self.assertEqual(resolved, "https://publisher.example/articles/123")
+        self.assertEqual(status, "decoder_resolved")
 
     def test_google_news_redirect_resolves_publisher_url(self):
         adapter = build_source_config("https://news.google.com/rss/search?q=hackathon")
