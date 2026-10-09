@@ -17,6 +17,7 @@ Configured URLs in `sources.txt` are routed through the adapter registry in `sou
 
 - **Google News RSS:** feed fetching plus best-effort resolution of article redirects or canonical URL tags. If resolution fails, the original discovery URL is retained and canonical URL remains unknown.
 - **Hackalendar RSS:** a human-curated upcoming-hackathon discovery feed; the feed's event page is not automatically treated as the organizer's official page.
+- **MLH official events calendar (HTML):** the adapter reads dated external links only from the calendar's Upcoming Events section, captures the section year and displayed schedule, and ignores past events and navigation links. The linked organizer page still requires separate verification.
 - **GitHub Blog RSS:** recognized as a named official-blog feed.
 - **Generic RSS/Atom:** shared fetching and parsing for other configured public feeds.
 
