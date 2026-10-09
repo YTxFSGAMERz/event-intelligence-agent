@@ -107,6 +107,7 @@ The live dashboard is available at https://event-intelligence-dashboard-indol.ve
 - **Calendar-date sorting:** event-date sorting can use a calendar's displayed month/day plus its section year for ordering, while keeping the raw schedule labelled as unverified and leaving canonical date fields untouched.
 - **Paged results and exports:** results are paginated in groups of 12. CSV and JSON exports include the current filtered result set, provenance and trust labels; CSV fields beginning with spreadsheet formula characters are neutralized.
 - **Source health:** per-feed latest known status, last attempt and last success, adapter type, entries seen, matches, queued items, failure streak, and reported error.
+- **Deployment freshness:** the workflow checks both HTTP availability and a dashboard build marker. A reachable but stale deployment emits a warning while allowing the event scan to continue.
 - **Saved opportunities:** saved cards are kept in the visitor's local browser storage; they are not uploaded to the agent or shared between devices.
 
 Unverified discovery-page facts are explicitly labelled as unverified. A page being readable, an outbound organizer-link candidate being found, or a source image being present does not establish official ownership. Missing deadline, location, eligibility, reward, or travel-support data remain unknown rather than being guessed. The dashboard is a research aid, not an application or booking service.
