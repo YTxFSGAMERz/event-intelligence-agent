@@ -1182,6 +1182,24 @@ def main() -> int:
                     )
                     continue
 
+                # Apply the headline-quality gate before spending a network request
+                # on Google News URL resolution. This also keeps generic listicles
+                # from consuming the per-run resolver budget.
+                quality = assess_discovery_quality(
+                    title,
+                    summary,
+                    categories,
+                    adapter_type=config.adapter_type,
+                )
+                if not quality["accepted"]:
+                    quality_rejected_count += 1
+                    if quality_rejected_count <= 5:
+                        print(
+                            f"Discovery quality gate: skipped {title!r}; "
+                            f"status={quality['status']}; reason={quality['reason']}"
+                        )
+                    continue
+
                 if alerts_attempted >= MAX_ALERTS_PER_SOURCE_PER_RUN:
                     if not alert_limit_logged:
                         print(
@@ -1213,21 +1231,6 @@ def main() -> int:
                         existing["canonical_url"] = clean_url(canonical_link)
                     if discovered_link and not existing.get("discovered_url"):
                         existing["discovered_url"] = clean_url(discovered_link)
-                    continue
-
-                quality = assess_discovery_quality(
-                    title,
-                    summary,
-                    categories,
-                    adapter_type=config.adapter_type,
-                )
-                if not quality["accepted"]:
-                    quality_rejected_count += 1
-                    if quality_rejected_count <= 5:
-                        print(
-                            f"Discovery quality gate: skipped {title!r}; "
-                            f"status={quality['status']}; reason={quality['reason']}"
-                        )
                     continue
 
                 normalized_canonical = clean_url(canonical_link) if canonical_link else ""
