@@ -123,6 +123,12 @@ class DashboardContractTests(unittest.TestCase):
         self.assertIn("sort==='event_date')list.sort((a,b)=>eventStartSortValue(a)-eventStartSortValue(b))", self.html)
         self.assertIn("Observed schedule · unverified · ", self.html)
 
+    def test_dashboard_has_a_build_marker_for_stale_deployment_checks(self):
+        self.assertIn(
+            '<meta name="event-intel-dashboard-version" content="2026-10-10-source-observed-sort-v1">',
+            self.html,
+        )
+
     def test_dashboard_can_render_images_and_event_details(self):
         self.assertIn("media.source_image_url", self.html)
         self.assertIn("function renderDetails(e)", self.html)
