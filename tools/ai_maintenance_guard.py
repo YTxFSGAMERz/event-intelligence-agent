@@ -54,8 +54,8 @@ def main() -> int:
             report("Policy gate failed: malformed Git status output.")
             return 1
         state, path = line[:2], line[3:]
-        if "R" in state or "C" in state or " -> " in path:
-            report("Policy gate failed: renames and copies are not permitted.")
+        if any(char not in (" ", "M") for char in state) or " -> " in path:
+            report("Policy gate failed: only modifications to existing files are permitted.")
             return 1
         if not (path in ALLOWED_FILES or path.startswith("tests/")):
             report(f"Policy gate failed: change outside allowlist: {path}")
