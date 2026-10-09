@@ -722,19 +722,85 @@ def build_alert(item: dict, categories: list[str], deadline: str,
         f"Note: verify eligibility, dates, fees and ticket inventory on the official page."
     )
 
-def find_existing_event_id(seen: dict, candidate_url: str) -> str | None:
-    """Find a tracked event by any known URL alias, supporting safe URL migration."""
+TITLE_DEDUPE_WINDOW_DAYS = 90
+
+
+def normalize_title_key(value: str) -> str:
+    """Normalize punctuation/case for conservative exact-title cross-source matching."""
+    return re.sub(r"[^a-z0-9]+", " ", str(value or "").casefold()).strip()
+
+
+def find_existing_event_id(
+    seen: dict,
+    candidate_url: str,
+    candidate_title: str | None = None,
+    now: datetime | None = None,
+) -> str | None:
+    """Match URLs first, then conservative exact titles from the recent 90-day window."""
     target = clean_url(candidate_url)
-    if not target:
+    if target:
+        for existing_id, record in seen.items():
+            if not isinstance(record, dict):
+                continue
+            for key in ("canonical_url", "url", "discovered_url"):
+                value = record.get(key)
+                if value and clean_url(str(value)) == target:
+                    return str(existing_id)
+
+    title_key = normalize_title_key(candidate_title or "")
+    # Short/generic titles are too collision-prone for title-based deduplication.
+    if len(title_key) < 24 or len(title_key.split()) < 4:
         return None
+
+    current = now or datetime.now(timezone.utc)
+    if current.tzinfo is None:
+        current = current.replace(tzinfo=timezone.utc)
     for existing_id, record in seen.items():
-        if not isinstance(record, dict):
+        if not isinstance(record, dict) or normalize_title_key(record.get("title", "")) != title_key:
             continue
-        for key in ("canonical_url", "url", "discovered_url"):
-            value = record.get(key)
-            if value and clean_url(str(value)) == target:
-                return str(existing_id)
+        first_seen = str(record.get("first_seen_utc") or "").strip()
+        if not first_seen:
+            continue
+        try:
+            parsed = datetime.fromisoformat(first_seen.replace("Z", "+00:00"))
+            if parsed.tzinfo is None:
+                parsed = parsed.replace(tzinfo=timezone.utc)
+        except ValueError:
+            continue
+        age_seconds = abs((current - parsed.astimezone(timezone.utc)).total_seconds())
+        if age_seconds <= TITLE_DEDUPE_WINDOW_DAYS * 24 * 60 * 60:
+            return str(existing_id)
     return None
+
+
+def remember_source_alias(
+    record: dict,
+    source_id: str,
+    source_name: str,
+    source_feed_url: str,
+    discovered_url: str,
+    resolved_url: str | None = None,
+) -> None:
+    """Retain multi-source provenance whenever two feeds point to the same opportunity."""
+    def add_unique(field: str, value: str | None) -> None:
+        if not value:
+            return
+        values = record.get(field)
+        if not isinstance(values, list):
+            values = []
+        if value not in values:
+            values.append(value)
+        record[field] = values
+
+    add_unique("source_ids", str(record.get("source_id") or ""))
+    add_unique("source_ids", source_id)
+    add_unique("source_names", str(record.get("source_name") or record.get("source") or ""))
+    add_unique("source_names", source_name)
+    add_unique("source_feeds", str(record.get("source_feed_url") or record.get("source") or ""))
+    add_unique("source_feeds", source_feed_url)
+    add_unique("discovered_urls", str(record.get("discovered_url") or record.get("url") or ""))
+    add_unique("discovered_urls", clean_url(discovered_url))
+    add_unique("resolved_urls", clean_url(resolved_url) if resolved_url else None)
 
 
 def main() -> int:
@@ -844,9 +910,13 @@ def main() -> int:
                 if raw_uid in seen:
                     seen[raw_uid]["last_seen_utc"] = now_iso()
                     continue
-                existing_raw_id = find_existing_event_id(seen, discovered_link)
+                existing_raw_id = find_existing_event_id(seen, discovered_link, title)
                 if existing_raw_id is not None:
-                    seen[existing_raw_id]["last_seen_utc"] = now_iso()
+                    existing = seen[existing_raw_id]
+                    existing["last_seen_utc"] = now_iso()
+                    remember_source_alias(
+                        existing, config.source_id, config.name, source, discovered_link
+                    )
                     continue
 
                 if alerts_attempted >= MAX_ALERTS_PER_SOURCE_PER_RUN:
@@ -868,10 +938,14 @@ def main() -> int:
 
                 # Dedupe by resolved URL across feeds, without assuming that the
                 # publisher page is necessarily the organizer's official page.
-                existing_id = find_existing_event_id(seen, resolved_link)
+                existing_id = find_existing_event_id(seen, resolved_link, title)
                 if existing_id is not None:
                     existing = seen[existing_id]
                     existing["last_seen_utc"] = now_iso()
+                    remember_source_alias(
+                        existing, config.source_id, config.name, source,
+                        discovered_link, canonical_link,
+                    )
                     if canonical_link and not existing.get("canonical_url"):
                         existing["canonical_url"] = clean_url(canonical_link)
                     if discovered_link and not existing.get("discovered_url"):
@@ -1101,7 +1175,12 @@ def main() -> int:
                     "notes": ["Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."],
                 },
             }
-            seen[event["uid"]] = normalize_event_record(event["uid"], record)
+            normalized_record = normalize_event_record(event["uid"], record)
+            remember_source_alias(
+                normalized_record, event["source_id"], event["source_name"],
+                event["source"], event["discovered_link"], event["canonical_link"],
+            )
+            seen[event["uid"]] = normalized_record
             discovered += 1
 
     state["updated_utc"] = now_iso()
