@@ -49,6 +49,12 @@ class URLResolutionRetryTests(unittest.TestCase):
         }
         self.assertTrue(url_resolution_retry_is_due(record, now=now))
 
+    def test_invalid_legacy_attempt_count_does_not_crash_retry_check(self):
+        self.assertTrue(url_resolution_retry_is_due({
+            "resolution_attempts": "legacy-value",
+            "last_resolution_attempt_at": "not-a-date",
+        }))
+
     def test_malformed_timestamp_is_retried_but_exhausted_records_stop(self):
         self.assertTrue(url_resolution_retry_is_due({
             "resolution_attempts": 3,
