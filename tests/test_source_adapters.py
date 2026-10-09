@@ -48,19 +48,27 @@ class SourceAdapterTests(unittest.TestCase):
         hackalendar = "https://hackalendar.com/feed.xml"
         blog = "https://github.blog/changelog/feed/"
         mlh = "https://mlh.com/events"
-        adapters = build_adapters([google, hackalendar, blog, mlh, google])
+        devfolio = "https://devfolio.co/explore"
+        nsp = "https://scholarships.gov.in/All-Scholarships"
+        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, google])
 
-        self.assertEqual(len(adapters), 4)
+        self.assertEqual(len(adapters), 6)
         self.assertIsInstance(adapters[0], source_adapters.GoogleNewsRSSAdapter)
         self.assertIsInstance(adapters[1], source_adapters.HackalendarRSSAdapter)
         self.assertIsInstance(adapters[2], source_adapters.OfficialBlogRSSAdapter)
         self.assertIsInstance(adapters[3], source_adapters.MLHEventsHTMLAdapter)
+        self.assertIsInstance(adapters[4], source_adapters.DevfolioExploreHTMLAdapter)
+        self.assertIsInstance(adapters[5], source_adapters.NSPScholarshipHTMLAdapter)
         self.assertEqual(adapters[0].config.adapter_type, "google_news_rss")
         self.assertEqual(adapters[1].config.adapter_type, "hackalendar_rss")
         self.assertEqual(adapters[2].config.adapter_type, "official_blog_rss")
         self.assertEqual(adapters[3].config.adapter_type, "mlh_events_html")
         self.assertEqual(adapters[3].config.access_method, "public_official_mlh_events_html")
         self.assertEqual(adapters[3].config.pagination_mode, "official_calendar_upcoming_section")
+        self.assertEqual(adapters[4].config.adapter_type, "devfolio_html")
+        self.assertEqual(adapters[4].config.pagination_mode, "platform_open_upcoming_sections")
+        self.assertEqual(adapters[5].config.adapter_type, "nsp_scholarships_html")
+        self.assertEqual(adapters[5].config.pagination_mode, "portal_scheme_list_current_year")
         self.assertEqual(adapters[1].config.access_method, "public_hackalendar_rss")
         self.assertEqual(adapters[1].config.pagination_mode, "catalogue_feed_upcoming_events")
         self.assertNotEqual(adapters[0].config.source_id, adapters[1].config.source_id)
@@ -101,6 +109,76 @@ class SourceAdapterTests(unittest.TestCase):
         session = FakeSession(response)
         with self.assertRaisesRegex(RuntimeError, "Upcoming Events heading was not found"):
             adapter.fetch(session=session)
+        self.assertTrue(response.closed)
+
+    def test_registry_classifies_direct_devfolio_and_nsp_sources(self):
+        devfolio = build_source_config("https://devfolio.co/explore")
+        nsp = build_source_config("https://scholarships.gov.in/All-Scholarships")
+        self.assertEqual(devfolio.adapter_type, "devfolio_html")
+        self.assertEqual(devfolio.access_method, "public_devfolio_explore_html")
+        self.assertEqual(nsp.adapter_type, "nsp_scholarships_html")
+        self.assertEqual(nsp.access_method, "public_official_nsp_scholarship_html")
+
+    def test_devfolio_parser_keeps_open_and_upcoming_cards_but_ignores_past(self):
+        html = b"""<!doctype html><html><body>
+        <h2>Open</h2>
+        <a href="https://wild-bugs.devfolio.co/"><strong>Wild Bugs</strong><span>Hackathon</span><span>Online</span><span>Open</span><span>Starts 14/10/26</span><span>Apply now</span></a>
+        <a href="https://winter-of-code-4.devfolio.co/"><strong>Winter of Code 2026</strong><span>Hackathon</span><span>Online</span><span>Open</span><span>Starts 15/10/26</span></a>
+        <h2>Upcoming</h2>
+        <a href="https://lean-in-hacks-8.devfolio.co/"><strong>Lean In Hacks 8.0</strong><span>Online</span><span>Upcoming</span><span>Opens 20/10/26</span><span>Remind me</span></a>
+        <h2>Past</h2>
+        <a href="https://past-event.devfolio.co/"><strong>Past Event</strong><span>Ended</span></a>
+        </body></html>"""
+        adapter = build_adapters(["https://devfolio.co/explore"])[0]
+        response = FakeResponse("https://devfolio.co/explore", html)
+        result = adapter.fetch(session=FakeSession(response))
+        self.assertEqual(result.status, "success")
+        self.assertEqual(result.item_count, 3)
+        self.assertEqual([item["title"] for item in result.entries], ["Wild Bugs", "Winter of Code 2026", "Lean In Hacks 8.0"])
+        self.assertEqual(result.entries[0]["event_date_text"], "14/10/26")
+        self.assertEqual(result.entries[0]["format_text"], "Online")
+        self.assertEqual(result.entries[2]["application_open_date_text"], "20/10/26")
+        self.assertIsNone(result.entries[2]["event_date_text"])
+        self.assertIn("not independently verified as an organizer page", result.entries[0]["summary"])
+        self.assertTrue(response.closed)
+
+    def test_devfolio_fails_closed_if_open_and_upcoming_sections_are_missing(self):
+        adapter = build_adapters(["https://devfolio.co/explore"])[0]
+        response = FakeResponse("https://devfolio.co/explore", b"<html><h2>Blog</h2></html>")
+        with self.assertRaisesRegex(RuntimeError, "Open/Upcoming sections were not found"):
+            adapter.fetch(session=FakeSession(response))
+        self.assertTrue(response.closed)
+
+    def test_nsp_parser_extracts_scheme_and_application_deadline_without_guessing_links(self):
+        html = b"""<!doctype html><html><body>
+        <h5>Schemes On NSP</h5>
+        <h6>AICTE - Swanath Scholarship Scheme (Technical Degree)</h6>
+        <p>Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026</p>
+        <a href="/public/schemeGuidelines/AICTE/AICTE_Swanath.pdf">Specifications</a>
+        <a href="/public/faq/swanath.pdf">FAQ</a>
+        <h6>National Scholarship for Post Graduate Studies</h6>
+        <p>Scheme Open from : 16-09-2026 Student Application Open till : 30-11-2026</p>
+        <a href="/public/schemeGuidelines/UGC/PG.pdf">Specifications</a>
+        </body></html>"""
+        adapter = build_adapters(["https://scholarships.gov.in/All-Scholarships"])[0]
+        response = FakeResponse("https://scholarships.gov.in/All-Scholarships", html)
+        result = adapter.fetch(session=FakeSession(response))
+        self.assertEqual(result.status, "success")
+        self.assertEqual(result.item_count, 2)
+        first = result.entries[0]
+        self.assertEqual(first["title"], "AICTE - Swanath Scholarship Scheme (Technical Degree)")
+        self.assertEqual(first["deadline_raw"], "31-10-2026")
+        self.assertEqual(first["deadline_display"], "October 31, 2026")
+        self.assertEqual(first["link"], "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_Swanath.pdf")
+        self.assertIn("official portal listing: https://scholarships.gov.in/All-Scholarships", first["summary"])
+        self.assertTrue(response.closed)
+
+    def test_nsp_fails_closed_if_page_has_no_scheme_guidance_links(self):
+        html = b"""<!doctype html><html><body><h6>Scheme Without Link</h6><p>Student Application Open till : 31-10-2026</p></body></html>"""
+        adapter = build_adapters(["https://scholarships.gov.in/All-Scholarships"])[0]
+        response = FakeResponse("https://scholarships.gov.in/All-Scholarships", html)
+        with self.assertRaisesRegex(RuntimeError, "no schemes with specific official guidance links"):
+            adapter.fetch(session=FakeSession(response))
         self.assertTrue(response.closed)
 
     def test_targeted_student_sources_receive_descriptive_labels(self):
