@@ -7691,8 +7691,8 @@
     "13fc322dc192694f0bda": {
       "title": "VIBENIGHT #2 : Hackathon AI Safety — Puteaux, 30 Oct 2026",
       "summary": " 30 Oct 2026  · Puteaux · In person · Holberton School Paris Organiser: TheScorton Practical Info\nDates: 30 October 2026\nSchedule: From 4:30 PM to 10:30 PM.\nTeams: 1-4 people\nExact venue details will be accessible to selected participants\nAll applications are reviewed by the scorton team on a rolling basis\nSelected participants will receive confirmation one week before the event\nBefore event day: find your teammates or we will help you find one on the spot.\n\nPrizes\n🥇 1st place\n$3,000 LLM credits\n$1000 Scorton Perks\n1 Internship\n🥈 2nd place\n$2,000 LLM credits\n$500 Scorton Perks\nPerks\n🥉 3rd place\n$300 Scorton Perks\n$1,000  LLM credits\n\n Learn how to create a AI Trust and AI Safety wih Notion Dev , Notion AI and Notion Workflow.\n\nJoin our Discord Community to get all the update about ScortonJS and the our Hackathons series. https://discord.gg/CUCja2yn  Register on the organiser's own page ",
-      "url": "https://hackalendar.com/e/vibedays-hackathon-ai-safety-puteaux-2026",
-      "image_url": "https://hackalendar.com/cover/vibedays-hackathon-ai-safety-puteaux-2026-800.webp",
+      "url": "https://luma.com/9rkl3mrp",
+      "image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/1g/676b5e1e-38e5-407e-9d57-f9f7cb7283cd.png",
       "source": "https://hackalendar.com/feed.xml",
       "source_name": "Hackalendar · Upcoming Hackathons",
       "source_id": "7c33d1ecedb854aa",
@@ -7721,8 +7721,8 @@
       "first_seen_utc": "2026-10-09T19:50:06+00:00",
       "last_seen_utc": "2026-10-09T19:50:29+00:00",
       "deadline": "Not found — verify on official page",
-      "registration_status": "UNKNOWN",
-      "registration_status_evidence": "No explicit status phrase in feed item",
+      "registration_status": "CLOSED (official page)",
+      "registration_status_evidence": "'dark' : 'light') : preferredTheme); })(); // https://gist.github.com/paulirish/1579671 (function() { var lastTime = 0; if (!window.requestAnimationFrame) { window.requestAnimationFrame = window['webkitRequestAnimationFrame']; window.cancelAnimationFrame = window['webkitCancelAni",
       "link_status": "REACHABLE",
       "link_status_evidence": "HTTP 200",
       "discovered_url": "https://hackalendar.com/e/vibedays-hackathon-ai-safety-puteaux-2026",
@@ -7732,35 +7732,139 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
-        "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "status": "official_page_verified",
+        "official_url": "https://luma.com/9rkl3mrp",
+        "evidence_urls": [
+          "https://hackalendar.com/e/vibedays-hackathon-ai-safety-puteaux-2026",
+          "https://lu.ma/9rkl3mrp",
+          "https://luma.com/9rkl3mrp"
+        ],
+        "last_checked_at": "2026-10-09T19:51:47+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://hackalendar.com/e/vibedays-hackathon-ai-safety-puteaux-2026",
+        "official_link_candidate": "https://lu.ma/9rkl3mrp",
+        "official_link_reason": "outbound_anchor:Enter on the organiser’s site",
+        "candidate_page_status": "success",
+        "candidate_page_error": null,
+        "candidate_page_http_status": 200,
+        "page_title": "VIBENIGHT #2 : Hackathon AI Safety",
+        "last_check_error": null,
+        "last_check_duration_ms": 1292,
+        "observed_facts": {
+          "page_role": "structured_event_listing",
+          "page_title": "VIBENIGHT #2 : Hackathon AI Safety",
+          "description": "Practical Info\nDates: 30 October 2026\nSchedule: From 4:30 PM to 10:30 PM.\nTeams: 1-4 people\nExact venue details will be accessible to selected participants\nAll applications are reviewed by the scorton team on a rolling basis\nSelected participants will receive confirmation one week before the event\nBefore event day: find your teammates or we will help you find one on the spot.\n\nPrizes\n🥇 1st place\n$3,000 LLM credits\n$1000 Scorton Perks\n1 Internship\n🥈 2nd place\n$2,000 LLM credits\n$500 Scorton Perks\nPerks\n🥉 3rd place\n$300 Scorton Perks\n$1,000  LLM credits\n\n Learn how to create a AI Trust and AI Safety wih Notion Dev , Notion AI and Notion Workflow.\n\nJoin our Discord Community to get all the update about ScortonJS and the our Hackathons series. https://discord.gg/CUCja2yn",
+          "organizer": "TheScorton",
+          "event_start_at": "2026-10-30T16:30:00.000+01:00",
+          "event_end_at": "2026-10-30T22:30:00.000+01:00",
+          "event_timezone": "UTC+01:00",
+          "opportunity_status": "unknown",
+          "registration_status": "closed",
+          "registration_status_evidence": "'dark' : 'light') : preferredTheme); })(); // https://gist.github.com/paulirish/1579671 (function() { var lastTime = 0; if (!window.requestAnimationFrame) { window.requestAnimationFrame = window['webkitRequestAnimationFrame']; window.cancelAnimationFrame = window['webkitCancelAni",
+          "location": {
+            "raw": "Holberton School Paris, Puteaux, Île-de-France, FR",
+            "mode": "in_person",
+            "venue": "Holberton School Paris",
+            "city": "Puteaux",
+            "region": "Île-de-France",
+            "country": "FR",
+            "country_code": "FR",
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/1g/676b5e1e-38e5-407e-9d57-f9f7cb7283cd.png"
+        },
+        "fact_evidence": {
+          "event_start_at": {
+            "value": "2026-10-30T16:30:00.000+01:00",
+            "source_url": "https://luma.com/9rkl3mrp",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.startDate=2026-10-30T16:30:00.000+01:00"
+          },
+          "event_end_at": {
+            "value": "2026-10-30T22:30:00.000+01:00",
+            "source_url": "https://luma.com/9rkl3mrp",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.endDate=2026-10-30T22:30:00.000+01:00"
+          },
+          "organizer": {
+            "value": "TheScorton",
+            "source_url": "https://luma.com/9rkl3mrp",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.organizer.name=TheScorton"
+          },
+          "location": {
+            "value": {
+              "raw": "Holberton School Paris, Puteaux, Île-de-France, FR",
+              "mode": "in_person",
+              "venue": "Holberton School Paris",
+              "city": "Puteaux",
+              "region": "Île-de-France",
+              "country": "FR",
+              "country_code": "FR",
+              "remote_restrictions": []
+            },
+            "source_url": "https://luma.com/9rkl3mrp",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.location / eventAttendanceMode"
+          },
+          "registration_status": {
+            "value": "closed",
+            "source_url": "https://luma.com/9rkl3mrp",
+            "method": "explicit_page_text",
+            "snippet": "'dark' : 'light') : preferredTheme); })(); // https://gist.github.com/paulirish/1579671 (function() { var lastTime = 0; if (!window.requestAnimationFrame) { window.requestAnimationFrame = window['webkitRequestAnimationFrame']; window.cancelAnimationFrame = window['webkitCancelAni"
+          }
+        },
+        "last_verified_at": "2026-10-09T19:51:47+00:00"
       },
       "schema_version": 1,
       "id": "13fc322dc192694f0bda",
-      "organizer": null,
+      "organizer": "TheScorton",
       "application_open_at": null,
       "application_deadline": null,
       "deadline_timezone": null,
-      "event_start_at": null,
-      "event_end_at": null,
-      "event_timezone": null,
+      "event_start_at": "2026-10-30T16:30:00.000+01:00",
+      "event_end_at": "2026-10-30T22:30:00.000+01:00",
+      "event_timezone": "UTC+01:00",
       "date_precision": "unknown",
       "location": {
-        "raw": null,
-        "mode": "unknown",
-        "venue": null,
-        "city": null,
-        "region": null,
-        "country": null,
-        "country_code": null,
+        "raw": "Holberton School Paris, Puteaux, Île-de-France, FR",
+        "mode": "in_person",
+        "venue": "Holberton School Paris",
+        "city": "Puteaux",
+        "region": "Île-de-France",
+        "country": "FR",
+        "country_code": "FR",
         "remote_restrictions": []
       },
       "eligibility": {
@@ -7795,7 +7899,7 @@
         "evidence_url": null
       },
       "media": {
-        "source_image_url": "https://hackalendar.com/cover/vibedays-hackathon-ai-safety-puteaux-2026-800.webp",
+        "source_image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/1g/676b5e1e-38e5-407e-9d57-f9f7cb7283cd.png",
         "generated_image_url": null
       },
       "content_hash": null,
@@ -8074,7 +8178,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-09T19:50:32+00:00",
+  "updated_utc": "2026-10-09T19:51:48+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -8084,7 +8188,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T19:50:23+00:00",
       "last_success_at": "2026-10-09T19:50:23+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 273,
       "items_seen": 1,
@@ -8107,7 +8211,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:47:12+00:00",
+      "last_skipped_at": "2026-10-09T19:51:47+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 3
     },
@@ -8118,7 +8222,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T19:50:23+00:00",
       "last_success_at": "2026-10-09T19:50:23+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 273,
       "items_seen": 0,
@@ -8141,7 +8245,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:47:12+00:00",
+      "last_skipped_at": "2026-10-09T19:51:47+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 3
     },
@@ -8152,7 +8256,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T19:50:24+00:00",
       "last_success_at": "2026-10-09T19:50:24+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 520,
       "items_seen": 57,
@@ -8175,7 +8279,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:47:12+00:00",
+      "last_skipped_at": "2026-10-09T19:51:47+00:00",
       "quality_rejected_count": 2,
       "quality_rule_version": 3
     },
@@ -8186,7 +8290,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-09T19:50:24+00:00",
       "last_success_at": "2026-10-09T19:50:24+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 551,
       "items_seen": 68,
@@ -8209,7 +8313,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:47:12+00:00",
+      "last_skipped_at": "2026-10-09T19:51:47+00:00",
       "quality_rejected_count": 3,
       "quality_rule_version": 3
     },
@@ -8220,7 +8324,7 @@
       "adapter_type": "official_blog_rss",
       "last_attempt_at": "2026-10-09T19:50:26+00:00",
       "last_success_at": "2026-10-09T19:50:26+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 79,
       "items_seen": 10,
@@ -8244,7 +8348,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T19:47:12+00:00",
+      "last_skipped_at": "2026-10-09T19:51:47+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 3
     },
@@ -8270,7 +8374,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-09T19:50:26+00:00",
       "last_success_at": "2026-10-09T19:50:26+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 175,
       "items_seen": 15,
@@ -8280,7 +8384,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T19:47:12+00:00",
+      "last_skipped_at": "2026-10-09T19:51:47+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 3
     },
@@ -8304,7 +8408,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-09T19:50:25+00:00",
       "last_success_at": "2026-10-09T19:50:25+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 292,
       "items_seen": 0,
@@ -8316,7 +8420,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 3,
-      "last_skipped_at": "2026-10-09T19:47:12+00:00"
+      "last_skipped_at": "2026-10-09T19:51:47+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -8338,7 +8442,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-09T19:50:26+00:00",
       "last_success_at": "2026-10-09T19:50:26+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 248,
       "items_seen": 0,
@@ -8350,7 +8454,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 3,
-      "last_skipped_at": "2026-10-09T19:47:12+00:00"
+      "last_skipped_at": "2026-10-09T19:51:47+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -8384,7 +8488,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 3,
-      "last_skipped_at": "2026-10-09T19:50:26+00:00"
+      "last_skipped_at": "2026-10-09T19:51:47+00:00"
     }
   }
 }
