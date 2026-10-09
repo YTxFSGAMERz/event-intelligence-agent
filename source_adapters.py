@@ -98,6 +98,8 @@ class CanonicalLinkParser(HTMLParser):
 def _resolve_source_type(url: str) -> tuple[str, str]:
     host = _host(url)
     parts = urlsplit(url)
+    if host in {"hackalendar.com", "www.hackalendar.com"} and parts.path.rstrip("/") == "/feed.xml":
+        return "hackalendar_rss", "Hackalendar · Upcoming Hackathons"
     if host == "news.google.com" and parts.path.startswith("/rss/"):
         query = (parse_qs(parts.query).get("q") or [""])[0].lower()
         if "devpost.com" in query:
@@ -124,6 +126,10 @@ def build_source_config(url: str) -> SourceConfig:
         expected_fields = ("title", "link", "summary", "published", "source", "media")
         pagination_mode = "google_news_feed_managed_recent_results"
         access_method = "public_google_news_rss"
+    elif adapter_type == "hackalendar_rss":
+        expected_fields = ("title", "link", "summary", "description", "published", "updated", "category", "guid")
+        pagination_mode = "catalogue_feed_upcoming_events"
+        access_method = "public_hackalendar_rss"
     elif adapter_type == "official_blog_rss":
         expected_fields = ("title", "link", "summary", "published", "updated", "author", "media")
         pagination_mode = "publisher_feed_managed"
@@ -256,6 +262,10 @@ class GoogleNewsRSSAdapter(RSSSourceAdapter):
                     pass
 
 
+class HackalendarRSSAdapter(RSSSourceAdapter):
+    """Public, curated hackathon discovery feed; organizer claims still require verification."""
+
+
 class OfficialBlogRSSAdapter(RSSSourceAdapter):
     """RSS adapter for the configured official GitHub Blog feed."""
 
@@ -266,6 +276,7 @@ class GenericRSSAdapter(RSSSourceAdapter):
 
 ADAPTER_REGISTRY: dict[str, type[RSSSourceAdapter]] = {
     "google_news_rss": GoogleNewsRSSAdapter,
+    "hackalendar_rss": HackalendarRSSAdapter,
     "official_blog_rss": OfficialBlogRSSAdapter,
     "rss_atom": GenericRSSAdapter,
 }
