@@ -1,0 +1,5 @@
+# Add one public RSS/Atom feed URL per line.
+# Prefer official event organizers, student programs, hackathon platforms,
+# open-source communities, and scholarship/fellowship announcement feeds.
+# The agent intentionally starts with no hard-coded third-party feeds:
+# add feeds you have checked and are allowed to access.
