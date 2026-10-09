@@ -5,7 +5,7 @@
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNME9wb0tvWnBIbjlwU3k3cGlIZjhSYmR5Q2ppenZuTVRTRUstSWJFMkdURlBOVlNUR1A5NHdldk94ckFpOGNQclFkUU9aQU1yLUpwLW1aSGJSNTczbElsNlV6Si1uRGFhNi0yLTh6X3RBRlIydlo3OHVEWjFidHNZNFhYTHlSeXFoYXR4dzlaelJrODJkTnc?oc=5",
       "source": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:06:59+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "link_status": "REACHABLE",
@@ -87,7 +87,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T10:30:47+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "2498ccdafad4195c70bc": {
       "title": "Ambassador’s Scholarship for Bhutanese Students in India - fundsforNGOs - Grants and Resources for Sustainability",
@@ -176,7 +182,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T10:30:47+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "c8656308d119706e39b8": {
       "title": "Scholarships for Indian students to study in England, Wales, Scotland and Ireland - Education Times",
@@ -184,7 +196,7 @@
       "image_url": "",
       "source": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:13:23+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "link_status": "REACHABLE",
@@ -266,7 +278,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T10:50:58+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "fb972294a1373de5aa6d": {
       "title": "Top Scholarships in Germany For Indian Students 2027 - Shiksha.com",
@@ -274,7 +292,7 @@
       "image_url": "",
       "source": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:13:25+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "link_status": "REACHABLE",
@@ -356,7 +374,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T10:50:35+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "d03cea6e706747f3bc03": {
       "title": "GIST Scholarship 2027: Fully Funded Master’s and PhD in South Korea - Global South Opportunities",
@@ -364,7 +388,7 @@
       "image_url": "",
       "source": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:14:31+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "link_status": "REACHABLE",
@@ -446,7 +470,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T10:52:44+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "097339d3e2ca22c077eb": {
       "title": "NMMSS Scholarship deadline extended: Fresh, renewal applications open till Oct 31 - India Today",
@@ -454,7 +484,7 @@
       "image_url": "",
       "source": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:14:33+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "link_status": "REACHABLE",
@@ -536,7 +566,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T10:52:58+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "75c871eb8e7b8dceaa22": {
       "title": "Britain’s University of Oxford Offers Scholarships to Students from Low-Income Countries - Al-Fanar Media",
@@ -544,7 +580,7 @@
       "image_url": "",
       "source": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:15:23+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "link_status": "REACHABLE",
@@ -626,7 +662,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T10:55:50+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "0ab24bc038a3fda02782": {
       "title": "Government Scholarship Rules 2026-27 Revised: Check New NSP Rules - PW",
@@ -634,7 +676,7 @@
       "image_url": "",
       "source": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "first_seen_utc": "2026-10-09T07:15:25+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "link_status": "REACHABLE",
@@ -716,7 +758,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T10:56:18+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "6234e3c18f812c3412e2": {
       "title": "Best Fully Funded Scholarships for Study Abroad 2026-27 - Shiksha.com",
@@ -729,7 +777,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T07:39:12+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "link_status": "REACHABLE",
@@ -811,7 +859,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T10:57:04+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "b9e033091547a26a5417": {
       "title": "NMMSS 2026-27: Education Ministry extends scholarship application deadline to October 31; check eligibili - The Times of India",
@@ -823,7 +877,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T07:39:14+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "link_status": "REACHABLE",
@@ -905,7 +959,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T11:14:51+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "0720fe51fb3c1de1c32f": {
       "title": "ASUC Grants & Scholarships to award $250K, application closes Friday - dailycal.org",
@@ -917,7 +977,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T07:40:35+00:00",
-      "last_seen_utc": "2026-10-09T07:41:27+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "link_status": "REACHABLE",
@@ -999,7 +1059,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T11:54:45+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "09b8e186c242ef386918": {
       "title": "From Rs 12,000 to full course fees: 8 scholarship opportunities students should not miss before the deadline - Organiser Weekly",
@@ -1011,7 +1077,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T07:40:37+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "link_status": "REACHABLE",
@@ -1093,7 +1159,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T13:42:21+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "b4e18407e0caffe0217a": {
       "title": "Indian Government Scholarships for Studying Abroad in 2027-28 - Shiksha.com",
@@ -1105,7 +1177,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T07:41:31+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "link_status": "REACHABLE",
@@ -1187,7 +1259,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T13:59:59+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "097bd0de2475e0b6c4c1": {
       "title": "List of USA Colleges Offering Financial Aid for International Students 2027 (Updated) - Shiksha.com",
@@ -1199,7 +1277,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T07:41:33+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "link_status": "REACHABLE",
@@ -1281,7 +1359,13 @@
       "last_material_change_at": null,
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T18:00:37+00:00",
-      "resolution_status": "unresolved_google_news_link"
+      "resolution_status": "unresolved_google_news_link",
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "b2838b950514448a5194": {
       "title": "Scholarships closing October 31, 2026: Check eligibility, amount and how to apply - Education Times",
@@ -1294,7 +1378,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:17:51+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -1374,7 +1458,16 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      },
+      "resolution_attempts": 1,
+      "last_resolution_attempt_at": "2026-10-09T19:04:35+00:00",
+      "resolution_status": "unresolved_google_news_link"
     },
     "cd9fb7eee3ba696e513e": {
       "title": "Tanzania secures 150 Algeria scholarships for top STEM students - The Citizen",
@@ -1387,7 +1480,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:17:52+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -1467,7 +1560,16 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      },
+      "resolution_attempts": 1,
+      "last_resolution_attempt_at": "2026-10-09T19:04:35+00:00",
+      "resolution_status": "unresolved_google_news_link"
     },
     "e56a2c28e388f18f6c71": {
       "title": "Open Call for School Students Scholarship Program (India) - fundsforNGOs - Grants and Resources for Sustainability",
@@ -1560,7 +1662,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "1d138cdd27882c95efb7": {
       "title": "Shanghai Government Scholarship 2027: Fully Funded Study Opportunities at 31 Universities in China - Global South Opportunities",
@@ -1574,7 +1682,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:19:52+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -1654,7 +1762,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "b9578691f8645d2bf3f9": {
       "title": "AfricaLics PhD Visiting Fellowship 2027: Fully Funded 3-Month Research Fellowship in South Africa - Global South Opportunities",
@@ -1672,7 +1786,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:24:32+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -1752,7 +1866,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "d360c43f36f3ca1ace6d": {
       "title": "UP Scholarship 2026-27 applications close soon at scholarship.up.gov.in; check key dates and direct link - The Times of India",
@@ -1769,7 +1889,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:24:34+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -1849,7 +1969,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "0659b6333791d1a90e15": {
       "title": "Aditya Birla Capital Scholarship Programme 2026-27 for Girls: Get up to ₹60,000, check details and how to apply - Education Times",
@@ -1866,7 +1992,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:25:17+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -1946,7 +2072,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "2a3cee09b1ecd3a7fdfa": {
       "title": "Application for the Jill Sanders Memorial Scholarship 2026 Now Open: CAD 20,000 for African Health Technology Assessment Professionals - Global South Opportunities",
@@ -1963,7 +2095,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:25:19+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -2043,7 +2175,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "f831481768986d843ac0": {
       "title": "Top 10 UK Scholarships for Indian students 2026 - Shiksha.com",
@@ -2060,7 +2198,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:26:48+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -2140,7 +2278,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "b3446ae33fd087f627b7": {
       "title": "University College London (UCL) is Offering 50 Fully Funded PhDs in the UK — £26,022 Stipend + Tuition Fees for 4 Years: Open to Home & International Applicants - Global South Opportunities",
@@ -2158,7 +2302,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:26:50+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -2238,7 +2382,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "b742228d80c8fd25ebf7": {
       "title": "University of Surrey SEDarc PhD Studentships 2027 – Fully Funded UK PhD Opportunities - Global South Opportunities",
@@ -2255,7 +2405,7 @@
       ],
       "primary_category": "funded_travel_abroad",
       "first_seen_utc": "2026-10-09T10:27:54+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -2335,7 +2485,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "7e85ef681e609272cfee": {
       "title": "Top Scholarships after 12th for Indian Students to Study Abroad in 2027 - Shiksha.com",
@@ -2352,7 +2508,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:27:56+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -2432,7 +2588,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "ccf705e1b3f9021fa246": {
       "title": "Call for Applications: NVIDIA Graduate Fellowship 2027–2028 | PhD Students Worldwide Can Receive Up to $60,000 - Global South Opportunities",
@@ -2451,7 +2613,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:30:53+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -2531,7 +2693,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "2fe28de9eae32af3326e": {
       "title": "Top PhD Scholarships for Indian Students to Study Abroad in 2027-28 - Shiksha.com",
@@ -2550,7 +2718,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:30:55+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -2630,7 +2798,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "ff80a00d5b68dac26647": {
       "title": "DAAD Scholarship 2026-27 for Indian Students: Eligibility & Amount - Shiksha.com",
@@ -2649,7 +2823,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:50:41+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -2729,7 +2903,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "6475887d2c93c2ebbae1": {
       "title": "Wellington Doctoral Scholarship 2026: Fully Funded PhD Opportunity in New Zealand - Global South Opportunities",
@@ -2749,7 +2929,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:50:43+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -2829,7 +3009,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "9f1787c3e214794f0f5a": {
       "title": "Concentrix Scholarship Program 2026-27: Eligibility, Benefits, Documents and How to Apply - College Mentor",
@@ -2848,7 +3034,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:52:23+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -2928,7 +3114,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "f37b0812f8670da348ff": {
       "title": "US South Pacific Scholarship 2027: Study in Hawaii on a Fully Funded Scholarship — Bachelor’s & Master’s Students Can Apply - Global South Opportunities",
@@ -3028,7 +3220,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "cd9fa24c7b8eb7b7c810": {
       "title": "Signalpost — Online, 23 Aug – 21 Oct 2026",
@@ -3048,7 +3246,7 @@
       ],
       "primary_category": "competitions_challenges",
       "first_seen_utc": "2026-10-09T10:55:56+00:00",
-      "last_seen_utc": "2026-10-09T18:00:41+00:00",
+      "last_seen_utc": "2026-10-09T19:04:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -3207,7 +3405,13 @@
         "generated_image_url": null
       },
       "content_hash": null,
-      "last_material_change_at": null
+      "last_material_change_at": null,
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "e55db4f92cbd01c94ab6": {
       "title": "Nebius x NVIDIA Global AI Hackathon — Online, 26 Aug – 30 Oct 2026",
@@ -3228,7 +3432,7 @@
       ],
       "primary_category": "hackathons_buildathons",
       "first_seen_utc": "2026-10-09T11:14:57+00:00",
-      "last_seen_utc": "2026-10-09T18:00:41+00:00",
+      "last_seen_utc": "2026-10-09T19:04:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -3402,7 +3606,13 @@
       ],
       "resolved_urls": [
         "https://hackalendar.com/e/nebius-nvidia-global-ai-hackathon-2026"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "c4888ab2c50d34980f8c": {
       "title": "US Embassy opens applications for fully funded YES Programme 2027 - The Business Standard",
@@ -3421,7 +3631,7 @@
       ],
       "primary_category": "funded_travel_abroad",
       "first_seen_utc": "2026-10-09T11:15:00+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -3570,7 +3780,13 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMipwFBVV95cUxQMlUzN2RJS1ZySVJfMEJVNjEwcXVQOW85NFpoNGZNbkJwS2QyQ0NMdUNmb3drZ2VWTHlwbDVhZXhySllSLUhtT3FORVFLVG42U0pQTlJiMmU5U3p6cTdhV2daNXo2R0ljUG5SMnozWjFfWE5TS2NxN3RmUi0yRG9pYy1QTE9tQldCT2p1RU14NHZuSlVKTXJzNll3ODhjWTNpNU1IWENTTQ?oc=5"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "084a093563ee5bf27c94": {
       "title": "Scholarship for 12th Class Students 2026-27: Government and Private Schemes, Eligibility, Amount and How to Apply - Shiksha.com",
@@ -3589,7 +3805,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T11:15:03+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -3736,7 +3952,13 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPS0dlc2QtSW94X2hJSllwa3BuWFRIZmNFVjVnSXd3LS1PTHpwUDNCb21IVXpGOHBZeVFIT011OWdUR3VhUWt2WGxKb0ljNVJnZC00aG5BWDRGcFViaWlya0JaLUJYZ3BHM2o3SEw1a3VCWHNFREdpSS10MUNrOHpHd19FOXVmcDZEMmZoY1lKSnExNjBNZENfSVJFbnItZFZEX1dmTVhVZ1pZLUl1VDM0UDdQa2RsU282aXVXakxMNGMtNEx6V3JQNk1rSmxGdEVGSmgyTDdSTDdvT3ZNRmMyMW5KdE44R3Q0eEZOTXB3VFB0RkloM3dieA?oc=5"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "01d22a68766e35af4a48": {
       "title": "Barcelona AI Hackathon — Barcelona, 9–10 Oct 2026",
@@ -3759,7 +3981,7 @@
       ],
       "primary_category": "hackathons_buildathons",
       "first_seen_utc": "2026-10-09T11:54:51+00:00",
-      "last_seen_utc": "2026-10-09T18:00:41+00:00",
+      "last_seen_utc": "2026-10-09T19:04:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "CLOSED (official page)",
       "registration_status_evidence": "'dark' : 'light') : preferredTheme); })(); // https://gist.github.com/paulirish/1579671 (function() { var lastTime = 0; if (!window.requestAnimationFrame) { window.requestAnimationFrame = window['webkitRequestAnimationFrame']; window.cancelAnimationFrame = window['webkitCancelAni",
@@ -3958,7 +4180,13 @@
       ],
       "resolved_urls": [
         "https://hackalendar.com/e/barcelona-ai-hackathon-2026"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "f915fc66f72cd475a773": {
       "title": "Motsepe Foundation Bursary 2027: Fully Funded University Funding for South African Students - Global South Opportunities",
@@ -3978,7 +4206,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T11:54:54+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -4079,7 +4307,13 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMib0FVX3lxTE5vaVp4N3pTQWZRYTZGNXdkalVGS0wyaTljdjJFV2MtWW1iMmtJR1JBLXJMOWxLLU1qVndFSk1wN2wxbnNJZWh3RFozUXFYV2h2MkhXWDVnLXRmdGd6ZHdFMzVjaDlsZ2VIbFRxRUFJMA?oc=5"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "d352d16582d04efb47f8": {
       "title": "UP Scholarship 2026-27: Eligibility for financial assistance, important dates, and more - The Indian Express",
@@ -4098,7 +4332,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T11:54:56+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -4190,7 +4424,13 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOUmhvb3p2UzFreTQ0dWFkM29oRDlVaGpSdnJFVThTcEQtdEpxcFhkcXg3V04wUjNsZDhGc1R1OGVIRkswU2RSY3BlSVRpdjNSQ1RrVjVTTXotR0hCQ25Xb2w5WnBGSVg5OWhudHVsTDhtdjFraVp2TkxWX3cyZ1htMC0yUk1OaXA2STZFOXdyZ204SEdxRnR0M1hvSUVuWVp5SlNERUc0d1pkZ0hMMjlmRWZNU2JYd2F2S01XdlpvaWhlUHA5c1dVcl9NSmMzRk5HNEJraGo1OFc5Y2JyRG1pYWxGeTRKUnJMVzQ0RjRuVnMtbDZH0gH7AUFVX3lxTFBXY0JRdnRKeEN3SFJMZ19UYzNOdHdFRVNQcXlodU5id0Y5aWQyQzNHaW9ERG9QV2lwSWFwRXd6Z1M0bTlVVl8wbnhZNDVuc3g3TGZ4dzRKNzc1ekFXa2h4Q2NLMml5cjNEbWNydUhPSTFwd0VBdlh1Y3FPR201NWl1NjJ4cGxaeHdOVGdtYkYyNGRyUUF4UW9MVG11bFZvYno1TVNEQXdzbFBRX1RsSzNYY0Jub0I4c0pLMS0ycVotb1NUaFpGRUdhQS1GYzhqZm11MV8wakU4QjZWZ040cTl4MldWdzZOUEY0djUzeE45bkVBNGhFNzA0RXpR?oc=5"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "579ad1f3966a0f642c71": {
       "title": "Stripe x Briefcase: AI FinTech London Hackathon — London, 15 Oct 2026",
@@ -4212,7 +4452,7 @@
       ],
       "primary_category": "hackathons_buildathons",
       "first_seen_utc": "2026-10-09T13:42:02+00:00",
-      "last_seen_utc": "2026-10-09T18:00:41+00:00",
+      "last_seen_utc": "2026-10-09T19:04:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -4405,7 +4645,13 @@
       ],
       "resolved_urls": [
         "https://hackalendar.com/e/stripe-briefcase-ai-fintech-london-hackathon-2026"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "d0e42c83043f545b1390": {
       "title": "IIT Madras MS by Research Admissions 2026: Applications open under AARDO MoU; check eligibility and scholarship - EdexLive",
@@ -4424,7 +4670,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T13:42:05+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "applications open",
@@ -4525,7 +4771,13 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOR1dTbWRJSW5CWlFINDFEOWxjOFlQYWFtNHhhT0gzSkNzUkswT2ZNNV82UV9NSlFTOHhQWjVNZl9YZ1RKdFpxeVJ3VlNUNTNqVnpHdTVmazU0ak5DWnY5cUxDbTREbmpWdVpzUXRUeEtVSk5kVmpKMkE4aURxU2J2d1F3VEFlZm9LVkYyWEZNZ1BwcXVOSjQyVW5FeGN3QzBFc2RhOXI1emtfQ0ZpZy1UVktlQ01mNHMwMlNQVE1IbWtVaEI4ZUUwTWJCWDY5V0xwQWYzc2l30gHjAUFVX3lxTE1iYThXMEszN2tQVWNic0x0ckNxOXExRk53SHpyWEItQmFaRjNmOFdVZVBVVnc2UlBYdEVWYWFlRlhEbURnSno1ek1CMllzS1VxUlVIdjIwMnN0MzNpaVg5d3VQbE1lUVBmQUozUUE2UEVSZnJFc2JFcTZvNDFPLXFGNWxYbXhOSzY5ZTBjYXQyVEdNazdDTmFTTjk1cXc1N0ZUb0RPVXBNQjF5MlVnR1JFUTNuQVYxRlVabUZBNkFPbWdiWmI0UU5WVWh0QzRzVDZyMGgxQzZWTThQMDdNTmRsZHdJ?oc=5"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "3c497d9bcd6c40774b8f": {
       "title": "MEXT Scholarship 2026-27: Eligibility, Amount, Important Dates and Application Process - Shiksha.com",
@@ -4636,7 +4888,13 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMiygFBVV95cUxOMm51dlJoOUNZaS1SLWd0NmlvQ2t5QmcwQlQ3WDZxVUM2RjRJME03RG42ckxSNTJ6cmNoYmdfcVpaM243Z2V3VU1BaVJHdTZuaTZfSVA4S0cwNm5GeWhkUEVmOExBZkxyaXY0OTlzeVRCZjVzYnZVdUw1TVFBMzRmS2lHakc4MWlESGlVVXhXVUQwVWptdWd3azQ5VDN2S0ZRSHU2c1hhTjI1VzY3OW9BWm92ZEFfQnN5WkNhQm03bWN6YVBIRk1KTTFR?oc=5"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "6bb39ab2ec7c014dc6ed": {
       "title": "Tata Capital Pankh Scholarship 2026-27: Check Last Date, Eligibility, Amount and Apply Online - Shiksha.com",
@@ -4655,7 +4913,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T13:42:34+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -4747,7 +5005,13 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPX2k2eUw3aUdIdkpvNklyV0h3M2FoY3lsd01ucGRUcThVVG9mRDlYLVJueFZjMTNQM0dxdkZuT05ONXJIVUY1cmtaV2h6aE0tQWlFU3lXMjFzdGNfa1NCUTdJbDB5ckw0RTFONTZLdE1lQm83ai0xUFgwWGRyOXNFV2NhTVVqYUtQMmFXSUZPQzV0alppdHZrUTVRcElmU1hqZWE5NEVoazlJTFZKa2VsdHNqMXV6UmdLdXpzMHNldnBuQ2xYQ1pEampBakprek9XZ19CdjhHRFl0M005RlE?oc=5"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "044a3b3d18e55bbfb73c": {
       "title": "Real-Time Video Agents Hack - LDN — London, 17 Oct 2026",
@@ -4767,7 +5031,7 @@
       ],
       "primary_category": "competitions_challenges",
       "first_seen_utc": "2026-10-09T14:00:08+00:00",
-      "last_seen_utc": "2026-10-09T18:00:41+00:00",
+      "last_seen_utc": "2026-10-09T19:04:41+00:00",
       "deadline": "on 9",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -4960,7 +5224,13 @@
       ],
       "resolved_urls": [
         "https://hackalendar.com/e/real-time-video-agents-hack-ldn-london-2026"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "808d54d46cb50129e23b": {
       "title": "FAWEZA–Mastercard Foundation TEVET Bursary 2027 | 200 Fully Funded STEM Bursaries in Zambia - Global South Opportunities",
@@ -4980,7 +5250,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T14:00:11+00:00",
-      "last_seen_utc": "2026-10-09T18:00:38+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -5081,7 +5351,13 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMia0FVX3lxTFBLbWc1NHpFSW9KcDJ6U0ZpLWlqendraGlDT0dsLTg5ajlBMGJacGJFRjJvT3lsdTlwWGp6c0Z4dmt2Ry1Nb25VczUwWjAyM056emtsYVY3eTdiR1Vjc2g5Uk45bGNhYXdxYVYw?oc=5"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "4c8997e9a4ade693b9d2": {
       "title": "NSP ICAR Undergraduate National Talent Scholarship (NTS-UG) 2026: Know Eligibility and How to Apply - College Mentor",
@@ -5100,7 +5376,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T14:00:12+00:00",
-      "last_seen_utc": "2026-10-09T18:00:39+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -5192,13 +5468,19 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMinwFBVV95cUxQQTc0WUMyQkN1TnhyZExObkVZQVhHSFZHcUdSUy12enFrSFlNcl8zRHNyVnZFTTVHUFBvZjJTQXZLdDhjYWlvajRXU3d4Sk1VTTl0RHhuLVBuWjA2bF93QUZiMm53NXppWEU2czBXcnpoUU96X3NNQm4yeVpKS1hyTTg3VnluMUN6NWtSUUlvQmluTUhvLVNkcmhDQ3ZTNTg?oc=5"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "b396b35bff130b491836": {
       "title": "Agentic Hackathon: From Research to Commerce — Berlin, 19 Oct 2026",
       "summary": " 19 Oct 2026  · Berlin · In person · The Delta Campus Organiser: AI Agents Berlin From Research to Action: Agents That Discover, Verify & Transact\n\nSeven hours to build an agent that actually does something. Form a team, pick a track, ship a working demo by the evening — then carry the best builds through to AIB Demo Day in December.\n\nMonday 19 October, 14:00–21:00, at The Delta Campus, Berlin. Food and drinks throughout.\n\nTracks\n\n- Research Agents: Build agents that search, retrieve, evaluate, summarise and reason over information. A fit for web research, source discovery, market intelligence, due diligence, monitoring, knowledge workflows and verified research pipelines.\n- Agentic Commerce: Build agents that discover products or services, compare options, verify information and support transactions or commercial workflows. A fit for product discovery, shopping agents, marketplace automation, price comparison, procurement, MCP-based commerce workflows and agentic payments.\n\nAgenda\n\n- 14:00 — Doors, check-in, food\n- 14:30 — Welcome, tracks and rules\n- 14:45 — Partner challenges, five minutes each\n- 15:10 — Team formation, solo builders paired up\n- 15:45 — Build\n- 18:15 — Working dinner, building continues\n- 20:00 — Demos, three minutes per team\n- 20:45 — Winners and what happens next\n- 21:00 — Close\n\nPartners\n\n- Tavily — a search and retrieval API designed for powering intelligent agents with real-time, verifiable web data\n- Nebius — a high-performance AI cloud platform for building and scaling modern AI systems\n- Affinidi – giving every AI agent a verifiable identity\n- n8n — workflow automation for agentic systems\n\nPartner challenges, prizes and technical resources are announced on the day.\n\nWhat you get\n\n- Compute and API credits from our partners, and n8n Cloud Pro licences for participating builders.\n- Mentors from the partner teams in the room while you build.\n- A jury of partners and investors watching the demos.\n\nA route to Demo Day on Dec 10: standout builders win an AIB Builder Pass, and with it a demo slot in front of the season's partner and investor bench.\n\nWho should join\n\nThis hackathon is for:\n\n- AI engineers and full-stack developers\n- Agent builders\n- Founders and product teams\n- Data, search and retrieval engineers\n- AI x commerce builders\n- Students and researchers working on applied AI agents.\n\nYou can join solo or with a team. Builders will have the day to form teams, build, and demo their projects.\n\nTeam rules\n\nYou can join solo or with a team.\n\n- Max. 5 people per team\n- At least one team member must be onsite in Berlin\n- Solo builders are welcome — we will support team formation at the beginning\n- Please bring your laptop and anything else you need to build\n- The event is builder-focused: please only register if you plan to actively build, mentor, judge, or support teams\n\nWant to mentor, judge or speak?\n\nTell us here and we will get back to you.\n\nInterested in sponsoring the hackathon?\n\nPartner packages and everything else commercial start here.\n\nAbout AI Agents Berlin\n\nBerlin's community for the agentic economy. Builder sessions, hackathons, and the Agentic Economy Forum. 11,000+ community contacts and 2,000+ agent builders.\n\nJoin the builder community on Telegram to share what you are building and connect with other agent builders. More on the 2026 season on our website.  Register on the organiser's own page ",
-      "url": "https://hackalendar.com/e/agentic-hackathon-from-research-to-commerce-berlin-2026",
-      "image_url": "https://hackalendar.com/cover/agentic-hackathon-from-research-to-commerce-berlin-2026-800.webp",
+      "url": "https://luma.com/research-to-commerce",
+      "image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/yk/34ce6773-65bb-45e8-bef9-b7391f5bd3ad.png",
       "source": "https://hackalendar.com/feed.xml",
       "source_name": "Hackalendar · Upcoming Hackathons",
       "source_id": "7c33d1ecedb854aa",
@@ -5214,7 +5496,7 @@
       ],
       "primary_category": "hackathons_buildathons",
       "first_seen_utc": "2026-10-09T18:00:46+00:00",
-      "last_seen_utc": "2026-10-09T18:00:46+00:00",
+      "last_seen_utc": "2026-10-09T19:04:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -5227,35 +5509,133 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
-        "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "status": "official_page_verified",
+        "official_url": "https://luma.com/research-to-commerce",
+        "evidence_urls": [
+          "https://hackalendar.com/e/agentic-hackathon-from-research-to-commerce-berlin-2026",
+          "https://lu.ma/research-to-commerce",
+          "https://luma.com/research-to-commerce"
+        ],
+        "last_checked_at": "2026-10-09T19:04:41+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://hackalendar.com/e/agentic-hackathon-from-research-to-commerce-berlin-2026",
+        "official_link_candidate": "https://lu.ma/research-to-commerce",
+        "official_link_reason": "outbound_anchor:Enter on the organiser’s site",
+        "candidate_page_status": "success",
+        "candidate_page_error": null,
+        "candidate_page_http_status": 200,
+        "page_title": "Agentic Hackathon: From Research to Commerce",
+        "last_check_error": null,
+        "last_check_duration_ms": 501,
+        "observed_facts": {
+          "page_role": "structured_event_listing",
+          "page_title": "Agentic Hackathon: From Research to Commerce",
+          "description": "From Research to Action: Agents That Discover, Verify & Transact\nSeven hours to build an agent that actually does something. Form a team, pick a track, ship a working demo by the evening — then carry the best builds through to AIB Demo Day in December.\nMonday 19 October, 14:00–21:00, at The Delta Campus, Berlin. Food and drinks throughout.\n\nTracks\nResearch Agents: Build agents that search, retrieve, evaluate, summarise and reason over information. A fit for web research, source discovery, market intelligence, due diligence, monitoring, knowledge workflows and verified research pipelines.\nAgentic Commerce: Build agents that discover products or services, compare options, verify information and support transactions or commercial workflows. A fit for product discovery, shopping agents, marketplace automation, price comparison, procurement, MCP-based commerce workflows and agentic payments.\n\nAgenda\n14:00 — Doors, check-in, food\n14:30 — Welcome, tracks and rules\n14:45 — Partner challenges, five minutes each\n15:10 — Team formation, solo builders paired up\n15:45 — Build\n18:15 — Working dinner, building continues\n20:00 — Demos, three minutes per team\n20:45 — Winners and what happens next\n21:00 — Close\n\nPartners\nTavily — a search and retrieval API designed for powering intelligent agents with real-time, verifiable web data\nNebius — a high-performance AI cloud platform for building and scaling modern AI systems\nAffinidi – giving every AI agent a verifiable identity\nn8n — workflow autom",
+          "organizer": "AI Agents Berlin",
+          "event_start_at": "2026-10-19T14:00:00.000+02:00",
+          "event_end_at": "2026-10-19T21:00:00.000+02:00",
+          "event_timezone": "UTC+02:00",
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": "The Delta Campus, Berlin, Berlin, DE",
+            "mode": "in_person",
+            "venue": "The Delta Campus",
+            "city": "Berlin",
+            "region": "Berlin",
+            "country": "DE",
+            "country_code": "DE",
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/yk/34ce6773-65bb-45e8-bef9-b7391f5bd3ad.png"
+        },
+        "fact_evidence": {
+          "event_start_at": {
+            "value": "2026-10-19T14:00:00.000+02:00",
+            "source_url": "https://luma.com/research-to-commerce",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.startDate=2026-10-19T14:00:00.000+02:00"
+          },
+          "event_end_at": {
+            "value": "2026-10-19T21:00:00.000+02:00",
+            "source_url": "https://luma.com/research-to-commerce",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.endDate=2026-10-19T21:00:00.000+02:00"
+          },
+          "organizer": {
+            "value": "AI Agents Berlin",
+            "source_url": "https://luma.com/research-to-commerce",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.organizer.name=AI Agents Berlin"
+          },
+          "location": {
+            "value": {
+              "raw": "The Delta Campus, Berlin, Berlin, DE",
+              "mode": "in_person",
+              "venue": "The Delta Campus",
+              "city": "Berlin",
+              "region": "Berlin",
+              "country": "DE",
+              "country_code": "DE",
+              "remote_restrictions": []
+            },
+            "source_url": "https://luma.com/research-to-commerce",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.location / eventAttendanceMode"
+          }
+        },
+        "last_verified_at": "2026-10-09T19:04:41+00:00"
       },
       "schema_version": 1,
       "id": "b396b35bff130b491836",
-      "organizer": null,
+      "organizer": "AI Agents Berlin",
       "application_open_at": null,
       "application_deadline": null,
       "deadline_timezone": null,
-      "event_start_at": null,
-      "event_end_at": null,
-      "event_timezone": null,
+      "event_start_at": "2026-10-19T14:00:00.000+02:00",
+      "event_end_at": "2026-10-19T21:00:00.000+02:00",
+      "event_timezone": "UTC+02:00",
       "date_precision": "unknown",
       "location": {
-        "raw": null,
-        "mode": "unknown",
-        "venue": null,
-        "city": null,
-        "region": null,
-        "country": null,
-        "country_code": null,
+        "raw": "The Delta Campus, Berlin, Berlin, DE",
+        "mode": "in_person",
+        "venue": "The Delta Campus",
+        "city": "Berlin",
+        "region": "Berlin",
+        "country": "DE",
+        "country_code": "DE",
         "remote_restrictions": []
       },
       "eligibility": {
@@ -5290,7 +5670,7 @@
         "evidence_url": null
       },
       "media": {
-        "source_image_url": "https://hackalendar.com/cover/agentic-hackathon-from-research-to-commerce-berlin-2026-800.webp",
+        "source_image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/yk/34ce6773-65bb-45e8-bef9-b7391f5bd3ad.png",
         "generated_image_url": null
       },
       "content_hash": null,
@@ -5309,7 +5689,13 @@
       ],
       "resolved_urls": [
         "https://hackalendar.com/e/agentic-hackathon-from-research-to-commerce-berlin-2026"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "b5441ad4ec8b11ba70d9": {
       "title": "New & upcoming hackathons - Devpost",
@@ -5328,7 +5714,7 @@
       ],
       "primary_category": "hackathons_buildathons",
       "first_seen_utc": "2026-10-09T18:00:48+00:00",
-      "last_seen_utc": "2026-10-09T18:00:48+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -5429,7 +5815,13 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMibkFVX3lxTE1DUHFHWG9ZYmt3X1VfbUhOQ3YyTWwxdHNHbU1UU2l3V1VRNXVyaEUwWDYxZ3ZiUnFESkEydW5Ic1BBR2ttelVqRjVwS0s1blFxRllLNkNBRDIzcERJdlMzSHc4MTZMbUoyeFRIVkN3?oc=5"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "f7566c2d6b54c3967b9d": {
       "title": "HongKong Fellowships for International Students - Academia Mag",
@@ -5448,7 +5840,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T18:00:51+00:00",
-      "last_seen_utc": "2026-10-09T18:00:51+00:00",
+      "last_seen_utc": "2026-10-09T19:04:36+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -5540,7 +5932,13 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMijwFBVV95cUxQVTBSeHB5RTRmdS11ZjNONURmblh0X0k5U0RtLUdscS1fa1NKSHNUM3I5VzFYdTQ1RVdmemw5RW9sZEZ0TWFPdVFWNXRwZU43cnltS05XenNuU3FPR1VwRmh0S0JiZzZKX0RSY01CVFM3UzkyaEFVOS1DRjAySnVjeDNWekRJVGFOMzQ4XzJwZw?oc=5"
-      ]
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
     },
     "6a2f2bb84ff67ddfc9ed": {
       "title": "LIC Scholarship 2026-27: Apply Online, Check Eligibility, Amount and Last Date - Shiksha.com",
@@ -5559,7 +5957,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T18:00:53+00:00",
-      "last_seen_utc": "2026-10-09T18:00:53+00:00",
+      "last_seen_utc": "2026-10-09T19:04:37+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -5651,10 +6049,398 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZndkeDF3NWcxdlZDYnYzeHhvM1lmTXBMYThKUDVuQzYwZHNRX1FuUHJFLTJZRDRSaGUyRkhudVlsR2NoR0JmWnZwT0I5d1lmVm40Zzd5a0U1Y0ROcXRyTndSNFpmUGQtNFZIbjBxZHJucWFzOC1XakZCVzNNSFhqcGZHcjVQS2RoZ1dVdGctVXdEYk00R1dDcFNiVGZwdjRhUGtkbFBvR0Jrc1dLRXdrRnJkcV9nN1l5UUh5V0JmOHh3d1NnSDFuVU9n?oc=5"
+      ],
+      "discovery_quality": {
+        "accepted": null,
+        "status": "unknown",
+        "reason": "No discovery-quality assessment was recorded for this legacy item.",
+        "rule_version": 1
+      }
+    },
+    "dac1b99de94ef1bdd9cb": {
+      "title": "Lovable x EF x WWB 🪄 Hackathon — London, 24 Oct 2026",
+      "summary": " 24 Oct 2026  · London · In person · Entrepreneurs First Organiser: Women Who Build 🪄 This event is part of the broader WWB Founder Fellowship, running from 10-28 October in London.\nIf you’d like to be considered, tell us a little about yourself and apply below 🚀💜\nhttps://tally.so/r/Y5Geyz\n\nWomen Who Build 🪄 is a fast-growing European initiative on a mission to open the worlds of entrepreneurship and venture building to bold, curious women - from students to early-career talent.\nThe WWB Founde4r Fellowship 2026 is a 3-week programme designed to give Fellows hands-on exposure to how companies are built, from first principles to traction.\nAlongside founder and investor-led masterclasses, practical startup sessions and a final pitch challenge, we're partnering with Lovable and Entrepreneurs First to host an exclusive 10-hour hackathon.\nThe goal?\nTurn real-world problems into working AI-powered solutions – from identifying and validating an idea to building a prototype and pitching it. Gain the confidence, skills and experience to become a builder, regardless of your coding experience or whether you already have a startup idea.  Register on the organiser's own page ",
+      "url": "https://hackalendar.com/e/lovable-ef-wwb-hackathon-london-2026",
+      "image_url": "https://hackalendar.com/cover/lovable-ef-wwb-hackathon-london-2026-800.webp",
+      "source": "https://hackalendar.com/feed.xml",
+      "source_name": "Hackalendar · Upcoming Hackathons",
+      "source_id": "7c33d1ecedb854aa",
+      "adapter_type": "hackalendar_rss",
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "hackathons_buildathons",
+        "competitions_challenges",
+        "scholarships_fellowships"
+      ],
+      "primary_category": "hackathons_buildathons",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 1,
+        "title_signal": true,
+        "actionable_update": false,
+        "matched_categories": [
+          "hackathons_buildathons",
+          "competitions_challenges",
+          "scholarships_fellowships"
+        ]
+      },
+      "first_seen_utc": "2026-10-09T19:04:46+00:00",
+      "last_seen_utc": "2026-10-09T19:04:46+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://hackalendar.com/e/lovable-ef-wwb-hackathon-london-2026",
+      "canonical_url": "https://hackalendar.com/e/lovable-ef-wwb-hackathon-london-2026",
+      "source_feed_url": "https://hackalendar.com/feed.xml",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ]
+      },
+      "schema_version": 1,
+      "id": "dac1b99de94ef1bdd9cb",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": "https://hackalendar.com/cover/lovable-ef-wwb-hackathon-london-2026-800.webp",
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "7c33d1ecedb854aa"
+      ],
+      "source_names": [
+        "Hackalendar · Upcoming Hackathons"
+      ],
+      "source_feeds": [
+        "https://hackalendar.com/feed.xml"
+      ],
+      "discovered_urls": [
+        "https://hackalendar.com/e/lovable-ef-wwb-hackathon-london-2026"
+      ],
+      "resolved_urls": [
+        "https://hackalendar.com/e/lovable-ef-wwb-hackathon-london-2026"
+      ]
+    },
+    "e957cb40b392528ddee7": {
+      "title": "Russian Embassy announces 70 fully-funded scholarships for Kenyan students - Citizen Digital",
+      "summary": " Russian Embassy announces 70 fully-funded scholarships for Kenyan students    Citizen Digital ",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUEQ3ZDl5b1BkX0EzZXZBalQ0QVM3cFdac0MyVnlsWEtJaXRiaEktQmJaVWFLa1IyZW90aldULWFqLVNFMjU2VGRQX2h6UF9SVkZNX2IyT0hDSGw1REFhcU5yMFRXeDV5ZUpCRERiR3pCTm9TOFh1Q29RQncxVHk3WGJ0NTctaVR4M1hEcXZIVkRpWXB0SEl2ODJwSDJJck15MzQ2dndBQ19SRjBlX0hhcnBELUM?oc=5",
+      "image_url": "",
+      "source": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "source_name": "Google News · Funded travel",
+      "source_id": "7c5c4d34b1a8fdc9",
+      "adapter_type": "google_news_rss",
+      "resolution_status": "unresolved_google_news_link",
+      "resolution_attempts": 1,
+      "last_resolution_attempt_at": "2026-10-09T19:04:48+00:00",
+      "categories": [
+        "scholarships_fellowships"
+      ],
+      "primary_category": "scholarships_fellowships",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 1,
+        "title_signal": true,
+        "actionable_update": false,
+        "matched_categories": [
+          "scholarships_fellowships"
+        ]
+      },
+      "first_seen_utc": "2026-10-09T19:04:48+00:00",
+      "last_seen_utc": "2026-10-09T19:04:48+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUEQ3ZDl5b1BkX0EzZXZBalQ0QVM3cFdac0MyVnlsWEtJaXRiaEktQmJaVWFLa1IyZW90aldULWFqLVNFMjU2VGRQX2h6UF9SVkZNX2IyT0hDSGw1REFhcU5yMFRXeDV5ZUpCRERiR3pCTm9TOFh1Q29RQncxVHk3WGJ0NTctaVR4M1hEcXZIVkRpWXB0SEl2ODJwSDJJck15MzQ2dndBQ19SRjBlX0hhcnBELUM?oc=5",
+      "canonical_url": null,
+      "source_feed_url": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "awaiting_source_resolution",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ],
+        "source_page_url": null,
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": null,
+        "last_check_error": "Google News wrapper has not resolved to a publisher page.",
+        "last_check_duration_ms": 0
+      },
+      "schema_version": 1,
+      "id": "e957cb40b392528ddee7",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "7c5c4d34b1a8fdc9"
+      ],
+      "source_names": [
+        "Google News · Funded travel"
+      ],
+      "source_feeds": [
+        "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen"
+      ],
+      "discovered_urls": [
+        "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUEQ3ZDl5b1BkX0EzZXZBalQ0QVM3cFdac0MyVnlsWEtJaXRiaEktQmJaVWFLa1IyZW90aldULWFqLVNFMjU2VGRQX2h6UF9SVkZNX2IyT0hDSGw1REFhcU5yMFRXeDV5ZUpCRERiR3pCTm9TOFh1Q29RQncxVHk3WGJ0NTctaVR4M1hEcXZIVkRpWXB0SEl2ODJwSDJJck15MzQ2dndBQ19SRjBlX0hhcnBELUM?oc=5"
+      ]
+    },
+    "22aa6133f0a7e9eac5fa": {
+      "title": "Social Justice Ministry’s SETU NSP App Simplifies Scholarship Access for Students - PIB",
+      "summary": " Social Justice Ministry’s SETU NSP App Simplifies Scholarship Access for Students    PIB ",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4wWmRORXFQd1NYblNGdURBSzBBTlVXZGE1YU9kR2xQZkZkaWxEdzQtREY0ajE5RmpQU1MtcGJKZWYwMnZSZHRTb3NuT19KMTZSSnhnaGNxcEN4WDFoUS1XdFJpNGxPLUEtQUZ5M1V1VXlUUzlMRXZtUHV3Q1o?oc=5",
+      "image_url": "",
+      "source": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "source_name": "Google News · Scholarships",
+      "source_id": "56da5ebaefc91f25",
+      "adapter_type": "google_news_rss",
+      "resolution_status": "unresolved_google_news_link",
+      "resolution_attempts": 1,
+      "last_resolution_attempt_at": "2026-10-09T19:04:50+00:00",
+      "categories": [
+        "scholarships_fellowships"
+      ],
+      "primary_category": "scholarships_fellowships",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 1,
+        "title_signal": true,
+        "actionable_update": false,
+        "matched_categories": [
+          "scholarships_fellowships"
+        ]
+      },
+      "first_seen_utc": "2026-10-09T19:04:50+00:00",
+      "last_seen_utc": "2026-10-09T19:04:50+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4wWmRORXFQd1NYblNGdURBSzBBTlVXZGE1YU9kR2xQZkZkaWxEdzQtREY0ajE5RmpQU1MtcGJKZWYwMnZSZHRTb3NuT19KMTZSSnhnaGNxcEN4WDFoUS1XdFJpNGxPLUEtQUZ5M1V1VXlUUzlMRXZtUHV3Q1o?oc=5",
+      "canonical_url": null,
+      "source_feed_url": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ]
+      },
+      "schema_version": 1,
+      "id": "22aa6133f0a7e9eac5fa",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "56da5ebaefc91f25"
+      ],
+      "source_names": [
+        "Google News · Scholarships"
+      ],
+      "source_feeds": [
+        "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen"
+      ],
+      "discovered_urls": [
+        "https://news.google.com/rss/articles/CBMifEFVX3lxTE4wWmRORXFQd1NYblNGdURBSzBBTlVXZGE1YU9kR2xQZkZkaWxEdzQtREY0ajE5RmpQU1MtcGJKZWYwMnZSZHRTb3NuT19KMTZSSnhnaGNxcEN4WDFoUS1XdFJpNGxPLUEtQUZ5M1V1VXlUUzlMRXZtUHV3Q1o?oc=5"
       ]
     }
   },
-  "updated_utc": "2026-10-09T18:00:53+00:00",
+  "updated_utc": "2026-10-09T19:04:50+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -5662,18 +6448,18 @@
       "name": "Google News · Devpost",
       "url": "https://news.google.com/rss/search?q=site%3Adevpost.com%2Fhackathons+hackathon+registration+prize+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "adapter_type": "google_news_rss",
-      "last_attempt_at": "2026-10-09T18:00:37+00:00",
-      "last_success_at": "2026-10-09T18:00:37+00:00",
+      "last_attempt_at": "2026-10-09T19:04:35+00:00",
+      "last_success_at": "2026-10-09T19:04:35+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 280,
+      "last_duration_ms": 290,
       "items_seen": 1,
       "matching_items": 1,
-      "new_items": 1,
+      "new_items": 0,
       "failure_streak": 0,
       "last_success_items_seen": 1,
       "last_success_matching_items": 1,
-      "last_success_new_items": 1,
+      "last_success_new_items": 0,
       "access_method": "public_google_news_rss",
       "expected_fields": [
         "title",
@@ -5687,18 +6473,20 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T14:04:55+00:00"
+      "last_skipped_at": "2026-10-09T14:04:55+00:00",
+      "quality_rejected_count": 0,
+      "quality_rule_version": 1
     },
     "4ae1d4cb1873b219": {
       "source_id": "4ae1d4cb1873b219",
       "name": "Google News · MLH",
       "url": "https://news.google.com/rss/search?q=site%3Amlh.io+hackathon+student+registration+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "adapter_type": "google_news_rss",
-      "last_attempt_at": "2026-10-09T18:00:37+00:00",
-      "last_success_at": "2026-10-09T18:00:37+00:00",
+      "last_attempt_at": "2026-10-09T19:04:36+00:00",
+      "last_success_at": "2026-10-09T19:04:36+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 231,
+      "last_duration_ms": 219,
       "items_seen": 0,
       "matching_items": 0,
       "new_items": 0,
@@ -5719,24 +6507,26 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T14:04:55+00:00"
+      "last_skipped_at": "2026-10-09T14:04:55+00:00",
+      "quality_rejected_count": 0,
+      "quality_rule_version": 1
     },
     "7c5c4d34b1a8fdc9": {
       "source_id": "7c5c4d34b1a8fdc9",
       "name": "Google News · Funded travel",
       "url": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "adapter_type": "google_news_rss",
-      "last_attempt_at": "2026-10-09T18:00:37+00:00",
-      "last_success_at": "2026-10-09T18:00:37+00:00",
+      "last_attempt_at": "2026-10-09T19:04:36+00:00",
+      "last_success_at": "2026-10-09T19:04:36+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 553,
-      "items_seen": 56,
-      "matching_items": 51,
+      "last_duration_ms": 448,
+      "items_seen": 57,
+      "matching_items": 52,
       "new_items": 1,
       "failure_streak": 0,
-      "last_success_items_seen": 56,
-      "last_success_matching_items": 51,
+      "last_success_items_seen": 57,
+      "last_success_matching_items": 52,
       "last_success_new_items": 1,
       "access_method": "public_google_news_rss",
       "expected_fields": [
@@ -5751,18 +6541,20 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T14:04:55+00:00"
+      "last_skipped_at": "2026-10-09T14:04:55+00:00",
+      "quality_rejected_count": 2,
+      "quality_rule_version": 1
     },
     "56da5ebaefc91f25": {
       "source_id": "56da5ebaefc91f25",
       "name": "Google News · Scholarships",
       "url": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "adapter_type": "google_news_rss",
-      "last_attempt_at": "2026-10-09T18:00:38+00:00",
-      "last_success_at": "2026-10-09T18:00:38+00:00",
+      "last_attempt_at": "2026-10-09T19:04:36+00:00",
+      "last_success_at": "2026-10-09T19:04:36+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 524,
+      "last_duration_ms": 441,
       "items_seen": 68,
       "matching_items": 51,
       "new_items": 1,
@@ -5783,18 +6575,20 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T14:04:55+00:00"
+      "last_skipped_at": "2026-10-09T14:04:55+00:00",
+      "quality_rejected_count": 6,
+      "quality_rule_version": 1
     },
     "105b071f37b46d64": {
       "source_id": "105b071f37b46d64",
       "name": "GitHub Blog RSS",
       "url": "https://github.blog/changelog/feed/",
       "adapter_type": "official_blog_rss",
-      "last_attempt_at": "2026-10-09T18:00:41+00:00",
-      "last_success_at": "2026-10-09T18:00:41+00:00",
+      "last_attempt_at": "2026-10-09T19:04:41+00:00",
+      "last_success_at": "2026-10-09T19:04:41+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 84,
+      "last_duration_ms": 180,
       "items_seen": 10,
       "matching_items": 0,
       "new_items": 0,
@@ -5816,7 +6610,9 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T14:04:55+00:00"
+      "last_skipped_at": "2026-10-09T14:04:55+00:00",
+      "quality_rejected_count": 0,
+      "quality_rule_version": 1
     },
     "7c33d1ecedb854aa": {
       "source_id": "7c33d1ecedb854aa",
@@ -5838,11 +6634,11 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-10-09T18:00:39+00:00",
-      "last_success_at": "2026-10-09T18:00:39+00:00",
+      "last_attempt_at": "2026-10-09T19:04:37+00:00",
+      "last_success_at": "2026-10-09T19:04:37+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 2145,
+      "last_duration_ms": 3132,
       "items_seen": 15,
       "matching_items": 15,
       "new_items": 1,
@@ -5850,7 +6646,75 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T14:04:55+00:00"
+      "last_skipped_at": "2026-10-09T14:04:55+00:00",
+      "quality_rejected_count": 0,
+      "quality_rule_version": 1
+    },
+    "be99cef77555f6df": {
+      "source_id": "be99cef77555f6df",
+      "name": "Google News · National Scholarship Portal",
+      "url": "https://news.google.com/rss/search?q=site%3Ascholarships.gov.in+scholarship+student+application+deadline+-top+-best+-guide+-list+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "adapter_type": "google_news_rss",
+      "access_method": "public_google_news_rss",
+      "expected_fields": [
+        "title",
+        "link",
+        "summary",
+        "published",
+        "source",
+        "media"
+      ],
+      "pagination_mode": "google_news_feed_managed_recent_results",
+      "timeout_seconds": 10,
+      "minimum_interval_seconds": 900,
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_attempt_at": "2026-10-09T19:04:37+00:00",
+      "last_success_at": "2026-10-09T19:04:37+00:00",
+      "last_status": "success",
+      "last_error": null,
+      "last_duration_ms": 179,
+      "items_seen": 0,
+      "matching_items": 0,
+      "new_items": 0,
+      "last_success_items_seen": 0,
+      "last_success_matching_items": 0,
+      "last_success_new_items": 0,
+      "failure_streak": 0,
+      "quality_rejected_count": 0,
+      "quality_rule_version": 1
+    },
+    "9730b36bd7348d15": {
+      "source_id": "9730b36bd7348d15",
+      "name": "Google News · Google Student Programs",
+      "url": "https://news.google.com/rss/search?q=site%3Ablog.google%2Fcompany-news%2Foutreach-and-initiatives%2Fstudent-programs+student+scholarship+internship+applications+-top+-best+-guide+-list+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "adapter_type": "google_news_rss",
+      "access_method": "public_google_news_rss",
+      "expected_fields": [
+        "title",
+        "link",
+        "summary",
+        "published",
+        "source",
+        "media"
+      ],
+      "pagination_mode": "google_news_feed_managed_recent_results",
+      "timeout_seconds": 10,
+      "minimum_interval_seconds": 900,
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_attempt_at": "2026-10-09T19:04:37+00:00",
+      "last_success_at": "2026-10-09T19:04:37+00:00",
+      "last_status": "success",
+      "last_error": null,
+      "last_duration_ms": 193,
+      "items_seen": 0,
+      "matching_items": 0,
+      "new_items": 0,
+      "last_success_items_seen": 0,
+      "last_success_matching_items": 0,
+      "last_success_new_items": 0,
+      "failure_streak": 0,
+      "quality_rejected_count": 0,
+      "quality_rule_version": 1
     }
   }
 }
