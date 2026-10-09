@@ -1196,6 +1196,10 @@ def main() -> int:
             )
             print(f"Feed error ({source}): {type(exc).__name__}: {exc}", file=sys.stderr)
 
+    # Verify one new opportunity and backfill one older record per run.
+    # Page fetches are bounded separately so a feed burst cannot cause a crawl burst.
+    verify_due_opportunities(pending_events, seen)
+
     # One item appears once in the stream, under a primary bucket, with all tags
     # preserved on the photo card and caption.
     pending_events.sort(key=lambda event: (
@@ -1376,6 +1380,9 @@ def main() -> int:
                     "notes": ["Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."],
                 },
             }
+            verification_result = event.get("verification_result")
+            if isinstance(verification_result, dict):
+                record = apply_page_verification(record, verification_result)
             normalized_record = normalize_event_record(event["uid"], record)
             remember_source_alias(
                 normalized_record, event["source_id"], event["source_name"],
