@@ -844,15 +844,24 @@ def generate_opportunity_card(item: dict, categories: list[str], deadline: str,
         chip_x += chip_width + 12
 
     deadline_value = (deadline or "Not found — verify on official page")[:42]
+    event_schedule = re.sub(r"\s+", " ", str(item.get("event_schedule") or "")).strip()
+    event_location = re.sub(r"\s+", " ", str(item.get("event_location") or "")).strip()
     status_value = (reg_status or "UNKNOWN")[:35]
     box_y = 464
     draw.rounded_rectangle((82, box_y, 580, 579), radius=20, fill=(18, 31, 61), outline=(42, 68, 111), width=1)
     draw.rounded_rectangle((604, box_y, 1117, 579), radius=20, fill=(18, 31, 61), outline=(42, 68, 111), width=1)
-    draw.text((106, box_y + 18), "DEADLINE", font=section_font, fill=(125, 164, 205))
-    draw.text((106, box_y + 52), deadline_value, font=value_font, fill=(246, 248, 255))
+    left_label = "EVENT DATES · UNVERIFIED" if event_schedule else "APPLICATION DEADLINE"
+    left_value = event_schedule[:42] if event_schedule else deadline_value
+    draw.text((106, box_y + 18), left_label, font=section_font, fill=(125, 164, 205))
+    draw.text((106, box_y + 52), left_value, font=value_font, fill=(246, 248, 255))
     draw.text((630, box_y + 18), "REGISTRATION STATUS", font=section_font, fill=(125, 164, 205))
     draw.text((630, box_y + 52), status_value, font=value_font, fill=(115, 235, 192) if status_value.startswith("OPEN") else (246, 248, 255))
-    draw.text((83, 598), "Check the caption for the source link and verify details with the organiser.", font=body_font, fill=(157, 174, 209))
+    footer = (
+        "Listed location (unverified): " + event_location[:76]
+        if event_schedule and event_location
+        else "Check the caption for the source link and verify details with the organiser."
+    )
+    draw.text((83, 598), footer, font=body_font, fill=(157, 174, 209))
 
     output = io.BytesIO()
     image.save(output, format="PNG", optimize=True)
@@ -915,26 +924,35 @@ def telegram_send(text: str, image_url: str | None = None, caption: str | None =
 
 def build_photo_caption(item: dict, categories: list[str], deadline: str,
                         reg_status: str, primary: str | None = None) -> str:
-    """Build a compact caption that fits Telegram's 1,024-character photo-caption limit."""
-    title = re.sub(r"\s+", " ", item.get("title", "Untitled event")).strip()
+    """Build a compact caption with application deadlines distinct from calendar dates."""
+    title = re.sub(r"\s+", " ", item.get("title", "Untitled event")).strip()[:180]
     summary = re.sub(r"\s+", " ", item.get("summary", "")).strip()
     url = item.get("link", "").strip()
-    title = title[:180]
     categories_text = ", ".join(categories)[:150]
-    deadline_text = deadline[:100]
-    status_text = reg_status[:60]
+    deadline_text = (deadline or "Not found — verify on official page")[:100]
+    status_text = (reg_status or "UNKNOWN")[:60]
     url_text = url[:400]
+    event_schedule = re.sub(r"\s+", " ", str(item.get("event_schedule") or "")).strip()[:70]
+    event_location = re.sub(r"\s+", " ", str(item.get("event_location") or "")).strip()[:115]
 
     bucket = category_label(primary or primary_category(categories, title))
-    fixed = (
-        f"🆕 {title}\n"
-        f"📂 {bucket}\n"
-        f"🏷️ Tags: {categories_text}\n"
-        f"📅 Deadline: {deadline_text}\n"
-        f"🎟️ Registration: {status_text}\n"
-        f"🔗 {url_text}\n\n"
-        "Verify eligibility, dates and fees on the official page."
-    )
+    lines = [
+        f"🆕 {title}",
+        f"📂 {bucket}",
+        f"🏷️ Tags: {categories_text}",
+        f"📅 Application deadline: {deadline_text}",
+    ]
+    if event_schedule:
+        lines.append(f"🗓️ Event dates (calendar listing; unverified): {event_schedule}")
+    if event_schedule and event_location:
+        lines.append(f"📍 Listed location (unverified): {event_location}")
+    lines.extend([
+        f"🎟️ Registration: {status_text}",
+        f"🔗 {url_text}",
+        "",
+        "Verify eligibility, event dates, fees and location on the official organizer page.",
+    ])
+    fixed = "\n".join(lines)
     room = max(0, 1000 - len(fixed))
     if summary and room > 20:
         short_summary = summary[:max(0, room - 14)]
@@ -953,19 +971,32 @@ def build_alert(item: dict, categories: list[str], deadline: str,
     summary = re.sub(r"\s+", " ", item.get("summary", "")).strip()
     if len(summary) > 500:
         summary = summary[:497] + "..."
-    return (
-        f"🆕 EVENT OPPORTUNITY\n\n"
-        f"{title}\n"
-        f"Categories: {', '.join(categories)}\n"
-        f"Deadline: {deadline}\n"
-        f"Registration status: {reg_status}\n"
-        f"Status evidence: {reg_evidence}\n"
-        f"Link check: {link_status} ({link_evidence})\n\n"
-        f"Details: {summary or 'No summary supplied by feed.'}\n\n"
-        f"Official/source link: {url}\n\n"
-        f"First detected (UTC): {now_iso()}\n"
-        f"Note: verify eligibility, dates, fees and ticket inventory on the official page."
-    )
+    event_schedule = re.sub(r"\s+", " ", str(item.get("event_schedule") or "")).strip()
+    event_location = re.sub(r"\s+", " ", str(item.get("event_location") or "")).strip()
+    lines = [
+        "🆕 EVENT OPPORTUNITY",
+        "",
+        title,
+        f"Categories: {', '.join(categories)}",
+        f"Application deadline: {deadline or 'Not found — verify on official page'}",
+    ]
+    if event_schedule:
+        lines.append(f"Event dates (MLH calendar listing; unverified): {event_schedule}")
+    if event_schedule and event_location:
+        lines.append(f"Listed location (unverified): {event_location}")
+    lines.extend([
+        f"Registration status: {reg_status}",
+        f"Status evidence: {reg_evidence}",
+        f"Link check: {link_status} ({link_evidence})",
+        "",
+        f"Details: {summary or 'No summary supplied by feed.'}",
+        "",
+        f"Official/source link: {url}",
+        "",
+        f"First detected (UTC): {now_iso()}",
+        "Note: verify eligibility, event dates, fees and location on the official organizer page.",
+    ])
+    return "\n".join(lines)
 
 TITLE_DEDUPE_WINDOW_DAYS = 90
 
@@ -1600,7 +1631,22 @@ def main() -> int:
             title = event["title"]
             link = event["link"]
             categories = event["categories"]
-            item = {"title": title, "link": link, "summary": event["summary"]}
+            item = {
+                "title": title,
+                "link": link,
+                "summary": event["summary"],
+                "adapter_type": event.get("adapter_type", ""),
+            }
+            entry_metadata = event.get("entry") if isinstance(event.get("entry"), dict) else {}
+            if event.get("adapter_type") == "mlh_events_html":
+                event_date_text = str(entry_metadata.get("event_date_text") or "").strip()
+                calendar_year = entry_metadata.get("calendar_year")
+                item["event_schedule"] = (
+                    f"{event_date_text}, {calendar_year}"
+                    if event_date_text and calendar_year
+                    else event_date_text
+                )
+                item["event_location"] = str(entry_metadata.get("location_text") or "").strip()
 
             try:
                 image_url = extract_event_image(event["entry"], link, event["raw_summary"])
