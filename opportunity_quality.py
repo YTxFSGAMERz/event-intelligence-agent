@@ -26,6 +26,20 @@ ROUNDUP_PATTERNS = (
         r"programs?|competitions?|hackathons?)\b",
         re.IGNORECASE,
     ),
+    # Headlines often insert a broad subject (for example "tech") between
+    # a ranking word and the opportunity type: "10 best tech internships".
+    re.compile(
+        r"\b(?:top|best)\s+\d+\s+.{0,45}\b"
+        r"(?:scholarships?|fellowships?|internships?|grants?|opportunities|"
+        r"programs?|competitions?|hackathons?)\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\b\d+\s+(?:best|top)\s+.{0,45}\b"
+        r"(?:scholarships?|fellowships?|internships?|grants?|opportunities|"
+        r"programs?|competitions?|hackathons?)\b",
+        re.IGNORECASE,
+    ),
     re.compile(
         r"\b(?:government and private schemes|multiple scholarships|various scholarships|"
         r"different scholarships|scholarships you should know|opportunities you should know)\b",
@@ -105,7 +119,7 @@ def assess_discovery_quality(
     if (
         "to study in" in normalized
         and len(re.findall(r",", clean_title)) >= 2
-        and re.search(r"\b(?:scholarship|fellowship|grant)\b", normalized)
+        and re.search(r"\b(?:scholarships?|fellowships?|grants?)\b", normalized)
     ):
         return result(
             False, "roundup_or_listicle",
