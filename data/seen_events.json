@@ -4226,7 +4226,7 @@
           "https://lu.ma/3k1pazop",
           "https://luma.com/3k1pazop"
         ],
-        "last_checked_at": "2026-10-09T13:44:24+00:00",
+        "last_checked_at": "2026-10-09T13:44:38+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
@@ -4242,7 +4242,7 @@
         "candidate_page_http_status": 200,
         "page_title": "Stripe x Briefcase: AI FinTech London Hackathon",
         "last_check_error": null,
-        "last_check_duration_ms": 994,
+        "last_check_duration_ms": 428,
         "observed_facts": {
           "page_role": "structured_event_listing",
           "page_title": "Stripe x Briefcase: AI FinTech London Hackathon",
@@ -4326,7 +4326,7 @@
             "snippet": "JSON-LD Event.location / eventAttendanceMode"
           }
         },
-        "last_verified_at": "2026-10-09T13:44:24+00:00"
+        "last_verified_at": "2026-10-09T13:44:38+00:00"
       },
       "schema_version": 1,
       "id": "579ad1f3966a0f642c71",
@@ -4744,7 +4744,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-09T13:44:25+00:00",
+  "updated_utc": "2026-10-09T13:44:39+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -4777,7 +4777,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T13:44:24+00:00"
+      "last_skipped_at": "2026-10-09T13:44:38+00:00"
     },
     "4ae1d4cb1873b219": {
       "source_id": "4ae1d4cb1873b219",
@@ -4809,7 +4809,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T13:44:24+00:00"
+      "last_skipped_at": "2026-10-09T13:44:38+00:00"
     },
     "7c5c4d34b1a8fdc9": {
       "source_id": "7c5c4d34b1a8fdc9",
@@ -4841,7 +4841,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T13:44:24+00:00"
+      "last_skipped_at": "2026-10-09T13:44:38+00:00"
     },
     "56da5ebaefc91f25": {
       "source_id": "56da5ebaefc91f25",
@@ -4873,7 +4873,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T13:44:24+00:00"
+      "last_skipped_at": "2026-10-09T13:44:38+00:00"
     },
     "105b071f37b46d64": {
       "source_id": "105b071f37b46d64",
@@ -4906,7 +4906,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T13:44:24+00:00"
+      "last_skipped_at": "2026-10-09T13:44:38+00:00"
     },
     "7c33d1ecedb854aa": {
       "source_id": "7c33d1ecedb854aa",
@@ -4940,7 +4940,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T13:44:24+00:00"
+      "last_skipped_at": "2026-10-09T13:44:38+00:00"
     }
   }
 }
