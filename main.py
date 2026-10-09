@@ -1240,9 +1240,12 @@ def main() -> int:
         discovered_url = str(existing.get("discovered_url") or existing.get("url") or "").strip()
         if (urlsplit(discovered_url).hostname or "").lower() != "news.google.com":
             continue
-        attempts = int(existing.get("resolution_attempts") or 0)
         if not url_resolution_retry_is_due(existing):
             continue
+        try:
+            attempts = max(0, int(existing.get("resolution_attempts") or 0))
+        except (TypeError, ValueError):
+            attempts = 0
         source_url = str(existing.get("source_feed_url") or existing.get("source") or "").strip()
         adapter = adapters_by_url.get(source_url)
         if adapter is None or adapter.config.adapter_type != "google_news_rss":
