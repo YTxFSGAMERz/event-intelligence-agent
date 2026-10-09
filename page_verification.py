@@ -550,9 +550,30 @@ def _travel_facts(text: str, page_url: str) -> dict:
                 "value": status, "source_url": page_url, "snippet": candidate[:280],
                 "method": "explicit_page_text",
             }
-    overall = "confirmed" if any(facts.get(k) == "confirmed" for k in components) else (
-        "possible" if any(facts.get(k) == "possible" for k in components) else "unknown"
-    )
+    if any(facts.get(k) == "confirmed" for k in components):
+        overall = "confirmed"
+    elif any(facts.get(k) == "possible" for k in components):
+        overall = "possible"
+    elif re.search(
+        r"\\b(no travel support|travel support is not (?:offered|available|provided)|"
+        r"travel (?:costs|expenses) (?:are )?not covered|travel is not funded)\\b",
+        text,
+        re.I,
+    ):
+        overall = "not_offered"
+        facts.setdefault("evidence", {})["status"] = {
+            "value": "not_offered",
+            "source_url": page_url,
+            "snippet": next((
+                sentence[:280] for sentence in sentences
+                if re.search(r"\\b(no travel support|travel support is not (?:offered|available|provided)|"
+                             r"travel (?:costs|expenses) (?:are )?not covered|travel is not funded)\\b",
+                             sentence, re.I)
+            ), "Explicit page statement says travel support is not offered."),
+            "method": "explicit_page_text",
+        }
+    else:
+        overall = "unknown"
     facts["status"] = overall
     facts.setdefault("conditions", [])
     facts["maximum_amount"] = None
