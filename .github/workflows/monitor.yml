@@ -1,10 +1,25 @@
 name: Event Intelligence Agent
 
 on:
+  push:
+    branches: [main]
+    # Code/config updates trigger a scan; data/seen_events.json is intentionally excluded
+    # to prevent the agent's own state commits from starting another run.
+    paths:
+      - ".github/workflows/monitor.yml"
+      - "main.py"
+      - "requirements.txt"
+      - "sources.txt"
   schedule:
     # Every 15 minutes, UTC. GitHub scheduling is best-effort, not a guaranteed exact timer.
     - cron: "*/15 * * * *"
   workflow_dispatch:
+    inputs:
+      send_test_alert:
+        description: "Send a Telegram connectivity test before scanning"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -30,6 +45,50 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Test Telegram delivery (optional manual run)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.send_test_alert }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - <<'PY'
+          import os
+          import sys
+          import requests
+
+          token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
+          chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
+          if not token or not chat_id:
+              print("Telegram secrets are missing: check TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID.", file=sys.stderr)
+              raise SystemExit(1)
+
+          try:
+              response = requests.post(
+                  f"https://api.telegram.org/bot{token}/sendMessage",
+                  json={
+                      "chat_id": chat_id,
+                      "text": "✅ Event Intelligence Agent: GitHub Actions can reach Telegram.",
+                      "disable_web_page_preview": True,
+                  },
+                  timeout=15,
+              )
+              payload = response.json()
+          except requests.RequestException as exc:
+              print(f"Telegram request failed ({type(exc).__name__}).", file=sys.stderr)
+              raise SystemExit(1)
+          except ValueError:
+              print("Telegram returned a non-JSON response.", file=sys.stderr)
+              raise SystemExit(1)
+
+          if not response.ok or not payload.get("ok"):
+              code = payload.get("error_code", response.status_code)
+              description = payload.get("description", "Telegram did not confirm delivery")
+              print(f"Telegram API error {code}: {description}", file=sys.stderr)
+              raise SystemExit(1)
+
+          print("Telegram connectivity test passed; Telegram accepted the test message.")
+          PY
+
       - name: Scan configured feeds
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -37,6 +96,7 @@ jobs:
         run: python main.py
 
       - name: Persist deduplication state
+        if: always()
         run: |
           if [[ -n "$(git status --porcelain data/seen_events.json)" ]]; then
             git config user.name "github-actions[bot]"
