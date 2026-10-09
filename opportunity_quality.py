@@ -10,7 +10,7 @@ import re
 from typing import Iterable
 
 
-RULE_VERSION = 1
+RULE_VERSION = 2
 
 ROUNDUP_PATTERNS = (
     re.compile(
