@@ -403,13 +403,13 @@ def main() -> int:
                 categories = matching_categories(content)
                 if not categories:
                     continue
-                image_url = extract_event_image(entry, link, raw_summary)
                 uid = event_id(link, title)
                 if uid in seen:
                     # Keep last-seen timestamp without re-alerting on every run.
                     seen[uid]["last_seen_utc"] = now_iso()
                     continue
 
+                image_url = extract_event_image(entry, link, raw_summary)
                 alerts_attempted += 1
                 deadline = extract_deadline(content)
                 reg_status, reg_evidence = registration_status(content)
