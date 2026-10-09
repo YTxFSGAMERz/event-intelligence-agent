@@ -136,6 +136,24 @@ jobs:
               merged_seen[event_id] = combined
 
           merged["seen"] = merged_seen
+
+          # Merge source-run health separately so successful fetch timestamps and
+          # failure streaks survive the same optimistic state merge as event records.
+          merged_health = dict(remote_state.get("source_health") or {})
+          local_health = local_state.get("source_health") or {}
+          for source_id, local_record in local_health.items():
+              remote_record = merged_health.get(source_id, {})
+              combined = dict(remote_record)
+              combined.update(local_record)
+              for field in ("last_attempt_at", "last_success_at"):
+                  values = [value for value in (
+                      remote_record.get(field), local_record.get(field)
+                  ) if value]
+                  if values:
+                      combined[field] = max(values)
+              merged_health[source_id] = combined
+          merged["source_health"] = merged_health
+
           timestamps = [value for value in (
               remote_state.get("updated_utc"), local_state.get("updated_utc")
           ) if value]
