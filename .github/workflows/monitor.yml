@@ -8,6 +8,8 @@ on:
     paths:
       - ".github/workflows/monitor.yml"
       - "main.py"
+      - "source_adapters.py"
+      - "tests/**"
       - "requirements.txt"
       - "sources.txt"
   schedule:
