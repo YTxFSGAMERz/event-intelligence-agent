@@ -54,6 +54,30 @@ class DashboardContractTests(unittest.TestCase):
         self.assertIn(" · unverified", self.html)
         self.assertIn("Reported: support confirmed", self.html)
 
+    def test_multiple_category_membership_is_used_everywhere(self):
+        self.assertIn("function eventCategories(e)", self.html)
+        self.assertIn("eventCategories(e).includes(activeCategory)", self.html)
+        self.assertIn("events.filter(e=>eventCategories(e).includes(c[0]))", self.html)
+        self.assertIn('class="category-list"', self.html)
+
+    def test_dashboard_paginates_and_exports_filtered_results(self):
+        for marker in (
+            'id="pagination"',
+            "const PAGE_SIZE=12",
+            "function renderPagination(total,pageCount)",
+            'id="exportCsvBtn"',
+            'id="exportJsonBtn"',
+            "function exportRecords(format)",
+            "return filteredEvents.map(e=>",
+            "text/csv;charset=utf-8",
+            "application/json;charset=utf-8",
+        ):
+            self.assertIn(marker, self.html)
+
+    def test_csv_export_guards_spreadsheet_formulas(self):
+        self.assertIn("/^[=+\\\\-@\\\\t\\\\r]/.test(raw)", self.html)
+        self.assertIn("raw.replace(/\\\"/g,'\\\"\\\"')", self.html)
+
     def test_dashboard_can_render_images_and_event_details(self):
         self.assertIn("media.source_image_url", self.html)
         self.assertIn("function renderDetails(e)", self.html)
