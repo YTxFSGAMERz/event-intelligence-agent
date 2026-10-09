@@ -15,6 +15,8 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 import feedparser
 import requests
 
+from source_adapters import build_adapters, source_health_failure, source_health_success
+
 ROOT = Path(__file__).resolve().parent
 SOURCES_FILE = ROOT / "sources.txt"
 STATE_FILE = ROOT / "data" / "seen_events.json"
@@ -117,12 +119,13 @@ def normalize_event_record(event_id_value: str, record: dict) -> dict:
     still consume them. Migration is intentionally additive and idempotent.
     """
     item = dict(record or {})
-    raw_url = _http_url(item.get("url"))
-    parsed_host = (urlsplit(raw_url).hostname or "").lower() if raw_url else ""
+    source_url = _http_url(item.get("url"))
+    discovered_url = _http_url(item.get("discovered_url")) or source_url
+    parsed_host = (urlsplit(source_url).hostname or "").lower() if source_url else ""
     is_discovery_redirect = parsed_host in {"news.google.com", "www.google.com"}
     canonical_url = _http_url(item.get("canonical_url"))
-    if canonical_url is None and raw_url and not is_discovery_redirect:
-        canonical_url = clean_url(raw_url)
+    if canonical_url is None and source_url and not is_discovery_redirect:
+        canonical_url = clean_url(source_url)
 
     legacy_deadline = str(item.get("deadline") or "").strip()
     if legacy_deadline.lower() in {"", UNKNOWN_DEADLINE_TEXT.lower(), "not found"}:
@@ -190,8 +193,8 @@ def normalize_event_record(event_id_value: str, record: dict) -> dict:
         "summary": str(item.get("summary") or ""),
         "organizer": item.get("organizer"),
         "canonical_url": canonical_url,
-        "discovered_url": raw_url,
-        "source_feed_url": _http_url(item.get("source")),
+        "discovered_url": discovered_url,
+        "source_feed_url": _http_url(item.get("source_feed_url")) or _http_url(item.get("source")),
         "application_open_at": item.get("application_open_at"),
         "application_deadline": item.get("application_deadline"),
         "application_deadline_raw": item.get("application_deadline_raw") or legacy_deadline or None,
@@ -238,6 +241,7 @@ def normalize_state(state: dict) -> dict:
         for event_id_value, record in seen.items()
         if isinstance(record, dict)
     }
+    normalized["source_health"] = normalized.get("source_health") if isinstance(normalized.get("source_health"), dict) else {}
     normalized["schema_version"] = STATE_SCHEMA_VERSION
     return normalized
 
@@ -714,6 +718,21 @@ def build_alert(item: dict, categories: list[str], deadline: str,
         f"Note: verify eligibility, dates, fees and ticket inventory on the official page."
     )
 
+def find_existing_event_id(seen: dict, candidate_url: str) -> str | None:
+    """Find a tracked event by any known URL alias, supporting safe URL migration."""
+    target = clean_url(candidate_url)
+    if not target:
+        return None
+    for existing_id, record in seen.items():
+        if not isinstance(record, dict):
+            continue
+        for key in ("canonical_url", "url", "discovered_url"):
+            value = record.get(key)
+            if value and clean_url(str(value)) == target:
+                return str(existing_id)
+    return None
+
+
 def main() -> int:
     sources = read_sources()
     state = read_state()
@@ -728,31 +747,47 @@ def main() -> int:
         print("No network discovery was performed.")
         return 0
 
-    # Discovery pass: gather new entries before sending so the Telegram output can
-    # be grouped and sorted by category instead of following feed-source order.
-    for source in sources:
-        alerts_attempted = 0
-        print(f"Checking feed: {source}")
-        try:
-            feed_response = requests.get(source, timeout=TIMEOUT, headers={"User-Agent": USER_AGENT})
-            feed_response.raise_for_status()
-            feed = feedparser.parse(feed_response.content)
-            if getattr(feed, "bozo", False) and not feed.entries:
-                raise RuntimeError(str(getattr(feed, "bozo_exception", "invalid feed")))
+    # Discovery pass: adapters normalize fetching while source-specific behavior
+    # (such as resolving Google News redirect links) stays outside the alert logic.
+    source_health = state.setdefault("source_health", {})
+    adapters = build_adapters(sources)
+    pending_url_index: dict[str, str] = {}
 
-            for entry in feed.entries:
+    for adapter in adapters:
+        config = adapter.config
+        source = config.url
+        previous_health = source_health.get(config.source_id, {})
+        started = time.monotonic()
+        matching_count = 0
+        queued_count = 0
+        alerts_attempted = 0
+        print(f"Checking {config.name} [{config.adapter_type}]: {source}")
+
+        try:
+            feed_result = adapter.fetch(timeout=TIMEOUT, user_agent=USER_AGENT)
+            for entry in feed_result.entries:
                 title = str(entry.get("title", "Untitled event")).strip()
-                link = str(entry.get("link", "")).strip()
-                raw_summary = str(entry.get("summary", entry.get("description", "")))
-                summary = unescape(re.sub(r"<[^>]+>", " ", raw_summary))
-                content = f"{title}\n{summary}"
-                categories = matching_categories(content)
-                if not categories:
+                discovered_link = str(entry.get("link", "")).strip()
+                if not title or not discovered_link:
                     continue
 
-                uid = event_id(link, title)
-                if uid in seen:
-                    seen[uid]["last_seen_utc"] = now_iso()
+                raw_summary = str(entry.get("summary", entry.get("description", "")))
+                summary = unescape(re.sub(r"<[^>]+>", " ", raw_summary))
+                searchable_text = f"{title}\n{summary}"
+                categories = matching_categories(searchable_text)
+                if not categories:
+                    continue
+                matching_count += 1
+
+                # Skip previously tracked raw links without making another network
+                # request to resolve the same news redirect on every scheduled run.
+                raw_uid = event_id(discovered_link, title)
+                if raw_uid in seen:
+                    seen[raw_uid]["last_seen_utc"] = now_iso()
+                    continue
+                existing_raw_id = find_existing_event_id(seen, discovered_link)
+                if existing_raw_id is not None:
+                    seen[existing_raw_id]["last_seen_utc"] = now_iso()
                     continue
 
                 if alerts_attempted >= MAX_ALERTS_PER_SOURCE_PER_RUN:
@@ -762,22 +797,65 @@ def main() -> int:
                     )
                     break
 
+                canonical_link, resolution_status = adapter.resolve_item_url(
+                    discovered_link, timeout=TIMEOUT, user_agent=USER_AGENT
+                )
+                resolved_link = canonical_link or discovered_link
+                uid = event_id(resolved_link, title)
+
+                # Dedupe by resolved URL across feeds, without assuming that the
+                # publisher page is necessarily the organizer's official page.
+                existing_id = find_existing_event_id(seen, resolved_link)
+                if existing_id is not None:
+                    existing = seen[existing_id]
+                    existing["last_seen_utc"] = now_iso()
+                    if canonical_link and not existing.get("canonical_url"):
+                        existing["canonical_url"] = clean_url(canonical_link)
+                    if discovered_link and not existing.get("discovered_url"):
+                        existing["discovered_url"] = clean_url(discovered_link)
+                    continue
+
+                normalized_canonical = clean_url(canonical_link) if canonical_link else ""
+                if normalized_canonical and normalized_canonical in pending_url_index:
+                    print(f"Duplicate canonical URL in this scan; skipped: {title}")
+                    continue
+
                 primary = primary_category(categories, title)
                 pending_events.append({
                     "uid": uid,
                     "title": title,
-                    "link": link,
+                    "link": resolved_link,
+                    "discovered_link": discovered_link,
+                    "canonical_link": canonical_link,
+                    "resolution_status": resolution_status,
                     "summary": summary,
                     "raw_summary": raw_summary,
                     "entry": dict(entry),
                     "categories": categories,
                     "primary_category": primary,
                     "source": source,
+                    "source_id": config.source_id,
+                    "source_name": config.name,
+                    "adapter_type": config.adapter_type,
                 })
+                if normalized_canonical:
+                    pending_url_index[normalized_canonical] = uid
                 alerts_attempted += 1
+                queued_count += 1
 
+            source_health[config.source_id] = source_health_success(
+                previous_health, config, feed_result, matching_count, queued_count
+            )
+            print(
+                f"Source health: success; entries={feed_result.item_count}; "
+                f"matching={matching_count}; queued={queued_count}; "
+                f"duration={feed_result.duration_ms}ms"
+            )
         except Exception as exc:
             feed_errors += 1
+            source_health[config.source_id] = source_health_failure(
+                previous_health, config, exc, round((time.monotonic() - started) * 1000)
+            )
             print(f"Feed error ({source}): {type(exc).__name__}: {exc}", file=sys.stderr)
 
     # One item appears once in the stream, under a primary bucket, with all tags
@@ -912,6 +990,10 @@ def main() -> int:
                 "url": clean_url(link),
                 "image_url": image_url or "",
                 "source": event["source"],
+                "source_name": event["source_name"],
+                "source_id": event["source_id"],
+                "adapter_type": event["adapter_type"],
+                "resolution_status": event["resolution_status"],
                 "categories": categories,
                 "primary_category": primary,
                 "first_seen_utc": now_iso(),
@@ -921,7 +1003,8 @@ def main() -> int:
                 "registration_status_evidence": reg_evidence,
                 "link_status": link_status,
                 "link_status_evidence": link_evidence,
-                "discovered_url": clean_url(link),
+                "discovered_url": clean_url(event["discovered_link"]),
+                "canonical_url": clean_url(event["canonical_link"]) if event["canonical_link"] else None,
                 "source_feed_url": event["source"],
                 "application_deadline_raw": None if deadline == UNKNOWN_DEADLINE_TEXT else deadline,
                 "deadline_status": "unknown" if deadline == UNKNOWN_DEADLINE_TEXT else "unverified",
@@ -934,7 +1017,7 @@ def main() -> int:
                     "deadline_checked_at": None,
                     "eligibility_checked_at": None,
                     "funding_checked_at": None,
-                    "notes": ["Discovered via a feed; official details have not yet been verified."],
+                    "notes": ["Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."],
                 },
             }
             seen[event["uid"]] = normalize_event_record(event["uid"], record)
