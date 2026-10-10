@@ -53,15 +53,17 @@ class SourceAdapterTests(unittest.TestCase):
         mlh = "https://mlh.com/events"
         devfolio = "https://devfolio.co/explore"
         nsp = "https://scholarships.gov.in/All-Scholarships"
-        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, google])
+        unstop = "https://unstop.com/compete/amp"
+        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, google])
 
-        self.assertEqual(len(adapters), 6)
+        self.assertEqual(len(adapters), 7)
         self.assertIsInstance(adapters[0], source_adapters.GoogleNewsRSSAdapter)
         self.assertIsInstance(adapters[1], source_adapters.HackalendarRSSAdapter)
         self.assertIsInstance(adapters[2], source_adapters.OfficialBlogRSSAdapter)
         self.assertIsInstance(adapters[3], source_adapters.MLHEventsHTMLAdapter)
         self.assertIsInstance(adapters[4], source_adapters.DevfolioExploreHTMLAdapter)
         self.assertIsInstance(adapters[5], source_adapters.NSPScholarshipHTMLAdapter)
+        self.assertIsInstance(adapters[6], source_adapters.UnstopExploreHTMLAdapter)
         self.assertEqual(adapters[0].config.adapter_type, "google_news_rss")
         self.assertEqual(adapters[1].config.adapter_type, "hackalendar_rss")
         self.assertEqual(adapters[2].config.adapter_type, "official_blog_rss")
@@ -71,6 +73,7 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(adapters[4].config.adapter_type, "devfolio_html")
         self.assertEqual(adapters[4].config.pagination_mode, "platform_open_upcoming_sections")
         self.assertEqual(adapters[5].config.adapter_type, "nsp_scholarships_html")
+        self.assertEqual(adapters[6].config.adapter_type, "unstop_html")
         self.assertEqual(adapters[5].config.pagination_mode, "portal_scheme_list_current_year")
         self.assertEqual(adapters[1].config.access_method, "public_hackalendar_rss")
         self.assertEqual(adapters[1].config.pagination_mode, "catalogue_feed_upcoming_events")
@@ -78,6 +81,40 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIn("Devpost", build_source_config(
             "https://news.google.com/rss/search?q=site%3Adevpost.com%2Fhackathons"
         ).name)
+
+    def test_unstop_parser_keeps_current_detail_links_and_skips_expired_or_external_links(self):
+        html = b"""<!doctype html><html><body>
+        <h2>Competitions</h2>
+        <a href="/hackathons/codeverse-india-national-level-hackathon-wecodecoders-1763003">
+          hackathons CodeVerse India - National Level Hackathon WeCodeCoders 1504 Applied 26 days left All Posted 10 Oct
+        </a>
+        <a href="https://unstop.com/competitions/snapdragon-ai-lab-challenge-1763004">
+          Snapdragon AI Lab Challenge 2400 Registered 18 days left
+        </a>
+        <a href="/hackathons/past-event-1763005">Expired Past Event 10 days ago</a>
+        <a href="https://outside.example/hackathons/unsafe-event-1763006">External Event 4 days left</a>
+        <a href="/hackathons">Browse Hackathons</a>
+        </body></html>"""
+        adapter = build_adapters(["https://unstop.com/compete/amp"])[0]
+        response = FakeResponse("https://unstop.com/compete/amp", html)
+        result = adapter.fetch(session=FakeSession(response))
+
+        self.assertEqual(result.status, "success")
+        self.assertEqual(result.item_count, 2)
+        self.assertEqual(result.entries[0]["title"], "CodeVerse India - National Level Hackathon WeCodeCoders")
+        self.assertEqual(result.entries[0]["link"], "https://unstop.com/hackathons/codeverse-india-national-level-hackathon-wecodecoders-1763003")
+        self.assertEqual(result.entries[0]["listing_category"], "hackathons")
+        self.assertEqual(result.entries[0]["listing_countdown_text"], "26 days left")
+        self.assertIn("discovery evidence only", result.entries[0]["summary"])
+        self.assertEqual(result.entries[1]["listing_category"], "competitions")
+        self.assertTrue(response.closed)
+
+    def test_unstop_fails_closed_if_page_has_no_opportunity_detail_cards(self):
+        adapter = build_adapters(["https://unstop.com/compete/amp"])[0]
+        response = FakeResponse("https://unstop.com/compete/amp", b"<html><h1>Please enable cookies</h1></html>")
+        with self.assertRaisesRegex(RuntimeError, "no opportunity detail cards"):
+            adapter.fetch(session=FakeSession(response))
+        self.assertTrue(response.closed)
 
     def test_mlh_calendar_parses_only_dated_upcoming_organizer_links(self):
         page_url = "https://www.mlh.com/seasons/2027/events/"
@@ -117,10 +154,13 @@ class SourceAdapterTests(unittest.TestCase):
     def test_registry_classifies_direct_devfolio_and_nsp_sources(self):
         devfolio = build_source_config("https://devfolio.co/explore")
         nsp = build_source_config("https://scholarships.gov.in/All-Scholarships")
+        unstop = build_source_config("https://unstop.com/compete/amp")
         self.assertEqual(devfolio.adapter_type, "devfolio_html")
         self.assertEqual(devfolio.access_method, "public_devfolio_explore_html")
         self.assertEqual(nsp.adapter_type, "nsp_scholarships_html")
         self.assertEqual(nsp.access_method, "public_official_nsp_scholarship_html")
+        self.assertEqual(unstop.adapter_type, "unstop_html")
+        self.assertEqual(unstop.access_method, "public_unstop_html_listing")
 
     def test_devfolio_parser_keeps_open_and_upcoming_cards_but_ignores_past(self):
         html = b"""<!doctype html><html><body>
