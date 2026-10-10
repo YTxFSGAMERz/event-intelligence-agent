@@ -101,6 +101,9 @@ class SourceAdapterTests(unittest.TestCase):
         <a href="/hackathons/bugwars-iiitn-1766954">
           hackathons Launching soon BugWars IIIT Nagpur 1000 Registered 2 hours left
         </a>
+        <a href="/competitions/asian-paints-alchemy-2026-asian-paints-1704498">
+          Asian Paints Online Asian Paints Alchemy 2026 29330 Registered 26 days left
+        </a>
         <a href="/hackathons/past-event-1763005">Expired Past Event 10 days ago</a>
         <a href="https://outside.example/hackathons/unsafe-event-1763006">External Event 4 days left</a>
         <a href="/hackathons">Browse Hackathons</a>
@@ -110,7 +113,7 @@ class SourceAdapterTests(unittest.TestCase):
         result = adapter.fetch(session=FakeSession(response))
 
         self.assertEqual(result.status, "success")
-        self.assertEqual(result.item_count, 3)
+        self.assertEqual(result.item_count, 4)
         self.assertEqual(result.entries[0]["title"], "CodeVerse India - National Level Hackathon WeCodeCoders")
         self.assertEqual(result.entries[0]["link"], "https://unstop.com/hackathons/codeverse-india-national-level-hackathon-wecodecoders-1763003")
         self.assertEqual(result.entries[0]["listing_category"], "hackathons")
@@ -120,6 +123,8 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(result.entries[1]["listing_category"], "competitions")
         self.assertEqual(result.entries[2]["title"], "BugWars IIIT Nagpur")
         self.assertIn("Launching soon BugWars", result.entries[2]["summary"])
+        self.assertEqual(result.entries[3]["title"], "Asian Paints Alchemy 2026")
+        self.assertIn("Asian Paints Online Asian Paints Alchemy", result.entries[3]["summary"])
         self.assertTrue(response.closed)
 
     def test_unstop_fails_closed_if_page_has_no_opportunity_detail_cards(self):
