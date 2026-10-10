@@ -1,9 +1,9 @@
 # Event Intelligence Agent
 
-A lightweight Python starter that checks configured public RSS/Atom feeds every 15 minutes via GitHub Actions and sends new matching opportunities to Telegram.
+A Python opportunity-discovery agent that checks configured public RSS/Atom feeds and supported HTML listing pages every 15 minutes via GitHub Actions, then sends new matching opportunities to Telegram.
 
 ## What it does
-- Reads public RSS/Atom feeds you configure in `sources.txt`.
+- Reads public RSS/Atom feeds and supported HTML listing pages configured in `sources.txt`.
 - Filters for hackathons, student events, prizes, swag, gadgets, scholarships and funded travel.
 - Deduplicates events using a stable hash of the normalized URL (with a title fallback).
 - Saves seen-event state in `data/seen_events.json` and commits updates back to the repository.
@@ -19,7 +19,7 @@ Configured URLs in `sources.txt` are routed through the adapter registry in `sou
 - **Hackalendar RSS:** a human-curated upcoming-hackathon discovery feed; the feed's event page is not automatically treated as the organizer's official page.
 - **MLH official events calendar (HTML):** the adapter reads dated external links only from the calendar's Upcoming Events section, captures the section year and displayed schedule, and ignores past events and navigation links. The linked organizer page still requires separate verification.
 - **Devfolio Open & Upcoming listings (HTML):** the adapter reads current cards only from Open/Upcoming sections, keeps `Starts` dates separate from `Opens` dates, and omits Past events. These are platform listings, not proof of organizer ownership.
-- **Unstop public opportunity listings (HTML):** captures direct detail-page links for listed hackathons, competitions, scholarships, internships and related opportunities, skips entries explicitly labelled expired/closed, and preserves displayed countdown text without converting it into an invented date. Unstop is a discovery platform; organizer and eligibility facts still require separate verification.
+- **Unstop public opportunity listings (HTML):** captures direct detail-page links from its general opportunity page, hackathon listing, and internship portal; skips entries explicitly labelled expired/closed; and preserves displayed countdown text without converting it into an invented date. Leading display chips such as `Online Free` are removed from the card title while the original listing text remains in the summary evidence. Unstop is a discovery platform; organizer and eligibility facts still require separate verification.
 - **National Scholarship Portal (HTML):** reads academic-year scheme titles, explicit student application-deadline labels, and each scheme's specific Specifications/FAQ guidance link. Deadlines remain reported portal data until checked on the relevant scheme details.
   Calendar schedule/location text is stored under `source_observed` and shown as unverified listing information; it is never promoted to canonical event dates or verified location until the organizer page confirms it.
 - **GitHub Blog RSS:** recognized as a named official-blog feed.
@@ -88,7 +88,7 @@ New normalized fields include:
 
 ## Discovery quality and source coverage (Phase 5)
 
-The agent now applies an explainable quality gate before spending a Google News URL-resolution request. It rejects obvious opportunity roundup/listicle headlines, non-actionable results/rules stories, and items whose opportunity keywords only appear in generic supporting text. Named opportunities and concrete application, registration, and deadline updates are retained. The decision and reason are stored as `discovery_quality`, and the latest per-feed `quality_rejected_count` is visible in source-health data. This is a transparent rule-based triage system, not an AI accuracy score.
+The agent now applies an explainable quality gate before spending a Google News URL-resolution request. It rejects obvious opportunity roundup/listicle headlines, non-actionable results/rules stories, and items whose opportunity keywords only appear in generic supporting text. Named opportunities and concrete application, registration, and deadline updates are retained. The decision and reason are stored as `discovery_quality`, and the latest per-feed `quality_rejected_count` is visible in source-health data. This is a transparent rule-based triage system, not an AI accuracy score. Direct Unstop cards are recognized as structured platform listings, so titles can be retained after removing UI badges even when the cleaned title does not itself say “competition” or “hackathon”; explicit roundup and non-actionable-news rules still apply.
 
 The matcher no longer treats generic words such as standalone `winner`, `reward`, `flight`, `laptop`, or `early bird` as sufficient evidence for prize, travel, gadget, or free-ticket categories. The resolver budget is eight URL attempts per workflow run, reserving up to four for legacy Google News records while allowing four for newly found records; individual legacy records can receive up to five bounded attempts before the agent stops retrying them.
 
