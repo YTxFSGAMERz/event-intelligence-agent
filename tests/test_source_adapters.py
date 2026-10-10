@@ -282,6 +282,7 @@ class SourceAdapterTests(unittest.TestCase):
                 with redirect_stdout(output):
                     resolved, status = adapter.resolve_item_url(
                         "https://news.google.com/rss/articles/encoded",
+                        session=source_adapters.requests,
                     )
         finally:
             source_adapters._decode_google_news = original
