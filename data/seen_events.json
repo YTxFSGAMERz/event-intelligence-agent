@@ -11186,16 +11186,92 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "source_page_checked",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://hacklanta.dev"
+        ],
+        "last_checked_at": "2026-10-10T16:00:22+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://hacklanta.dev",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": "Hacklanta '26",
+        "last_check_error": null,
+        "last_check_duration_ms": 148,
+        "observed_facts": {
+          "page_role": "possible_event_page",
+          "page_title": "Hacklanta '26",
+          "description": "Build the future at Hacklanta '26, Oct 9 - 11.",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "open",
+          "registration_status_evidence": "Sponsors FAQ Log in Apply now Home What is Hacklanta?",
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "found",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [
+              "Who can apply? Applicants must be 18 or older and a current college or university student with a .edu email. How much does it cost? Hacklanta is free for accepted participants. How large can teams be? Teams may have up to four people. Do I need a team? Nope, you can always apply solo! We'll have a team finder available to you upon acceptance. Where"
+            ],
+            "evidence_url": "https://hacklanta.dev"
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        },
+        "fact_evidence": {
+          "registration_status": {
+            "value": "open",
+            "source_url": "https://hacklanta.dev",
+            "method": "explicit_page_text",
+            "snippet": "Sponsors FAQ Log in Apply now Home What is Hacklanta?"
+          },
+          "eligibility": {
+            "value": "Who can apply? Applicants must be 18 or older and a current college or university student with a .edu email. How much does it cost? Hacklanta is free for accepted participants. How large can teams be? Teams may have up to four people. Do I need a team? Nope, you can always apply solo! We'll have a team finder available to you upon acceptance. Where",
+            "source_url": "https://hacklanta.dev",
+            "method": "explicit_page_text",
+            "snippet": "Who can apply? Applicants must be 18 or older and a current college or university student with a .edu email. How much does it cost? Hacklanta is free for accepted participants. How large can teams be? Teams may have up to four people. Do I need a team? Nope, you can always apply solo! We'll have a team finder available to you upon acceptance. Where"
+          }
+        }
       },
       "schema_version": 1,
       "id": "d5f4e3a4a98e6909483d",
@@ -11866,7 +11942,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-10T15:52:17+00:00",
+  "updated_utc": "2026-10-10T16:00:22+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -11899,7 +11975,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:52:08+00:00",
+      "last_skipped_at": "2026-10-10T16:00:22+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -11933,7 +12009,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:52:08+00:00",
+      "last_skipped_at": "2026-10-10T16:00:22+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -11967,7 +12043,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:52:08+00:00",
+      "last_skipped_at": "2026-10-10T16:00:22+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 4
     },
@@ -12001,7 +12077,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:52:08+00:00",
+      "last_skipped_at": "2026-10-10T16:00:22+00:00",
       "quality_rejected_count": 3,
       "quality_rule_version": 4
     },
@@ -12036,7 +12112,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:52:08+00:00",
+      "last_skipped_at": "2026-10-10T16:00:22+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12072,7 +12148,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T15:52:08+00:00",
+      "last_skipped_at": "2026-10-10T16:00:22+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12108,7 +12184,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:52:08+00:00"
+      "last_skipped_at": "2026-10-10T16:00:22+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -12142,7 +12218,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:52:08+00:00"
+      "last_skipped_at": "2026-10-10T16:00:22+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -12176,7 +12252,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:52:08+00:00"
+      "last_skipped_at": "2026-10-10T16:00:22+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -12205,7 +12281,7 @@
       "matching_items": 21,
       "new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T15:52:08+00:00",
+      "last_skipped_at": "2026-10-10T16:00:22+00:00",
       "last_success_at": "2026-10-10T15:50:59+00:00",
       "last_success_items_seen": 21,
       "last_success_matching_items": 21,
@@ -12246,11 +12322,11 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:52:08+00:00"
+      "last_skipped_at": "2026-10-10T16:00:22+00:00"
     },
     "9b37a8e295affa8c": {
       "source_id": "9b37a8e295affa8c",
-      "name": "Unstop · Open Competitions & Hackathons",
+      "name": "Unstop · Open Opportunities",
       "url": "https://unstop.com/compete/amp",
       "adapter_type": "unstop_html",
       "access_method": "public_unstop_html_listing",
@@ -12268,7 +12344,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T15:52:08+00:00",
       "last_success_at": "2026-10-10T15:52:08+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1118,
       "items_seen": 9,
@@ -12279,7 +12355,8 @@
       "last_success_new_items": 1,
       "failure_streak": 0,
       "quality_rejected_count": 8,
-      "quality_rule_version": 4
+      "quality_rule_version": 4,
+      "last_skipped_at": "2026-10-10T16:00:22+00:00"
     }
   }
 }
