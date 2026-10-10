@@ -315,7 +315,7 @@ class SourceAdapterTests(unittest.TestCase):
         try:
             source_adapters._decode_google_news = lambda url, timeout: {
                 "success": False,
-                "message": "signature fields missing",
+                "message": "signature   fields\\nmissing",
             }
             output = StringIO()
             with patch("source_adapters.requests.get", return_value=response):
@@ -329,6 +329,7 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIsNone(resolved)
         self.assertEqual(status, "unresolved_google_news_link")
         self.assertIn("decoder did not resolve", output.getvalue().lower())
+        self.assertIn("signature fields missing", output.getvalue().lower())
 
     def test_google_news_redirect_resolves_publisher_url(self):
         response = FakeResponse("https://publisher.example/events/abc/?utm_campaign=rss")
