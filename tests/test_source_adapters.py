@@ -1,4 +1,6 @@
 import unittest
+from contextlib import redirect_stdout
+from io import StringIO
 from datetime import datetime, timezone
 
 import source_adapters
@@ -264,6 +266,28 @@ class SourceAdapterTests(unittest.TestCase):
             source_adapters._decode_google_news = original
         self.assertEqual(resolved, "https://publisher.example/articles/123")
         self.assertEqual(status, "decoder_resolved")
+
+    def test_google_news_decoder_failure_emits_diagnostic_and_keeps_unknown(self):
+        adapter = build_adapters(["https://news.google.com/rss/search?q=hackathon"])[0]
+        original = source_adapters._decode_google_news
+        response = FakeResponse("https://news.google.com/rss/articles/encoded", b"<html><head></head>")
+        session = FakeSession(response)
+        try:
+            source_adapters._decode_google_news = lambda url, timeout: {
+                "success": False,
+                "message": "signature fields missing",
+            }
+            output = StringIO()
+            with redirect_stdout(output):
+                resolved, status = adapter.resolve_item_url(
+                    "https://news.google.com/rss/articles/encoded",
+                    session=session,
+                )
+        finally:
+            source_adapters._decode_google_news = original
+        self.assertIsNone(resolved)
+        self.assertEqual(status, "unresolved_google_news_link")
+        self.assertIn("decoder did not resolve", output.getvalue().lower())
 
     def test_google_news_redirect_resolves_publisher_url(self):
         response = FakeResponse("https://publisher.example/events/abc/?utm_campaign=rss")
