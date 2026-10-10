@@ -16,7 +16,7 @@ on:
       - "sources.txt"
       - "dashboard/**"
   schedule:
-    # Every 15 minutes, UTC. GitHub scheduling is best-effort, not a guaranteed exact timer.
+    # Every 10 minutes, UTC. Per-feed polling uses a matching 10-minute guard. GitHub timing is best-effort.
     - cron: "*/10 * * * *"
   workflow_dispatch:
     inputs:
