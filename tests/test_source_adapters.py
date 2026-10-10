@@ -216,9 +216,17 @@ class SourceAdapterTests(unittest.TestCase):
 
     def test_devfolio_fails_closed_if_no_current_event_cards_are_present(self):
         adapter = build_adapters(["https://devfolio.co/explore"])[0]
-        response = FakeResponse("https://devfolio.co/explore", b"<html><h2>Blog</h2></html>")
-        with self.assertRaisesRegex(RuntimeError, "no current event cards"):
+        response = FakeResponse(
+            "https://devfolio.co/explore",
+            b"<html><h2>Blog</h2><p>Please enable cookies</p></html>",
+        )
+        with self.assertRaisesRegex(RuntimeError, "no current event cards") as raised:
             adapter.fetch(session=FakeSession(response))
+        message = str(raised.exception)
+        self.assertIn("html_bytes=", message)
+        self.assertIn("tag_counts=", message)
+        self.assertIn("has_cookie_notice=True", message)
+        self.assertIn("has_access_challenge=False", message)
         self.assertTrue(response.closed)
 
     def test_devfolio_can_parse_current_cards_without_heading_tags_and_ignores_ended_cards(self):

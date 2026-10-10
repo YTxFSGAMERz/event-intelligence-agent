@@ -964,6 +964,30 @@ def unstop_html_diagnostic(page_html: str, parser: UnstopExploreParser) -> str:
     )
 
 
+def devfolio_html_diagnostic(page_html: str, parser: DevfolioExploreParser) -> str:
+    """Summarize a public listing response when no current Devfolio cards were parsed."""
+    body = str(page_html or "")
+    lowered = body.casefold()
+    tag_counts = {
+        tag: len(re.findall(r"<" + tag + r"\b", body, re.IGNORECASE))
+        for tag in ("h1", "h2", "h3", "h4", "h5", "h6", "a", "script")
+    }
+    link_mentions = len(re.findall(r"devfolio\.co", body, re.IGNORECASE))
+    heading_matches = re.findall(
+        r"<h[1-6]\b[^>]*>(.*?)</h[1-6]\s*>", body, re.IGNORECASE | re.DOTALL
+    )
+    headings = [
+        re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", heading)).strip()[:70]
+        for heading in heading_matches[:8]
+    ]
+    return (
+        f"html_bytes={len(body)}; tag_counts={tag_counts}; "
+        f"devfolio_host_mentions={link_mentions}; headings={headings}; "
+        f"has_cookie_notice={bool(re.search(r'cookies? (?:are )?disabled|enable cookies', lowered))}; "
+        f"has_access_challenge={bool(re.search(r'access denied|captcha|verify you are human', lowered))}"
+    )
+
+
 class DevfolioExploreHTMLAdapter(RSSSourceAdapter):
     """Parse Devfolio's current Open and Upcoming hackathon cards."""
 
@@ -1001,7 +1025,7 @@ class DevfolioExploreHTMLAdapter(RSSSourceAdapter):
             parser.close()
             if not parser.events:
                 raise RuntimeError(
-                    "Devfolio parser found no current event cards with Open/Upcoming/Live/date markers"
+                    "Devfolio parser found no current event cards; " + devfolio_html_diagnostic(page_html, parser)
                 )
             return FeedResult(
                 entries=parser.events,
