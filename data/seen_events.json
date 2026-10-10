@@ -8656,16 +8656,93 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "official_link_candidate_found",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://scholarships.gov.in/All-Scholarships",
+          "https://udiseplus.gov.in/#/page/dcfdownload"
+        ],
+        "last_checked_at": "2026-10-10T14:42:36+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://scholarships.gov.in/All-Scholarships",
+        "official_link_candidate": "https://udiseplus.gov.in/#/page/dcfdownload",
+        "official_link_reason": "outbound_anchor:UDISE+ website details; destination relevance/ownership not established",
+        "candidate_page_status": "success",
+        "candidate_page_error": null,
+        "candidate_page_http_status": 200,
+        "page_title": "NSP : National Scholarship Portal NSP : National Scholarship Portal",
+        "last_check_error": null,
+        "last_check_duration_ms": 3729,
+        "observed_facts": {
+          "page_role": "discovery_or_unrelated_page",
+          "page_title": "NSP : National Scholarship Portal NSP : National Scholarship Portal",
+          "description": "",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "open",
+          "registration_status_evidence": "You are strongly advised to ensure it's authenticity & click OK to proceed, else click Cancel to go back.\"; if (confirm(text) == true) { text = \"You pressed OK!\"; } else { return false; } } document.addEventListener(\"DOMContentLoaded\", function () { var script = document.createEl",
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "found",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [
+              "Eligibility Application Status Track Your Payment Aadhaar Seva Kendra Check Aadhaar Seeding Status NSP OTR APP Check UDID details How to seed Aadhaar with the Bank Account Institute Institutes How to fill Registration Form Registration Form Login Know your AISHE Code Get AISHE code UDISE+ website details Officers Officers Login Nodal Officers (Sche"
+            ],
+            "evidence_url": "https://scholarships.gov.in/All-Scholarships"
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        },
+        "fact_evidence": {
+          "registration_status": {
+            "value": "open",
+            "source_url": "https://scholarships.gov.in/All-Scholarships",
+            "method": "explicit_page_text",
+            "snippet": "You are strongly advised to ensure it's authenticity & click OK to proceed, else click Cancel to go back.\"; if (confirm(text) == true) { text = \"You pressed OK!\"; } else { return false; } } document.addEventListener(\"DOMContentLoaded\", function () { var script = document.createEl"
+          },
+          "eligibility": {
+            "value": "Eligibility Application Status Track Your Payment Aadhaar Seva Kendra Check Aadhaar Seeding Status NSP OTR APP Check UDID details How to seed Aadhaar with the Bank Account Institute Institutes How to fill Registration Form Registration Form Login Know your AISHE Code Get AISHE code UDISE+ website details Officers Officers Login Nodal Officers (Sche",
+            "source_url": "https://scholarships.gov.in/All-Scholarships",
+            "method": "explicit_page_text",
+            "snippet": "Eligibility Application Status Track Your Payment Aadhaar Seva Kendra Check Aadhaar Seeding Status NSP OTR APP Check UDID details How to seed Aadhaar with the Bank Account Institute Institutes How to fill Registration Form Registration Form Login Know your AISHE Code Get AISHE code UDISE+ website details Officers Officers Login Nodal Officers (Sche"
+          }
+        }
       },
       "schema_version": 1,
       "id": "bb43b904f5d23afa4c2e",
@@ -8864,7 +8941,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-10T14:37:27+00:00",
+  "updated_utc": "2026-10-10T14:42:40+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -8874,7 +8951,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T14:37:03+00:00",
       "last_success_at": "2026-10-10T14:37:03+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 331,
       "items_seen": 1,
@@ -8897,7 +8974,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T20:01:52+00:00",
+      "last_skipped_at": "2026-10-10T14:42:36+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -8908,7 +8985,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T14:37:03+00:00",
       "last_success_at": "2026-10-10T14:37:03+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 211,
       "items_seen": 0,
@@ -8931,7 +9008,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T20:01:52+00:00",
+      "last_skipped_at": "2026-10-10T14:42:36+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -8942,7 +9019,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T14:37:03+00:00",
       "last_success_at": "2026-10-10T14:37:03+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 560,
       "items_seen": 58,
@@ -8965,7 +9042,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T20:01:52+00:00",
+      "last_skipped_at": "2026-10-10T14:42:36+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 4
     },
@@ -8976,7 +9053,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T14:37:04+00:00",
       "last_success_at": "2026-10-10T14:37:04+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 434,
       "items_seen": 67,
@@ -8999,7 +9076,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T20:01:52+00:00",
+      "last_skipped_at": "2026-10-10T14:42:36+00:00",
       "quality_rejected_count": 2,
       "quality_rule_version": 4
     },
@@ -9010,7 +9087,7 @@
       "adapter_type": "official_blog_rss",
       "last_attempt_at": "2026-10-10T14:37:07+00:00",
       "last_success_at": "2026-10-10T14:37:07+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 224,
       "items_seen": 10,
@@ -9034,7 +9111,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-09T20:01:52+00:00",
+      "last_skipped_at": "2026-10-10T14:42:36+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -9060,7 +9137,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T14:37:05+00:00",
       "last_success_at": "2026-10-10T14:37:05+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1663,
       "items_seen": 15,
@@ -9070,7 +9147,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-09T20:01:52+00:00",
+      "last_skipped_at": "2026-10-10T14:42:36+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -9094,7 +9171,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T14:37:04+00:00",
       "last_success_at": "2026-10-10T14:37:04+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 204,
       "items_seen": 0,
@@ -9106,7 +9183,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-09T20:01:52+00:00"
+      "last_skipped_at": "2026-10-10T14:42:36+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -9128,7 +9205,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T14:37:05+00:00",
       "last_success_at": "2026-10-10T14:37:05+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 194,
       "items_seen": 0,
@@ -9140,7 +9217,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-09T20:01:52+00:00"
+      "last_skipped_at": "2026-10-10T14:42:36+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -9162,7 +9239,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T14:37:07+00:00",
       "last_success_at": "2026-10-10T14:37:07+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1339,
       "items_seen": 71,
@@ -9174,7 +9251,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-09T20:01:52+00:00"
+      "last_skipped_at": "2026-10-10T14:42:36+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -9196,13 +9273,14 @@
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T14:37:09+00:00",
-      "last_status": "failure",
+      "last_status": "skipped_minimum_interval",
       "last_error": "RuntimeError",
       "last_duration_ms": 1343,
       "items_seen": 0,
       "matching_items": 0,
       "new_items": 0,
-      "failure_streak": 1
+      "failure_streak": 1,
+      "last_skipped_at": "2026-10-10T14:42:36+00:00"
     },
     "bb43b904f5d23afa": {
       "source_id": "bb43b904f5d23afa",
@@ -9225,7 +9303,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T14:37:09+00:00",
       "last_success_at": "2026-10-10T14:37:09+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 2109,
       "items_seen": 26,
@@ -9236,7 +9314,8 @@
       "last_success_new_items": 1,
       "failure_streak": 0,
       "quality_rejected_count": 0,
-      "quality_rule_version": 4
+      "quality_rule_version": 4,
+      "last_skipped_at": "2026-10-10T14:42:36+00:00"
     }
   }
 }
