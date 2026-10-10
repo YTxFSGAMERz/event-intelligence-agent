@@ -1031,7 +1031,7 @@ def build_photo_caption(item: dict, categories: list[str], deadline: str,
         lines.append(f"🗓️ Event dates ({source_label}; unverified): {event_schedule}")
     if event_schedule and event_location:
         location_label = "listed format" if item.get("adapter_type") == "devfolio_html" else "listed location"
-        lines.append(f"📍 {location_label.title()} (unverified): {event_location}")
+        lines.append(f"📍 {location_label} (unverified): {event_location}")
     elif item.get("adapter_type") == "devfolio_html" and event_location:
         lines.append(f"📍 Format as listed (unverified): {event_location}")
     lines.extend([
