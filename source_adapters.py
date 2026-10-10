@@ -543,7 +543,10 @@ def _resolve_source_type(url: str) -> tuple[str, str]:
     parts = urlsplit(url)
     if host in {"hackalendar.com", "www.hackalendar.com"} and parts.path.rstrip("/") == "/feed.xml":
         return "hackalendar_rss", "Hackalendar · Upcoming Hackathons"
-    if host in {"devfolio.co", "www.devfolio.co"} and parts.path.rstrip("/").lower() == "/explore":
+    if host in {"devfolio.co", "www.devfolio.co"} and parts.path.rstrip("/").lower() in {"/explore", "/hackathons"}:
+        path = parts.path.rstrip("/").lower()
+        if path == "/hackathons":
+            return "devfolio_html", "Devfolio · Hackathons Catalogue"
         return "devfolio_html", "Devfolio · Open & Upcoming Hackathons"
     if host in {"unstop.com", "www.unstop.com"} and re.fullmatch(
         r"/(?:compete|hackathons|competitions|internship-portal|scholarships)/amp", parts.path.rstrip("/"), re.IGNORECASE

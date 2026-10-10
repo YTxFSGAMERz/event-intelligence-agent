@@ -41,3 +41,6 @@ https://unstop.com/competitions/amp
 
 # Unstop public scholarship catalogue; treat cards as discovery data, not official verification.
 https://unstop.com/scholarships/amp
+
+# Devfolio's direct public hackathons catalogue provides a second listing path if /explore changes.
+https://devfolio.co/hackathons

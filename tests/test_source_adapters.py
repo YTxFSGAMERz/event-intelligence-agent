@@ -58,9 +58,10 @@ class SourceAdapterTests(unittest.TestCase):
         unstop_internships = "https://unstop.com/internship-portal/amp"
         unstop_competitions = "https://unstop.com/competitions/amp"
         unstop_scholarships = "https://unstop.com/scholarships/amp"
-        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, unstop_hackathons, unstop_internships, unstop_competitions, unstop_scholarships, google])
+        devfolio_catalogue = "https://devfolio.co/hackathons"
+        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, unstop_hackathons, unstop_internships, unstop_competitions, unstop_scholarships, devfolio_catalogue, google])
 
-        self.assertEqual(len(adapters), 11)
+        self.assertEqual(len(adapters), 12)
         self.assertIsInstance(adapters[0], source_adapters.GoogleNewsRSSAdapter)
         self.assertIsInstance(adapters[1], source_adapters.HackalendarRSSAdapter)
         self.assertIsInstance(adapters[2], source_adapters.OfficialBlogRSSAdapter)
@@ -87,6 +88,8 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(adapters[8].config.name, "Unstop · Internships")
         self.assertEqual(adapters[9].config.name, "Unstop · Competitions")
         self.assertEqual(adapters[10].config.name, "Unstop · Scholarships")
+        self.assertIsInstance(adapters[11], source_adapters.DevfolioExploreHTMLAdapter)
+        self.assertEqual(adapters[11].config.name, "Devfolio · Hackathons Catalogue")
         self.assertEqual(adapters[5].config.pagination_mode, "portal_scheme_list_current_year")
         self.assertEqual(adapters[1].config.access_method, "public_hackalendar_rss")
         self.assertEqual(adapters[1].config.pagination_mode, "catalogue_feed_upcoming_events")
