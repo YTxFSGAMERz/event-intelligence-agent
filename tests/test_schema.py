@@ -8,6 +8,7 @@ from main import (
     find_existing_event_id,
     _verification_target,
     normalize_event_record,
+    normalize_unstop_display_title,
     normalize_state,
     normalize_title_key,
     legacy_resolution_priority,
@@ -40,6 +41,18 @@ class OpportunitySchemaTests(unittest.TestCase):
         }
         ordered = sorted(records.items(), key=legacy_resolution_priority)
         self.assertEqual([key for key, _ in ordered], ["specific", "unknown", "roundup"])
+
+    def test_unstop_legacy_title_cleanup_is_idempotent_and_preserves_summary(self):
+        event = normalize_event_record("unstop-old", {
+            "title": "Online Free HP Power Lab 3.0",
+            "summary": "Unstop public platform listing. Listing text: Online Free HP Power Lab 3.0 11319 Registered 25 days left.",
+            "url": "https://unstop.com/competitions/hp-power-lab-3-0-1759161",
+            "adapter_type": "unstop_html",
+        })
+
+        self.assertEqual(event["title"], "HP Power Lab 3.0")
+        self.assertIn("Online Free HP Power Lab 3.0", event["summary"])
+        self.assertEqual(normalize_unstop_display_title(event["title"]), "HP Power Lab 3.0")
 
     def test_legacy_google_news_record_keeps_unknowns_unknown(self):
         event = normalize_event_record("abc123", {
