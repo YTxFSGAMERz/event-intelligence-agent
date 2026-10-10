@@ -63,6 +63,15 @@ class OpportunitySchemaTests(unittest.TestCase):
         self.assertEqual(launching["title"], "BugWars IIIT Nagpur")
         self.assertIn("Launching soon BugWars", launching["summary"])
 
+        duplicated = normalize_event_record("unstop-duplicated", {
+            "title": "Asian Paints Online Asian Paints Alchemy 2026",
+            "summary": "Raw listing text: Asian Paints Online Asian Paints Alchemy 2026.",
+            "url": "https://unstop.com/competitions/asian-paints-alchemy-2026-asian-paints-1704498",
+            "adapter_type": "unstop_html",
+        })
+        self.assertEqual(duplicated["title"], "Asian Paints Alchemy 2026")
+        self.assertIn("Asian Paints Online Asian Paints Alchemy", duplicated["summary"])
+
     def test_legacy_google_news_record_keeps_unknowns_unknown(self):
         event = normalize_event_record("abc123", {
             "title": "Example scholarship",
