@@ -9615,7 +9615,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T14:57:50+00:00",
-      "last_seen_utc": "2026-10-10T16:32:33+00:00",
+      "last_seen_utc": "2026-10-10T17:29:48+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "apply now",
@@ -11289,7 +11289,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T15:51:14+00:00",
-      "last_seen_utc": "2026-10-10T16:32:33+00:00",
+      "last_seen_utc": "2026-10-10T17:29:48+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "apply now",
@@ -13129,7 +13129,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T16:32:53+00:00",
-      "last_seen_utc": "2026-10-10T16:32:53+00:00",
+      "last_seen_utc": "2026-10-10T17:29:48+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "apply now",
@@ -15099,16 +15099,28 @@
       "deadline_status": "unverified",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "not_html",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2011_G.pdf"
+        ],
+        "last_checked_at": "2026-10-10T17:29:49+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2011_G.pdf",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": null,
+        "last_check_error": "content_type_not_html",
+        "last_check_duration_ms": 1205
       },
       "schema_version": 1,
       "id": "135e2ee9f441eb814799",
@@ -15491,9 +15503,227 @@
       "resolved_urls": [
         "https://unstop.com/scholarships/kotak-kanya-scholarship-2026-27-kotak-mahindra-group-1767240"
       ]
+    },
+    "73d80f17c1fb589c6145": {
+      "title": "Winter of Code 2026",
+      "summary": "Devfolio platform listing; not independently verified as an organizer page. Listing section: Open. Schedule/status as displayed: Starts 15/10/26. Format as displayed: Online. Listing text: Hackathon Theme No Restrictions + 500 participating Online Open Starts 15/10/26 Apply now. Confirm eligibility, exact timing, prizes and application rules on the event page.",
+      "url": "https://winter-of-code-4.devfolio.co",
+      "image_url": "https://assets.devfolio.co/hackathons/d959fbb33372440883f65f9ff9054982/assets/cover/791.png",
+      "source": "https://devfolio.co/hackathons",
+      "source_name": "Devfolio · Hackathons Catalogue",
+      "source_id": "7e8cfb2b3636b070",
+      "adapter_type": "devfolio_html",
+      "source_observed": {
+        "source_kind": "platform_listing",
+        "source_name": "Devfolio · Hackathons Catalogue",
+        "source_url": "https://devfolio.co/hackathons",
+        "observed_at_utc": "2026-10-10T17:29:54+00:00",
+        "listing_status": "open",
+        "schedule": {
+          "raw": "15/10/26",
+          "confidence": "observed_unverified"
+        },
+        "application_open_date": {
+          "raw": null,
+          "confidence": "observed_unverified"
+        },
+        "location": {
+          "raw": "Online",
+          "mode": "remote",
+          "venue": null,
+          "city": null,
+          "region": null,
+          "country": null,
+          "country_code": null,
+          "confidence": "observed_unverified"
+        }
+      },
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "hackathons_buildathons"
+      ],
+      "primary_category": "hackathons_buildathons",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 5,
+        "title_signal": false,
+        "actionable_update": false,
+        "matched_categories": [
+          "hackathons_buildathons"
+        ]
+      },
+      "first_seen_utc": "2026-10-10T17:29:54+00:00",
+      "last_seen_utc": "2026-10-10T17:29:54+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "OPEN (phrase detected)",
+      "registration_status_evidence": "apply now",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://winter-of-code-4.devfolio.co",
+      "canonical_url": "https://winter-of-code-4.devfolio.co",
+      "source_feed_url": "https://devfolio.co/hackathons",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "source_page_checked",
+        "official_url": null,
+        "evidence_urls": [
+          "https://winter-of-code-4.devfolio.co"
+        ],
+        "last_checked_at": "2026-10-10T17:29:48+00:00",
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ],
+        "version": 1,
+        "source_page_url": "https://winter-of-code-4.devfolio.co",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": "Winter of Code 2026 | Devfolio",
+        "last_check_error": null,
+        "last_check_duration_ms": 1081,
+        "observed_facts": {
+          "page_role": "possible_event_page",
+          "page_title": "Winter of Code 2026 | Devfolio",
+          "description": "Code. Contribute. Collaborate. Create.",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "open",
+          "registration_status_evidence": "Winter of Code 2026 | Devfolio Skip to content Home Blog Winter of Code 2026 Winter of Code 2026 Overview Schedule Overview Schedule Overview Schedule Overview Schedule Overview Schedule Runs from Oct 15 - Dec 1, 2026 Happening Online Applications close in Apply now Code.",
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        },
+        "fact_evidence": {
+          "registration_status": {
+            "value": "open",
+            "source_url": "https://winter-of-code-4.devfolio.co",
+            "method": "explicit_page_text",
+            "snippet": "Winter of Code 2026 | Devfolio Skip to content Home Blog Winter of Code 2026 Winter of Code 2026 Overview Schedule Overview Schedule Overview Schedule Overview Schedule Overview Schedule Runs from Oct 15 - Dec 1, 2026 Happening Online Applications close in Apply now Code."
+          }
+        }
+      },
+      "schema_version": 1,
+      "id": "73d80f17c1fb589c6145",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": "https://assets.devfolio.co/hackathons/d959fbb33372440883f65f9ff9054982/assets/cover/791.png",
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "7e8cfb2b3636b070"
+      ],
+      "source_names": [
+        "Devfolio · Hackathons Catalogue"
+      ],
+      "source_feeds": [
+        "https://devfolio.co/hackathons"
+      ],
+      "discovered_urls": [
+        "https://winter-of-code-4.devfolio.co"
+      ],
+      "resolved_urls": [
+        "https://winter-of-code-4.devfolio.co"
+      ]
     }
   },
-  "updated_utc": "2026-10-10T17:28:25+00:00",
+  "updated_utc": "2026-10-10T17:29:54+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -15526,7 +15756,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T17:28:25+00:00",
+      "last_skipped_at": "2026-10-10T17:29:47+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 5
     },
@@ -15560,7 +15790,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T17:28:25+00:00",
+      "last_skipped_at": "2026-10-10T17:29:47+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 5
     },
@@ -15594,7 +15824,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T17:28:25+00:00",
+      "last_skipped_at": "2026-10-10T17:29:47+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 5
     },
@@ -15628,7 +15858,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T17:28:25+00:00",
+      "last_skipped_at": "2026-10-10T17:29:47+00:00",
       "quality_rejected_count": 2,
       "quality_rule_version": 5
     },
@@ -15663,7 +15893,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T17:28:25+00:00",
+      "last_skipped_at": "2026-10-10T17:29:47+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 5
     },
@@ -15699,7 +15929,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T17:28:25+00:00",
+      "last_skipped_at": "2026-10-10T17:29:47+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 5
     },
@@ -15735,7 +15965,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T17:28:25+00:00"
+      "last_skipped_at": "2026-10-10T17:29:47+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -15769,7 +15999,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T17:28:25+00:00"
+      "last_skipped_at": "2026-10-10T17:29:47+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -15803,7 +16033,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T17:28:25+00:00"
+      "last_skipped_at": "2026-10-10T17:29:47+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -15832,7 +16062,7 @@
       "matching_items": 0,
       "new_items": 0,
       "failure_streak": 1,
-      "last_skipped_at": "2026-10-10T17:28:25+00:00",
+      "last_skipped_at": "2026-10-10T17:29:47+00:00",
       "last_success_at": "2026-10-10T16:32:32+00:00",
       "last_success_items_seen": 21,
       "last_success_matching_items": 21,
@@ -15873,7 +16103,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T17:28:25+00:00"
+      "last_skipped_at": "2026-10-10T17:29:47+00:00"
     },
     "9b37a8e295affa8c": {
       "source_id": "9b37a8e295affa8c",
@@ -15907,7 +16137,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T17:28:25+00:00"
+      "last_skipped_at": "2026-10-10T17:29:47+00:00"
     },
     "8e0842c73fb362fb": {
       "source_id": "8e0842c73fb362fb",
@@ -15941,7 +16171,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T17:28:25+00:00"
+      "last_skipped_at": "2026-10-10T17:29:47+00:00"
     },
     "baec8f4645b19637": {
       "source_id": "baec8f4645b19637",
@@ -15975,7 +16205,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T17:28:25+00:00"
+      "last_skipped_at": "2026-10-10T17:29:47+00:00"
     },
     "9094d50190e1d4a7": {
       "source_id": "9094d50190e1d4a7",
@@ -16009,7 +16239,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T17:28:25+00:00"
+      "last_skipped_at": "2026-10-10T17:29:47+00:00"
     },
     "3181a5bfa4703f10": {
       "source_id": "3181a5bfa4703f10",
@@ -16043,7 +16273,41 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T17:28:25+00:00"
+      "last_skipped_at": "2026-10-10T17:29:47+00:00"
+    },
+    "7e8cfb2b3636b070": {
+      "source_id": "7e8cfb2b3636b070",
+      "name": "Devfolio · Hackathons Catalogue",
+      "url": "https://devfolio.co/hackathons",
+      "adapter_type": "devfolio_html",
+      "access_method": "public_devfolio_explore_html",
+      "expected_fields": [
+        "title",
+        "link",
+        "summary",
+        "listing_status",
+        "event_date_text",
+        "application_open_date_text",
+        "format_text"
+      ],
+      "pagination_mode": "platform_open_upcoming_sections",
+      "timeout_seconds": 10,
+      "minimum_interval_seconds": 600,
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_attempt_at": "2026-10-10T17:29:47+00:00",
+      "last_success_at": "2026-10-10T17:29:47+00:00",
+      "last_status": "success",
+      "last_error": null,
+      "last_duration_ms": 325,
+      "items_seen": 21,
+      "matching_items": 21,
+      "new_items": 1,
+      "last_success_items_seen": 21,
+      "last_success_matching_items": 21,
+      "last_success_new_items": 1,
+      "failure_streak": 0,
+      "quality_rejected_count": 0,
+      "quality_rule_version": 5
     }
   }
 }
