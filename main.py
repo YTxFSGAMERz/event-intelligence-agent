@@ -1475,8 +1475,8 @@ def main() -> int:
         f"unknown={quality_backfill['unknown']}"
     )
 
-    # Backfill at most two unresolved legacy Google News links per run so that
-    # historical records cannot starve URL resolution for new discoveries.
+    # Backfill at most MAX_URL_RESOLUTIONS_PER_RUN total links, reserving
+    # MAX_LEGACY_URL_RESOLUTIONS_PER_RUN slots for useful historical records.
     unresolved_records = sorted(seen.items(), key=legacy_resolution_priority)
 
     # Do not issue article-resolution HTTP requests during rapid push/manual runs
