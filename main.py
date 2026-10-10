@@ -139,7 +139,7 @@ def normalize_unstop_display_title(title: object) -> str:
         re.IGNORECASE,
     )
     badge_prefix = re.compile(
-        r"^(?:(?:online|offline|hybrid)\s+free\s+|(?:online|offline|hybrid)\s+|festival\s+)",
+        r"^(?:(?:online|offline|hybrid)\s+free\s+|(?:online|offline|hybrid)\s+|festival\s+|(?:launching|closing|starting)\s+soon\s+)",
         re.IGNORECASE,
     )
     for _ in range(3):
