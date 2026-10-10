@@ -9153,8 +9153,8 @@
     "190a10e750be7cba5cf9": {
       "title": "NASA Space Apps Challenge - Paris 2026 — Paris, 14–15 Nov 2026",
       "summary": " 14–15 Nov 2026  · Paris · In person · Paris Organiser: Panossian NASA Space Apps Challenge - Paris 2026\nOu l'innovation humaine rencontre l'exploration spatiale.\nLien : https://www.spaceappschallenge.org/2026/local-events/paris/\nLe NASA Space Apps Challenge est le plus grand hackathon mondial annuel, organisé par la National Aeronautics and Space Administration (NASA). Organisé dans plus de 160 villes à travers le monde, cet évènement rassemble des milliers d'innovateurs, développeurs, scientifiques, designers et créatifs afin de concevoir des solutions concrètes pour la Terre et l'espace à partir des données ouvertes (Open Data) de la NASA et de ses agences spatiales partenaires.\nDates : 14-15 Novembre 2026\nFormat : Présentiel uniquement (In-person only)\nLieu : Paris / Grand Paris - Le lieu exact (venue) sera communiqué dans les plus brefs délais.\nLangues : Français & Anglais\nPrix : Gratuit & ouvert à tous\nProfils recherchés\nQue vous soyez etudiant, developpeur, ingenieur, designer, scientifique, artiste ou simplement passionne par l'espace et le climat, c'est l'occasion de contribuer a des solutions a fort impact qui pourront etre analysees par les scientifiques de la NASA.\nIl n'est pas necessaire d'etre un expert en astrophysique ou en programmation. Les equipes beneficient de la diversite de leurs membres :\nEtudiants & Chercheurs (Informatique, Data, Physique, Design, Business)\nDeveloppeurs & Data Scientists\nDesigners, Artistes & Storytellers\nPassionnes d'espace et d'innovation\nAxes de travail & Thématiques\nLes défis (Challenges) sont préparés par les experts de la NASA et des agences spatiales partenaires (ESA, CNES, etc.) autour de grands axes :\nEarth & Climate : Observation de la Terre, changement climatique, agriculture durable et biodiversité.\nSpace Exploration : Exploration lunaire et martienne, astrophysique, exoplanètes et débris spatiaux.\nSoftware & AI : Traitement de données spatiales, intelligence artificielle et outils interactifs.\nStorytelling & Design : Visualisation de données, outils pédagogiques et sensibilisation du public.\nContact & Partenariats\nPour toute question, mentorat ou opportunite de partenariat (sponsoring, mise a disposition de materiel), veuillez contacter :\nyassinehadi25@gmail.com\nDe Paris au cosmos... Innovons ensemble pour la Terre et l'espace.\n\nNASA Space Apps Challenge - Paris 2026\nWhere human innovation meets space exploration.\nLink : https://www.spaceappschallenge.org/2026/local-events/paris/\nThe NASA Space Apps Challenge is the world's largest annual global hackathon, organized by the National Aeronautics and Space Administration (NASA). Held in over 160 cities worldwide, the challenge brings together tens of thousands of innovators, developers, scientists, and creatives to design real-world solutions for both Earth and space, using NASA's open data.\nDates: November 14-15, 2026\nFormat: In-person only\nLocation: Paris / Greater Paris - The exact venue will be announced shortly.\nLanguages: French & English\nCost: Free & Open to all\nWho Can Participate?\nWhether you are a student, developer, engineer, designer, scientist, artist, or simply passionate about space and climate - this is your opportunity to contribute to impactful global solutions that may reach NASA scientists themselves.\nNo prior experience in astrophysics or advanced coding is required. Teams benefit from diverse skills:\nStudents & Researchers (Computer Science, Data, Physics, Design, Business)\nDevelopers & Data Scientists\nDesigners, Artists & Storytellers\nSpace & Innovation Enthusiasts\nFocus Areas & Themes\nChallenges are designed by NASA experts and partner space agencies (ESA, CNES, etc.) across several primary tracks:\nEarth & Climate: Earth observation, climate change, sustainable agriculture, and biodiversity.\nSpace Exploration: Lunar and Martian exploration, astrophysics, exoplanets, and space debris.\nSoftware & AI: Space data processing, artificial intelligence, and interactive tools.\nStorytelling & Design: Data visualization, educational tools, and public outreach.\nContact &…  Register on the organiser's own page ",
-      "url": "https://hackalendar.com/e/nasa-space-apps-challenge-paris-2026",
-      "image_url": "https://hackalendar.com/cover/nasa-space-apps-challenge-paris-2026-9b027964f2f2ad77-800.webp",
+      "url": "https://luma.com/jb33a8gb",
+      "image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/qg/c35df4ba-28cb-4e2f-ba0c-0fd865e65224.jpg",
       "source": "https://hackalendar.com/feed.xml",
       "source_name": "Hackalendar · Upcoming Hackathons",
       "source_id": "7c33d1ecedb854aa",
@@ -9183,8 +9183,8 @@
       "first_seen_utc": "2026-10-10T14:57:47+00:00",
       "last_seen_utc": "2026-10-10T14:58:31+00:00",
       "deadline": "Not found — verify on official page",
-      "registration_status": "UNKNOWN",
-      "registration_status_evidence": "No explicit status phrase in feed item",
+      "registration_status": "CLOSED (official page)",
+      "registration_status_evidence": "'dark' : 'light') : preferredTheme); })(); // https://gist.github.com/paulirish/1579671 (function() { var lastTime = 0; if (!window.requestAnimationFrame) { window.requestAnimationFrame = window['webkitRequestAnimationFrame']; window.cancelAnimationFrame = window['webkitCancelAni",
       "link_status": "REACHABLE",
       "link_status_evidence": "HTTP 200",
       "discovered_url": "https://hackalendar.com/e/nasa-space-apps-challenge-paris-2026",
@@ -9194,35 +9194,139 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
-        "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "status": "official_page_verified",
+        "official_url": "https://luma.com/jb33a8gb",
+        "evidence_urls": [
+          "https://hackalendar.com/e/nasa-space-apps-challenge-paris-2026",
+          "https://lu.ma/jb33a8gb",
+          "https://luma.com/jb33a8gb"
+        ],
+        "last_checked_at": "2026-10-10T15:09:46+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://hackalendar.com/e/nasa-space-apps-challenge-paris-2026",
+        "official_link_candidate": "https://lu.ma/jb33a8gb",
+        "official_link_reason": "outbound_anchor:Enter on the organiser’s site",
+        "candidate_page_status": "success",
+        "candidate_page_error": null,
+        "candidate_page_http_status": 200,
+        "page_title": "NASA Space Apps Challenge - Paris 2026",
+        "last_check_error": null,
+        "last_check_duration_ms": 770,
+        "observed_facts": {
+          "page_role": "structured_event_listing",
+          "page_title": "NASA Space Apps Challenge - Paris 2026",
+          "description": "NASA Space Apps Challenge - Paris 2026\nOu l'innovation humaine rencontre l'exploration spatiale.\nLien : https://www.spaceappschallenge.org/2026/local-events/paris/\nLe NASA Space Apps Challenge est le plus grand hackathon mondial annuel, organisé par la National Aeronautics and Space Administration (NASA). Organisé dans plus de 160 villes à travers le monde, cet évènement rassemble des milliers d'innovateurs, développeurs, scientifiques, designers et créatifs afin de concevoir des solutions concrètes pour la Terre et l'espace à partir des données ouvertes (Open Data) de la NASA et de ses agences spatiales partenaires.\nDates : 14-15 Novembre 2026\nFormat : Présentiel uniquement (In-person only)\nLieu : Paris / Grand Paris - Le lieu exact (venue) sera communiqué dans les plus brefs délais.\nLangues : Français & Anglais\nPrix : Gratuit & ouvert à tous\nProfils recherchés\nQue vous soyez etudiant, developpeur, ingenieur, designer, scientifique, artiste ou simplement passionne par l'espace et le climat, c'est l'occasion de contribuer a des solutions a fort impact qui pourront etre analysees par les scientifiques de la NASA.\nIl n'est pas necessaire d'etre un expert en astrophysique ou en programmation. Les equipes beneficient de la diversite de leurs membres :\nEtudiants & Chercheurs (Informatique, Data, Physique, Design, Business)\nDeveloppeurs & Data Scientists\nDesigners, Artistes & Storytellers\nPassionnes d'espace et d'innovation\nAxes de travail & Thématiques\nLes défis (Challenges) sont ",
+          "organizer": "Panossian",
+          "event_start_at": "2026-11-14T08:00:00.000+01:00",
+          "event_end_at": "2026-11-15T21:00:00.000+01:00",
+          "event_timezone": "UTC+01:00",
+          "opportunity_status": "unknown",
+          "registration_status": "closed",
+          "registration_status_evidence": "'dark' : 'light') : preferredTheme); })(); // https://gist.github.com/paulirish/1579671 (function() { var lastTime = 0; if (!window.requestAnimationFrame) { window.requestAnimationFrame = window['webkitRequestAnimationFrame']; window.cancelAnimationFrame = window['webkitCancelAni",
+          "location": {
+            "raw": "Paris, Paris, Île-de-France, FR",
+            "mode": "in_person",
+            "venue": "Paris",
+            "city": "Paris",
+            "region": "Île-de-France",
+            "country": "FR",
+            "country_code": "FR",
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/qg/c35df4ba-28cb-4e2f-ba0c-0fd865e65224.jpg"
+        },
+        "fact_evidence": {
+          "event_start_at": {
+            "value": "2026-11-14T08:00:00.000+01:00",
+            "source_url": "https://luma.com/jb33a8gb",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.startDate=2026-11-14T08:00:00.000+01:00"
+          },
+          "event_end_at": {
+            "value": "2026-11-15T21:00:00.000+01:00",
+            "source_url": "https://luma.com/jb33a8gb",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.endDate=2026-11-15T21:00:00.000+01:00"
+          },
+          "organizer": {
+            "value": "Panossian",
+            "source_url": "https://luma.com/jb33a8gb",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.organizer.name=Panossian"
+          },
+          "location": {
+            "value": {
+              "raw": "Paris, Paris, Île-de-France, FR",
+              "mode": "in_person",
+              "venue": "Paris",
+              "city": "Paris",
+              "region": "Île-de-France",
+              "country": "FR",
+              "country_code": "FR",
+              "remote_restrictions": []
+            },
+            "source_url": "https://luma.com/jb33a8gb",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.location / eventAttendanceMode"
+          },
+          "registration_status": {
+            "value": "closed",
+            "source_url": "https://luma.com/jb33a8gb",
+            "method": "explicit_page_text",
+            "snippet": "'dark' : 'light') : preferredTheme); })(); // https://gist.github.com/paulirish/1579671 (function() { var lastTime = 0; if (!window.requestAnimationFrame) { window.requestAnimationFrame = window['webkitRequestAnimationFrame']; window.cancelAnimationFrame = window['webkitCancelAni"
+          }
+        },
+        "last_verified_at": "2026-10-10T15:09:46+00:00"
       },
       "schema_version": 1,
       "id": "190a10e750be7cba5cf9",
-      "organizer": null,
+      "organizer": "Panossian",
       "application_open_at": null,
       "application_deadline": null,
       "deadline_timezone": null,
-      "event_start_at": null,
-      "event_end_at": null,
-      "event_timezone": null,
+      "event_start_at": "2026-11-14T08:00:00.000+01:00",
+      "event_end_at": "2026-11-15T21:00:00.000+01:00",
+      "event_timezone": "UTC+01:00",
       "date_precision": "unknown",
       "location": {
-        "raw": null,
-        "mode": "unknown",
-        "venue": null,
-        "city": null,
-        "region": null,
-        "country": null,
-        "country_code": null,
+        "raw": "Paris, Paris, Île-de-France, FR",
+        "mode": "in_person",
+        "venue": "Paris",
+        "city": "Paris",
+        "region": "Île-de-France",
+        "country": "FR",
+        "country_code": "FR",
         "remote_restrictions": []
       },
       "eligibility": {
@@ -9257,7 +9361,7 @@
         "evidence_url": null
       },
       "media": {
-        "source_image_url": "https://hackalendar.com/cover/nasa-space-apps-challenge-paris-2026-9b027964f2f2ad77-800.webp",
+        "source_image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/qg/c35df4ba-28cb-4e2f-ba0c-0fd865e65224.jpg",
         "generated_image_url": null
       },
       "content_hash": null,
@@ -9896,7 +10000,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-10T15:09:22+00:00",
+  "updated_utc": "2026-10-10T15:09:47+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -9929,7 +10033,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:09:21+00:00",
+      "last_skipped_at": "2026-10-10T15:09:46+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -9963,7 +10067,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:09:21+00:00",
+      "last_skipped_at": "2026-10-10T15:09:46+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -9997,7 +10101,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:09:21+00:00",
+      "last_skipped_at": "2026-10-10T15:09:46+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 4
     },
@@ -10031,7 +10135,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:09:21+00:00",
+      "last_skipped_at": "2026-10-10T15:09:46+00:00",
       "quality_rejected_count": 3,
       "quality_rule_version": 4
     },
@@ -10066,7 +10170,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:09:21+00:00",
+      "last_skipped_at": "2026-10-10T15:09:46+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -10102,7 +10206,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T15:09:21+00:00",
+      "last_skipped_at": "2026-10-10T15:09:46+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -10138,7 +10242,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:09:21+00:00"
+      "last_skipped_at": "2026-10-10T15:09:46+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -10172,7 +10276,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:09:21+00:00"
+      "last_skipped_at": "2026-10-10T15:09:46+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -10206,7 +10310,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:09:21+00:00"
+      "last_skipped_at": "2026-10-10T15:09:46+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -10235,7 +10339,7 @@
       "matching_items": 0,
       "new_items": 0,
       "failure_streak": 2,
-      "last_skipped_at": "2026-10-10T15:09:21+00:00",
+      "last_skipped_at": "2026-10-10T15:09:46+00:00",
       "last_success_at": "2026-10-10T14:57:36+00:00",
       "last_success_items_seen": 21,
       "last_success_matching_items": 21,
@@ -10276,7 +10380,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:09:21+00:00"
+      "last_skipped_at": "2026-10-10T15:09:46+00:00"
     }
   }
 }
