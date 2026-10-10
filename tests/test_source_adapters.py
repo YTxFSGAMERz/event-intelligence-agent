@@ -170,7 +170,7 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(first["deadline_raw"], "31-10-2026")
         self.assertEqual(first["deadline_display"], "October 31, 2026")
         self.assertEqual(first["link"], "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_Swanath.pdf")
-        self.assertIn("official portal listing: https://scholarships.gov.in/All-Scholarships", first["summary"])
+        self.assertIn("Official portal listing: https://scholarships.gov.in/All-Scholarships", first["summary"])
         self.assertTrue(response.closed)
 
     def test_nsp_fails_closed_if_page_has_no_scheme_guidance_links(self):
