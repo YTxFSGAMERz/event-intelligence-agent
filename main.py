@@ -142,6 +142,15 @@ def normalize_unstop_display_title(title: object) -> str:
         r"^(?:(?:online|offline|hybrid)\s+free\s+|(?:online|offline|hybrid)\s+|festival\s+|(?:launching|closing|starting)\s+soon\s+)",
         re.IGNORECASE,
     )
+    mode_match = re.match(
+        r"^(?P<organizer>.+?)\s+(?:online|offline|hybrid)\s+(?P<remainder>.+)$",
+        cleaned, re.IGNORECASE,
+    )
+    if mode_match:
+        organizer = mode_match.group("organizer").strip()
+        remainder = mode_match.group("remainder").strip()
+        if remainder.casefold().startswith(organizer.casefold() + " "):
+            cleaned = remainder
     for _ in range(3):
         updated = category_prefix.sub("", cleaned, count=1)
         updated = badge_prefix.sub("", updated, count=1)
