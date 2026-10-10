@@ -914,6 +914,15 @@ class UnstopExploreParser(HTMLParser):
             r"^(?:(?:online|offline|hybrid)\s+free\s+|(?:online|offline|hybrid)\s+|festival\s+|(?:launching|closing|starting)\s+soon\s+)",
             "", visible, flags=re.IGNORECASE,
         )
+        mode_match = re.match(
+            r"^(?P<organizer>.+?)\s+(?:online|offline|hybrid)\s+(?P<remainder>.+)$",
+            visible, re.IGNORECASE,
+        )
+        if mode_match:
+            organizer = mode_match.group("organizer").strip()
+            remainder = mode_match.group("remainder").strip()
+            if remainder.casefold().startswith(organizer.casefold() + " "):
+                visible = remainder
         tail = UNSTOP_CARD_TAIL_RE.search(visible)
         title = visible[:tail.start()] if tail else visible
         title = re.sub(r"\s+", " ", title).strip(" \t-|:·")[:180]
