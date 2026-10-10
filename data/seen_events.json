@@ -13666,16 +13666,28 @@
       "deadline_status": "unverified",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "not_html",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_G.pdf"
+        ],
+        "last_checked_at": "2026-10-10T16:33:36+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_G.pdf",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": null,
+        "last_check_error": "content_type_not_html",
+        "last_check_duration_ms": 1073
       },
       "schema_version": 1,
       "id": "2d29dd0cbc8ac3cfcf18",
@@ -13872,9 +13884,195 @@
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMifEFVX3lxTE9FWUE2bFB2N2pXc1o4U295Z2QzTFJacVNlVmd4UFFhczJ2b1h6ODdkRWw0ZzRObkhvUGlIWWtPTTNLakRhWmV3RE9wWlEyRnFXeFFLYmxLcV9LLTZVVkpvZEx2QVRaZy05OTZNZUFoeXRWNWJyN0ZsSkFOMU8?oc=5"
       ]
+    },
+    "13caaadcca90717e12b1": {
+      "title": "MONEYBALL - The Strategic Auction Amity University (AU), Noida",
+      "summary": "Unstop public platform listing (competitions). Listing text: competitions MONEYBALL - The Strategic Auction Amity University (AU), Noida 8 days left Undergraduate Postgraduate +5 Posted 8 Oct'26, 07:03 PM IST 17 Impressions. This is discovery evidence only; verify eligibility, dates, rewards and organizer rules on the linked opportunity page.",
+      "url": "https://unstop.com/competitions/moneyball-the-strategic-auction-amity-university-au-noida-1767925",
+      "image_url": "",
+      "source": "https://unstop.com/competitions/amp",
+      "source_name": "Unstop · Competitions",
+      "source_id": "9094d50190e1d4a7",
+      "adapter_type": "unstop_html",
+      "source_observed": {},
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "competitions_challenges"
+      ],
+      "primary_category": "competitions_challenges",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 5,
+        "title_signal": false,
+        "actionable_update": false,
+        "matched_categories": [
+          "competitions_challenges"
+        ]
+      },
+      "first_seen_utc": "2026-10-10T16:33:42+00:00",
+      "last_seen_utc": "2026-10-10T16:33:42+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://unstop.com/competitions/moneyball-the-strategic-auction-amity-university-au-noida-1767925",
+      "canonical_url": "https://unstop.com/competitions/moneyball-the-strategic-auction-amity-university-au-noida-1767925",
+      "source_feed_url": "https://unstop.com/competitions/amp",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "source_page_checked",
+        "official_url": null,
+        "evidence_urls": [
+          "https://unstop.com/competitions/moneyball-the-strategic-auction-amity-university-au-noida-1767925"
+        ],
+        "last_checked_at": "2026-10-10T16:33:35+00:00",
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ],
+        "version": 1,
+        "source_page_url": "https://unstop.com/competitions/moneyball-the-strategic-auction-amity-university-au-noida-1767925",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
+        "last_check_error": null,
+        "last_check_duration_ms": 285,
+        "observed_facts": {
+          "page_role": "discovery_or_unrelated_page",
+          "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
+          "description": "",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        }
+      },
+      "schema_version": 1,
+      "id": "13caaadcca90717e12b1",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "9094d50190e1d4a7"
+      ],
+      "source_names": [
+        "Unstop · Competitions"
+      ],
+      "source_feeds": [
+        "https://unstop.com/competitions/amp"
+      ],
+      "discovered_urls": [
+        "https://unstop.com/competitions/moneyball-the-strategic-auction-amity-university-au-noida-1767925"
+      ],
+      "resolved_urls": [
+        "https://unstop.com/competitions/moneyball-the-strategic-auction-amity-university-au-noida-1767925"
+      ]
     }
   },
-  "updated_utc": "2026-10-10T16:33:09+00:00",
+  "updated_utc": "2026-10-10T16:33:42+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -13884,7 +14082,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T16:32:27+00:00",
       "last_success_at": "2026-10-10T16:32:27+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 244,
       "items_seen": 1,
@@ -13907,7 +14105,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:05:30+00:00",
+      "last_skipped_at": "2026-10-10T16:33:34+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 5
     },
@@ -13918,7 +14116,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T16:32:27+00:00",
       "last_success_at": "2026-10-10T16:32:27+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 197,
       "items_seen": 0,
@@ -13941,7 +14139,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:05:30+00:00",
+      "last_skipped_at": "2026-10-10T16:33:34+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 5
     },
@@ -13952,7 +14150,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T16:32:28+00:00",
       "last_success_at": "2026-10-10T16:32:28+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 429,
       "items_seen": 60,
@@ -13975,7 +14173,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:05:30+00:00",
+      "last_skipped_at": "2026-10-10T16:33:34+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 5
     },
@@ -13986,7 +14184,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T16:32:28+00:00",
       "last_success_at": "2026-10-10T16:32:28+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 482,
       "items_seen": 67,
@@ -14009,7 +14207,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:05:30+00:00",
+      "last_skipped_at": "2026-10-10T16:33:34+00:00",
       "quality_rejected_count": 2,
       "quality_rule_version": 5
     },
@@ -14020,7 +14218,7 @@
       "adapter_type": "official_blog_rss",
       "last_attempt_at": "2026-10-10T16:32:30+00:00",
       "last_success_at": "2026-10-10T16:32:30+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 188,
       "items_seen": 10,
@@ -14044,7 +14242,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:05:30+00:00",
+      "last_skipped_at": "2026-10-10T16:33:34+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 5
     },
@@ -14070,7 +14268,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T16:32:29+00:00",
       "last_success_at": "2026-10-10T16:32:29+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 184,
       "items_seen": 15,
@@ -14080,7 +14278,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T16:05:30+00:00",
+      "last_skipped_at": "2026-10-10T16:33:34+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 5
     },
@@ -14104,7 +14302,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T16:32:29+00:00",
       "last_success_at": "2026-10-10T16:32:29+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 206,
       "items_seen": 0,
@@ -14116,7 +14314,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:05:30+00:00"
+      "last_skipped_at": "2026-10-10T16:33:34+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -14138,7 +14336,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T16:32:29+00:00",
       "last_success_at": "2026-10-10T16:32:29+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 202,
       "items_seen": 0,
@@ -14150,7 +14348,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:05:30+00:00"
+      "last_skipped_at": "2026-10-10T16:33:34+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -14172,7 +14370,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T16:32:30+00:00",
       "last_success_at": "2026-10-10T16:32:30+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 2023,
       "items_seen": 71,
@@ -14184,7 +14382,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:05:30+00:00"
+      "last_skipped_at": "2026-10-10T16:33:34+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -14206,14 +14404,14 @@
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T16:32:32+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1479,
       "items_seen": 21,
       "matching_items": 21,
       "new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T16:05:30+00:00",
+      "last_skipped_at": "2026-10-10T16:33:34+00:00",
       "last_success_at": "2026-10-10T16:32:32+00:00",
       "last_success_items_seen": 21,
       "last_success_matching_items": 21,
@@ -14242,7 +14440,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T16:32:33+00:00",
       "last_success_at": "2026-10-10T16:32:33+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 2285,
       "items_seen": 24,
@@ -14254,7 +14452,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:05:30+00:00"
+      "last_skipped_at": "2026-10-10T16:33:34+00:00"
     },
     "9b37a8e295affa8c": {
       "source_id": "9b37a8e295affa8c",
@@ -14276,7 +14474,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T16:32:36+00:00",
       "last_success_at": "2026-10-10T16:32:36+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 399,
       "items_seen": 9,
@@ -14288,7 +14486,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:05:30+00:00"
+      "last_skipped_at": "2026-10-10T16:33:34+00:00"
     },
     "8e0842c73fb362fb": {
       "source_id": "8e0842c73fb362fb",
@@ -14310,7 +14508,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T16:32:36+00:00",
       "last_success_at": "2026-10-10T16:32:36+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1369,
       "items_seen": 5,
@@ -14322,7 +14520,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:05:30+00:00"
+      "last_skipped_at": "2026-10-10T16:33:34+00:00"
     },
     "baec8f4645b19637": {
       "source_id": "baec8f4645b19637",
@@ -14344,7 +14542,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T16:32:37+00:00",
       "last_success_at": "2026-10-10T16:32:37+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 339,
       "items_seen": 6,
@@ -14356,7 +14554,40 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:05:30+00:00"
+      "last_skipped_at": "2026-10-10T16:33:34+00:00"
+    },
+    "9094d50190e1d4a7": {
+      "source_id": "9094d50190e1d4a7",
+      "name": "Unstop · Competitions",
+      "url": "https://unstop.com/competitions/amp",
+      "adapter_type": "unstop_html",
+      "access_method": "public_unstop_html_listing",
+      "expected_fields": [
+        "title",
+        "link",
+        "summary",
+        "listing_category",
+        "listing_countdown_text",
+        "source_listing"
+      ],
+      "pagination_mode": "current_unstop_listing_cards",
+      "timeout_seconds": 10,
+      "minimum_interval_seconds": 600,
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_attempt_at": "2026-10-10T16:33:34+00:00",
+      "last_success_at": "2026-10-10T16:33:34+00:00",
+      "last_status": "success",
+      "last_error": null,
+      "last_duration_ms": 1595,
+      "items_seen": 5,
+      "matching_items": 5,
+      "new_items": 1,
+      "last_success_items_seen": 5,
+      "last_success_matching_items": 5,
+      "last_success_new_items": 1,
+      "failure_streak": 0,
+      "quality_rejected_count": 0,
+      "quality_rule_version": 5
     }
   }
 }
