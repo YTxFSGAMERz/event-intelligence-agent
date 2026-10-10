@@ -10190,8 +10190,8 @@
     "e1e52cc946a0772fd118": {
       "title": "European Defense Tech Hackathon – Paris — Vincennes, 20–22 Nov 2026",
       "summary": " 20–22 Nov 2026  · Vincennes · In person · Vincennes, France Organiser: European Defense Tech Hub The event will run through our EDTH event platform. Registration on Luma is not required. Please register directly on the platform to get your ticket, and you'll also find the agenda, challenges, and team formation there: https://events.eurodefense.tech/2026-paris\n\n----\n\nTime to Accelerate European Defense Innovation 🚀\n\nJoin us and 200+ hackers from all across Europe and beyond for the European Defense Tech Hackathon on November 20-22, 2026, in Paris, France.\n\nWe'll focus on solving urgent security challenges:\n 🛸 Stopping Shahed-class and fiber-optic drones\n 🎯 Tracking targets across messy sensor setups\n 📡 Keeping systems working when everything is jammed\n\nWe're thrilled to co-organize this hackathon with the team behind the Adopt AI Summit (Dec 3-4, 2026, at Grand Palais)—matching AI expertise with real-world deployment needs in the defense sector.\n\nWanna come as a visitor? Join our EDTH Community here: https://community.eurodefense.tech/\n\nGoal\n\nWe want to bridge the gaps between technologists, the public sector, investors, and operators in dual-use and defense technology. This hackathon will demonstrate the talent and drive of the European ecosystem.\n\nGet inspired by the challenges we have prepared, or feel free to bring your own project. You'll get feedback from folks who have been on the frontline to ensure you're solving real problems.\n\nOur goal with the hackathon is to put you in a position to continue towards deployment.\n\nWho joins the hackathon?\n\nHackers\n\nHackers are the people actually building. They form small teams, pick a problem, and spend the weekend turning ideas into working prototypes. It starts on Friday with team formation, gets intense on Saturday, and ends on Sunday with our Demo Day where they show what they’ve built.\n\nMentors\n\nMentors are the ones helping the hackers with all the relevant expertise to build a defense tech project. They share real-world context and help teams avoid dead ends, whether it’s sharpening the problem, pressure-testing assumptions, or making something actually deployable.\n\nVisitors\n\nTo give participants time and space to focus on their projects, there will be no visitors during the hacking phase (until Sunday 12 pm).\n\nIf you’re curious about the outcomes and what the teams have built, you can join the Demo Day on Sunday (from 1 pm) as an EDTH Community visitor by selecting a Community Visitor ticket.\n\nNot yet part of the EDTH Community?\n\nGet free access to all EDTH Community events for one year, including hackathon demo days, webinars, networking sessions, and our flagship New Defense Summit\n\nSign up to become a member here: https://community.eurodefense.tech/\n\nChallenges\n\nWe'll focus on solving urgent security challenges: stopping Shahed-class and fiber-optic drones, tracking targets across messy sensor setups, and keeping systems working when everything is jammed.\n\nThink low-cost sensing, AI that can tell what’s coming and where it’s going, and interceptor logic that goes from detection to action.\n\nComms that don’t rely on infrastructure, making sense of data from everywhere—RF, cameras, thermal, you name it—and autonomy that actually reduces operator load.  Register on the organiser's own page ",
-      "url": "https://hackalendar.com/e/european-defense-tech-hackathon-paris-2026-2",
-      "image_url": "https://hackalendar.com/cover/european-defense-tech-hackathon-paris-2026-2-f8619aaaa716c453-800.webp",
+      "url": "https://luma.com/edth-nov-2026-paris",
+      "image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/ev/0a4a1b5b-951c-4925-b9f2-44f7383a1ca1.jpg",
       "source": "https://hackalendar.com/feed.xml",
       "source_name": "Hackalendar · Upcoming Hackathons",
       "source_id": "7c33d1ecedb854aa",
@@ -10222,8 +10222,8 @@
       "first_seen_utc": "2026-10-10T15:21:46+00:00",
       "last_seen_utc": "2026-10-10T15:50:57+00:00",
       "deadline": "Not found — verify on official page",
-      "registration_status": "UNKNOWN",
-      "registration_status_evidence": "No explicit status phrase in feed item",
+      "registration_status": "OPEN (official page)",
+      "registration_status_evidence": "Please choose your desired ticket type: Hacker (Apply Now) ​ Require Approval Mentor (Invitation Only) ​ Require Approval Exclusively for our mentors, speakers, and partners Community Visitor Access the Demo Day on Sunday as an EDTH Community member and see what the hackathon tea",
       "link_status": "REACHABLE",
       "link_status_evidence": "HTTP 200",
       "discovered_url": "https://hackalendar.com/e/european-defense-tech-hackathon-paris-2026-2",
@@ -10233,35 +10233,139 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
-        "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "status": "official_page_verified",
+        "official_url": "https://luma.com/edth-nov-2026-paris",
+        "evidence_urls": [
+          "https://hackalendar.com/e/european-defense-tech-hackathon-paris-2026-2",
+          "https://lu.ma/edth-nov-2026-paris",
+          "https://luma.com/edth-nov-2026-paris"
+        ],
+        "last_checked_at": "2026-10-10T16:05:30+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://hackalendar.com/e/european-defense-tech-hackathon-paris-2026-2",
+        "official_link_candidate": "https://lu.ma/edth-nov-2026-paris",
+        "official_link_reason": "outbound_anchor:Enter on the organiser’s site",
+        "candidate_page_status": "success",
+        "candidate_page_error": null,
+        "candidate_page_http_status": 200,
+        "page_title": "European Defense Tech Hackathon – Paris",
+        "last_check_error": null,
+        "last_check_duration_ms": 912,
+        "observed_facts": {
+          "page_role": "structured_event_listing",
+          "page_title": "European Defense Tech Hackathon – Paris",
+          "description": "The event will run through our EDTH event platform. Registration on Luma is not required. Please register directly on the platform to get your ticket, and you'll also find the agenda, challenges, and team formation there:  https://events.eurodefense.tech/2026-paris\n----\nTime to Accelerate European Defense Innovation 🚀\nJoin us and 200+ hackers from all across Europe and beyond for the European Defense Tech Hackathon on November 20-22, 2026, in Paris, France.\nWe'll focus on solving urgent security challenges:\n 🛸 Stopping Shahed-class and fiber-optic drones\n 🎯 Tracking targets across messy sensor setups\n 📡 Keeping systems working when everything is jammed\nWe're thrilled to co-organize this hackathon with the team behind the Adopt AI Summit (Dec 3-4, 2026, at Grand Palais)—matching AI expertise with real-world deployment needs in the defense sector.\nWanna come as a visitor? Join our EDTH Community here: https://community.eurodefense.tech/\nGoal\nWe want to bridge the gaps between technologists, the public sector, investors, and operators in dual-use and defense technology. This hackathon will demonstrate the talent and drive of the European ecosystem.\nGet inspired by the challenges we have prepared, or feel free to bring your own project. You'll get feedback from folks who have been on the frontline to ensure you're solving real problems.\nOur goal with the hackathon is to put you in a position to continue towards deployment.\nWho joins the hackathon?\nHackers\nHackers are the people a",
+          "organizer": "European Defense Tech Hub",
+          "event_start_at": "2026-11-20T12:00:00.000+01:00",
+          "event_end_at": "2026-11-22T17:00:00.000+01:00",
+          "event_timezone": "UTC+01:00",
+          "opportunity_status": "unknown",
+          "registration_status": "open",
+          "registration_status_evidence": "Please choose your desired ticket type: Hacker (Apply Now) ​ Require Approval Mentor (Invitation Only) ​ Require Approval Exclusively for our mentors, speakers, and partners Community Visitor Access the Demo Day on Sunday as an EDTH Community member and see what the hackathon tea",
+          "location": {
+            "raw": "Paris, France, Paris, Île-de-France, FR",
+            "mode": "in_person",
+            "venue": "Paris, France",
+            "city": "Paris",
+            "region": "Île-de-France",
+            "country": "FR",
+            "country_code": "FR",
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/ev/0a4a1b5b-951c-4925-b9f2-44f7383a1ca1.jpg"
+        },
+        "fact_evidence": {
+          "event_start_at": {
+            "value": "2026-11-20T12:00:00.000+01:00",
+            "source_url": "https://luma.com/edth-nov-2026-paris",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.startDate=2026-11-20T12:00:00.000+01:00"
+          },
+          "event_end_at": {
+            "value": "2026-11-22T17:00:00.000+01:00",
+            "source_url": "https://luma.com/edth-nov-2026-paris",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.endDate=2026-11-22T17:00:00.000+01:00"
+          },
+          "organizer": {
+            "value": "European Defense Tech Hub",
+            "source_url": "https://luma.com/edth-nov-2026-paris",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.organizer.name=European Defense Tech Hub"
+          },
+          "location": {
+            "value": {
+              "raw": "Paris, France, Paris, Île-de-France, FR",
+              "mode": "in_person",
+              "venue": "Paris, France",
+              "city": "Paris",
+              "region": "Île-de-France",
+              "country": "FR",
+              "country_code": "FR",
+              "remote_restrictions": []
+            },
+            "source_url": "https://luma.com/edth-nov-2026-paris",
+            "method": "schema_org_event",
+            "snippet": "JSON-LD Event.location / eventAttendanceMode"
+          },
+          "registration_status": {
+            "value": "open",
+            "source_url": "https://luma.com/edth-nov-2026-paris",
+            "method": "explicit_page_text",
+            "snippet": "Please choose your desired ticket type: Hacker (Apply Now) ​ Require Approval Mentor (Invitation Only) ​ Require Approval Exclusively for our mentors, speakers, and partners Community Visitor Access the Demo Day on Sunday as an EDTH Community member and see what the hackathon tea"
+          }
+        },
+        "last_verified_at": "2026-10-10T16:05:30+00:00"
       },
       "schema_version": 1,
       "id": "e1e52cc946a0772fd118",
-      "organizer": null,
+      "organizer": "European Defense Tech Hub",
       "application_open_at": null,
       "application_deadline": null,
       "deadline_timezone": null,
-      "event_start_at": null,
-      "event_end_at": null,
-      "event_timezone": null,
+      "event_start_at": "2026-11-20T12:00:00.000+01:00",
+      "event_end_at": "2026-11-22T17:00:00.000+01:00",
+      "event_timezone": "UTC+01:00",
       "date_precision": "unknown",
       "location": {
-        "raw": null,
-        "mode": "unknown",
-        "venue": null,
-        "city": null,
-        "region": null,
-        "country": null,
-        "country_code": null,
+        "raw": "Paris, France, Paris, Île-de-France, FR",
+        "mode": "in_person",
+        "venue": "Paris, France",
+        "city": "Paris",
+        "region": "Île-de-France",
+        "country": "FR",
+        "country_code": "FR",
         "remote_restrictions": []
       },
       "eligibility": {
@@ -10296,7 +10400,7 @@
         "evidence_url": null
       },
       "media": {
-        "source_image_url": "https://hackalendar.com/cover/european-defense-tech-hackathon-paris-2026-2-f8619aaaa716c453-800.webp",
+        "source_image_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/ev/0a4a1b5b-951c-4925-b9f2-44f7383a1ca1.jpg",
         "generated_image_url": null
       },
       "content_hash": null,
@@ -10386,7 +10490,7 @@
         "evidence_urls": [
           "https://www.road2tech.com"
         ],
-        "last_checked_at": "2026-10-10T16:05:15+00:00",
+        "last_checked_at": "2026-10-10T16:05:00+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
@@ -10402,7 +10506,7 @@
         "candidate_page_http_status": null,
         "page_title": "Road To Tech 2026 | Hackathon en Saltillo",
         "last_check_error": null,
-        "last_check_duration_ms": 87,
+        "last_check_duration_ms": 222,
         "observed_facts": {
           "page_role": "possible_event_page",
           "page_title": "Road To Tech 2026 | Hackathon en Saltillo",
@@ -12573,7 +12677,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-10T16:05:15+00:00",
+  "updated_utc": "2026-10-10T16:05:31+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -12606,7 +12710,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:05:15+00:00",
+      "last_skipped_at": "2026-10-10T16:05:30+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12640,7 +12744,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:05:15+00:00",
+      "last_skipped_at": "2026-10-10T16:05:30+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12674,7 +12778,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:05:15+00:00",
+      "last_skipped_at": "2026-10-10T16:05:30+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 4
     },
@@ -12708,7 +12812,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:05:15+00:00",
+      "last_skipped_at": "2026-10-10T16:05:30+00:00",
       "quality_rejected_count": 3,
       "quality_rule_version": 4
     },
@@ -12743,7 +12847,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:05:15+00:00",
+      "last_skipped_at": "2026-10-10T16:05:30+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12779,7 +12883,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T16:05:15+00:00",
+      "last_skipped_at": "2026-10-10T16:05:30+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12815,7 +12919,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:05:15+00:00"
+      "last_skipped_at": "2026-10-10T16:05:30+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -12849,7 +12953,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:05:15+00:00"
+      "last_skipped_at": "2026-10-10T16:05:30+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -12883,7 +12987,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:05:15+00:00"
+      "last_skipped_at": "2026-10-10T16:05:30+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -12912,7 +13016,7 @@
       "matching_items": 21,
       "new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T16:05:15+00:00",
+      "last_skipped_at": "2026-10-10T16:05:30+00:00",
       "last_success_at": "2026-10-10T15:50:59+00:00",
       "last_success_items_seen": 21,
       "last_success_matching_items": 21,
@@ -12953,7 +13057,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:05:15+00:00"
+      "last_skipped_at": "2026-10-10T16:05:30+00:00"
     },
     "9b37a8e295affa8c": {
       "source_id": "9b37a8e295affa8c",
@@ -12987,7 +13091,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 8,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:05:15+00:00"
+      "last_skipped_at": "2026-10-10T16:05:30+00:00"
     },
     "8e0842c73fb362fb": {
       "source_id": "8e0842c73fb362fb",
@@ -13021,7 +13125,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:05:15+00:00"
+      "last_skipped_at": "2026-10-10T16:05:30+00:00"
     },
     "baec8f4645b19637": {
       "source_id": "baec8f4645b19637",
@@ -13055,7 +13159,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:05:15+00:00"
+      "last_skipped_at": "2026-10-10T16:05:30+00:00"
     }
   }
 }
