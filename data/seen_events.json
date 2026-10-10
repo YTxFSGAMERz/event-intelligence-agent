@@ -12311,7 +12311,7 @@
         "evidence_urls": [
           "https://unstop.com/competitions/crp-asian-paints-alchemy-2026-asian-paints-1704498"
         ],
-        "last_checked_at": "2026-10-10T16:02:00+00:00",
+        "last_checked_at": "2026-10-10T16:02:14+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
@@ -12327,7 +12327,7 @@
         "candidate_page_http_status": null,
         "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
         "last_check_error": null,
-        "last_check_duration_ms": 843,
+        "last_check_duration_ms": 688,
         "observed_facts": {
           "page_role": "discovery_or_unrelated_page",
           "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
@@ -12451,7 +12451,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-10T16:02:01+00:00",
+  "updated_utc": "2026-10-10T16:02:15+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -12484,7 +12484,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:02:00+00:00",
+      "last_skipped_at": "2026-10-10T16:02:14+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12518,7 +12518,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:02:00+00:00",
+      "last_skipped_at": "2026-10-10T16:02:14+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12552,7 +12552,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:02:00+00:00",
+      "last_skipped_at": "2026-10-10T16:02:14+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 4
     },
@@ -12586,7 +12586,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:02:00+00:00",
+      "last_skipped_at": "2026-10-10T16:02:14+00:00",
       "quality_rejected_count": 3,
       "quality_rule_version": 4
     },
@@ -12621,7 +12621,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:02:00+00:00",
+      "last_skipped_at": "2026-10-10T16:02:14+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12657,7 +12657,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T16:02:00+00:00",
+      "last_skipped_at": "2026-10-10T16:02:14+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12693,7 +12693,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:02:00+00:00"
+      "last_skipped_at": "2026-10-10T16:02:14+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -12727,7 +12727,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:02:00+00:00"
+      "last_skipped_at": "2026-10-10T16:02:14+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -12761,7 +12761,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:02:00+00:00"
+      "last_skipped_at": "2026-10-10T16:02:14+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -12790,7 +12790,7 @@
       "matching_items": 21,
       "new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T16:02:00+00:00",
+      "last_skipped_at": "2026-10-10T16:02:14+00:00",
       "last_success_at": "2026-10-10T15:50:59+00:00",
       "last_success_items_seen": 21,
       "last_success_matching_items": 21,
@@ -12831,7 +12831,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:02:00+00:00"
+      "last_skipped_at": "2026-10-10T16:02:14+00:00"
     },
     "9b37a8e295affa8c": {
       "source_id": "9b37a8e295affa8c",
@@ -12865,7 +12865,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 8,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:02:00+00:00"
+      "last_skipped_at": "2026-10-10T16:02:14+00:00"
     },
     "8e0842c73fb362fb": {
       "source_id": "8e0842c73fb362fb",
@@ -12899,7 +12899,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:02:00+00:00"
+      "last_skipped_at": "2026-10-10T16:02:14+00:00"
     },
     "baec8f4645b19637": {
       "source_id": "baec8f4645b19637",
@@ -12933,7 +12933,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:02:00+00:00"
+      "last_skipped_at": "2026-10-10T16:02:14+00:00"
     }
   }
 }
