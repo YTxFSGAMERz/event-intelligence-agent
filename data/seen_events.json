@@ -13671,7 +13671,7 @@
         "evidence_urls": [
           "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_G.pdf"
         ],
-        "last_checked_at": "2026-10-10T16:33:36+00:00",
+        "last_checked_at": "2026-10-10T16:33:58+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
@@ -13687,7 +13687,7 @@
         "candidate_page_http_status": null,
         "page_title": null,
         "last_check_error": "content_type_not_html",
-        "last_check_duration_ms": 1073
+        "last_check_duration_ms": 1085
       },
       "schema_version": 1,
       "id": "2d29dd0cbc8ac3cfcf18",
@@ -13887,7 +13887,7 @@
     },
     "13caaadcca90717e12b1": {
       "title": "MONEYBALL - The Strategic Auction Amity University (AU), Noida",
-      "summary": "Unstop public platform listing (competitions). Listing text: competitions MONEYBALL - The Strategic Auction Amity University (AU), Noida 8 days left Undergraduate Postgraduate +5 Posted 8 Oct'26, 07:03 PM IST 17 Impressions. This is discovery evidence only; verify eligibility, dates, rewards and organizer rules on the linked opportunity page.",
+      "summary": "Unstop public platform listing (competitions). Listing text: competitions MONEYBALL - The Strategic Auction Amity University (AU), Noida 8 days left Undergraduate Postgraduate +5 Posted 8 Oct'26, 07:03 PM IST 20 Impressions. This is discovery evidence only; verify eligibility, dates, rewards and organizer rules on the linked opportunity page.",
       "url": "https://unstop.com/competitions/moneyball-the-strategic-auction-amity-university-au-noida-1767925",
       "image_url": "",
       "source": "https://unstop.com/competitions/amp",
@@ -13914,7 +13914,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T16:33:42+00:00",
-      "last_seen_utc": "2026-10-10T16:33:42+00:00",
+      "last_seen_utc": "2026-10-10T16:34:04+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -13932,7 +13932,7 @@
         "evidence_urls": [
           "https://unstop.com/competitions/moneyball-the-strategic-auction-amity-university-au-noida-1767925"
         ],
-        "last_checked_at": "2026-10-10T16:33:35+00:00",
+        "last_checked_at": "2026-10-10T16:33:58+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
@@ -13948,7 +13948,7 @@
         "candidate_page_http_status": null,
         "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
         "last_check_error": null,
-        "last_check_duration_ms": 285,
+        "last_check_duration_ms": 280,
         "observed_facts": {
           "page_role": "discovery_or_unrelated_page",
           "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
@@ -14072,7 +14072,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-10T16:33:42+00:00",
+  "updated_utc": "2026-10-10T16:34:04+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -14105,7 +14105,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:33:34+00:00",
+      "last_skipped_at": "2026-10-10T16:33:57+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 5
     },
@@ -14139,7 +14139,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:33:34+00:00",
+      "last_skipped_at": "2026-10-10T16:33:57+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 5
     },
@@ -14173,7 +14173,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:33:34+00:00",
+      "last_skipped_at": "2026-10-10T16:33:57+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 5
     },
@@ -14207,7 +14207,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:33:34+00:00",
+      "last_skipped_at": "2026-10-10T16:33:57+00:00",
       "quality_rejected_count": 2,
       "quality_rule_version": 5
     },
@@ -14242,7 +14242,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:33:34+00:00",
+      "last_skipped_at": "2026-10-10T16:33:57+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 5
     },
@@ -14278,7 +14278,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T16:33:34+00:00",
+      "last_skipped_at": "2026-10-10T16:33:57+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 5
     },
@@ -14314,7 +14314,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:33:34+00:00"
+      "last_skipped_at": "2026-10-10T16:33:57+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -14348,7 +14348,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:33:34+00:00"
+      "last_skipped_at": "2026-10-10T16:33:57+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -14382,7 +14382,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:33:34+00:00"
+      "last_skipped_at": "2026-10-10T16:33:57+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -14411,7 +14411,7 @@
       "matching_items": 21,
       "new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T16:33:34+00:00",
+      "last_skipped_at": "2026-10-10T16:33:57+00:00",
       "last_success_at": "2026-10-10T16:32:32+00:00",
       "last_success_items_seen": 21,
       "last_success_matching_items": 21,
@@ -14452,7 +14452,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:33:34+00:00"
+      "last_skipped_at": "2026-10-10T16:33:57+00:00"
     },
     "9b37a8e295affa8c": {
       "source_id": "9b37a8e295affa8c",
@@ -14486,7 +14486,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:33:34+00:00"
+      "last_skipped_at": "2026-10-10T16:33:57+00:00"
     },
     "8e0842c73fb362fb": {
       "source_id": "8e0842c73fb362fb",
@@ -14520,7 +14520,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:33:34+00:00"
+      "last_skipped_at": "2026-10-10T16:33:57+00:00"
     },
     "baec8f4645b19637": {
       "source_id": "baec8f4645b19637",
@@ -14554,7 +14554,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 5,
-      "last_skipped_at": "2026-10-10T16:33:34+00:00"
+      "last_skipped_at": "2026-10-10T16:33:57+00:00"
     },
     "9094d50190e1d4a7": {
       "source_id": "9094d50190e1d4a7",
@@ -14574,11 +14574,11 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-10-10T16:33:34+00:00",
-      "last_success_at": "2026-10-10T16:33:34+00:00",
+      "last_attempt_at": "2026-10-10T16:33:57+00:00",
+      "last_success_at": "2026-10-10T16:33:57+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 1595,
+      "last_duration_ms": 1588,
       "items_seen": 5,
       "matching_items": 5,
       "new_items": 1,
