@@ -301,10 +301,19 @@ class DevfolioExploreParser(HTMLParser):
         live = bool(re.search(r"\blive\b", visible, re.IGNORECASE))
         format_match = re.search(r"\b(online|offline|hybrid)\b", visible, re.IGNORECASE)
         format_text = format_match.group(1).capitalize() if format_match else ""
-        if not event_date and not application_open_date and not live and not visible:
+        section = str(current.get("section") or "").casefold()
+        explicit_current_signal = bool(
+            re.search(r"\b(?:open|upcoming|live|apply now|remind me)\b", visible, re.IGNORECASE)
+            or date_match
+        )
+        is_past_listing = section == "past" or bool(
+            re.search(r"\b(?:ended|past|closed|participated|see projects)\b", visible, re.IGNORECASE)
+        )
+        if is_past_listing or (section not in {"open", "upcoming"} and not explicit_current_signal):
             return
+        if section not in {"open", "upcoming"}:
+            section = "upcoming" if application_open_date else "open"
 
-        section = str(current.get("section") or "")
         schedule_text = (
             f"Starts {event_date}" if event_date
             else f"Applications open {application_open_date}" if application_open_date
@@ -321,6 +330,10 @@ class DevfolioExploreParser(HTMLParser):
         if visible:
             summary_bits.append(f"Listing text: {visible[:500]}.")
         summary_bits.append("Confirm eligibility, exact timing, prizes and application rules on the event page.")
+        if section == "open":
+            self.saw_open = True
+        elif section == "upcoming":
+            self.saw_upcoming = True
         self.events.append({
             "title": current["title"],
             "link": current["link"],
@@ -351,8 +364,6 @@ class DevfolioExploreParser(HTMLParser):
             return
         anchor = self._anchor
         self._anchor = None
-        if self.section not in {"open", "upcoming"}:
-            return
         link = normalize_http_url(urljoin("https://devfolio.co/explore/", anchor.get("href", "")))
         if not link:
             return
@@ -798,10 +809,10 @@ class DevfolioExploreHTMLAdapter(RSSSourceAdapter):
             parser = DevfolioExploreParser()
             parser.feed(page_html)
             parser.close()
-            if not (parser.saw_open or parser.saw_upcoming):
-                raise RuntimeError("Devfolio page changed: Open/Upcoming sections were not found")
             if not parser.events:
-                raise RuntimeError("Devfolio parser found no event cards in Open/Upcoming sections")
+                raise RuntimeError(
+                    "Devfolio parser found no current event cards with Open/Upcoming/Live/date markers"
+                )
             return FeedResult(
                 entries=parser.events,
                 status="success",
