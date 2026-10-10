@@ -26,3 +26,6 @@ https://devfolio.co/explore
 
 # Official National Scholarship Portal active scheme list (academic year 2026-27).
 https://scholarships.gov.in/All-Scholarships
+
+# Direct Unstop competitions and hackathon listings (platform discovery only; organizer pages still need verification).
+https://unstop.com/compete/amp
