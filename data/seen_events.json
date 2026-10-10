@@ -92,7 +92,7 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -100,8 +100,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "2498ccdafad4195c70bc": {
@@ -196,15 +196,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "c8656308d119706e39b8": {
@@ -300,15 +300,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline aggregates destinations rather than identifying one application.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "fb972294a1373de5aa6d": {
@@ -404,15 +404,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "d03cea6e706747f3bc03": {
@@ -508,7 +508,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -516,8 +516,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "097339d3e2ca22c077eb": {
@@ -613,15 +613,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "75c871eb8e7b8dceaa22": {
@@ -717,15 +717,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "0ab24bc038a3fda02782": {
@@ -821,15 +821,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "6234e3c18f812c3412e2": {
@@ -930,7 +930,7 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -938,8 +938,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "b9e033091547a26a5417": {
@@ -1039,15 +1039,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "0720fe51fb3c1de1c32f": {
@@ -1147,15 +1147,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "09b8e186c242ef386918": {
@@ -1255,15 +1255,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "b4e18407e0caffe0217a": {
@@ -1363,15 +1363,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "097bd0de2475e0b6c4c1": {
@@ -1471,15 +1471,15 @@
         "accepted": false,
         "status": "low_specificity",
         "reason": "Opportunity keywords only appear in supporting text; headline lacks an opportunity signal.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "b2838b950514448a5194": {
@@ -1578,7 +1578,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -1588,8 +1588,8 @@
       "resolution_attempts": 2,
       "last_resolution_attempt_at": "2026-10-10T15:50:53+00:00",
       "resolution_status": "unresolved_google_news_link",
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "cd9fb7eee3ba696e513e": {
@@ -1688,7 +1688,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -1698,8 +1698,8 @@
       "resolution_attempts": 2,
       "last_resolution_attempt_at": "2026-10-10T15:50:53+00:00",
       "resolution_status": "unresolved_google_news_link",
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "e56a2c28e388f18f6c71": {
@@ -1798,15 +1798,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T19:32:58+00:00",
       "resolution_status": "unresolved_google_news_link",
@@ -1909,7 +1909,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -1917,8 +1917,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T19:32:58+00:00",
       "resolution_status": "unresolved_google_news_link",
@@ -2025,7 +2025,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -2033,8 +2033,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {},
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T19:50:23+00:00"
@@ -2139,15 +2139,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {},
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-09T19:50:23+00:00"
@@ -2252,15 +2252,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {},
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-10T14:37:02+00:00"
@@ -2365,15 +2365,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {},
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-10T14:37:03+00:00"
@@ -2478,15 +2478,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "b3446ae33fd087f627b7": {
@@ -2590,7 +2590,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -2598,8 +2598,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {},
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-10T14:58:18+00:00"
@@ -2704,15 +2704,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "funded_travel_abroad"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {},
       "resolution_attempts": 1,
       "last_resolution_attempt_at": "2026-10-10T14:58:18+00:00"
@@ -2817,15 +2817,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "ccf705e1b3f9021fa246": {
@@ -2930,15 +2930,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "2fe28de9eae32af3326e": {
@@ -3043,15 +3043,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "ff80a00d5b68dac26647": {
@@ -3156,15 +3156,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "6475887d2c93c2ebbae1": {
@@ -3270,7 +3270,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -3278,8 +3278,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "9f1787c3e214794f0f5a": {
@@ -3384,15 +3384,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "f37b0812f8670da348ff": {
@@ -3498,7 +3498,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -3506,8 +3506,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "cd9fa24c7b8eb7b7c810": {
@@ -3692,7 +3692,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
@@ -3700,8 +3700,8 @@
           "prizes_cash_rewards"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "e55db4f92cbd01c94ab6": {
@@ -3904,7 +3904,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -3913,8 +3913,8 @@
           "open_source_programs"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "c4888ab2c50d34980f8c": {
@@ -4088,15 +4088,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "funded_travel_abroad"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "084a093563ee5bf27c94": {
@@ -4268,15 +4268,15 @@
         "accepted": false,
         "status": "roundup_or_listicle",
         "reason": "Headline looks like a listicle or general opportunity guide.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "01d22a68766e35af4a48": {
@@ -4504,7 +4504,7 @@
         "accepted": true,
         "status": "official_source_verified",
         "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -4516,8 +4516,8 @@
         ],
         "official_verification_override": true
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "f915fc66f72cd475a773": {
@@ -4644,7 +4644,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -4652,8 +4652,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "d352d16582d04efb47f8": {
@@ -4770,15 +4770,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "579ad1f3966a0f642c71": {
@@ -4999,7 +4999,7 @@
         "accepted": true,
         "status": "official_source_verified",
         "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -5010,8 +5010,8 @@
         ],
         "official_verification_override": true
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "d0e42c83043f545b1390": {
@@ -5137,15 +5137,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "3c497d9bcd6c40774b8f": {
@@ -5262,15 +5262,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "6bb39ab2ec7c014dc6ed": {
@@ -5387,15 +5387,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "044a3b3d18e55bbfb73c": {
@@ -5614,7 +5614,7 @@
         "accepted": true,
         "status": "official_source_verified",
         "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
@@ -5623,8 +5623,8 @@
         ],
         "official_verification_override": true
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "808d54d46cb50129e23b": {
@@ -5751,7 +5751,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -5759,8 +5759,8 @@
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "4c8997e9a4ade693b9d2": {
@@ -5877,15 +5877,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "b396b35bff130b491836": {
@@ -6106,7 +6106,7 @@
         "accepted": true,
         "status": "official_source_verified",
         "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -6117,8 +6117,8 @@
         ],
         "official_verification_override": true
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "b5441ad4ec8b11ba70d9": {
@@ -6244,15 +6244,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "hackathons_buildathons"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "f7566c2d6b54c3967b9d": {
@@ -6369,15 +6369,15 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "6a2f2bb84ff67ddfc9ed": {
@@ -6494,15 +6494,15 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
           "scholarships_fellowships"
         ]
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "dac1b99de94ef1bdd9cb": {
@@ -6527,7 +6527,7 @@
         "accepted": true,
         "status": "official_source_verified",
         "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -6732,8 +6732,8 @@
       "resolved_urls": [
         "https://hackalendar.com/e/lovable-ef-wwb-hackathon-london-2026"
       ],
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "e957cb40b392528ddee7": {
@@ -6756,7 +6756,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -6866,8 +6866,8 @@
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUEQ3ZDl5b1BkX0EzZXZBalQ0QVM3cFdac0MyVnlsWEtJaXRiaEktQmJaVWFLa1IyZW90aldULWFqLVNFMjU2VGRQX2h6UF9SVkZNX2IyT0hDSGw1REFhcU5yMFRXeDV5ZUpCRERiR3pCTm9TOFh1Q29RQncxVHk3WGJ0NTctaVR4M1hEcXZIVkRpWXB0SEl2ODJwSDJJck15MzQ2dndBQ19SRjBlX0hhcnBELUM?oc=5"
       ],
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "22aa6133f0a7e9eac5fa": {
@@ -6890,7 +6890,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -6991,8 +6991,8 @@
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMifEFVX3lxTE4wWmRORXFQd1NYblNGdURBSzBBTlVXZGE1YU9kR2xQZkZkaWxEdzQtREY0ajE5RmpQU1MtcGJKZWYwMnZSZHRTb3NuT19KMTZSSnhnaGNxcEN4WDFoUS1XdFJpNGxPLUEtQUZ5M1V1VXlUUzlMRXZtUHV3Q1o?oc=5"
       ],
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "277f2047eba7160a71b8": {
@@ -7015,7 +7015,7 @@
         "accepted": true,
         "status": "official_source_verified",
         "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
@@ -7218,8 +7218,8 @@
       "resolved_urls": [
         "https://hackalendar.com/e/devday-exchange-community-hackathon-paris-2026"
       ],
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "ebc543d7d72cbfc009d9": {
@@ -7243,7 +7243,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -7354,8 +7354,8 @@
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMioAFBVV95cUxNc2w1VzZ0cUNjZndkaTVQekp5YUdNTnNFYWVqc29WU0x1b2k1aVdkQVRtWUlRcDJhbVV1Wi1Jakd2S0FMR01XU1N2STB5S2hhWGNyWHZlRlhpRkxpc2xrZVBaXzFwWGtHMHh0MXpJcWJIWVBoMHpacmxSLUx5QlFoemN1WmYzWHRHQnZyaUc4dlNYNDFKaVpPUlR2OVVVRzVy?oc=5"
       ],
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "d6796dc02071e8aa91a9": {
@@ -7378,7 +7378,7 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
@@ -7479,8 +7479,8 @@
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRlpvb054d1pEZW9wdUt5dHNqRFVRd1ZkV0VfT3AxZEFZeDR1Q1Z5SFNmZ3lKLXhrTHJWUnBjZ21mYnRXc2lLdW5CYko2blNTeGFvYUxIc0hhNUtFWVZ4Y0pFT192a1Z0eDZ6WUIydEFXcEVtYmIza2tFSFBsX19VTVVXcmF6UWplV1NWRFdPSzlIMG50Rmx4U1lOR2VQTmlvYU84aDFxLUtVVl94WTRaUWZOZ2dpOHAtYTVVUExDTU1iVXJ4MW00VHZiRjVIN3BXbW5vcW1QdXhtM0V1X2xYVW1Bd3F6d9IB6wFBVV95cUxQUDlQYWphNE53SmcwTUZPLUZtWThoN1NYSEd2aHZncTlfM0ZpUDJuZzcyNGJfeFZjRGRScFozV19oT001YjBBem8tbExhVjFXZWxTNUYzY3JUaHltY19POThPdThkWHdOTWt1c3BOTG54MnItOVVPMkJHQnNGdENIdEpOU056TGNxem10cFJiQnpBQjVwWkVqWTZLTUVrSEJnY3R5dElOUVptZm5BT2g4WTlzbTVrd1NkeXQ5V2pyNUN5azlQVk5MUTBsbWtLd3pJWnFPTjkybTVCSVVpeldWODZMRjFzVmRzSmNz?oc=5"
       ],
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00",
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00",
       "source_observed": {}
     },
     "9ac69a17a6eb752e5f93": {
@@ -7503,7 +7503,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
@@ -7697,8 +7697,8 @@
         },
         "migration_note": "Recovered from a saved MLH calendar summary; it remains unverified organizer information."
       },
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00"
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "13fc322dc192694f0bda": {
       "title": "VIBENIGHT #2 : Hackathon AI Safety — Puteaux, 30 Oct 2026",
@@ -7722,7 +7722,7 @@
         "accepted": true,
         "status": "official_source_verified",
         "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -7932,8 +7932,8 @@
       "resolved_urls": [
         "https://hackalendar.com/e/vibedays-hackathon-ai-safety-puteaux-2026"
       ],
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00"
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "7d653b604242ae620a3a": {
       "title": "AIxBio Research Fellowship (Winter 2027) in Cambridge, UK | Fully Funded 10-Week Fellowship - After School Africa",
@@ -7957,7 +7957,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -8068,8 +8068,8 @@
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMia0FVX3lxTE5RU3BXcEtMUmFsRzFzM0RWQWNPRE1pZjhHczJYWE1XUjZjSHdSMU1IMjd0alRiWV9OY05STlh1X3pvSGNZNXNldFFSMGhaMFIwY21MVEZYV2szcmI4b19IZXg1TUJDNlZmM3NB?oc=5"
       ],
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00"
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "89b9d4e3eb4939a532ce": {
       "title": "OBC students have time till Oct 31 to apply for post-matric scholarship - The Times of India",
@@ -8092,7 +8092,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -8193,8 +8193,8 @@
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQRm5FSjZodktyU3dfaFJUeEVYeXlCMmIzeHVlUkFpRVk0SWNaTUhlU2FfakhmTnExRkc1SXBpNEtZMnNwamYyR0owenFhVTh4RU41ZDF2d3ZVME5EaEE4Z3hDN2J3aXFiVEVaSGVXMGpjcXY0N0dmc1BQcURtV1RrZEV5UXdwRC1RTVBDWWRmeXhGY3U2ZWRrN0Y4VG5tZnhDWXdGa0lWemVLUHU5OTJaNk5RdlljX1p5eGd0UEF5Zkx0SGtHZ0trSjgtQkZ3TWE4M3FjY2dqT0dDNzZ30gHiAUFVX3lxTE9zTEsxVXQ3VWNWUmRKemQ4SVltNVJUWkJRZnc2dTJqRENndXVHenFkMjFSNFh5M2JSQWxSSmZBODZYcE0xT2h3bjlFUG91OFBCZERuanhHeDZOQ3h2TmJCMXR4NldFSVpDaENkVU1NR2I2a2VKVXpSbVd6QWstdDhZWXRiQzdQR1RvdjNSZXVvQ0dfVHFrc0ZLSExxTlZid0o1RFNXNWVnTmJUOHM4TGFNaWFJaW1oazQ2LXFycTVfRzRoNFUyZjFYS25xbXV0MzAwNXd0Q2dxTklXWlFMaHJBSlE?oc=5"
       ],
-      "quality_rule_version": 4,
-      "quality_checked_at_utc": "2026-10-10T14:37:02+00:00"
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "da497450b9b60f37e91b": {
       "title": "European Defense Tech Hackathon – Lisbon — Lisboa, 6–8 Nov 2026",
@@ -8217,16 +8217,17 @@
       "primary_category": "hackathons_buildathons",
       "discovery_quality": {
         "accepted": true,
-        "status": "specific_opportunity",
-        "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "status": "official_source_verified",
+        "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
           "hackathons_buildathons",
           "competitions_challenges",
           "tech_events_conferences"
-        ]
+        ],
+        "official_verification_override": true
       },
       "first_seen_utc": "2026-10-10T14:37:16+00:00",
       "last_seen_utc": "2026-10-10T15:50:57+00:00",
@@ -8428,7 +8429,9 @@
       ],
       "resolved_urls": [
         "https://hackalendar.com/e/european-defense-tech-hackathon-lisbon-lisboa-2026"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "ebfa8cd0aeebbf26242e": {
       "title": "HackBIOS",
@@ -8471,7 +8474,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
@@ -8634,7 +8637,9 @@
       ],
       "resolved_urls": [
         "https://hackbios.xyz"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "03a0f9d611ef7532299a": {
       "title": "The University of British Columbia (UBC) International Scholars Program 2027 for international students (Fully Funded) - Opportunities For Africans",
@@ -8657,7 +8662,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -8766,7 +8771,9 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZWg5RGt4cHlWdkV4WW43c0ItYkQwRXQzM3hLZWR0NERtMDhIQXV1ejgteXFod0Jnalk2em82NVBjOWp5SjAtMWFZUl9TUGRnRFlmcEtkdEdHV0ZFQTZKZmdGYXUySlg5UUFWUUh0aXhPSkducWtqZWRZVi1ZLXNSdk5ab2hlYkVTb2JFb2lNZDJYMVlxY1o3a2JmQWx6QjBGMzBHWmt2ekU3SVlQMU5Fa2JSU1JKeXROcWdoblIxQ2tqY1dQbHAwdGRURjFXbmt3NXBrTjBGek8yeTQ?oc=5"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "bb43b904f5d23afa4c2e": {
       "title": "Academic Year 2026-27",
@@ -8803,7 +8810,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
@@ -8983,7 +8990,9 @@
       ],
       "resolved_urls": [
         "https://scholarships.gov.in/All-Scholarships"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "4efb95a24a079e6ee451": {
       "title": "Labour Welfare Scholarship 2026 applications closing soon, apply by October 31 - The Times of India",
@@ -9006,7 +9015,7 @@
         "accepted": true,
         "status": "actionable_update",
         "reason": "Headline contains a concrete application, registration, or deadline action.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": true,
         "matched_categories": [
@@ -9106,7 +9115,9 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMi6gFBVV95cUxONVVMWkRmcHpyRmg0NXpzSTVLaEV5ZXR0Q3VBay1ORFBHcDUzWGV1d2hoMTd3WUJyLVlEdC1LRzJHUFhMMlJHempyY1hOTm1odkRCMTJBMnpLSTVZV05yRjB3YlVPSTJDWUF2T04tX0ttbkN1YWk4dUh6LXd1WkROaFVEdEg5QkRtaVR5SnFqUWlSdFVQcTlidExPdFJrRVlxUG5xWWwzWFhVV2V4QVBNQ2hic0Q3N2tySmhqdDhkZmxKZkMwT2ZWMzJ1ejh4Uk1yV0s2dWlpRlRxWDRFWXJQbE84dVBWd29EY0HSAe8BQVVfeXFMTkszNUdrbEdQOFhjS3lHYk5pbUF5TjR5dkFmd0hjSDZmMXdkWEZobWhITEE1TUVlaEk3dmZydzNkQlpqWVlkTHNLUjEwbkJNNzZWU2NaT1lYbTNuN09qYl94MFdlZF95bUM2XzdlVnVzNTBUWUxHd21WOHUyMXNFQ2FUTFVYcVo2T2w2NWc2U3VyajNxUDRBcHo1WGx1TTJSNGp0Z1FwVUlic3g4d2ZsRHVrN0FGYU1wYzRIZEV6T3JUd2NVUW4zZXI1Qlk2Rm1JWnVZNlAzeXQtb1FYWHZnMU91d2wweGFFMHRGdGxPLTg?oc=5"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "c126750194a6853ec930": {
       "title": "Hack Knight",
@@ -9149,7 +9160,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
@@ -9312,7 +9323,9 @@
       ],
       "resolved_urls": [
         "https://hackknight.org"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "190a10e750be7cba5cf9": {
       "title": "NASA Space Apps Challenge - Paris 2026 — Paris, 14–15 Nov 2026",
@@ -9334,15 +9347,16 @@
       "primary_category": "hackathons_buildathons",
       "discovery_quality": {
         "accepted": true,
-        "status": "specific_opportunity",
-        "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "status": "official_source_verified",
+        "reason": "The opportunity already has an officially verified page; a headline-only quality heuristic cannot suppress it.",
+        "rule_version": 5,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
           "hackathons_buildathons",
           "competitions_challenges"
-        ]
+        ],
+        "official_verification_override": true
       },
       "first_seen_utc": "2026-10-10T14:57:47+00:00",
       "last_seen_utc": "2026-10-10T15:50:57+00:00",
@@ -9544,7 +9558,9 @@
       ],
       "resolved_urls": [
         "https://hackalendar.com/e/nasa-space-apps-challenge-paris-2026"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "5b73ef663393b4c409bd": {
       "title": "Wild Bugs",
@@ -9591,7 +9607,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
@@ -9754,7 +9770,9 @@
       ],
       "resolved_urls": [
         "https://wild-bugs.devfolio.co"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "f73a5bf5ad3b26bfc57d": {
       "title": "Prime Minister'S Scholarship Scheme For Wards Of States/UTs Police Personnel Martyred During Terror/Naxal Attacks (Merit Based Scheme)",
@@ -9791,7 +9809,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -9906,7 +9924,9 @@
       ],
       "resolved_urls": [
         "https://scholarships.gov.in/public/schemeGuidelines/warb/PMSS_Guidelines_1197_3001-2023-24.pdf"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "547fa7e8b5fa763b06bd": {
       "title": "Reliance Foundation Scholarship 2026-27: Application Ends Today, October 5; Check Eligibility, Selection Process and How to Apply - Education Times",
@@ -9929,7 +9949,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -10029,7 +10049,9 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMilgJBVV95cUxOUzAyRUVuWUdVd1BLWGFFaFYwTy16SXFzRV9TSjFXU3NWQ0JQaHgxMjAtSlVOd09jRW1qakVVSmNVejQtQ0ZXRTNlZGpPa3p0WjRiWFpENkVJMHE2TjlfaFpuXzFYci1memprTVltZHFoYm5pUGdPRVdCM2ZLYV85d0RCSk1URWt1MF9DOWRfaWJNZGg1WFczYWtxTnVIV0VwZ25MSlQzUEpGcXQ1dkd2S013M05TUmhIX2dpUlg2TnJMRUt5VlJlNTBCRTVGYTlCbXhwdjFoX280dkRRTUIzdEN5WWJCM2dIaWptazdMNDliSWRLbElCRExHQ2VueG5nd1VscmMtbnZKNW02em9RcmhFUmRjdw?oc=5"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "46012711792843ea2ca6": {
       "title": "Russian Embassy announces 70 fully-funded scholarships for Kenyan students - TV47 Digital",
@@ -10052,7 +10074,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -10161,7 +10183,9 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaDhLa2d6OEVKaHpNcFZLSkJfRDkyX2MtcjNzWmI1RDBoeDB0QWhDTzVDaEVkZGJILTdJdXFGMnhITFJ2UTRLZFRyUmlpcTJfZ3lOX0xtZ29KSzU1eGstMlF1NUpXd1Rqc2QwQVVKclliT2VlTkEwQ2VFNklrTnlrV3RCSjV5VHpUNFlaU3MtaVV5MTZqR2hFaDBJa0lXZ19nQnBleHY5Q0hiX1k?oc=5"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "e1e52cc946a0772fd118": {
       "title": "European Defense Tech Hackathon – Paris — Vincennes, 20–22 Nov 2026",
@@ -10186,7 +10210,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -10291,7 +10315,9 @@
       ],
       "resolved_urls": [
         "https://hackalendar.com/e/european-defense-tech-hackathon-paris-2026-2"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "34c34f2b822d98dcf87f": {
       "title": "Hackathon TecNM Campus Saltillo 2026",
@@ -10334,7 +10360,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -10437,7 +10463,9 @@
       ],
       "resolved_urls": [
         "https://www.road2tech.com"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "26465be093a9da9899fc": {
       "title": "AICTE - Swanath Scholarship Scheme ( Technical Degree) (Welfare Based Scheme)",
@@ -10474,7 +10502,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -10589,7 +10617,9 @@
       ],
       "resolved_urls": [
         "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_3039_G.pdf"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "5fcc02ce72b9efd59a89": {
       "title": "NSP Scholarship 2026-27: Renewal Deadline October 31, Check Key Details - NDTV",
@@ -10612,7 +10642,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -10712,7 +10742,9 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWm8tdkxqaTBnU2czSXQ2dkVpLTBYdlJsWEMzWXM3VzAybzVhYjZXVk9yMjQtNEhwRDZOQk5CSTJFcjZ3WjNWeXBRZF9McFhRWmtxaWFuMUJTTFZPVmhPTjQzSkFRblA2RndvT3pjdXlhcnJ0VVhySWxBZG9sejNSRkJZYmYydlJQaGNLVXFBRjB4WnNiTXFvSDd0S1VGLVdnVWVWWTlKWmV5ODBqaEpPMG1NejlFQdIBtgFBVV95cUxPWm8tdkxqaTBnU2czSXQ2dkVpLTBYdlJsWEMzWXM3VzAybzVhYjZXVk9yMjQtNEhwRDZOQk5CSTJFcjZ3WjNWeXBRZF9McFhRWmtxaWFuMUJTTFZPVmhPTjQzSkFRblA2RndvT3pjdXlhcnJ0VVhySWxBZG9sejNSRkJZYmYydlJQaGNLVXFBRjB4WnNiTXFvSDd0S1VGLVdnVWVWWTlKWmV5ODBqaEpPMG1NejlFQQ?oc=5"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "46eee8ce3ef078128991": {
       "title": "Tomorrow’s Leaders Scholarship 2027/28: USA Fully Funded Undergraduate Scholarship - After School Africa",
@@ -10736,7 +10768,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -10846,7 +10878,9 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMidEFVX3lxTFBrdWpOY1FoOGlvWnNiU2ZseXU1TzltdHlRQTV1QzlDaEFHSVhkYkNreVZkNklXOVludkFlQ3h6S2pLX1BHOVFEOHl3RXROaTlaMHBiLWhHeG9xYklhMXJib1JPWlV3X2FIamtYT3NVTVhPSER5?oc=5"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "bbee553d442e8f32c46e": {
       "title": "Artefact Adopt AI - Hackathon Désinformation et Souveraineté démocratique — Paris, 2–4 Dec 2026",
@@ -10869,7 +10903,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -10972,7 +11006,9 @@
       ],
       "resolved_urls": [
         "https://hackalendar.com/e/artefact-adopt-ai-hackathon-desinformation-souverainete-democratique-paris-2026"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "b717e8b7a035ef5eba99": {
       "title": "CODEARAMBH 2.0",
@@ -11019,7 +11055,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
@@ -11040,16 +11076,105 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "official_link_candidate_found",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://codearambh.devfolio.co",
+          "https://code-arambh.netlify.app/register"
+        ],
+        "last_checked_at": "2026-10-10T16:01:14+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://codearambh.devfolio.co",
+        "official_link_candidate": "https://code-arambh.netlify.app/register",
+        "official_link_reason": "outbound_anchor:https://code-arambh.netlify.app/register; destination relevance/ownership not established",
+        "candidate_page_status": "success",
+        "candidate_page_error": null,
+        "candidate_page_http_status": 200,
+        "page_title": "CODEARAMBH 2.0 | Devfolio",
+        "last_check_error": null,
+        "last_check_duration_ms": 2562,
+        "observed_facts": {
+          "page_role": "possible_event_page",
+          "page_title": "CODEARAMBH 2.0 | Devfolio",
+          "description": "Code Beyond Limits. Create the Extraordinary.",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "confirmed",
+            "evidence": {
+              "accommodation": {
+                "value": "confirmed",
+                "source_url": "https://codearambh.devfolio.co",
+                "snippet": "Will accommodation be provided?",
+                "method": "explicit_page_text"
+              },
+              "meals": {
+                "value": "confirmed",
+                "source_url": "https://codearambh.devfolio.co",
+                "snippet": "Will food be provided during the hackathon?",
+                "method": "explicit_page_text"
+              }
+            },
+            "meals": "confirmed",
+            "visa_support": "unknown",
+            "status": "confirmed",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": "https://codearambh.devfolio.co"
+          },
+          "image_url": null
+        },
+        "fact_evidence": {
+          "travel_support.accommodation": {
+            "value": "confirmed",
+            "source_url": "https://codearambh.devfolio.co",
+            "snippet": "Will accommodation be provided?",
+            "method": "explicit_page_text"
+          },
+          "travel_support.meals": {
+            "value": "confirmed",
+            "source_url": "https://codearambh.devfolio.co",
+            "snippet": "Will food be provided during the hackathon?",
+            "method": "explicit_page_text"
+          }
+        }
       },
       "schema_version": 1,
       "id": "b717e8b7a035ef5eba99",
@@ -11122,7 +11247,9 @@
       ],
       "resolved_urls": [
         "https://codearambh.devfolio.co"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "d5f4e3a4a98e6909483d": {
       "title": "Hacklanta",
@@ -11165,7 +11292,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": false,
         "actionable_update": false,
         "matched_categories": [
@@ -11344,7 +11471,9 @@
       ],
       "resolved_urls": [
         "https://hacklanta.dev"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "6843f3c470b5487d0f36": {
       "title": "Erasmus Mundus fully funded scholarship 2027 offers €1,400 monthly - Pakistan Connect",
@@ -11368,7 +11497,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -11478,7 +11607,9 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWVNOalpqUHdRQ1hveG9yUUFuNDZUeld0YWhjRnByb2lGUXA4NzhiNksxdDNDbmN1UWp4RV9PV0MzLWE3aVJGbnMwWTJkZk1VWEhDZXVNdllyaWsxOXluMGpEV3VidUVyemhpQkxlV2lUNTVjWDAwTXJ4aFRNaFlNWjFB?oc=5"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "d93d7bd84dc244f778ed": {
       "title": "PM USP Special Scholarship Scheme For Jammu Kashmir And Ladakh (Merit Based Scheme)",
@@ -11515,7 +11646,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -11630,7 +11761,9 @@
       ],
       "resolved_urls": [
         "https://scholarships.gov.in/public/schemeGuidelines/AICTE/PM_USPY(SSSJKL)SchemeSpecifications.pdf"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "6dba962350c4f77d1ee5": {
       "title": "Study in Korea Fair 2026 opens university, scholarship and career pathways for Indian students - Education Times",
@@ -11653,7 +11786,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -11753,7 +11886,9 @@
       ],
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQRmhnX1pnZGpwb3dram9NcTVnTmNLSUllLVdJWkxaeEtBV2hlS1UzZUF0a0dOZFZ2NFgySThXQWZOeTZFa2dSVzI2S2tSX3YxcG0yblJnMDB2cnhqR0FPVXRSenRiYktUWHd0SzRwMS11cVpmaDlMekZIZTJhcm00dk50eXdTUlppTHl3U1RILTF2cTV5ZnJSR09Tb1YycEF4aHVieFFJZ1NmU2VIR2czV2ZGOTNzczVQeDF5QUYzZTNvb3ZGRk5YV2hha0syVWVYb2wtTFB0c3JIbmpGNUotWV9GaUJTNWVYX3dF?oc=5"
-      ]
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
     },
     "39e3c5df3705506df8ef": {
       "title": "Online Free Building India Case Study Competition 2027",
@@ -11776,7 +11911,7 @@
         "accepted": true,
         "status": "specific_opportunity",
         "reason": "Headline identifies an opportunity or a curated event listing.",
-        "rule_version": 4,
+        "rule_version": 5,
         "title_signal": true,
         "actionable_update": false,
         "matched_categories": [
@@ -11784,7 +11919,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T15:52:17+00:00",
-      "last_seen_utc": "2026-10-10T15:52:17+00:00",
+      "last_seen_utc": "2026-10-10T16:01:13+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -11939,10 +12074,324 @@
       ],
       "resolved_urls": [
         "https://unstop.com/competitions/crp-building-india-case-study-competition-2027-nationbuilding-foundation-of-india-1759161"
+      ],
+      "quality_rule_version": 5,
+      "quality_checked_at_utc": "2026-10-10T16:01:10+00:00"
+    },
+    "65504507030e5204aea2": {
+      "title": "Launching soon BugWars Indian Institute of Information Technology (IIIT), Nagpur",
+      "summary": "Unstop public platform listing (hackathons). Listing text: hackathons Launching soon BugWars Indian Institute of Information Technology (IIIT), Nagpur 2 hours left Undergraduate Engineering Students Posted 7 Oct'26, 12:15 AM IST 35 Impressions. This is discovery evidence only; verify eligibility, dates, rewards and organizer rules on the linked opportunity page.",
+      "url": "https://unstop.com/hackathons/bugwars-iiitn-1766954",
+      "image_url": "",
+      "source": "https://unstop.com/hackathons/amp",
+      "source_name": "Unstop · Hackathons",
+      "source_id": "8e0842c73fb362fb",
+      "adapter_type": "unstop_html",
+      "source_observed": {},
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "hackathons_buildathons"
+      ],
+      "primary_category": "hackathons_buildathons",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 5,
+        "title_signal": false,
+        "actionable_update": false,
+        "matched_categories": [
+          "hackathons_buildathons"
+        ]
+      },
+      "first_seen_utc": "2026-10-10T16:01:21+00:00",
+      "last_seen_utc": "2026-10-10T16:01:21+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://unstop.com/hackathons/bugwars-iiitn-1766954",
+      "canonical_url": "https://unstop.com/hackathons/bugwars-iiitn-1766954",
+      "source_feed_url": "https://unstop.com/hackathons/amp",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "source_page_checked",
+        "official_url": null,
+        "evidence_urls": [
+          "https://unstop.com/hackathons/bugwars-iiitn-1766954"
+        ],
+        "last_checked_at": "2026-10-10T16:01:13+00:00",
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ],
+        "version": 1,
+        "source_page_url": "https://unstop.com/hackathons/bugwars-iiitn-1766954",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
+        "last_check_error": null,
+        "last_check_duration_ms": 740,
+        "observed_facts": {
+          "page_role": "discovery_or_unrelated_page",
+          "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
+          "description": "",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        }
+      },
+      "schema_version": 1,
+      "id": "65504507030e5204aea2",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "8e0842c73fb362fb"
+      ],
+      "source_names": [
+        "Unstop · Hackathons"
+      ],
+      "source_feeds": [
+        "https://unstop.com/hackathons/amp"
+      ],
+      "discovered_urls": [
+        "https://unstop.com/hackathons/bugwars-iiitn-1766954"
+      ],
+      "resolved_urls": [
+        "https://unstop.com/hackathons/bugwars-iiitn-1766954"
+      ]
+    },
+    "97a94110357e3dc407e4": {
+      "title": "Asian Paints Online Asian Paints Alchemy 2026",
+      "summary": "Unstop public platform listing (competitions). Listing text: Asian Paints Online Asian Paints Alchemy 2026 29463 Applied 21 days left. This is discovery evidence only; verify eligibility, dates, rewards and organizer rules on the linked opportunity page.",
+      "url": "https://unstop.com/competitions/crp-asian-paints-alchemy-2026-asian-paints-1704498",
+      "image_url": "",
+      "source": "https://unstop.com/internship-portal/amp",
+      "source_name": "Unstop · Internships",
+      "source_id": "baec8f4645b19637",
+      "adapter_type": "unstop_html",
+      "source_observed": {},
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "competitions_challenges"
+      ],
+      "primary_category": "competitions_challenges",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 5,
+        "title_signal": false,
+        "actionable_update": false,
+        "matched_categories": [
+          "competitions_challenges"
+        ]
+      },
+      "first_seen_utc": "2026-10-10T16:01:25+00:00",
+      "last_seen_utc": "2026-10-10T16:01:25+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://unstop.com/competitions/crp-asian-paints-alchemy-2026-asian-paints-1704498",
+      "canonical_url": "https://unstop.com/competitions/crp-asian-paints-alchemy-2026-asian-paints-1704498",
+      "source_feed_url": "https://unstop.com/internship-portal/amp",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ]
+      },
+      "schema_version": 1,
+      "id": "97a94110357e3dc407e4",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "baec8f4645b19637"
+      ],
+      "source_names": [
+        "Unstop · Internships"
+      ],
+      "source_feeds": [
+        "https://unstop.com/internship-portal/amp"
+      ],
+      "discovered_urls": [
+        "https://unstop.com/competitions/crp-asian-paints-alchemy-2026-asian-paints-1704498"
+      ],
+      "resolved_urls": [
+        "https://unstop.com/competitions/crp-asian-paints-alchemy-2026-asian-paints-1704498"
       ]
     }
   },
-  "updated_utc": "2026-10-10T16:00:22+00:00",
+  "updated_utc": "2026-10-10T16:01:25+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -11975,7 +12424,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:00:22+00:00",
+      "last_skipped_at": "2026-10-10T16:01:10+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12009,7 +12458,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:00:22+00:00",
+      "last_skipped_at": "2026-10-10T16:01:10+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12043,7 +12492,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:00:22+00:00",
+      "last_skipped_at": "2026-10-10T16:01:10+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 4
     },
@@ -12077,7 +12526,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:00:22+00:00",
+      "last_skipped_at": "2026-10-10T16:01:10+00:00",
       "quality_rejected_count": 3,
       "quality_rule_version": 4
     },
@@ -12112,7 +12561,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T16:00:22+00:00",
+      "last_skipped_at": "2026-10-10T16:01:10+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12148,7 +12597,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T16:00:22+00:00",
+      "last_skipped_at": "2026-10-10T16:01:10+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -12184,7 +12633,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:00:22+00:00"
+      "last_skipped_at": "2026-10-10T16:01:10+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -12218,7 +12667,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:00:22+00:00"
+      "last_skipped_at": "2026-10-10T16:01:10+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -12252,7 +12701,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:00:22+00:00"
+      "last_skipped_at": "2026-10-10T16:01:10+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -12281,7 +12730,7 @@
       "matching_items": 21,
       "new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T16:00:22+00:00",
+      "last_skipped_at": "2026-10-10T16:01:10+00:00",
       "last_success_at": "2026-10-10T15:50:59+00:00",
       "last_success_items_seen": 21,
       "last_success_matching_items": 21,
@@ -12322,7 +12771,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:00:22+00:00"
+      "last_skipped_at": "2026-10-10T16:01:10+00:00"
     },
     "9b37a8e295affa8c": {
       "source_id": "9b37a8e295affa8c",
@@ -12356,7 +12805,73 @@
       "failure_streak": 0,
       "quality_rejected_count": 8,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T16:00:22+00:00"
+      "last_skipped_at": "2026-10-10T16:01:10+00:00"
+    },
+    "8e0842c73fb362fb": {
+      "source_id": "8e0842c73fb362fb",
+      "name": "Unstop · Hackathons",
+      "url": "https://unstop.com/hackathons/amp",
+      "adapter_type": "unstop_html",
+      "access_method": "public_unstop_html_listing",
+      "expected_fields": [
+        "title",
+        "link",
+        "summary",
+        "listing_category",
+        "listing_countdown_text",
+        "source_listing"
+      ],
+      "pagination_mode": "current_unstop_listing_cards",
+      "timeout_seconds": 10,
+      "minimum_interval_seconds": 900,
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_attempt_at": "2026-10-10T16:01:10+00:00",
+      "last_success_at": "2026-10-10T16:01:10+00:00",
+      "last_status": "success",
+      "last_error": null,
+      "last_duration_ms": 1764,
+      "items_seen": 5,
+      "matching_items": 5,
+      "new_items": 1,
+      "last_success_items_seen": 5,
+      "last_success_matching_items": 5,
+      "last_success_new_items": 1,
+      "failure_streak": 0,
+      "quality_rejected_count": 0,
+      "quality_rule_version": 5
+    },
+    "baec8f4645b19637": {
+      "source_id": "baec8f4645b19637",
+      "name": "Unstop · Internships",
+      "url": "https://unstop.com/internship-portal/amp",
+      "adapter_type": "unstop_html",
+      "access_method": "public_unstop_html_listing",
+      "expected_fields": [
+        "title",
+        "link",
+        "summary",
+        "listing_category",
+        "listing_countdown_text",
+        "source_listing"
+      ],
+      "pagination_mode": "current_unstop_listing_cards",
+      "timeout_seconds": 10,
+      "minimum_interval_seconds": 900,
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_attempt_at": "2026-10-10T16:01:12+00:00",
+      "last_success_at": "2026-10-10T16:01:12+00:00",
+      "last_status": "success",
+      "last_error": null,
+      "last_duration_ms": 1259,
+      "items_seen": 6,
+      "matching_items": 6,
+      "new_items": 1,
+      "last_success_items_seen": 6,
+      "last_success_matching_items": 6,
+      "last_success_new_items": 1,
+      "failure_streak": 0,
+      "quality_rejected_count": 0,
+      "quality_rule_version": 5
     }
   }
 }
