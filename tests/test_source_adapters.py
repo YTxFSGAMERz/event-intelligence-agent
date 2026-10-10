@@ -57,9 +57,10 @@ class SourceAdapterTests(unittest.TestCase):
         unstop_hackathons = "https://unstop.com/hackathons/amp"
         unstop_internships = "https://unstop.com/internship-portal/amp"
         unstop_competitions = "https://unstop.com/competitions/amp"
-        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, unstop_hackathons, unstop_internships, unstop_competitions, google])
+        unstop_scholarships = "https://unstop.com/scholarships/amp"
+        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, unstop_hackathons, unstop_internships, unstop_competitions, unstop_scholarships, google])
 
-        self.assertEqual(len(adapters), 10)
+        self.assertEqual(len(adapters), 11)
         self.assertIsInstance(adapters[0], source_adapters.GoogleNewsRSSAdapter)
         self.assertIsInstance(adapters[1], source_adapters.HackalendarRSSAdapter)
         self.assertIsInstance(adapters[2], source_adapters.OfficialBlogRSSAdapter)
@@ -70,6 +71,7 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIsInstance(adapters[7], source_adapters.UnstopExploreHTMLAdapter)
         self.assertIsInstance(adapters[8], source_adapters.UnstopExploreHTMLAdapter)
         self.assertIsInstance(adapters[9], source_adapters.UnstopExploreHTMLAdapter)
+        self.assertIsInstance(adapters[10], source_adapters.UnstopExploreHTMLAdapter)
         self.assertEqual(adapters[0].config.adapter_type, "google_news_rss")
         self.assertEqual(adapters[1].config.adapter_type, "hackalendar_rss")
         self.assertEqual(adapters[2].config.adapter_type, "official_blog_rss")
@@ -84,6 +86,7 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(adapters[7].config.name, "Unstop · Hackathons")
         self.assertEqual(adapters[8].config.name, "Unstop · Internships")
         self.assertEqual(adapters[9].config.name, "Unstop · Competitions")
+        self.assertEqual(adapters[10].config.name, "Unstop · Scholarships")
         self.assertEqual(adapters[5].config.pagination_mode, "portal_scheme_list_current_year")
         self.assertEqual(adapters[1].config.access_method, "public_hackalendar_rss")
         self.assertEqual(adapters[1].config.pagination_mode, "catalogue_feed_upcoming_events")
@@ -107,6 +110,9 @@ class SourceAdapterTests(unittest.TestCase):
         <a href="/competitions/asian-paints-alchemy-2026-asian-paints-1704498">
           Asian Paints Online Asian Paints Alchemy 2026 29330 Registered 26 days left
         </a>
+        <a href="/scholarships/need-based-technical-scholarship-2026-1763006">
+          Need-Based Technical Scholarship 2026 1,205 Applied 12 days left
+        </a>
         <a href="/hackathons/past-event-1763005">Expired Past Event 10 days ago</a>
         <a href="https://outside.example/hackathons/unsafe-event-1763006">External Event 4 days left</a>
         <a href="/hackathons">Browse Hackathons</a>
@@ -116,7 +122,7 @@ class SourceAdapterTests(unittest.TestCase):
         result = adapter.fetch(session=FakeSession(response))
 
         self.assertEqual(result.status, "success")
-        self.assertEqual(result.item_count, 4)
+        self.assertEqual(result.item_count, 5)
         self.assertEqual(result.entries[0]["title"], "CodeVerse India - National Level Hackathon WeCodeCoders")
         self.assertEqual(result.entries[0]["link"], "https://unstop.com/hackathons/codeverse-india-national-level-hackathon-wecodecoders-1763003")
         self.assertEqual(result.entries[0]["listing_category"], "hackathons")
@@ -128,6 +134,8 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIn("Launching soon BugWars", result.entries[2]["summary"])
         self.assertEqual(result.entries[3]["title"], "Asian Paints Alchemy 2026")
         self.assertIn("Asian Paints Online Asian Paints Alchemy", result.entries[3]["summary"])
+        self.assertEqual(result.entries[4]["title"], "Need-Based Technical Scholarship 2026")
+        self.assertEqual(result.entries[4]["listing_category"], "scholarships")
         self.assertTrue(response.closed)
 
     def test_unstop_fails_closed_if_page_has_no_opportunity_detail_cards(self):
