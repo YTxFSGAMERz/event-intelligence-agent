@@ -54,9 +54,11 @@ class SourceAdapterTests(unittest.TestCase):
         devfolio = "https://devfolio.co/explore"
         nsp = "https://scholarships.gov.in/All-Scholarships"
         unstop = "https://unstop.com/compete/amp"
-        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, google])
+        unstop_hackathons = "https://unstop.com/hackathons/amp"
+        unstop_internships = "https://unstop.com/internship-portal/amp"
+        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, unstop_hackathons, unstop_internships, google])
 
-        self.assertEqual(len(adapters), 7)
+        self.assertEqual(len(adapters), 9)
         self.assertIsInstance(adapters[0], source_adapters.GoogleNewsRSSAdapter)
         self.assertIsInstance(adapters[1], source_adapters.HackalendarRSSAdapter)
         self.assertIsInstance(adapters[2], source_adapters.OfficialBlogRSSAdapter)
@@ -64,6 +66,8 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIsInstance(adapters[4], source_adapters.DevfolioExploreHTMLAdapter)
         self.assertIsInstance(adapters[5], source_adapters.NSPScholarshipHTMLAdapter)
         self.assertIsInstance(adapters[6], source_adapters.UnstopExploreHTMLAdapter)
+        self.assertIsInstance(adapters[7], source_adapters.UnstopExploreHTMLAdapter)
+        self.assertIsInstance(adapters[8], source_adapters.UnstopExploreHTMLAdapter)
         self.assertEqual(adapters[0].config.adapter_type, "google_news_rss")
         self.assertEqual(adapters[1].config.adapter_type, "hackalendar_rss")
         self.assertEqual(adapters[2].config.adapter_type, "official_blog_rss")
@@ -74,6 +78,9 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(adapters[4].config.pagination_mode, "platform_open_upcoming_sections")
         self.assertEqual(adapters[5].config.adapter_type, "nsp_scholarships_html")
         self.assertEqual(adapters[6].config.adapter_type, "unstop_html")
+        self.assertEqual(adapters[6].config.name, "Unstop · Open Opportunities")
+        self.assertEqual(adapters[7].config.name, "Unstop · Hackathons")
+        self.assertEqual(adapters[8].config.name, "Unstop · Internships")
         self.assertEqual(adapters[5].config.pagination_mode, "portal_scheme_list_current_year")
         self.assertEqual(adapters[1].config.access_method, "public_hackalendar_rss")
         self.assertEqual(adapters[1].config.pagination_mode, "catalogue_feed_upcoming_events")
@@ -86,7 +93,7 @@ class SourceAdapterTests(unittest.TestCase):
         html = b"""<!doctype html><html><body>
         <h2>Competitions</h2>
         <a href="/hackathons/codeverse-india-national-level-hackathon-wecodecoders-1763003">
-          hackathons CodeVerse India - National Level Hackathon WeCodeCoders 1504 Applied 26 days left All Posted 10 Oct
+          hackathons Online Free CodeVerse India - National Level Hackathon WeCodeCoders 1504 Applied 26 days left All Posted 10 Oct
         </a>
         <a href="https://unstop.com/competitions/snapdragon-ai-lab-challenge-1763004">
           Snapdragon AI Lab Challenge 2400 Registered 18 days left
@@ -106,6 +113,7 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(result.entries[0]["listing_category"], "hackathons")
         self.assertEqual(result.entries[0]["listing_countdown_text"], "26 days left")
         self.assertIn("discovery evidence only", result.entries[0]["summary"])
+        self.assertIn("Online Free CodeVerse India", result.entries[0]["summary"])
         self.assertEqual(result.entries[1]["listing_category"], "competitions")
         self.assertTrue(response.closed)
 
