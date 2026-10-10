@@ -56,9 +56,10 @@ class SourceAdapterTests(unittest.TestCase):
         unstop = "https://unstop.com/compete/amp"
         unstop_hackathons = "https://unstop.com/hackathons/amp"
         unstop_internships = "https://unstop.com/internship-portal/amp"
-        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, unstop_hackathons, unstop_internships, google])
+        unstop_competitions = "https://unstop.com/competitions/amp"
+        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, unstop_hackathons, unstop_internships, unstop_competitions, google])
 
-        self.assertEqual(len(adapters), 9)
+        self.assertEqual(len(adapters), 10)
         self.assertIsInstance(adapters[0], source_adapters.GoogleNewsRSSAdapter)
         self.assertIsInstance(adapters[1], source_adapters.HackalendarRSSAdapter)
         self.assertIsInstance(adapters[2], source_adapters.OfficialBlogRSSAdapter)
@@ -68,6 +69,7 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIsInstance(adapters[6], source_adapters.UnstopExploreHTMLAdapter)
         self.assertIsInstance(adapters[7], source_adapters.UnstopExploreHTMLAdapter)
         self.assertIsInstance(adapters[8], source_adapters.UnstopExploreHTMLAdapter)
+        self.assertIsInstance(adapters[9], source_adapters.UnstopExploreHTMLAdapter)
         self.assertEqual(adapters[0].config.adapter_type, "google_news_rss")
         self.assertEqual(adapters[1].config.adapter_type, "hackalendar_rss")
         self.assertEqual(adapters[2].config.adapter_type, "official_blog_rss")
@@ -81,6 +83,7 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(adapters[6].config.name, "Unstop · Open Opportunities")
         self.assertEqual(adapters[7].config.name, "Unstop · Hackathons")
         self.assertEqual(adapters[8].config.name, "Unstop · Internships")
+        self.assertEqual(adapters[9].config.name, "Unstop · Competitions")
         self.assertEqual(adapters[5].config.pagination_mode, "portal_scheme_list_current_year")
         self.assertEqual(adapters[1].config.access_method, "public_hackalendar_rss")
         self.assertEqual(adapters[1].config.pagination_mode, "catalogue_feed_upcoming_events")
