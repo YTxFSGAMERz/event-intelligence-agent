@@ -26,8 +26,8 @@ STATE_FILE = ROOT / "data" / "seen_events.json"
 USER_AGENT = "EventIntelligenceAgent/0.1 (personal event research; respectful feed polling)"
 TIMEOUT = 10
 MAX_ALERTS_PER_SOURCE_PER_RUN = 1
-MAX_URL_RESOLUTIONS_PER_RUN = 6
-MAX_LEGACY_URL_RESOLUTIONS_PER_RUN = 2
+MAX_URL_RESOLUTIONS_PER_RUN = 8
+MAX_LEGACY_URL_RESOLUTIONS_PER_RUN = 4
 MAX_URL_RESOLUTION_ATTEMPTS = 8
 URL_RESOLUTION_RETRY_BASE_SECONDS = 6 * 60 * 60
 URL_RESOLUTION_RETRY_MAX_SECONDS = 7 * 24 * 60 * 60
@@ -287,6 +287,26 @@ def write_state(state: dict) -> None:
     normalized["updated_utc"] = now_iso()
     STATE_FILE.write_text(json.dumps(normalized, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
+
+
+def legacy_resolution_priority(pair: tuple[str, dict]) -> tuple[int, int, str]:
+    """Prioritize accepted opportunity candidates during bounded URL backfill.
+
+    Low-quality/listicle records remain in the tracker for review, but should not
+    consume the first legacy resolution slots ahead of specific opportunities.
+    Within each quality tier, fewer previous attempts and older records go first.
+    """
+    _, record = pair
+    record = record if isinstance(record, dict) else {}
+    quality = record.get("discovery_quality")
+    accepted = quality.get("accepted") if isinstance(quality, dict) else None
+    quality_priority = 0 if accepted is True else (1 if accepted is None else 2)
+    try:
+        attempts = max(0, int(record.get("resolution_attempts") or 0))
+    except (TypeError, ValueError):
+        attempts = 0
+    first_seen = str(record.get("first_seen_utc") or record.get("first_seen_at") or "")
+    return quality_priority, attempts, first_seen
 
 
 def url_resolution_retry_delay_seconds(attempts: int) -> int:
@@ -1457,13 +1477,7 @@ def main() -> int:
 
     # Backfill at most two unresolved legacy Google News links per run so that
     # historical records cannot starve URL resolution for new discoveries.
-    unresolved_records = sorted(
-        seen.items(),
-        key=lambda pair: (
-            int(pair[1].get("resolution_attempts") or 0) if isinstance(pair[1], dict) else 99,
-            str(pair[1].get("first_seen_utc") or "") if isinstance(pair[1], dict) else "",
-        ),
-    )
+    unresolved_records = sorted(seen.items(), key=legacy_resolution_priority)
 
     # Do not issue article-resolution HTTP requests during rapid push/manual runs
     # when every Google News feed is still inside its minimum polling interval.
