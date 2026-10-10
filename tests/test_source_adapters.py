@@ -142,11 +142,26 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIn("not independently verified as an organizer page", result.entries[0]["summary"])
         self.assertTrue(response.closed)
 
-    def test_devfolio_fails_closed_if_open_and_upcoming_sections_are_missing(self):
+    def test_devfolio_fails_closed_if_no_current_event_cards_are_present(self):
         adapter = build_adapters(["https://devfolio.co/explore"])[0]
         response = FakeResponse("https://devfolio.co/explore", b"<html><h2>Blog</h2></html>")
-        with self.assertRaisesRegex(RuntimeError, "Open/Upcoming sections were not found"):
+        with self.assertRaisesRegex(RuntimeError, "no current event cards"):
             adapter.fetch(session=FakeSession(response))
+        self.assertTrue(response.closed)
+
+    def test_devfolio_can_parse_current_cards_without_heading_tags_and_ignores_ended_cards(self):
+        html = b"""<!doctype html><html><body>
+        <div><a href="https://wild-bugs.devfolio.co/"><span>Wild Bugs</span><span>Hackathon</span><span>Online</span><span>Open</span><span>Starts 14/10/26</span><span>Apply now</span></a></div>
+        <div><a href="https://past-event.devfolio.co/"><span>Past Event</span><span>Ended</span><span>See projects</span></a></div>
+        </body></html>"""
+        adapter = build_adapters(["https://devfolio.co/explore"])[0]
+        response = FakeResponse("https://devfolio.co/explore", html)
+        result = adapter.fetch(session=FakeSession(response))
+        self.assertEqual(result.status, "success")
+        self.assertEqual(result.item_count, 1)
+        self.assertEqual(result.entries[0]["title"], "Wild Bugs")
+        self.assertEqual(result.entries[0]["listing_status"], "open")
+        self.assertEqual(result.entries[0]["event_date_text"], "14/10/26")
         self.assertTrue(response.closed)
 
     def test_nsp_parser_extracts_scheme_and_application_deadline_without_guessing_links(self):
@@ -178,6 +193,17 @@ class SourceAdapterTests(unittest.TestCase):
         adapter = build_adapters(["https://scholarships.gov.in/All-Scholarships"])[0]
         response = FakeResponse("https://scholarships.gov.in/All-Scholarships", html)
         with self.assertRaisesRegex(RuntimeError, "no schemes with specific official guidance links"):
+            adapter.fetch(session=FakeSession(response))
+        self.assertTrue(response.closed)
+
+    def test_nsp_parser_never_treats_academic_year_heading_as_a_scheme(self):
+        html = b"""<!doctype html><html><body>
+        <h6>Academic Year 2026-27</h6>
+        <a href="#">Specifications</a><a href="#">FAQ</a>
+        </body></html>"""
+        adapter = build_adapters(["https://scholarships.gov.in/All-Scholarships"])[0]
+        response = FakeResponse("https://scholarships.gov.in/All-Scholarships", html)
+        with self.assertRaisesRegex(RuntimeError, "no scholarship-scheme title candidates"):
             adapter.fetch(session=FakeSession(response))
         self.assertTrue(response.closed)
 
