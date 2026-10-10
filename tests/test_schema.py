@@ -10,12 +10,37 @@ from main import (
     normalize_event_record,
     normalize_state,
     normalize_title_key,
+    legacy_resolution_priority,
     remember_source_alias,
     source_observed_facts,
 )
 
 
 class OpportunitySchemaTests(unittest.TestCase):
+    def test_legacy_resolution_prioritizes_specific_opportunities_over_roundups(self):
+        records = {
+            "roundup": {
+                "title": "Top scholarships in Europe",
+                "resolution_attempts": 0,
+                "first_seen_utc": "2026-10-01T00:00:00+00:00",
+                "discovery_quality": {"accepted": False},
+            },
+            "specific": {
+                "title": "Nebius Global AI Hackathon",
+                "resolution_attempts": 1,
+                "first_seen_utc": "2026-10-09T00:00:00+00:00",
+                "discovery_quality": {"accepted": True},
+            },
+            "unknown": {
+                "title": "Possible student opportunity",
+                "resolution_attempts": 0,
+                "first_seen_utc": "2026-10-02T00:00:00+00:00",
+                "discovery_quality": {"accepted": None},
+            },
+        }
+        ordered = sorted(records.items(), key=legacy_resolution_priority)
+        self.assertEqual([key for key, _ in ordered], ["specific", "unknown", "roundup"])
+
     def test_legacy_google_news_record_keeps_unknowns_unknown(self):
         event = normalize_event_record("abc123", {
             "title": "Example scholarship",
