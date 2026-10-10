@@ -1,6 +1,7 @@
 import unittest
 from contextlib import redirect_stdout
 from io import StringIO
+from unittest.mock import patch
 from datetime import datetime, timezone
 
 import source_adapters
@@ -271,18 +272,17 @@ class SourceAdapterTests(unittest.TestCase):
         adapter = build_adapters(["https://news.google.com/rss/search?q=hackathon"])[0]
         original = source_adapters._decode_google_news
         response = FakeResponse("https://news.google.com/rss/articles/encoded", b"<html><head></head>")
-        session = FakeSession(response)
         try:
             source_adapters._decode_google_news = lambda url, timeout: {
                 "success": False,
                 "message": "signature fields missing",
             }
             output = StringIO()
-            with redirect_stdout(output):
-                resolved, status = adapter.resolve_item_url(
-                    "https://news.google.com/rss/articles/encoded",
-                    session=session,
-                )
+            with patch("source_adapters.requests.get", return_value=response):
+                with redirect_stdout(output):
+                    resolved, status = adapter.resolve_item_url(
+                        "https://news.google.com/rss/articles/encoded",
+                    )
         finally:
             source_adapters._decode_google_news = original
         self.assertIsNone(resolved)
