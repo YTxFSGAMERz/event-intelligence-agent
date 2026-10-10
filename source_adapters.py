@@ -548,7 +548,16 @@ def _resolve_source_type(url: str) -> tuple[str, str]:
     if host in {"unstop.com", "www.unstop.com"} and re.fullmatch(
         r"/(?:compete|hackathons|competitions|internship-portal)/amp", parts.path.rstrip("/"), re.IGNORECASE
     ):
-        return "unstop_html", "Unstop · Open Competitions & Hackathons"
+        path = parts.path.rstrip("/").casefold()
+        if path == "/hackathons/amp":
+            label = "Unstop · Hackathons"
+        elif path == "/internship-portal/amp":
+            label = "Unstop · Internships"
+        elif path == "/competitions/amp":
+            label = "Unstop · Competitions"
+        else:
+            label = "Unstop · Open Opportunities"
+        return "unstop_html", label
     if host in {"scholarships.gov.in", "www.scholarships.gov.in"} and parts.path.rstrip("/").lower() in {"/all-scholarships", "/students"}:
         return "nsp_scholarships_html", "National Scholarship Portal · Schemes"
     if host in {"mlh.com", "www.mlh.com"} and (
@@ -893,8 +902,16 @@ class UnstopExploreParser(HTMLParser):
             return
 
         kind = path_match.group("kind").casefold()
+        raw_visible = visible
         visible = re.sub(
             r"^(?:hackathons|competitions|scholarships|internships|challenges|fellowships|jobs)\s+",
+            "", visible, flags=re.IGNORECASE,
+        )
+        # Unstop prefixes cards with display chips such as "Online Free" or
+        # "Festival". Remove those from the title only; preserve the exact
+        # listing text below as evidence and never derive a date from countdowns.
+        visible = re.sub(
+            r"^(?:(?:online|offline|hybrid)\s+free\s+|(?:online|offline|hybrid)\s+|festival\s+)",
             "", visible, flags=re.IGNORECASE,
         )
         tail = UNSTOP_CARD_TAIL_RE.search(visible)
@@ -903,9 +920,9 @@ class UnstopExploreParser(HTMLParser):
         if not title or title.casefold() in {"view all", "browse hackathons", "browse competitions"}:
             return
 
-        countdown = UNSTOP_COUNTDOWN_RE.search(visible)
+        countdown = UNSTOP_COUNTDOWN_RE.search(raw_visible)
         countdown_text = countdown.group(0) if countdown else None
-        listing_text = visible[:700]
+        listing_text = raw_visible[:700]
         self.events.append({
             "title": title,
             "link": link,
