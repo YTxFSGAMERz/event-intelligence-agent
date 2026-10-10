@@ -64,7 +64,7 @@ class SourceConfig:
     expected_fields: tuple[str, ...] = ("title", "link", "summary", "published")
     pagination_mode: str = "feed_managed_no_client_pagination"
     timeout_seconds: int = 10
-    minimum_interval_seconds: int = 900
+    minimum_interval_seconds: int = 600
     rate_limit_policy: str = "minimum_poll_interval_enforced_by_agent"
 
 
