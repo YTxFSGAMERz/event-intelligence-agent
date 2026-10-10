@@ -546,7 +546,7 @@ def _resolve_source_type(url: str) -> tuple[str, str]:
     if host in {"devfolio.co", "www.devfolio.co"} and parts.path.rstrip("/").lower() == "/explore":
         return "devfolio_html", "Devfolio · Open & Upcoming Hackathons"
     if host in {"unstop.com", "www.unstop.com"} and re.fullmatch(
-        r"/(?:compete|hackathons|competitions|internship-portal)/amp", parts.path.rstrip("/"), re.IGNORECASE
+        r"/(?:compete|hackathons|competitions|internship-portal|scholarships)/amp", parts.path.rstrip("/"), re.IGNORECASE
     ):
         path = parts.path.rstrip("/").casefold()
         if path == "/hackathons/amp":
@@ -555,6 +555,8 @@ def _resolve_source_type(url: str) -> tuple[str, str]:
             label = "Unstop · Internships"
         elif path == "/competitions/amp":
             label = "Unstop · Competitions"
+        elif path == "/scholarships/amp":
+            label = "Unstop · Scholarships"
         else:
             label = "Unstop · Open Opportunities"
         return "unstop_html", label
