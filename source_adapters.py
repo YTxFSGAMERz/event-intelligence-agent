@@ -963,7 +963,7 @@ def build_adapters(source_urls: list[str]) -> list[RSSSourceAdapter]:
 class URLResolutionBudget:
     """Bound costly Google News link-resolution requests across one scan.
 
-    Legacy backfill gets its own small allowance so old records cannot consume
+    Legacy backfill gets its own bounded allowance so old records cannot consume
     the entire budget before newly discovered opportunities are processed.
     Direct RSS links are normalized without spending this network-request budget.
     """
