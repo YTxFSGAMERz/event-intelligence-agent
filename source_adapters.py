@@ -687,8 +687,18 @@ class GoogleNewsRSSAdapter(RSSSourceAdapter):
                     resolved = normalize_http_url(decoded.get("decoded_url"))
                     if resolved and _host(resolved) not in {"news.google.com", "www.google.com"}:
                         return resolved, "decoder_resolved"
-            except Exception:
-                pass
+                    print("Google News decoder returned a success response without a safe publisher URL.")
+                elif isinstance(decoded, dict):
+                    # Keep the stable resolution status for retry/backoff logic, but
+                    # expose a short diagnostic so CI logs show why the decoder failed.
+                    detail = re.sub(r"\\s+", " ", str(decoded.get("message") or "no reason provided")).strip()
+                    print(f"Google News decoder did not resolve an item: {detail[:180]}")
+                else:
+                    print("Google News decoder returned an unexpected response type.")
+            except Exception as exc:
+                # Do not silently discard decoder failures; they explain why the
+                # fallback often remains on the Google wrapper in hosted runners.
+                print(f"Google News decoder exception: {type(exc).__name__}")
 
         response = None
         try:
