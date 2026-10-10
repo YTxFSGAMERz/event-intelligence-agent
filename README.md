@@ -1,6 +1,6 @@
 # Event Intelligence Agent
 
-A Python opportunity-discovery agent that checks configured public RSS/Atom feeds and supported HTML listing pages every 15 minutes via GitHub Actions, then sends new matching opportunities to Telegram.
+A Python opportunity-discovery agent that checks configured public RSS/Atom feeds and supported HTML listing pages on a best-effort 10-minute GitHub Actions schedule, then sends new matching opportunities to Telegram.
 
 ## What it does
 - Reads public RSS/Atom feeds and supported HTML listing pages configured in `sources.txt`.
@@ -27,7 +27,7 @@ Configured URLs in `sources.txt` are routed through the adapter registry in `sou
 
 Each configured URL receives a stable source ID and a source-health record in `data/seen_events.json`. Health includes the access method, expected feed fields, pagination model, request timeout, minimum polling interval, rate-limit policy, last attempt and successful fetch, status, duration, entry count, matching count, queued count, and failure streak. A failed run retains the last successful timestamp and last successful counts. GitHub Actions merges these health records alongside the deduplication records when persisting state.
 
-The agent enforces a **15-minute minimum polling interval per feed**, including manual and code-push runs. Sources skipped by this guard are marked `skipped_minimum_interval`; skipping does not overwrite their last real attempt or last successful-fetch time. RSS/Atom feeds are publisher-managed, so the current adapters do not implement client-side page-number pagination.
+The agent enforces a **10-minute minimum polling interval per feed**, matching the workflow's `*/10 * * * *` schedule, including manual and code-push runs. GitHub may delay scheduled runs, so this is not a guaranteed exact timer. Sources skipped by this guard are marked `skipped_minimum_interval`; skipping does not overwrite their last real attempt or last successful-fetch time. RSS/Atom feeds are publisher-managed, so the current adapters do not implement client-side page-number pagination.
 
 ### URL provenance and duplicate handling
 
@@ -150,7 +150,7 @@ Edit `sources.txt`. One public RSS/Atom URL per line; lines beginning with `#` a
 - Push the files to the default branch (usually `main`).
 - Open **Actions** and enable workflows if prompted.
 - Run **Event Intelligence Agent** manually once using **Run workflow**.
-- The workflow then runs every 15 minutes (`*/15 * * * *`, UTC), subject to GitHub scheduling delays and usage limits.
+- The workflow runs every 10 minutes (`*/10 * * * *`, UTC), subject to GitHub scheduling delays and usage limits; the per-feed 10-minute guard prevents duplicate requests from manual or push-triggered runs.
 
 ## Local test (Windows PowerShell)
 ```powershell
