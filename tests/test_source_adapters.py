@@ -315,7 +315,7 @@ class SourceAdapterTests(unittest.TestCase):
         try:
             source_adapters._decode_google_news = lambda url, timeout: {
                 "success": False,
-                "message": "signature   fields\\nmissing",
+                "message": "signature   fields\nmissing",
             }
             output = StringIO()
             with patch("source_adapters.requests.get", return_value=response):
