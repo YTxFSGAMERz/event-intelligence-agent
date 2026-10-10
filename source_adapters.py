@@ -907,11 +907,11 @@ class UnstopExploreParser(HTMLParser):
             r"^(?:hackathons|competitions|scholarships|internships|challenges|fellowships|jobs)\s+",
             "", visible, flags=re.IGNORECASE,
         )
-        # Unstop prefixes cards with display chips such as "Online Free" or
-        # "Festival". Remove those from the title only; preserve the exact
+        # Unstop prefixes cards with display chips such as "Online Free",
+        # "Festival" or "Launching soon". Remove those from the title only; preserve the exact
         # listing text below as evidence and never derive a date from countdowns.
         visible = re.sub(
-            r"^(?:(?:online|offline|hybrid)\s+free\s+|(?:online|offline|hybrid)\s+|festival\s+)",
+            r"^(?:(?:online|offline|hybrid)\s+free\s+|(?:online|offline|hybrid)\s+|festival\s+|(?:launching|closing|starting)\s+soon\s+)",
             "", visible, flags=re.IGNORECASE,
         )
         tail = UNSTOP_CARD_TAIL_RE.search(visible)
