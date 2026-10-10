@@ -29,3 +29,9 @@ https://scholarships.gov.in/All-Scholarships
 
 # Direct Unstop competitions and hackathon listings (platform discovery only; organizer pages still need verification).
 https://unstop.com/compete/amp
+
+# Unstop public upcoming hackathons; listing text is discovery evidence, not official verification.
+https://unstop.com/hackathons/amp
+
+# Unstop internship listings; roles and eligibility must be confirmed on the specific detail page.
+https://unstop.com/internship-portal/amp
