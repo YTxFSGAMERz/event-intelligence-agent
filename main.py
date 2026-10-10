@@ -130,6 +130,28 @@ def _http_url(value: object) -> str | None:
     return candidate
 
 
+def normalize_unstop_display_title(title: object) -> str:
+    """Remove known Unstop category and display chips from stored titles, idempotently."""
+    original = str(title or "").strip()
+    cleaned = original
+    category_prefix = re.compile(
+        r"^(?:hackathons?|competitions?|scholarships?|internships?|challenges?|fellowships?|jobs)\s+",
+        re.IGNORECASE,
+    )
+    badge_prefix = re.compile(
+        r"^(?:(?:online|offline|hybrid)\s+free\s+|(?:online|offline|hybrid)\s+|festival\s+)",
+        re.IGNORECASE,
+    )
+    for _ in range(3):
+        updated = category_prefix.sub("", cleaned, count=1)
+        updated = badge_prefix.sub("", updated, count=1)
+        updated = updated.strip()
+        if updated == cleaned:
+            break
+        cleaned = updated
+    return cleaned or original
+
+
 def normalize_event_record(event_id_value: str, record: dict) -> dict:
     """Add canonical schema fields without inventing dates, locations, or funding facts.
 
@@ -137,6 +159,9 @@ def normalize_event_record(event_id_value: str, record: dict) -> dict:
     still consume them. Migration is intentionally additive and idempotent.
     """
     item = dict(record or {})
+    stored_title = str(item.get("title") or "Untitled opportunity")
+    if str(item.get("adapter_type") or "") == "unstop_html":
+        stored_title = normalize_unstop_display_title(stored_title)
     source_url = _http_url(item.get("url"))
     discovered_url = _http_url(item.get("discovered_url")) or source_url
     parsed_host = (urlsplit(source_url).hostname or "").lower() if source_url else ""
@@ -207,7 +232,7 @@ def normalize_event_record(event_id_value: str, record: dict) -> dict:
     item.update({
         "schema_version": STATE_SCHEMA_VERSION,
         "id": str(item.get("id") or event_id_value),
-        "title": str(item.get("title") or "Untitled opportunity"),
+        "title": stored_title,
         "summary": str(item.get("summary") or ""),
         "source_observed": item.get("source_observed") if isinstance(item.get("source_observed"), dict) else {},
         "discovery_quality": item.get("discovery_quality") if isinstance(item.get("discovery_quality"), dict) else {
