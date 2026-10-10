@@ -9066,16 +9066,76 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "source_page_checked",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://hackknight.org"
+        ],
+        "last_checked_at": "2026-10-10T15:10:06+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://hackknight.org",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": "HackKnight",
+        "last_check_error": null,
+        "last_check_duration_ms": 292,
+        "observed_facts": {
+          "page_role": "possible_event_page",
+          "page_title": "HackKnight",
+          "description": "",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        }
       },
       "schema_version": 1,
       "id": "c126750194a6853ec930",
@@ -10000,7 +10060,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-10T15:09:47+00:00",
+  "updated_utc": "2026-10-10T15:10:06+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -10033,7 +10093,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:09:46+00:00",
+      "last_skipped_at": "2026-10-10T15:10:06+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -10067,7 +10127,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:09:46+00:00",
+      "last_skipped_at": "2026-10-10T15:10:06+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -10101,7 +10161,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:09:46+00:00",
+      "last_skipped_at": "2026-10-10T15:10:06+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 4
     },
@@ -10135,7 +10195,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:09:46+00:00",
+      "last_skipped_at": "2026-10-10T15:10:06+00:00",
       "quality_rejected_count": 3,
       "quality_rule_version": 4
     },
@@ -10170,7 +10230,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:09:46+00:00",
+      "last_skipped_at": "2026-10-10T15:10:06+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -10206,7 +10266,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T15:09:46+00:00",
+      "last_skipped_at": "2026-10-10T15:10:06+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -10242,7 +10302,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:09:46+00:00"
+      "last_skipped_at": "2026-10-10T15:10:06+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -10276,7 +10336,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:09:46+00:00"
+      "last_skipped_at": "2026-10-10T15:10:06+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -10310,7 +10370,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:09:46+00:00"
+      "last_skipped_at": "2026-10-10T15:10:06+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -10339,7 +10399,7 @@
       "matching_items": 0,
       "new_items": 0,
       "failure_streak": 2,
-      "last_skipped_at": "2026-10-10T15:09:46+00:00",
+      "last_skipped_at": "2026-10-10T15:10:06+00:00",
       "last_success_at": "2026-10-10T14:57:36+00:00",
       "last_success_items_seen": 21,
       "last_success_matching_items": 21,
@@ -10380,7 +10440,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:09:46+00:00"
+      "last_skipped_at": "2026-10-10T15:10:06+00:00"
     }
   }
 }
