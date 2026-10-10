@@ -54,6 +54,15 @@ class OpportunitySchemaTests(unittest.TestCase):
         self.assertIn("Online Free HP Power Lab 3.0", event["summary"])
         self.assertEqual(normalize_unstop_display_title(event["title"]), "HP Power Lab 3.0")
 
+        launching = normalize_event_record("unstop-launching", {
+            "title": "Launching soon BugWars IIIT Nagpur",
+            "summary": "Raw listing text: Launching soon BugWars IIIT Nagpur.",
+            "url": "https://unstop.com/hackathons/bugwars-iiitn-1766954",
+            "adapter_type": "unstop_html",
+        })
+        self.assertEqual(launching["title"], "BugWars IIIT Nagpur")
+        self.assertIn("Launching soon BugWars", launching["summary"])
+
     def test_legacy_google_news_record_keeps_unknowns_unknown(self):
         event = normalize_event_record("abc123", {
             "title": "Example scholarship",
