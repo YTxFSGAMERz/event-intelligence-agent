@@ -189,7 +189,7 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertTrue(response.closed)
 
     def test_nsp_fails_closed_if_page_has_no_scheme_guidance_links(self):
-        html = b"""<!doctype html><html><body><h6>Scheme Without Link</h6><p>Student Application Open till : 31-10-2026</p></body></html>"""
+        html = b"""<!doctype html><html><body><h6>Example Scholarship Scheme Test</h6><p>Student Application Open till : 31-10-2026</p></body></html>"""
         adapter = build_adapters(["https://scholarships.gov.in/All-Scholarships"])[0]
         response = FakeResponse("https://scholarships.gov.in/All-Scholarships", html)
         with self.assertRaisesRegex(RuntimeError, "no schemes with specific official guidance links"):
