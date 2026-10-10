@@ -395,14 +395,14 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIn("link", config.expected_fields)
         self.assertIn("media", config.expected_fields)
         self.assertEqual(config.timeout_seconds, 10)
-        self.assertEqual(config.minimum_interval_seconds, 900)
+        self.assertEqual(config.minimum_interval_seconds, 600)
         self.assertIn("feed_managed", config.pagination_mode)
 
     def test_minimum_poll_interval_is_enforced_using_last_real_attempt(self):
         config = build_source_config("https://example.org/feed.xml")
         now = datetime(2026, 10, 9, 10, 20, tzinfo=timezone.utc)
-        recent = {"last_attempt_at": "2026-10-09T10:10:00+00:00"}
-        old = {"last_attempt_at": "2026-10-09T10:00:00+00:00"}
+        recent = {"last_attempt_at": "2026-10-09T10:11:00+00:00"}
+        old = {"last_attempt_at": "2026-10-09T10:10:00+00:00"}
         malformed = {"last_attempt_at": "not-a-date"}
 
         self.assertFalse(source_adapters.should_poll_source(recent, config, now=now))
@@ -426,7 +426,7 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(skipped["last_success_items_seen"], 19)
         self.assertEqual(skipped["last_skipped_at"], "2026-10-09T10:05:00+00:00")
         self.assertEqual(skipped["timeout_seconds"], 10)
-        self.assertEqual(skipped["minimum_interval_seconds"], 900)
+        self.assertEqual(skipped["minimum_interval_seconds"], 600)
 
     def test_url_resolution_budget_bounds_requests_and_reserves_new_items(self):
         adapter = build_adapters(["https://news.google.com/rss/search?q=test"])[0]
