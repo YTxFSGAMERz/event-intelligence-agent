@@ -125,7 +125,7 @@ class OpportunityQualityTests(unittest.TestCase):
             ["hackathons_buildathons"],
         )
         self.assertTrue(result["accepted"])
-        self.assertEqual(result["rule_version"], 3)
+        self.assertEqual(result["rule_version"], 4)
         self.assertTrue(result["reason"])
         self.assertIn("matched_categories", result)
 
