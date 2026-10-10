@@ -407,6 +407,11 @@ class NSPScholarshipListParser(HTMLParser):
     """Extract titled schemes and their specific Specifications/FAQ links from NSP."""
 
     GENERAL_HEADINGS = {"students", "schemes on nsp", "public", "institutes", "officers"}
+    SCHEME_TITLE_RE = re.compile(
+        r"\b(?:scholarship|scholarships|fellowship|fellowships|stipend|"
+        r"financial assistance|financial support|free coaching|education grant)\b",
+        re.IGNORECASE,
+    )
 
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
@@ -421,7 +426,7 @@ class NSPScholarshipListParser(HTMLParser):
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attrs_dict = {key.lower(): (value or "").strip() for key, value in attrs}
         tag = tag.lower()
-        if tag == "h6":
+        if tag in {"h3", "h4", "h5", "h6"}:
             self._heading_tag = tag
             self._heading_parts = []
         if tag == "a":
@@ -492,8 +497,17 @@ class NSPScholarshipListParser(HTMLParser):
         tag = tag.lower()
         if self._heading_tag == tag:
             heading = re.sub(r"\s+", " ", " ".join(self._heading_parts)).strip()
-            self._finish_current()
-            if heading and heading.casefold() not in self.GENERAL_HEADINGS:
+            self._heading_tag = None
+            self._heading_parts = []
+            heading_lower = heading.casefold()
+            looks_like_scheme = (
+                len(heading) >= 14
+                and heading_lower not in self.GENERAL_HEADINGS
+                and not re.match(r"^academic\s+year\b", heading_lower)
+                and bool(self.SCHEME_TITLE_RE.search(heading))
+            )
+            if looks_like_scheme:
+                self._finish_current()
                 self._current = {
                     "title": heading,
                     "text_parts": [],
@@ -501,8 +515,8 @@ class NSPScholarshipListParser(HTMLParser):
                     "faq_url": None,
                 }
                 self.saw_scheme_heading = True
-            self._heading_tag = None
-            self._heading_parts = []
+            elif self._current and heading:
+                self._current["text_parts"].append(heading)
 
         if tag == "a" and self._anchor is not None:
             anchor = self._anchor
@@ -513,8 +527,11 @@ class NSPScholarshipListParser(HTMLParser):
             url = normalize_http_url(urljoin("https://scholarships.gov.in/All-Scholarships", anchor.get("href", "")))
             if not url:
                 return
-            host = (urlsplit(url).hostname or "").lower()
+            parts = urlsplit(url)
+            host = (parts.hostname or "").lower()
             if host not in {"scholarships.gov.in", "www.scholarships.gov.in"}:
+                return
+            if parts.path.rstrip("/").casefold() in {"/all-scholarships", "/students"} and not parts.query:
                 return
             if "specification" in label:
                 self._current["specifications_url"] = url
@@ -774,6 +791,24 @@ class MLHEventsHTMLAdapter(RSSSourceAdapter):
                 closer()
 
 
+
+def nsp_html_diagnostic(page_html: str) -> str:
+    """Summarize public-page markup around expected NSP labels when detection fails."""
+    body = str(page_html or "")
+    lowered = body.casefold()
+    tag_counts = {
+        tag: len(re.findall(r"<" + tag + r"\b", body, re.IGNORECASE))
+        for tag in ("h1", "h2", "h3", "h4", "h5", "h6", "p", "span", "strong", "a")
+    }
+    snippets = []
+    for term in ("Academic Year", "AICTE", "Student Application Open till", "Specifications", "FAQ"):
+        index = lowered.find(term.casefold())
+        if index >= 0:
+            snippet = re.sub(r"\s+", " ", body[max(0, index - 100):index + 220])
+            snippets.append(f"{term}={snippet[:260]}")
+    return f"html_bytes={len(body)}; tag_counts={tag_counts}; snippets={snippets}"
+
+
 class DevfolioExploreHTMLAdapter(RSSSourceAdapter):
     """Parse Devfolio's current Open and Upcoming hackathon cards."""
 
@@ -863,9 +898,15 @@ class NSPScholarshipHTMLAdapter(RSSSourceAdapter):
             parser.close()
             parser._finish_current()
             if not parser.saw_scheme_heading:
-                raise RuntimeError("NSP page changed: scheme headings were not found")
+                raise RuntimeError(
+                    "NSP page changed: no scholarship-scheme title candidates were found; "
+                    + nsp_html_diagnostic(page_html)
+                )
             if not parser.entries:
-                raise RuntimeError("NSP parser found no schemes with specific official guidance links")
+                raise RuntimeError(
+                    "NSP parser found no schemes with specific official guidance links; "
+                    + nsp_html_diagnostic(page_html)
+                )
             return FeedResult(
                 entries=parser.entries,
                 status="success",
