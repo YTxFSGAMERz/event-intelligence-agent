@@ -545,6 +545,10 @@ def _resolve_source_type(url: str) -> tuple[str, str]:
         return "hackalendar_rss", "Hackalendar · Upcoming Hackathons"
     if host in {"devfolio.co", "www.devfolio.co"} and parts.path.rstrip("/").lower() == "/explore":
         return "devfolio_html", "Devfolio · Open & Upcoming Hackathons"
+    if host in {"unstop.com", "www.unstop.com"} and re.fullmatch(
+        r"/(?:compete|hackathons|competitions|internship-portal)/amp", parts.path.rstrip("/"), re.IGNORECASE
+    ):
+        return "unstop_html", "Unstop · Open Competitions & Hackathons"
     if host in {"scholarships.gov.in", "www.scholarships.gov.in"} and parts.path.rstrip("/").lower() in {"/all-scholarships", "/students"}:
         return "nsp_scholarships_html", "National Scholarship Portal · Schemes"
     if host in {"mlh.com", "www.mlh.com"} and (
@@ -598,6 +602,10 @@ def build_source_config(url: str) -> SourceConfig:
         expected_fields = ("title", "link", "summary", "listing_status", "event_date_text", "application_open_date_text", "format_text")
         pagination_mode = "platform_open_upcoming_sections"
         access_method = "public_devfolio_explore_html"
+    elif adapter_type == "unstop_html":
+        expected_fields = ("title", "link", "summary", "listing_category", "listing_countdown_text", "source_listing")
+        pagination_mode = "current_unstop_listing_cards"
+        access_method = "public_unstop_html_listing"
     elif adapter_type == "nsp_scholarships_html":
         expected_fields = ("title", "link", "summary", "deadline_raw", "deadline_display", "specifications_url", "faq_url")
         pagination_mode = "portal_scheme_list_current_year"
@@ -691,7 +699,7 @@ class GoogleNewsRSSAdapter(RSSSourceAdapter):
                 elif isinstance(decoded, dict):
                     # Keep the stable resolution status for retry/backoff logic, but
                     # expose a short diagnostic so CI logs show why the decoder failed.
-                    detail = re.sub(r"\\s+", " ", str(decoded.get("message") or "no reason provided")).strip()
+                    detail = re.sub(r"\s+", " ", str(decoded.get("message") or "no reason provided")).strip()
                     print(f"Google News decoder did not resolve an item: {detail[:180]}")
                 else:
                     print("Google News decoder returned an unexpected response type.")
@@ -819,6 +827,115 @@ def nsp_html_diagnostic(page_html: str) -> str:
     return f"html_bytes={len(body)}; tag_counts={tag_counts}; snippets={snippets}"
 
 
+UNSTOP_DETAIL_PATH_RE = re.compile(
+    r"^/(?P<kind>hackathons|competitions|scholarships|internships|challenges|fellowships|jobs)/[^/]+-\d{5,}$",
+    re.IGNORECASE,
+)
+UNSTOP_EXPIRED_RE = re.compile(
+    r"\b(?:expired|registration\s+closed|applications?\s+closed|event\s+ended)\b",
+    re.IGNORECASE,
+)
+UNSTOP_COUNTDOWN_RE = re.compile(r"\b\d+\s+(?:days?|hours?)\s+left\b", re.IGNORECASE)
+UNSTOP_CARD_TAIL_RE = re.compile(
+    r"\s+\d[\d,]*\s+(?:applied|registered|participants?)\b"
+    r"|\s+\d+\s+(?:days?|hours?)\s+left\b"
+    r"|\s+posted\s+\d{1,2}\s+[a-z]{3,9}\b",
+    re.IGNORECASE,
+)
+
+
+class UnstopExploreParser(HTMLParser):
+    """Extract direct opportunity-detail links from Unstop's public listing pages."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self._anchor: dict | None = None
+        self.events: list[dict] = []
+        self._seen_links: set[str] = set()
+        self.anchor_count = 0
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() != "a":
+            return
+        attrs_dict = {key.lower(): (value or "").strip() for key, value in attrs}
+        self._anchor = {
+            "href": attrs_dict.get("href", ""),
+            "aria_label": attrs_dict.get("aria-label", ""),
+            "title_attr": attrs_dict.get("title", ""),
+            "parts": [],
+        }
+        self.anchor_count += 1
+
+    def handle_data(self, data: str) -> None:
+        if self._anchor is not None:
+            self._anchor["parts"].append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.lower() != "a" or self._anchor is None:
+            return
+        anchor = self._anchor
+        self._anchor = None
+        link = normalize_http_url(urljoin("https://unstop.com/compete/amp", anchor.get("href", "")))
+        if not link:
+            return
+        parts = urlsplit(link)
+        host = (parts.hostname or "").lower()
+        path_match = UNSTOP_DETAIL_PATH_RE.fullmatch(parts.path)
+        if host not in {"unstop.com", "www.unstop.com"} or not path_match:
+            return
+        if parts.username or parts.password or link in self._seen_links:
+            return
+
+        visible = re.sub(r"\s+", " ", " ".join(str(v or "") for v in anchor["parts"])).strip()
+        if not visible:
+            visible = str(anchor.get("aria_label") or anchor.get("title_attr") or "").strip()
+        if not visible or UNSTOP_EXPIRED_RE.search(visible):
+            return
+
+        kind = path_match.group("kind").casefold()
+        visible = re.sub(
+            r"^(?:hackathons|competitions|scholarships|internships|challenges|fellowships|jobs)\s+",
+            "", visible, flags=re.IGNORECASE,
+        )
+        tail = UNSTOP_CARD_TAIL_RE.search(visible)
+        title = visible[:tail.start()] if tail else visible
+        title = re.sub(r"\s+", " ", title).strip(" \t-|:·")[:180]
+        if not title or title.casefold() in {"view all", "browse hackathons", "browse competitions"}:
+            return
+
+        countdown = UNSTOP_COUNTDOWN_RE.search(visible)
+        countdown_text = countdown.group(0) if countdown else None
+        listing_text = visible[:700]
+        self.events.append({
+            "title": title,
+            "link": link,
+            "summary": (
+                f"Unstop public platform listing ({kind}). Listing text: {listing_text}. "
+                "This is discovery evidence only; verify eligibility, dates, rewards and organizer rules "
+                "on the linked opportunity page."
+            ),
+            "listing_category": kind,
+            "listing_countdown_text": countdown_text,
+            "source_listing": "Unstop Open Opportunities",
+        })
+        self._seen_links.add(link)
+
+
+def unstop_html_diagnostic(page_html: str, parser: UnstopExploreParser) -> str:
+    """Give maintainers compact clues when Unstop changes its listing markup."""
+    body = str(page_html or "")
+    detail_paths = len(re.findall(
+        r"/(?:hackathons|competitions|scholarships|internships|challenges|fellowships|jobs)/[^\s\"'<>]+-\d{5,}",
+        body,
+        re.IGNORECASE,
+    ))
+    return (
+        f"html_bytes={len(body)}; anchors={parser.anchor_count}; "
+        f"opportunity_link_candidates={detail_paths}; "
+        f"has_cookie_notice={bool(re.search(r'cookies? disabled', body, re.IGNORECASE))}"
+    )
+
+
 class DevfolioExploreHTMLAdapter(RSSSourceAdapter):
     """Parse Devfolio's current Open and Upcoming hackathon cards."""
 
@@ -857,6 +974,58 @@ class DevfolioExploreHTMLAdapter(RSSSourceAdapter):
             if not parser.events:
                 raise RuntimeError(
                     "Devfolio parser found no current event cards with Open/Upcoming/Live/date markers"
+                )
+            return FeedResult(
+                entries=parser.events,
+                status="success",
+                item_count=len(parser.events),
+                duration_ms=round((time.monotonic() - started) * 1000),
+                fetched_at_utc=fetched_at,
+            )
+        finally:
+            closer = getattr(response, "close", None)
+            if callable(closer):
+                closer()
+
+
+class UnstopExploreHTMLAdapter(RSSSourceAdapter):
+    """Fetch current Unstop listing cards; event pages still require separate verification."""
+
+    MAX_HTML_BYTES = 4_000_000
+
+    def fetch(
+        self,
+        timeout: int = 10,
+        user_agent: str = "EventIntelligenceAgent/0.2 (personal event research; respectful portal polling)",
+        session: Any = requests,
+    ) -> FeedResult:
+        started = time.monotonic()
+        fetched_at = utc_now()
+        response = session.get(
+            self.config.url,
+            allow_redirects=True,
+            timeout=timeout,
+            headers={"User-Agent": user_agent},
+            stream=True,
+        )
+        try:
+            response.raise_for_status()
+            chunks: list[bytes] = []
+            size = 0
+            for chunk in response.iter_content(chunk_size=8192):
+                if not chunk:
+                    continue
+                size += len(chunk)
+                if size > self.MAX_HTML_BYTES:
+                    raise RuntimeError("Unstop listing HTML exceeded the 4 MB safety limit")
+                chunks.append(chunk)
+            page_html = b"".join(chunks).decode(getattr(response, "encoding", None) or "utf-8", errors="replace")
+            parser = UnstopExploreParser()
+            parser.feed(page_html)
+            parser.close()
+            if not parser.events:
+                raise RuntimeError(
+                    "Unstop parser found no opportunity detail cards; " + unstop_html_diagnostic(page_html, parser)
                 )
             return FeedResult(
                 entries=parser.events,
@@ -940,6 +1109,7 @@ ADAPTER_REGISTRY: dict[str, type[RSSSourceAdapter]] = {
     "official_blog_rss": OfficialBlogRSSAdapter,
     "mlh_events_html": MLHEventsHTMLAdapter,
     "devfolio_html": DevfolioExploreHTMLAdapter,
+    "unstop_html": UnstopExploreHTMLAdapter,
     "nsp_scholarships_html": NSPScholarshipHTMLAdapter,
     "rss_atom": GenericRSSAdapter,
 }
