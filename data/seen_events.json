@@ -9484,16 +9484,28 @@
       "deadline_status": "unverified",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "not_html",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://scholarships.gov.in/public/schemeGuidelines/warb/PMSS_Guidelines_1197_3001-2023-24.pdf"
+        ],
+        "last_checked_at": "2026-10-10T14:59:20+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://scholarships.gov.in/public/schemeGuidelines/warb/PMSS_Guidelines_1197_3001-2023-24.pdf",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": null,
+        "last_check_error": "content_type_not_html",
+        "last_check_duration_ms": 1146
       },
       "schema_version": 1,
       "id": "f73a5bf5ad3b26bfc57d",
@@ -9824,7 +9836,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-10T14:58:38+00:00",
+  "updated_utc": "2026-10-10T14:59:21+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -9834,7 +9846,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T14:58:18+00:00",
       "last_success_at": "2026-10-10T14:58:18+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 201,
       "items_seen": 1,
@@ -9857,7 +9869,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T14:42:36+00:00",
+      "last_skipped_at": "2026-10-10T14:59:20+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -9868,7 +9880,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T14:58:18+00:00",
       "last_success_at": "2026-10-10T14:58:18+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 219,
       "items_seen": 0,
@@ -9891,7 +9903,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T14:42:36+00:00",
+      "last_skipped_at": "2026-10-10T14:59:20+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -9902,7 +9914,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T14:58:19+00:00",
       "last_success_at": "2026-10-10T14:58:19+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 407,
       "items_seen": 58,
@@ -9925,7 +9937,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T14:42:36+00:00",
+      "last_skipped_at": "2026-10-10T14:59:20+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 4
     },
@@ -9936,7 +9948,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T14:58:19+00:00",
       "last_success_at": "2026-10-10T14:58:19+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 424,
       "items_seen": 67,
@@ -9959,7 +9971,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T14:42:36+00:00",
+      "last_skipped_at": "2026-10-10T14:59:20+00:00",
       "quality_rejected_count": 3,
       "quality_rule_version": 4
     },
@@ -9970,7 +9982,7 @@
       "adapter_type": "official_blog_rss",
       "last_attempt_at": "2026-10-10T14:58:21+00:00",
       "last_success_at": "2026-10-10T14:58:21+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 82,
       "items_seen": 10,
@@ -9994,7 +10006,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T14:42:36+00:00",
+      "last_skipped_at": "2026-10-10T14:59:20+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -10020,7 +10032,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T14:58:20+00:00",
       "last_success_at": "2026-10-10T14:58:20+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 200,
       "items_seen": 15,
@@ -10030,7 +10042,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T14:42:36+00:00",
+      "last_skipped_at": "2026-10-10T14:59:20+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -10054,7 +10066,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T14:58:20+00:00",
       "last_success_at": "2026-10-10T14:58:20+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 199,
       "items_seen": 0,
@@ -10066,7 +10078,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T14:42:36+00:00"
+      "last_skipped_at": "2026-10-10T14:59:20+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -10088,7 +10100,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T14:58:20+00:00",
       "last_success_at": "2026-10-10T14:58:20+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 225,
       "items_seen": 0,
@@ -10100,7 +10112,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T14:42:36+00:00"
+      "last_skipped_at": "2026-10-10T14:59:20+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -10122,7 +10134,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T14:58:21+00:00",
       "last_success_at": "2026-10-10T14:58:21+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1637,
       "items_seen": 71,
@@ -10134,7 +10146,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T14:42:36+00:00"
+      "last_skipped_at": "2026-10-10T14:59:20+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -10156,14 +10168,14 @@
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T14:58:24+00:00",
-      "last_status": "failure",
+      "last_status": "skipped_minimum_interval",
       "last_error": "RuntimeError",
       "last_duration_ms": 1453,
       "items_seen": 0,
       "matching_items": 0,
       "new_items": 0,
       "failure_streak": 2,
-      "last_skipped_at": "2026-10-10T14:42:36+00:00",
+      "last_skipped_at": "2026-10-10T14:59:20+00:00",
       "last_success_at": "2026-10-10T14:57:36+00:00",
       "last_success_items_seen": 21,
       "last_success_matching_items": 21,
@@ -10192,7 +10204,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T14:58:24+00:00",
       "last_success_at": "2026-10-10T14:58:24+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 2296,
       "items_seen": 24,
@@ -10204,7 +10216,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T14:42:36+00:00"
+      "last_skipped_at": "2026-10-10T14:59:20+00:00"
     }
   }
 }
