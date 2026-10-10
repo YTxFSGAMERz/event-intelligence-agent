@@ -35,3 +35,6 @@ https://unstop.com/hackathons/amp
 
 # Unstop internship listings; roles and eligibility must be confirmed on the specific detail page.
 https://unstop.com/internship-portal/amp
+
+# Unstop's dedicated active competition catalogue, with direct detail links and countdown text.
+https://unstop.com/competitions/amp
