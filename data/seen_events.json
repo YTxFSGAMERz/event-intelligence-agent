@@ -11460,16 +11460,28 @@
       "deadline_status": "unverified",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "not_html",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://scholarships.gov.in/public/schemeGuidelines/AICTE/PM_USPY(SSSJKL)SchemeSpecifications.pdf"
+        ],
+        "last_checked_at": "2026-10-10T15:52:10+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/PM_USPY(SSSJKL)SchemeSpecifications.pdf",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": null,
+        "last_check_error": "content_type_not_html",
+        "last_check_duration_ms": 1392
       },
       "schema_version": 1,
       "id": "d93d7bd84dc244f778ed",
@@ -11666,9 +11678,195 @@
       "discovered_urls": [
         "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQRmhnX1pnZGpwb3dram9NcTVnTmNLSUllLVdJWkxaeEtBV2hlS1UzZUF0a0dOZFZ2NFgySThXQWZOeTZFa2dSVzI2S2tSX3YxcG0yblJnMDB2cnhqR0FPVXRSenRiYktUWHd0SzRwMS11cVpmaDlMekZIZTJhcm00dk50eXdTUlppTHl3U1RILTF2cTV5ZnJSR09Tb1YycEF4aHVieFFJZ1NmU2VIR2czV2ZGOTNzczVQeDF5QUYzZTNvb3ZGRk5YV2hha0syVWVYb2wtTFB0c3JIbmpGNUotWV9GaUJTNWVYX3dF?oc=5"
       ]
+    },
+    "39e3c5df3705506df8ef": {
+      "title": "Online Free Building India Case Study Competition 2027",
+      "summary": "Unstop public platform listing (competitions). Listing text: Online Free Building India Case Study Competition 2027 210 Registered 1 month left. This is discovery evidence only; verify eligibility, dates, rewards and organizer rules on the linked opportunity page.",
+      "url": "https://unstop.com/competitions/crp-building-india-case-study-competition-2027-nationbuilding-foundation-of-india-1759161",
+      "image_url": "",
+      "source": "https://unstop.com/compete/amp",
+      "source_name": "Unstop · Open Competitions & Hackathons",
+      "source_id": "9b37a8e295affa8c",
+      "adapter_type": "unstop_html",
+      "source_observed": {},
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "competitions_challenges"
+      ],
+      "primary_category": "competitions_challenges",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 4,
+        "title_signal": true,
+        "actionable_update": false,
+        "matched_categories": [
+          "competitions_challenges"
+        ]
+      },
+      "first_seen_utc": "2026-10-10T15:52:17+00:00",
+      "last_seen_utc": "2026-10-10T15:52:17+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://unstop.com/competitions/crp-building-india-case-study-competition-2027-nationbuilding-foundation-of-india-1759161",
+      "canonical_url": "https://unstop.com/competitions/crp-building-india-case-study-competition-2027-nationbuilding-foundation-of-india-1759161",
+      "source_feed_url": "https://unstop.com/compete/amp",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "source_page_checked",
+        "official_url": null,
+        "evidence_urls": [
+          "https://unstop.com/competitions/crp-building-india-case-study-competition-2027-nationbuilding-foundation-of-india-1759161"
+        ],
+        "last_checked_at": "2026-10-10T15:52:09+00:00",
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ],
+        "version": 1,
+        "source_page_url": "https://unstop.com/competitions/crp-building-india-case-study-competition-2027-nationbuilding-foundation-of-india-1759161",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
+        "last_check_error": null,
+        "last_check_duration_ms": 741,
+        "observed_facts": {
+          "page_role": "discovery_or_unrelated_page",
+          "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
+          "description": "",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        }
+      },
+      "schema_version": 1,
+      "id": "39e3c5df3705506df8ef",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "9b37a8e295affa8c"
+      ],
+      "source_names": [
+        "Unstop · Open Competitions & Hackathons"
+      ],
+      "source_feeds": [
+        "https://unstop.com/compete/amp"
+      ],
+      "discovered_urls": [
+        "https://unstop.com/competitions/crp-building-india-case-study-competition-2027-nationbuilding-foundation-of-india-1759161"
+      ],
+      "resolved_urls": [
+        "https://unstop.com/competitions/crp-building-india-case-study-competition-2027-nationbuilding-foundation-of-india-1759161"
+      ]
     }
   },
-  "updated_utc": "2026-10-10T15:51:24+00:00",
+  "updated_utc": "2026-10-10T15:52:17+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -11678,7 +11876,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T15:50:53+00:00",
       "last_success_at": "2026-10-10T15:50:53+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 194,
       "items_seen": 1,
@@ -11701,7 +11899,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:10:06+00:00",
+      "last_skipped_at": "2026-10-10T15:52:08+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -11712,7 +11910,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T15:50:53+00:00",
       "last_success_at": "2026-10-10T15:50:53+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 191,
       "items_seen": 0,
@@ -11735,7 +11933,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:10:06+00:00",
+      "last_skipped_at": "2026-10-10T15:52:08+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -11746,7 +11944,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T15:50:53+00:00",
       "last_success_at": "2026-10-10T15:50:53+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 400,
       "items_seen": 59,
@@ -11769,7 +11967,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:10:06+00:00",
+      "last_skipped_at": "2026-10-10T15:52:08+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 4
     },
@@ -11780,7 +11978,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-10T15:50:54+00:00",
       "last_success_at": "2026-10-10T15:50:54+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 490,
       "items_seen": 67,
@@ -11803,7 +12001,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:10:06+00:00",
+      "last_skipped_at": "2026-10-10T15:52:08+00:00",
       "quality_rejected_count": 3,
       "quality_rule_version": 4
     },
@@ -11814,7 +12012,7 @@
       "adapter_type": "official_blog_rss",
       "last_attempt_at": "2026-10-10T15:50:57+00:00",
       "last_success_at": "2026-10-10T15:50:57+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 180,
       "items_seen": 10,
@@ -11838,7 +12036,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-10T15:10:06+00:00",
+      "last_skipped_at": "2026-10-10T15:52:08+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -11864,7 +12062,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T15:50:55+00:00",
       "last_success_at": "2026-10-10T15:50:55+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1825,
       "items_seen": 15,
@@ -11874,7 +12072,7 @@
       "last_success_matching_items": 15,
       "last_success_new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T15:10:06+00:00",
+      "last_skipped_at": "2026-10-10T15:52:08+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 4
     },
@@ -11898,7 +12096,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T15:50:55+00:00",
       "last_success_at": "2026-10-10T15:50:55+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 174,
       "items_seen": 0,
@@ -11910,7 +12108,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:10:06+00:00"
+      "last_skipped_at": "2026-10-10T15:52:08+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -11932,7 +12130,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T15:50:55+00:00",
       "last_success_at": "2026-10-10T15:50:55+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 194,
       "items_seen": 0,
@@ -11944,7 +12142,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:10:06+00:00"
+      "last_skipped_at": "2026-10-10T15:52:08+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -11966,7 +12164,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T15:50:57+00:00",
       "last_success_at": "2026-10-10T15:50:57+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1814,
       "items_seen": 71,
@@ -11978,7 +12176,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:10:06+00:00"
+      "last_skipped_at": "2026-10-10T15:52:08+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -12000,14 +12198,14 @@
       "minimum_interval_seconds": 900,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T15:50:59+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1287,
       "items_seen": 21,
       "matching_items": 21,
       "new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-10T15:10:06+00:00",
+      "last_skipped_at": "2026-10-10T15:52:08+00:00",
       "last_success_at": "2026-10-10T15:50:59+00:00",
       "last_success_items_seen": 21,
       "last_success_matching_items": 21,
@@ -12036,7 +12234,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-10T15:51:00+00:00",
       "last_success_at": "2026-10-10T15:51:00+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1697,
       "items_seen": 24,
@@ -12048,7 +12246,40 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 4,
-      "last_skipped_at": "2026-10-10T15:10:06+00:00"
+      "last_skipped_at": "2026-10-10T15:52:08+00:00"
+    },
+    "9b37a8e295affa8c": {
+      "source_id": "9b37a8e295affa8c",
+      "name": "Unstop · Open Competitions & Hackathons",
+      "url": "https://unstop.com/compete/amp",
+      "adapter_type": "unstop_html",
+      "access_method": "public_unstop_html_listing",
+      "expected_fields": [
+        "title",
+        "link",
+        "summary",
+        "listing_category",
+        "listing_countdown_text",
+        "source_listing"
+      ],
+      "pagination_mode": "current_unstop_listing_cards",
+      "timeout_seconds": 10,
+      "minimum_interval_seconds": 900,
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_attempt_at": "2026-10-10T15:52:08+00:00",
+      "last_success_at": "2026-10-10T15:52:08+00:00",
+      "last_status": "success",
+      "last_error": null,
+      "last_duration_ms": 1118,
+      "items_seen": 9,
+      "matching_items": 9,
+      "new_items": 1,
+      "last_success_items_seen": 9,
+      "last_success_matching_items": 9,
+      "last_success_new_items": 1,
+      "failure_streak": 0,
+      "quality_rejected_count": 8,
+      "quality_rule_version": 4
     }
   }
 }
