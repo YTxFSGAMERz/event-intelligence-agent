@@ -481,7 +481,8 @@ class SourceAdapterTests(unittest.TestCase):
     def test_required_google_news_decoder_dependency_is_imported(self):
         self.assertIsNotNone(
             source_adapters._decode_google_news,
-            "googlenewsdecoder is pinned in requirements.txt and must load in CI",
+            "googlenewsdecoder is pinned in requirements.txt but failed to import: "
+            f"{source_adapters._GOOGLE_NEWS_DECODER_IMPORT_ERROR!r}",
         )
         self.assertIsNone(source_adapters._GOOGLE_NEWS_DECODER_IMPORT_ERROR)
 

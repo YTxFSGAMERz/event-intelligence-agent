@@ -24,7 +24,7 @@ try:
     from googlenewsdecoder import gnewsdecoder as _decode_google_news
 except ImportError as exc:  # Keep ordinary RSS sources functional if the optional decoder is unavailable.
     _decode_google_news = None
-    _GOOGLE_NEWS_DECODER_IMPORT_ERROR = type(exc).__name__
+    _GOOGLE_NEWS_DECODER_IMPORT_ERROR = f"{type(exc).__name__}: {str(exc)[:220]}"
 else:
     _GOOGLE_NEWS_DECODER_IMPORT_ERROR = None
 
