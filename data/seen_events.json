@@ -21522,16 +21522,84 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "source_page_checked",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://innosprint-3.devfolio.co"
+        ],
+        "last_checked_at": "2026-10-11T12:15:05+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://innosprint-3.devfolio.co",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": "Innosprint2.0 | Devfolio",
+        "last_check_error": null,
+        "last_check_duration_ms": 1487,
+        "observed_facts": {
+          "page_role": "possible_event_page",
+          "page_title": "Innosprint2.0 | Devfolio",
+          "description": "India's Largest student-led hackathon",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "open",
+          "registration_status_evidence": "Innosprint2.0 | Devfolio Skip to content Home Blog Innosprint2.0 Innosprint2.0 Overview Schedule Overview Schedule Overview Schedule Overview Schedule Overview Schedule Runs from Oct 24, 2026 Happening Chandigarh State, India Applications close in Apply now India's Largest studen",
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        },
+        "fact_evidence": {
+          "registration_status": {
+            "value": "open",
+            "source_url": "https://innosprint-3.devfolio.co",
+            "method": "explicit_page_text",
+            "snippet": "Innosprint2.0 | Devfolio Skip to content Home Blog Innosprint2.0 Innosprint2.0 Overview Schedule Overview Schedule Overview Schedule Overview Schedule Overview Schedule Runs from Oct 24, 2026 Happening Chandigarh State, India Applications close in Apply now India's Largest studen"
+          }
+        }
       },
       "schema_version": 1,
       "id": "f027d3dcfa0218fce0bb",
@@ -22406,7 +22474,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-11T12:14:08+00:00",
+  "updated_utc": "2026-10-11T12:15:07+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -22439,7 +22507,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:14:08+00:00",
+      "last_skipped_at": "2026-10-11T12:15:05+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -22473,7 +22541,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:14:08+00:00",
+      "last_skipped_at": "2026-10-11T12:15:05+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -22507,7 +22575,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:14:08+00:00",
+      "last_skipped_at": "2026-10-11T12:15:05+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 6
     },
@@ -22541,7 +22609,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:14:08+00:00",
+      "last_skipped_at": "2026-10-11T12:15:05+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 6
     },
@@ -22576,7 +22644,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:14:08+00:00",
+      "last_skipped_at": "2026-10-11T12:15:05+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -22612,7 +22680,7 @@
       "last_success_matching_items": 14,
       "last_success_new_items": 0,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-11T12:14:08+00:00",
+      "last_skipped_at": "2026-10-11T12:15:05+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -22648,7 +22716,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:14:08+00:00"
+      "last_skipped_at": "2026-10-11T12:15:05+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -22682,7 +22750,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:14:08+00:00"
+      "last_skipped_at": "2026-10-11T12:15:05+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -22716,7 +22784,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:14:08+00:00"
+      "last_skipped_at": "2026-10-11T12:15:05+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -22745,7 +22813,7 @@
       "matching_items": 20,
       "new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-11T12:14:08+00:00",
+      "last_skipped_at": "2026-10-11T12:15:05+00:00",
       "last_success_at": "2026-10-11T12:06:44+00:00",
       "last_success_items_seen": 20,
       "last_success_matching_items": 20,
@@ -22786,7 +22854,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:14:08+00:00"
+      "last_skipped_at": "2026-10-11T12:15:05+00:00"
     },
     "9b37a8e295affa8c": {
       "source_id": "9b37a8e295affa8c",
@@ -22820,7 +22888,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:14:08+00:00"
+      "last_skipped_at": "2026-10-11T12:15:05+00:00"
     },
     "8e0842c73fb362fb": {
       "source_id": "8e0842c73fb362fb",
@@ -22854,7 +22922,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:14:08+00:00"
+      "last_skipped_at": "2026-10-11T12:15:05+00:00"
     },
     "baec8f4645b19637": {
       "source_id": "baec8f4645b19637",
@@ -22888,7 +22956,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:14:08+00:00"
+      "last_skipped_at": "2026-10-11T12:15:05+00:00"
     },
     "9094d50190e1d4a7": {
       "source_id": "9094d50190e1d4a7",
@@ -22922,7 +22990,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:14:08+00:00"
+      "last_skipped_at": "2026-10-11T12:15:05+00:00"
     },
     "3181a5bfa4703f10": {
       "source_id": "3181a5bfa4703f10",
@@ -22956,7 +23024,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:14:08+00:00"
+      "last_skipped_at": "2026-10-11T12:15:05+00:00"
     },
     "7e8cfb2b3636b070": {
       "source_id": "7e8cfb2b3636b070",
@@ -22991,7 +23059,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:14:08+00:00"
+      "last_skipped_at": "2026-10-11T12:15:05+00:00"
     },
     "1960332d2712fbaf": {
       "source_id": "1960332d2712fbaf",
@@ -23031,7 +23099,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:14:08+00:00"
+      "last_skipped_at": "2026-10-11T12:15:05+00:00"
     }
   }
 }
