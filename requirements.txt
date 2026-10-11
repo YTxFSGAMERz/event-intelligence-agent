@@ -2,3 +2,6 @@ feedparser>=6.0.11,<7.0
 requests>=2.31,<3.0
 Pillow>=10.4,<13
 googlenewsdecoder==0.2.1
+
+# googlenewsdecoder 0.2.1 imports selectolax.parser, which was removed in selectolax 1.0.
+selectolax>=0.4.12,<1.0
