@@ -25023,16 +25023,28 @@
       "deadline_status": "unverified",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "not_html",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://scholarships.gov.in/public/schemeGuidelines/ApprovedmodifieddraftofTopClassCollege.pdf"
+        ],
+        "last_checked_at": "2026-10-11T14:25:19+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://scholarships.gov.in/public/schemeGuidelines/ApprovedmodifieddraftofTopClassCollege.pdf",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": null,
+        "last_check_error": "content_type_not_html",
+        "last_check_duration_ms": 1307
       },
       "schema_version": 1,
       "id": "7352d55877b5284bbf88",
@@ -25242,7 +25254,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-11T14:20:34+00:00",
+  "updated_utc": "2026-10-11T14:25:21+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -25252,7 +25264,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-11T14:19:47+00:00",
       "last_success_at": "2026-10-11T14:19:47+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 252,
       "items_seen": 1,
@@ -25275,7 +25287,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:15:05+00:00",
+      "last_skipped_at": "2026-10-11T14:25:19+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -25286,7 +25298,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-11T14:19:48+00:00",
       "last_success_at": "2026-10-11T14:19:48+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 186,
       "items_seen": 0,
@@ -25309,7 +25321,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:15:05+00:00",
+      "last_skipped_at": "2026-10-11T14:25:19+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -25320,7 +25332,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-11T14:19:48+00:00",
       "last_success_at": "2026-10-11T14:19:48+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 438,
       "items_seen": 55,
@@ -25343,7 +25355,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:15:05+00:00",
+      "last_skipped_at": "2026-10-11T14:25:19+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 6
     },
@@ -25354,7 +25366,7 @@
       "adapter_type": "google_news_rss",
       "last_attempt_at": "2026-10-11T14:19:48+00:00",
       "last_success_at": "2026-10-11T14:19:48+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 508,
       "items_seen": 68,
@@ -25377,7 +25389,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:15:05+00:00",
+      "last_skipped_at": "2026-10-11T14:25:19+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 6
     },
@@ -25388,7 +25400,7 @@
       "adapter_type": "official_blog_rss",
       "last_attempt_at": "2026-10-11T14:19:51+00:00",
       "last_success_at": "2026-10-11T14:19:51+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 273,
       "items_seen": 10,
@@ -25412,7 +25424,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:15:05+00:00",
+      "last_skipped_at": "2026-10-11T14:25:19+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -25438,7 +25450,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-11T14:19:49+00:00",
       "last_success_at": "2026-10-11T14:19:49+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1832,
       "items_seen": 14,
@@ -25448,7 +25460,7 @@
       "last_success_matching_items": 14,
       "last_success_new_items": 0,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-11T12:15:05+00:00",
+      "last_skipped_at": "2026-10-11T14:25:19+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -25472,7 +25484,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-11T14:19:49+00:00",
       "last_success_at": "2026-10-11T14:19:49+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 203,
       "items_seen": 0,
@@ -25484,7 +25496,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:15:05+00:00"
+      "last_skipped_at": "2026-10-11T14:25:19+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -25506,7 +25518,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-11T14:19:49+00:00",
       "last_success_at": "2026-10-11T14:19:49+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 183,
       "items_seen": 0,
@@ -25518,7 +25530,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:15:05+00:00"
+      "last_skipped_at": "2026-10-11T14:25:19+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -25540,7 +25552,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-11T14:19:52+00:00",
       "last_success_at": "2026-10-11T14:19:52+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 2059,
       "items_seen": 69,
@@ -25552,7 +25564,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:15:05+00:00"
+      "last_skipped_at": "2026-10-11T14:25:19+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -25574,14 +25586,14 @@
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-11T14:19:54+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1247,
       "items_seen": 20,
       "matching_items": 20,
       "new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-11T12:15:05+00:00",
+      "last_skipped_at": "2026-10-11T14:25:19+00:00",
       "last_success_at": "2026-10-11T14:19:54+00:00",
       "last_success_items_seen": 20,
       "last_success_matching_items": 20,
@@ -25610,7 +25622,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-11T14:19:55+00:00",
       "last_success_at": "2026-10-11T14:19:55+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 2268,
       "items_seen": 24,
@@ -25622,7 +25634,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:15:05+00:00"
+      "last_skipped_at": "2026-10-11T14:25:19+00:00"
     },
     "9b37a8e295affa8c": {
       "source_id": "9b37a8e295affa8c",
@@ -25644,7 +25656,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-11T14:19:57+00:00",
       "last_success_at": "2026-10-11T14:19:57+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 975,
       "items_seen": 7,
@@ -25656,7 +25668,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:15:05+00:00"
+      "last_skipped_at": "2026-10-11T14:25:19+00:00"
     },
     "8e0842c73fb362fb": {
       "source_id": "8e0842c73fb362fb",
@@ -25678,7 +25690,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-11T14:19:58+00:00",
       "last_success_at": "2026-10-11T14:19:58+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1362,
       "items_seen": 5,
@@ -25690,7 +25702,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:15:05+00:00"
+      "last_skipped_at": "2026-10-11T14:25:19+00:00"
     },
     "baec8f4645b19637": {
       "source_id": "baec8f4645b19637",
@@ -25712,7 +25724,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-11T14:20:00+00:00",
       "last_success_at": "2026-10-11T14:20:00+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 503,
       "items_seen": 7,
@@ -25724,7 +25736,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:15:05+00:00"
+      "last_skipped_at": "2026-10-11T14:25:19+00:00"
     },
     "9094d50190e1d4a7": {
       "source_id": "9094d50190e1d4a7",
@@ -25746,7 +25758,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-11T14:20:00+00:00",
       "last_success_at": "2026-10-11T14:20:00+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 2737,
       "items_seen": 5,
@@ -25758,7 +25770,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:15:05+00:00"
+      "last_skipped_at": "2026-10-11T14:25:19+00:00"
     },
     "3181a5bfa4703f10": {
       "source_id": "3181a5bfa4703f10",
@@ -25780,7 +25792,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-11T14:20:03+00:00",
       "last_success_at": "2026-10-11T14:20:03+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 4302,
       "items_seen": 5,
@@ -25792,7 +25804,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:15:05+00:00"
+      "last_skipped_at": "2026-10-11T14:25:19+00:00"
     },
     "7e8cfb2b3636b070": {
       "source_id": "7e8cfb2b3636b070",
@@ -25815,7 +25827,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-11T14:20:07+00:00",
       "last_success_at": "2026-10-11T14:20:07+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 1217,
       "items_seen": 20,
@@ -25827,7 +25839,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:15:05+00:00"
+      "last_skipped_at": "2026-10-11T14:25:19+00:00"
     },
     "1960332d2712fbaf": {
       "source_id": "1960332d2712fbaf",
@@ -25855,7 +25867,7 @@
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_attempt_at": "2026-10-11T14:20:08+00:00",
       "last_success_at": "2026-10-11T14:20:08+00:00",
-      "last_status": "success",
+      "last_status": "skipped_minimum_interval",
       "last_error": null,
       "last_duration_ms": 758,
       "items_seen": 103,
@@ -25867,7 +25879,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:15:05+00:00"
+      "last_skipped_at": "2026-10-11T14:25:19+00:00"
     }
   }
 }
