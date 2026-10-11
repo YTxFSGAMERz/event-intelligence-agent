@@ -208,10 +208,11 @@ class SourceAdapterTests(unittest.TestCase):
         class PagedSession:
             def __init__(self):
                 self.calls = []
-                self.responses = [
+                self.all_responses = [
                     FakeResponse("https://devpost.com/api/hackathons", json.dumps(payload).encode("utf-8"))
                     for payload in payloads
                 ]
+                self.responses = list(self.all_responses)
 
             def get(self, url, **kwargs):
                 self.calls.append((url, kwargs))
@@ -229,7 +230,7 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(result.entries[-1]["title"], "Student AI Hackathon 17")
         self.assertEqual([call[1]["params"]["page"] for call in session.calls], [1, 2])
         self.assertTrue(all(call[1]["params"]["per_page"] == 50 for call in session.calls))
-        self.assertTrue(all(response.closed for response in []))  # responses are closed by the adapter
+        self.assertTrue(all(response.closed for response in session.all_responses))
 
     def test_devpost_api_fails_closed_if_payload_shape_changes(self):
         adapter = build_adapters(["https://devpost.com/api/hackathons"])[0]
