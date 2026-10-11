@@ -146,7 +146,7 @@ class SourceAdapterTests(unittest.TestCase):
         session = FakeSession(response)
         result = adapter.fetch(session=session)
 
-        self.assertEqual(session.calls[0][1].get("params"), {"per_page": 50})
+        self.assertEqual(session.calls[0][1].get("params"), {"per_page": 50, "page": 1})
         self.assertEqual(result.status, "success")
         self.assertEqual(result.item_count, 2)
         self.assertEqual(
@@ -188,6 +188,48 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(result.entries[0]["title"], "Student AI Hackathon 00")
         self.assertEqual(result.entries[-1]["title"], "Student AI Hackathon 49")
         self.assertTrue(response.closed)
+
+    def test_devpost_api_follows_page_numbers_when_endpoint_caps_page_size(self):
+        def event_row(index):
+            return {
+                "title": f"Student AI Hackathon {index:02d}",
+                "open_state": "open",
+                "url": f"https://student-ai-{index:02d}.devpost.com/",
+                "submission_period_dates": "Oct 1 - Oct 30, 2026",
+                "time_left_to_submission": "10 days left",
+                "invite_only": False,
+            }
+
+        payloads = [
+            {"hackathons": [event_row(i) for i in range(9)], "meta": {"total_count": 18, "per_page": 9}},
+            {"hackathons": [event_row(i) for i in range(9, 18)], "meta": {"total_count": 18, "per_page": 9}},
+        ]
+
+        class PagedSession:
+            def __init__(self):
+                self.calls = []
+                self.responses = [
+                    FakeResponse("https://devpost.com/api/hackathons", json.dumps(payload).encode("utf-8"))
+                    for payload in payloads
+                ]
+
+            def get(self, url, **kwargs):
+                self.calls.append((url, kwargs))
+                if not self.responses:
+                    raise AssertionError("Adapter requested more pages than expected")
+                return self.responses.pop(0)
+
+        adapter = build_adapters(["https://devpost.com/api/hackathons"])[0]
+        session = PagedSession()
+        result = adapter.fetch(session=session)
+
+        self.assertEqual(result.status, "success")
+        self.assertEqual(result.item_count, 18)
+        self.assertEqual(result.entries[0]["title"], "Student AI Hackathon 00")
+        self.assertEqual(result.entries[-1]["title"], "Student AI Hackathon 17")
+        self.assertEqual([call[1]["params"]["page"] for call in session.calls], [1, 2])
+        self.assertTrue(all(call[1]["params"]["per_page"] == 50 for call in session.calls))
+        self.assertTrue(all(response.closed for response in []))  # responses are closed by the adapter
 
     def test_devpost_api_fails_closed_if_payload_shape_changes(self):
         adapter = build_adapters(["https://devpost.com/api/hackathons"])[0]
@@ -294,7 +336,7 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(unstop.access_method, "public_unstop_html_listing")
         self.assertEqual(devpost.adapter_type, "devpost_api")
         self.assertEqual(devpost.access_method, "public_devpost_json_api")
-        self.assertEqual(devpost.pagination_mode, "public_api_requested_page_size_50")
+        self.assertEqual(devpost.pagination_mode, "public_api_page_size_50_max_3_pages")
         self.assertIn("theme_names", devpost.expected_fields)
 
     def test_devfolio_parser_keeps_open_and_upcoming_cards_but_ignores_past(self):

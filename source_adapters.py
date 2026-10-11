@@ -618,7 +618,7 @@ def build_source_config(url: str) -> SourceConfig:
         access_method = "public_official_mlh_events_html"
     elif adapter_type == "devpost_api":
         expected_fields = ("title", "link", "summary", "listing_status", "submission_period_dates", "time_left_to_submission", "location_text", "organization_name", "prize_text", "theme_names", "registrations_count", "thumbnail_url")
-        pagination_mode = "public_api_requested_page_size_50"
+        pagination_mode = "public_api_page_size_50_max_3_pages"
         access_method = "public_devpost_json_api"
     elif adapter_type == "devfolio_html":
         expected_fields = ("title", "link", "summary", "listing_status", "event_date_text", "application_open_date_text", "format_text")
@@ -693,13 +693,15 @@ class RSSSourceAdapter:
 
 
 class DevpostHackathonsAPIAdapter(RSSSourceAdapter):
-    """Consume the public JSON listing exposed by Devpost's active hackathon catalogue.
+    """Consume Devpost's public JSON catalogue with bounded page-number pagination.
 
     The endpoint is public, but it is not treated as an organizer-verification API.
-    Only public open/upcoming entries with safe Devpost event URLs are emitted.
+    Listing values remain observed facts and must not be promoted to verified fields.
     """
 
     MAX_PAYLOAD_BYTES = 3_000_000
+    REQUESTED_PAGE_SIZE = 50
+    MAX_PAGES_PER_FETCH = 3
     ACTIVE_STATES = {"open", "upcoming"}
 
     def fetch(
@@ -710,142 +712,177 @@ class DevpostHackathonsAPIAdapter(RSSSourceAdapter):
     ) -> FeedResult:
         started = time.monotonic()
         fetched_at = utc_now()
-        response = session.get(
-            self.config.url,
-            params={"per_page": 50},
-            allow_redirects=True,
-            timeout=timeout,
-            headers={"User-Agent": user_agent, "Accept": "application/json"},
-            stream=True,
-        )
-        try:
-            response.raise_for_status()
-            chunks: list[bytes] = []
-            size = 0
-            for chunk in response.iter_content(chunk_size=8192):
-                if not chunk:
-                    continue
-                size += len(chunk)
-                if size > self.MAX_PAYLOAD_BYTES:
-                    raise RuntimeError("Devpost API response exceeded the 3 MB safety limit")
-                chunks.append(chunk)
+        all_rows: list[dict] = []
+        seen_row_keys: set[str] = set()
+        reported_total: int | None = None
+        reported_page_size: int | None = None
+        total_bytes = 0
 
-            raw_payload = b"".join(chunks).decode(
-                getattr(response, "encoding", None) or "utf-8", errors="replace"
+        # Devpost may ignore the requested page size. Follow page numbers from
+        # response metadata, but cap the number of HTTP requests and stop on a
+        # repeated page, an exhausted total, or a short final page.
+        for page in range(1, self.MAX_PAGES_PER_FETCH + 1):
+            response = session.get(
+                self.config.url,
+                params={"per_page": self.REQUESTED_PAGE_SIZE, "page": page},
+                allow_redirects=True,
+                timeout=timeout,
+                headers={"User-Agent": user_agent, "Accept": "application/json"},
+                stream=True,
             )
             try:
-                payload = json.loads(raw_payload)
-            except json.JSONDecodeError:
-                raise RuntimeError("Devpost API returned invalid JSON") from None
-            if not isinstance(payload, dict) or not isinstance(payload.get("hackathons"), list):
-                root_keys = sorted(payload.keys())[:12] if isinstance(payload, dict) else []
-                raise RuntimeError(
-                    f"Devpost API response did not contain a hackathons list; root_keys={root_keys}"
-                )
-
-            entries: list[dict] = []
-            for row in payload["hackathons"]:
-                if not isinstance(row, dict):
-                    continue
-                title = re.sub(r"\s+", " ", str(row.get("title") or "")).strip()
-                status = str(row.get("open_state") or "").strip().casefold()
-                if not title or status not in self.ACTIVE_STATES or row.get("invite_only") is True:
-                    continue
-
-                link = normalize_http_url(str(row.get("url") or ""))
-                if not link:
-                    continue
-                parts = urlsplit(link)
-                host = (parts.hostname or "").casefold()
-                if (
-                    parts.scheme.casefold() != "https"
-                    or (host != "devpost.com" and not host.endswith(".devpost.com"))
-                    or parts.username
-                    or parts.password
-                ):
-                    continue
-                try:
-                    if parts.port not in (None, 443):
+                response.raise_for_status()
+                chunks: list[bytes] = []
+                for chunk in response.iter_content(chunk_size=8192):
+                    if not chunk:
                         continue
-                except ValueError:
-                    continue
+                    total_bytes += len(chunk)
+                    if total_bytes > self.MAX_PAYLOAD_BYTES:
+                        raise RuntimeError("Devpost API pages exceeded the 3 MB total safety limit")
+                    chunks.append(chunk)
 
-                location_data = row.get("displayed_location")
-                if isinstance(location_data, dict):
-                    location = re.sub(r"\s+", " ", str(location_data.get("location") or "")).strip()
-                else:
-                    location = re.sub(r"\s+", " ", str(location_data or "")).strip()
-
-                submission_period = re.sub(
-                    r"\s+", " ", str(row.get("submission_period_dates") or "")
-                ).strip()
-                time_left = re.sub(
-                    r"\s+", " ", str(row.get("time_left_to_submission") or "")
-                ).strip()
-                organizer = re.sub(r"\s+", " ", str(row.get("organization_name") or "")).strip()
-                prize = re.sub(
-                    r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", str(row.get("prize_amount") or "")))
-                ).strip()
-                theme_rows = row.get("themes")
-                theme_names = [
-                    re.sub(r"\s+", " ", str(theme.get("name") or "")).strip()
-                    for theme in theme_rows
-                    if isinstance(theme, dict) and str(theme.get("name") or "").strip()
-                ] if isinstance(theme_rows, list) else []
-                participants = row.get("registrations_count")
-                thumbnail_raw = str(row.get("thumbnail_url") or "").strip()
-                thumbnail = normalize_http_url(urljoin(link, thumbnail_raw)) if thumbnail_raw else None
-
-                facts = [
-                    f"Status as displayed: {status.title()}",
-                    f"Submission period as displayed: {submission_period}" if submission_period else "",
-                    f"Time left to submission as displayed: {time_left}" if time_left else "",
-                    f"Location as displayed: {location}" if location else "",
-                    f"Host as listed: {organizer}" if organizer else "",
-                    f"Prize as displayed: {prize}" if prize else "",
-                    f"Themes as listed: {', '.join(theme_names)}" if theme_names else "",
-                    f"Registrations shown: {participants}" if participants is not None else "",
-                ]
-                summary = (
-                    "Devpost public hackathon listing; discovery evidence only, not official organizer "
-                    "verification. " + ". ".join(fact for fact in facts if fact) + ". "
-                    "Confirm current eligibility, submission timing, prize conditions and rules on the linked event page."
+                raw_payload = b"".join(chunks).decode(
+                    getattr(response, "encoding", None) or "utf-8", errors="replace"
                 )
-                entries.append({
-                    "title": title[:180],
-                    "link": link,
-                    "summary": summary,
-                    "listing_status": status.title(),
-                    "submission_period_dates": submission_period or None,
-                    "time_left_to_submission": time_left or None,
-                    "location_text": location or None,
-                    "organization_name": organizer or None,
-                    "prize_text": prize or None,
-                    "theme_names": theme_names,
-                    "registrations_count": participants,
-                    "thumbnail_url": thumbnail,
-                    "media_thumbnail": [{"url": thumbnail}] if thumbnail else [],
-                    "source_listing": "Devpost public hackathons API",
-                    "invite_only": False,
-                })
+                try:
+                    payload = json.loads(raw_payload)
+                except json.JSONDecodeError:
+                    raise RuntimeError("Devpost API returned invalid JSON") from None
+                if not isinstance(payload, dict) or not isinstance(payload.get("hackathons"), list):
+                    root_keys = sorted(payload.keys())[:12] if isinstance(payload, dict) else []
+                    raise RuntimeError(
+                        f"Devpost API response did not contain a hackathons list; root_keys={root_keys}"
+                    )
 
-            if not entries:
                 meta = payload.get("meta") if isinstance(payload.get("meta"), dict) else {}
-                raise RuntimeError(
-                    "Devpost API returned no active public hackathons with safe event URLs; "
-                    f"reported_total={meta.get('total_count')!r}"
-                )
-            return FeedResult(
-                entries=entries,
-                status="success",
-                item_count=len(entries),
-                duration_ms=round((time.monotonic() - started) * 1000),
-                fetched_at_utc=fetched_at,
+                if page == 1:
+                    try:
+                        reported_total = max(0, int(meta.get("total_count")))
+                    except (TypeError, ValueError):
+                        reported_total = None
+                    try:
+                        reported_page_size = max(1, int(meta.get("per_page")))
+                    except (TypeError, ValueError):
+                        reported_page_size = len(payload["hackathons"]) or self.REQUESTED_PAGE_SIZE
+
+                page_rows = [row for row in payload["hackathons"] if isinstance(row, dict)]
+                added_this_page = 0
+                for row in page_rows:
+                    normalized_link = normalize_http_url(str(row.get("url") or ""))
+                    identity = normalized_link or str(row.get("id") or row.get("title") or "").strip().casefold()
+                    if not identity or identity in seen_row_keys:
+                        continue
+                    seen_row_keys.add(identity)
+                    all_rows.append(row)
+                    added_this_page += 1
+
+                if not page_rows or added_this_page == 0:
+                    break
+                if reported_total is not None and len(all_rows) >= reported_total:
+                    break
+                if reported_page_size and len(page_rows) < reported_page_size:
+                    break
+            finally:
+                closer = getattr(response, "close", None)
+                if callable(closer):
+                    closer()
+
+        entries: list[dict] = []
+        for row in all_rows:
+            title = re.sub(r"\s+", " ", str(row.get("title") or "")).strip()
+            status = str(row.get("open_state") or "").strip().casefold()
+            if not title or status not in self.ACTIVE_STATES or row.get("invite_only") is True:
+                continue
+
+            link = normalize_http_url(str(row.get("url") or ""))
+            if not link:
+                continue
+            parts = urlsplit(link)
+            host = (parts.hostname or "").casefold()
+            if (
+                parts.scheme.casefold() != "https"
+                or (host != "devpost.com" and not host.endswith(".devpost.com"))
+                or parts.username
+                or parts.password
+            ):
+                continue
+            try:
+                if parts.port not in (None, 443):
+                    continue
+            except ValueError:
+                continue
+
+            location_data = row.get("displayed_location")
+            if isinstance(location_data, dict):
+                location = re.sub(r"\s+", " ", str(location_data.get("location") or "")).strip()
+            else:
+                location = re.sub(r"\s+", " ", str(location_data or "")).strip()
+
+            submission_period = re.sub(
+                r"\s+", " ", str(row.get("submission_period_dates") or "")
+            ).strip()
+            time_left = re.sub(
+                r"\s+", " ", str(row.get("time_left_to_submission") or "")
+            ).strip()
+            organizer = re.sub(r"\s+", " ", str(row.get("organization_name") or "")).strip()
+            prize = re.sub(
+                r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", str(row.get("prize_amount") or "")))
+            ).strip()
+            theme_rows = row.get("themes")
+            theme_names = [
+                re.sub(r"\s+", " ", str(theme.get("name") or "")).strip()
+                for theme in theme_rows
+                if isinstance(theme, dict) and str(theme.get("name") or "").strip()
+            ] if isinstance(theme_rows, list) else []
+            participants = row.get("registrations_count")
+            thumbnail_raw = str(row.get("thumbnail_url") or "").strip()
+            thumbnail = normalize_http_url(urljoin(link, thumbnail_raw)) if thumbnail_raw else None
+
+            facts = [
+                f"Status as displayed: {status.title()}",
+                f"Submission period as displayed: {submission_period}" if submission_period else "",
+                f"Time left to submission as displayed: {time_left}" if time_left else "",
+                f"Location as displayed: {location}" if location else "",
+                f"Host as listed: {organizer}" if organizer else "",
+                f"Prize as displayed: {prize}" if prize else "",
+                f"Themes as listed: {', '.join(theme_names)}" if theme_names else "",
+                f"Registrations shown: {participants}" if participants is not None else "",
+            ]
+            summary = (
+                "Devpost public hackathon listing; discovery evidence only, not official organizer "
+                "verification. " + ". ".join(fact for fact in facts if fact) + ". "
+                "Confirm current eligibility, submission timing, prize conditions and rules on the linked event page."
             )
-        finally:
-            closer = getattr(response, "close", None)
-            if callable(closer):
-                closer()
+            entries.append({
+                "title": title[:180],
+                "link": link,
+                "summary": summary,
+                "listing_status": status.title(),
+                "submission_period_dates": submission_period or None,
+                "time_left_to_submission": time_left or None,
+                "location_text": location or None,
+                "organization_name": organizer or None,
+                "prize_text": prize or None,
+                "theme_names": theme_names,
+                "registrations_count": participants,
+                "thumbnail_url": thumbnail,
+                "media_thumbnail": [{"url": thumbnail}] if thumbnail else [],
+                "source_listing": "Devpost public hackathons API",
+                "invite_only": False,
+            })
+
+        if not entries:
+            raise RuntimeError(
+                "Devpost API returned no active public hackathons with safe event URLs; "
+                f"reported_total={reported_total!r}"
+            )
+        return FeedResult(
+            entries=entries,
+            status="success",
+            item_count=len(entries),
+            duration_ms=round((time.monotonic() - started) * 1000),
+            fetched_at_utc=fetched_at,
+        )
 
 
 class GoogleNewsRSSAdapter(RSSSourceAdapter):
