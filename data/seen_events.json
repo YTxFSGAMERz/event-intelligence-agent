@@ -24760,16 +24760,76 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "source_page_checked",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://unstop.com/competitions/indian-equities-prediction-challenge-indiastox-1768968"
+        ],
+        "last_checked_at": "2026-10-11T14:29:22+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://unstop.com/competitions/indian-equities-prediction-challenge-indiastox-1768968",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
+        "last_check_error": null,
+        "last_check_duration_ms": 839,
+        "observed_facts": {
+          "page_role": "discovery_or_unrelated_page",
+          "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
+          "description": "",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        }
       },
       "schema_version": 1,
       "id": "b65c06f6c2e7ad169485",
@@ -25254,7 +25314,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-11T14:25:21+00:00",
+  "updated_utc": "2026-10-11T14:29:22+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -25287,7 +25347,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T14:25:19+00:00",
+      "last_skipped_at": "2026-10-11T14:29:21+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -25321,7 +25381,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T14:25:19+00:00",
+      "last_skipped_at": "2026-10-11T14:29:21+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -25355,7 +25415,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T14:25:19+00:00",
+      "last_skipped_at": "2026-10-11T14:29:21+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 6
     },
@@ -25389,7 +25449,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T14:25:19+00:00",
+      "last_skipped_at": "2026-10-11T14:29:21+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 6
     },
@@ -25424,7 +25484,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T14:25:19+00:00",
+      "last_skipped_at": "2026-10-11T14:29:21+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -25460,7 +25520,7 @@
       "last_success_matching_items": 14,
       "last_success_new_items": 0,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-11T14:25:19+00:00",
+      "last_skipped_at": "2026-10-11T14:29:21+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -25496,7 +25556,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T14:25:19+00:00"
+      "last_skipped_at": "2026-10-11T14:29:21+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -25530,7 +25590,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T14:25:19+00:00"
+      "last_skipped_at": "2026-10-11T14:29:21+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -25564,7 +25624,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T14:25:19+00:00"
+      "last_skipped_at": "2026-10-11T14:29:21+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -25593,7 +25653,7 @@
       "matching_items": 20,
       "new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-11T14:25:19+00:00",
+      "last_skipped_at": "2026-10-11T14:29:21+00:00",
       "last_success_at": "2026-10-11T14:19:54+00:00",
       "last_success_items_seen": 20,
       "last_success_matching_items": 20,
@@ -25634,7 +25694,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T14:25:19+00:00"
+      "last_skipped_at": "2026-10-11T14:29:21+00:00"
     },
     "9b37a8e295affa8c": {
       "source_id": "9b37a8e295affa8c",
@@ -25668,7 +25728,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T14:25:19+00:00"
+      "last_skipped_at": "2026-10-11T14:29:21+00:00"
     },
     "8e0842c73fb362fb": {
       "source_id": "8e0842c73fb362fb",
@@ -25702,7 +25762,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T14:25:19+00:00"
+      "last_skipped_at": "2026-10-11T14:29:21+00:00"
     },
     "baec8f4645b19637": {
       "source_id": "baec8f4645b19637",
@@ -25736,7 +25796,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T14:25:19+00:00"
+      "last_skipped_at": "2026-10-11T14:29:21+00:00"
     },
     "9094d50190e1d4a7": {
       "source_id": "9094d50190e1d4a7",
@@ -25770,7 +25830,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T14:25:19+00:00"
+      "last_skipped_at": "2026-10-11T14:29:21+00:00"
     },
     "3181a5bfa4703f10": {
       "source_id": "3181a5bfa4703f10",
@@ -25804,7 +25864,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T14:25:19+00:00"
+      "last_skipped_at": "2026-10-11T14:29:21+00:00"
     },
     "7e8cfb2b3636b070": {
       "source_id": "7e8cfb2b3636b070",
@@ -25839,7 +25899,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T14:25:19+00:00"
+      "last_skipped_at": "2026-10-11T14:29:21+00:00"
     },
     "1960332d2712fbaf": {
       "source_id": "1960332d2712fbaf",
@@ -25879,7 +25939,41 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T14:25:19+00:00"
+      "last_skipped_at": "2026-10-11T14:29:21+00:00"
+    },
+    "1cb50a49f43eec53": {
+      "source_id": "1cb50a49f43eec53",
+      "name": "Google Developers Blog · RSS",
+      "url": "https://blog.google/technology/developers/rss/",
+      "adapter_type": "official_blog_rss",
+      "access_method": "public_official_blog_rss",
+      "expected_fields": [
+        "title",
+        "link",
+        "summary",
+        "published",
+        "updated",
+        "author",
+        "media"
+      ],
+      "pagination_mode": "publisher_feed_managed",
+      "timeout_seconds": 10,
+      "minimum_interval_seconds": 600,
+      "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
+      "last_attempt_at": "2026-10-11T14:29:21+00:00",
+      "last_success_at": "2026-10-11T14:29:21+00:00",
+      "last_status": "success",
+      "last_error": null,
+      "last_duration_ms": 264,
+      "items_seen": 20,
+      "matching_items": 0,
+      "new_items": 0,
+      "last_success_items_seen": 20,
+      "last_success_matching_items": 0,
+      "last_success_new_items": 0,
+      "failure_streak": 0,
+      "quality_rejected_count": 0,
+      "quality_rule_version": 6
     }
   }
 }
