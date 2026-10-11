@@ -91,6 +91,45 @@ class OpportunitySchemaTests(unittest.TestCase):
         self.assertEqual(event["travel_support"]["status"], "unknown")
         self.assertEqual(event["verification"]["status"], "unverified")
 
+    def test_devpost_listing_observations_remain_unverified(self):
+        observed = source_observed_facts({
+            "adapter_type": "devpost_api",
+            "source_name": "Devpost · Open Hackathons (JSON API)",
+            "source": "https://devpost.com/api/hackathons",
+            "entry": {
+                "listing_status": "Open",
+                "submission_period_dates": "Aug 26 - Oct 30, 2026",
+                "time_left_to_submission": "20 days left",
+                "location_text": "Online",
+                "organization_name": "nebius",
+                "prize_text": "$50,000",
+                "theme_names": ["Machine Learning/AI", "Beginner Friendly"],
+                "registrations_count": 20810,
+                "thumbnail_url": "https://cdn.example.test/thumb.png",
+            },
+        })
+        self.assertEqual(observed["source_kind"], "platform_listing")
+        self.assertEqual(observed["schedule"]["raw"], "Aug 26 - Oct 30, 2026")
+        self.assertEqual(observed["schedule"]["meaning"], "submission period displayed by Devpost")
+        self.assertEqual(observed["schedule"]["confidence"], "observed_unverified")
+        self.assertEqual(observed["submission_countdown"]["raw"], "20 days left")
+        self.assertEqual(observed["location"]["mode"], "remote")
+        self.assertEqual(observed["organizer"]["raw"], "nebius")
+        self.assertEqual(observed["prize"]["raw"], "$50,000")
+        self.assertEqual(observed["themes"], ["Machine Learning/AI", "Beginner Friendly"])
+
+        event = normalize_event_record("devpost-observed", {
+            "title": "Nebius x NVIDIA Global AI Hackathon",
+            "url": "https://nebiusglobalaihackathon.devpost.com/",
+            "adapter_type": "devpost_api",
+            "source_observed": observed,
+        })
+        self.assertEqual(event["source_observed"], observed)
+        self.assertEqual(event["location"]["mode"], "unknown")
+        self.assertIsNone(event["event_start_at"])
+        self.assertIsNone(event["event_end_at"])
+        self.assertEqual(event["verification"]["status"], "unverified")
+
     def test_mlh_calendar_observations_remain_separate_from_verified_facts(self):
         observed = source_observed_facts({
             "adapter_type": "mlh_events_html",

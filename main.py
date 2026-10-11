@@ -522,6 +522,60 @@ def source_observed_facts(event: dict) -> dict:
             },
         }
 
+    if adapter_type == "devpost_api":
+        schedule_raw = str(entry.get("submission_period_dates") or "").strip()
+        time_left = str(entry.get("time_left_to_submission") or "").strip()
+        location_raw = str(entry.get("location_text") or "").strip()
+        location_lower = location_raw.casefold()
+        if "hybrid" in location_lower:
+            mode = "mixed"
+        elif "online" in location_lower or "remote" in location_lower:
+            mode = "remote"
+        elif "in-person" in location_lower or "in person" in location_lower or "offline" in location_lower:
+            mode = "in_person"
+        else:
+            mode = "unknown"
+        themes = entry.get("theme_names")
+        if not isinstance(themes, list):
+            themes = []
+        return {
+            "source_kind": "platform_listing",
+            "source_name": source_name or "Devpost · Open Hackathons (JSON API)",
+            "source_url": source_url or "https://devpost.com/api/hackathons",
+            "observed_at_utc": observed_at,
+            "listing_status": entry.get("listing_status"),
+            "schedule": {
+                "raw": schedule_raw or None,
+                "confidence": "observed_unverified",
+                "meaning": "submission period displayed by Devpost",
+            },
+            "submission_countdown": {
+                "raw": time_left or None,
+                "confidence": "observed_unverified",
+            },
+            "location": {
+                "raw": location_raw or None,
+                "mode": mode,
+                "venue": None,
+                "city": None,
+                "region": None,
+                "country": None,
+                "country_code": None,
+                "confidence": "observed_unverified",
+            },
+            "organizer": {
+                "raw": str(entry.get("organization_name") or "").strip() or None,
+                "confidence": "observed_unverified",
+            },
+            "prize": {
+                "raw": str(entry.get("prize_text") or "").strip() or None,
+                "confidence": "observed_unverified",
+            },
+            "themes": [str(value) for value in themes if str(value).strip()],
+            "registrations_count": entry.get("registrations_count"),
+            "thumbnail_url": _http_url(entry.get("thumbnail_url")),
+        }
+
     if adapter_type == "nsp_scholarships_html":
         deadline_raw = str(entry.get("deadline_raw") or "").strip()
         deadline_display = str(entry.get("deadline_display") or "").strip()
@@ -1080,6 +1134,26 @@ def build_photo_caption(item: dict, categories: list[str], deadline: str,
         lines.append(
             f"📨 Applications open (Devfolio listing; unverified): {str(item['application_open_date'])[:40]}"
         )
+    if item.get("source_listing_submission_period"):
+        lines.append(
+            f"🗓️ Submission period (Devpost listing; unverified): {str(item['source_listing_submission_period'])[:65]}"
+        )
+    if item.get("source_listing_countdown"):
+        lines.append(
+            f"⏳ Submission countdown (Devpost listing; unverified): {str(item['source_listing_countdown'])[:55]}"
+        )
+    if item.get("source_listing_prize"):
+        lines.append(
+            f"🏆 Prize shown on Devpost listing (unverified): {str(item['source_listing_prize'])[:70]}"
+        )
+    if item.get("source_listing_host"):
+        lines.append(
+            f"🏢 Host shown on Devpost listing (unverified): {str(item['source_listing_host'])[:60]}"
+        )
+    if item.get("source_listing_themes"):
+        theme_text = ", ".join(str(value) for value in item["source_listing_themes"][:5])
+        if theme_text:
+            lines.append(f"🧭 Themes shown on Devpost listing (unverified): {theme_text[:100]}")
     if event_schedule:
         source_label = "Devfolio listing" if item.get("adapter_type") == "devfolio_html" else "MLH calendar listing"
         lines.append(f"🗓️ Event dates ({source_label}; unverified): {event_schedule}")
@@ -1806,6 +1880,13 @@ def main() -> int:
                     item["event_schedule"] = f"Starts {event_date_text}"
                 item["event_location"] = str(entry_metadata.get("format_text") or "").strip()
                 item["application_open_date"] = str(entry_metadata.get("application_open_date_text") or "").strip()
+            elif event.get("adapter_type") == "devpost_api":
+                item["source_listing_submission_period"] = str(entry_metadata.get("submission_period_dates") or "").strip()
+                item["source_listing_countdown"] = str(entry_metadata.get("time_left_to_submission") or "").strip()
+                item["source_listing_prize"] = str(entry_metadata.get("prize_text") or "").strip()
+                item["source_listing_host"] = str(entry_metadata.get("organization_name") or "").strip()
+                themes = entry_metadata.get("theme_names")
+                item["source_listing_themes"] = themes if isinstance(themes, list) else []
             elif event.get("adapter_type") == "nsp_scholarships_html":
                 item["reported_deadline"] = str(entry_metadata.get("deadline_display") or entry_metadata.get("deadline_raw") or "").strip()
                 item["reported_deadline_source"] = "National Scholarship Portal listing"
