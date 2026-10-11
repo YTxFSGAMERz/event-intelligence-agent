@@ -1051,6 +1051,430 @@ class GoogleNewsRSSAdapter(RSSSourceAdapter):
         return [result or (None, "invalid_url") for result in results]
 
 
+class HackalendarRSSAdapter(RSSSourceAdapter):
+    """Public, curated hackathon discovery feed; organizer claims still require verification."""
+
+
+class OfficialBlogRSSAdapter(RSSSourceAdapter):
+    """RSS adapter for the configured official GitHub Blog feed."""
+
+
+
+
+class MLHEventsHTMLAdapter(RSSSourceAdapter):
+    """Fetch the public official MLH events calendar without authentication."""
+
+    MAX_HTML_BYTES = 3_000_000
+
+    def fetch(
+        self,
+        timeout: int = 10,
+        user_agent: str = "EventIntelligenceAgent/0.2 (personal event research; respectful feed polling)",
+        session: Any = requests,
+    ) -> FeedResult:
+        started = time.monotonic()
+        fetched_at = utc_now()
+        response = session.get(
+            self.config.url,
+            allow_redirects=True,
+            timeout=timeout,
+            headers={"User-Agent": user_agent},
+            stream=True,
+        )
+        try:
+            response.raise_for_status()
+            chunks: list[bytes] = []
+            size = 0
+            for chunk in response.iter_content(chunk_size=8192):
+                if not chunk:
+                    continue
+                size += len(chunk)
+                if size > self.MAX_HTML_BYTES:
+                    raise RuntimeError("MLH calendar HTML exceeded the 3 MB safety limit")
+                chunks.append(chunk)
+            page_html = b"".join(chunks).decode(getattr(response, "encoding", None) or "utf-8", errors="replace")
+            parser = MLHUpcomingEventsParser()
+            parser.feed(page_html)
+            if not parser.saw_upcoming_heading:
+                raise RuntimeError("MLH calendar changed: Upcoming Events heading was not found")
+            if not parser.events:
+                raise RuntimeError("MLH calendar parser found no dated organizer links in Upcoming Events")
+            return FeedResult(
+                entries=parser.events,
+                status="success",
+                item_count=len(parser.events),
+                duration_ms=round((time.monotonic() - started) * 1000),
+                fetched_at_utc=fetched_at,
+            )
+        finally:
+            closer = getattr(response, "close", None)
+            if callable(closer):
+                closer()
+
+
+
+def nsp_html_diagnostic(page_html: str) -> str:
+    """Summarize public-page markup around expected NSP labels when detection fails."""
+    body = str(page_html or "")
+    lowered = body.casefold()
+    tag_counts = {
+        tag: len(re.findall(r"<" + tag + r"\b", body, re.IGNORECASE))
+        for tag in ("h1", "h2", "h3", "h4", "h5", "h6", "p", "span", "strong", "a")
+    }
+    snippets = []
+    for term in ("Academic Year", "AICTE", "Student Application Open till", "Specifications", "FAQ"):
+        index = lowered.find(term.casefold())
+        if index >= 0:
+            snippet = re.sub(r"\s+", " ", body[max(0, index - 100):index + 220])
+            snippets.append(f"{term}={snippet[:260]}")
+    return f"html_bytes={len(body)}; tag_counts={tag_counts}; snippets={snippets}"
+
+
+UNSTOP_DETAIL_PATH_RE = re.compile(
+    r"^/(?P<kind>hackathons|competitions|scholarships|internships|challenges|fellowships|jobs)/[^/]+-\d{5,}$",
+    re.IGNORECASE,
+)
+UNSTOP_EXPIRED_RE = re.compile(
+    r"\b(?:expired|registration\s+closed|applications?\s+closed|event\s+ended)\b",
+    re.IGNORECASE,
+)
+UNSTOP_COUNTDOWN_RE = re.compile(r"\b\d+\s+(?:days?|hours?)\s+left\b", re.IGNORECASE)
+UNSTOP_CARD_TAIL_RE = re.compile(
+    r"\s+\d[\d,]*\s+(?:applied|registered|participants?)\b"
+    r"|\s+\d+\s+(?:days?|hours?)\s+left\b"
+    r"|\s+posted\s+\d{1,2}\s+[a-z]{3,9}\b",
+    re.IGNORECASE,
+)
+
+
+class UnstopExploreParser(HTMLParser):
+    """Extract direct opportunity-detail links from Unstop's public listing pages."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self._anchor: dict | None = None
+        self.events: list[dict] = []
+        self._seen_links: set[str] = set()
+        self.anchor_count = 0
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() != "a":
+            return
+        attrs_dict = {key.lower(): (value or "").strip() for key, value in attrs}
+        self._anchor = {
+            "href": attrs_dict.get("href", ""),
+            "aria_label": attrs_dict.get("aria-label", ""),
+            "title_attr": attrs_dict.get("title", ""),
+            "parts": [],
+        }
+        self.anchor_count += 1
+
+    def handle_data(self, data: str) -> None:
+        if self._anchor is not None:
+            self._anchor["parts"].append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.lower() != "a" or self._anchor is None:
+            return
+        anchor = self._anchor
+        self._anchor = None
+        link = normalize_http_url(urljoin("https://unstop.com/compete/amp", anchor.get("href", "")))
+        if not link:
+            return
+        parts = urlsplit(link)
+        host = (parts.hostname or "").lower()
+        path_match = UNSTOP_DETAIL_PATH_RE.fullmatch(parts.path)
+        if host not in {"unstop.com", "www.unstop.com"} or not path_match:
+            return
+        if parts.username or parts.password or link in self._seen_links:
+            return
+
+        visible = re.sub(r"\s+", " ", " ".join(str(v or "") for v in anchor["parts"])).strip()
+        if not visible:
+            visible = str(anchor.get("aria_label") or anchor.get("title_attr") or "").strip()
+        if not visible or UNSTOP_EXPIRED_RE.search(visible):
+            return
+
+        kind = path_match.group("kind").casefold()
+        raw_visible = visible
+        visible = re.sub(
+            r"^(?:hackathons|competitions|scholarships|internships|challenges|fellowships|jobs)\s+",
+            "", visible, flags=re.IGNORECASE,
+        )
+        # Unstop prefixes cards with display chips such as "Online Free",
+        # "Festival" or "Launching soon". Remove those from the title only; preserve the exact
+        # listing text below as evidence and never derive a date from countdowns.
+        visible = re.sub(
+            r"^(?:(?:online|offline|hybrid)\s+free\s+|(?:online|offline|hybrid)\s+|festival\s+|(?:launching|closing|starting)\s+soon\s+)",
+            "", visible, flags=re.IGNORECASE,
+        )
+        mode_match = re.match(
+            r"^(?P<organizer>.+?)\s+(?:online|offline|hybrid)\s+(?P<remainder>.+)$",
+            visible, re.IGNORECASE,
+        )
+        if mode_match:
+            organizer = mode_match.group("organizer").strip()
+            remainder = mode_match.group("remainder").strip()
+            if remainder.casefold().startswith(organizer.casefold() + " "):
+                visible = remainder
+        tail = UNSTOP_CARD_TAIL_RE.search(visible)
+        title = visible[:tail.start()] if tail else visible
+        title = re.sub(r"\s+", " ", title).strip(" \t-|:·")[:180]
+        if not title or title.casefold() in {"view all", "browse hackathons", "browse competitions"}:
+            return
+
+        countdown = UNSTOP_COUNTDOWN_RE.search(raw_visible)
+        countdown_text = countdown.group(0) if countdown else None
+        listing_text = raw_visible[:700]
+        self.events.append({
+            "title": title,
+            "link": link,
+            "summary": (
+                f"Unstop public platform listing ({kind}). Listing text: {listing_text}. "
+                "This is discovery evidence only; verify eligibility, dates, rewards and organizer rules "
+                "on the linked opportunity page."
+            ),
+            "listing_category": kind,
+            "listing_countdown_text": countdown_text,
+            "source_listing": "Unstop Open Opportunities",
+        })
+        self._seen_links.add(link)
+
+
+def unstop_html_diagnostic(page_html: str, parser: UnstopExploreParser) -> str:
+    """Give maintainers compact clues when Unstop changes its listing markup."""
+    body = str(page_html or "")
+    detail_paths = len(re.findall(
+        r"/(?:hackathons|competitions|scholarships|internships|challenges|fellowships|jobs)/[^\s\"'<>]+-\d{5,}",
+        body,
+        re.IGNORECASE,
+    ))
+    return (
+        f"html_bytes={len(body)}; anchors={parser.anchor_count}; "
+        f"opportunity_link_candidates={detail_paths}; "
+        f"has_cookie_notice={bool(re.search(r'cookies? disabled', body, re.IGNORECASE))}"
+    )
+
+
+def devfolio_html_diagnostic(page_html: str, parser: DevfolioExploreParser) -> str:
+    """Summarize a public listing response when no current Devfolio cards were parsed."""
+    body = str(page_html or "")
+    lowered = body.casefold()
+    tag_counts = {
+        tag: len(re.findall(r"<" + tag + r"\b", body, re.IGNORECASE))
+        for tag in ("h1", "h2", "h3", "h4", "h5", "h6", "a", "script")
+    }
+    link_mentions = len(re.findall(r"devfolio\.co", body, re.IGNORECASE))
+    heading_matches = re.findall(
+        r"<h[1-6]\b[^>]*>(.*?)</h[1-6]\s*>", body, re.IGNORECASE | re.DOTALL
+    )
+    headings = [
+        re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", heading)).strip()[:70]
+        for heading in heading_matches[:8]
+    ]
+    return (
+        f"html_bytes={len(body)}; tag_counts={tag_counts}; "
+        f"devfolio_host_mentions={link_mentions}; headings={headings}; "
+        f"has_cookie_notice={bool(re.search(r'cookies? (?:are )?disabled|enable cookies', lowered))}; "
+        f"has_access_challenge={bool(re.search(r'access denied|captcha|verify you are human', lowered))}"
+    )
+
+
+class DevfolioExploreHTMLAdapter(RSSSourceAdapter):
+    """Parse Devfolio's current Open and Upcoming hackathon cards."""
+
+    MAX_HTML_BYTES = 4_000_000
+
+    def fetch(
+        self,
+        timeout: int = 10,
+        user_agent: str = "EventIntelligenceAgent/0.2 (personal event research; respectful feed polling)",
+        session: Any = requests,
+    ) -> FeedResult:
+        started = time.monotonic()
+        fetched_at = utc_now()
+        response = session.get(
+            self.config.url,
+            allow_redirects=True,
+            timeout=timeout,
+            headers={"User-Agent": user_agent},
+            stream=True,
+        )
+        try:
+            response.raise_for_status()
+            chunks: list[bytes] = []
+            size = 0
+            for chunk in response.iter_content(chunk_size=8192):
+                if not chunk:
+                    continue
+                size += len(chunk)
+                if size > self.MAX_HTML_BYTES:
+                    raise RuntimeError("Devfolio explore HTML exceeded the 4 MB safety limit")
+                chunks.append(chunk)
+            page_html = b"".join(chunks).decode(getattr(response, "encoding", None) or "utf-8", errors="replace")
+            parser = DevfolioExploreParser()
+            parser.feed(page_html)
+            parser.close()
+            if not parser.events:
+                raise RuntimeError(
+                    "Devfolio parser found no current event cards; " + devfolio_html_diagnostic(page_html, parser)
+                )
+            return FeedResult(
+                entries=parser.events,
+                status="success",
+                item_count=len(parser.events),
+                duration_ms=round((time.monotonic() - started) * 1000),
+                fetched_at_utc=fetched_at,
+            )
+        finally:
+            closer = getattr(response, "close", None)
+            if callable(closer):
+                closer()
+
+
+class UnstopExploreHTMLAdapter(RSSSourceAdapter):
+    """Fetch current Unstop listing cards; event pages still require separate verification."""
+
+    MAX_HTML_BYTES = 4_000_000
+
+    def fetch(
+        self,
+        timeout: int = 10,
+        user_agent: str = "EventIntelligenceAgent/0.2 (personal event research; respectful portal polling)",
+        session: Any = requests,
+    ) -> FeedResult:
+        started = time.monotonic()
+        fetched_at = utc_now()
+        response = session.get(
+            self.config.url,
+            allow_redirects=True,
+            timeout=timeout,
+            headers={"User-Agent": user_agent},
+            stream=True,
+        )
+        try:
+            response.raise_for_status()
+            chunks: list[bytes] = []
+            size = 0
+            for chunk in response.iter_content(chunk_size=8192):
+                if not chunk:
+                    continue
+                size += len(chunk)
+                if size > self.MAX_HTML_BYTES:
+                    raise RuntimeError("Unstop listing HTML exceeded the 4 MB safety limit")
+                chunks.append(chunk)
+            page_html = b"".join(chunks).decode(getattr(response, "encoding", None) or "utf-8", errors="replace")
+            parser = UnstopExploreParser()
+            parser.feed(page_html)
+            parser.close()
+            if not parser.events:
+                raise RuntimeError(
+                    "Unstop parser found no opportunity detail cards; " + unstop_html_diagnostic(page_html, parser)
+                )
+            return FeedResult(
+                entries=parser.events,
+                status="success",
+                item_count=len(parser.events),
+                duration_ms=round((time.monotonic() - started) * 1000),
+                fetched_at_utc=fetched_at,
+            )
+        finally:
+            closer = getattr(response, "close", None)
+            if callable(closer):
+                closer()
+
+
+class NSPScholarshipHTMLAdapter(RSSSourceAdapter):
+    """Parse official NSP scholarship schemes and their specific Specifications/FAQ links."""
+
+    MAX_HTML_BYTES = 4_000_000
+
+    def fetch(
+        self,
+        timeout: int = 10,
+        user_agent: str = "EventIntelligenceAgent/0.2 (personal event research; respectful portal polling)",
+        session: Any = requests,
+    ) -> FeedResult:
+        started = time.monotonic()
+        fetched_at = utc_now()
+        response = session.get(
+            self.config.url,
+            allow_redirects=True,
+            timeout=timeout,
+            headers={"User-Agent": user_agent},
+            stream=True,
+        )
+        try:
+            response.raise_for_status()
+            chunks: list[bytes] = []
+            size = 0
+            for chunk in response.iter_content(chunk_size=8192):
+                if not chunk:
+                    continue
+                size += len(chunk)
+                if size > self.MAX_HTML_BYTES:
+                    raise RuntimeError("NSP scholarship listing exceeded the 4 MB safety limit")
+                chunks.append(chunk)
+            page_html = b"".join(chunks).decode(getattr(response, "encoding", None) or "utf-8", errors="replace")
+            parser = NSPScholarshipListParser()
+            parser.feed(page_html)
+            parser.close()
+            parser._finish_current()
+            if not parser.saw_scheme_heading:
+                raise RuntimeError(
+                    "NSP page changed: no scholarship-scheme title candidates were found; "
+                    + nsp_html_diagnostic(page_html)
+                )
+            if not parser.entries:
+                raise RuntimeError(
+                    "NSP parser found no schemes with specific official guidance links; "
+                    + nsp_html_diagnostic(page_html)
+                )
+            return FeedResult(
+                entries=parser.entries,
+                status="success",
+                item_count=len(parser.entries),
+                duration_ms=round((time.monotonic() - started) * 1000),
+                fetched_at_utc=fetched_at,
+            )
+        finally:
+            closer = getattr(response, "close", None)
+            if callable(closer):
+                closer()
+
+
+class GenericRSSAdapter(RSSSourceAdapter):
+    """Default adapter for other permitted RSS/Atom feeds."""
+
+
+ADAPTER_REGISTRY: dict[str, type[RSSSourceAdapter]] = {
+    "devpost_api": DevpostHackathonsAPIAdapter,
+    "google_news_rss": GoogleNewsRSSAdapter,
+    "hackalendar_rss": HackalendarRSSAdapter,
+    "official_blog_rss": OfficialBlogRSSAdapter,
+    "mlh_events_html": MLHEventsHTMLAdapter,
+    "devfolio_html": DevfolioExploreHTMLAdapter,
+    "unstop_html": UnstopExploreHTMLAdapter,
+    "nsp_scholarships_html": NSPScholarshipHTMLAdapter,
+    "rss_atom": GenericRSSAdapter,
+}
+
+
+def build_adapters(source_urls: list[str]) -> list[RSSSourceAdapter]:
+    """Select an adapter by source type while preserving config order and uniqueness."""
+    adapters: list[RSSSourceAdapter] = []
+    seen: set[str] = set()
+    for raw_url in source_urls:
+        url = str(raw_url or "").strip()
+        if not url or url in seen:
+            continue
+        seen.add(url)
+        config = build_source_config(url)
+        adapter_class = ADAPTER_REGISTRY.get(config.adapter_type, GenericRSSAdapter)
+        adapters.append(adapter_class(config))
+    return adapters
+
+
 class URLResolutionBudget:
     """Bound costly Google News link-resolution requests across one scan.
 
