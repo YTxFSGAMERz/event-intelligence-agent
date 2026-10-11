@@ -478,6 +478,13 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(result.entries[0].title, "Student Hackathon")
         self.assertGreaterEqual(result.duration_ms, 0)
 
+    def test_required_google_news_decoder_dependency_is_imported(self):
+        self.assertIsNotNone(
+            source_adapters._decode_google_news,
+            "googlenewsdecoder is pinned in requirements.txt and must load in CI",
+        )
+        self.assertIsNone(source_adapters._GOOGLE_NEWS_DECODER_IMPORT_ERROR)
+
     def test_google_news_decoder_resolves_modern_encoded_urls(self):
         adapter = build_adapters(["https://news.google.com/rss/search?q=hackathon"])[0]
         original = source_adapters._decode_google_news
@@ -607,8 +614,10 @@ class SourceAdapterTests(unittest.TestCase):
             {"success": True, "decoded_url": "https://publisher.example/two"},
         ]
 
+        output = StringIO()
         with patch("source_adapters._decode_google_news", return_value=decoded) as decoder:
-            results = adapter.resolve_item_urls(urls, timeout=7)
+            with redirect_stdout(output):
+                results = adapter.resolve_item_urls(urls, timeout=7)
 
         self.assertEqual(
             results,
@@ -625,6 +634,28 @@ class SourceAdapterTests(unittest.TestCase):
             timeout=7,
             interval=1,
         )
+        self.assertIn("Google News batch resolution: links=2; mode=batch", output.getvalue())
+        self.assertIn("decoder_resolved=2; http_fallbacks=0; final_resolved=2; unresolved=0", output.getvalue())
+
+    def test_google_news_batch_reports_if_decoder_dependency_is_unavailable(self):
+        adapter = build_adapters(["https://news.google.com/rss/search?q=test"])[0]
+        urls = [
+            "https://news.google.com/rss/articles/article-one",
+            "https://news.google.com/rss/articles/article-two",
+        ]
+        response = FakeResponse(urls[0], b"<html><head></head><body></body></html>")
+        output = StringIO()
+        with patch("source_adapters._decode_google_news", None), patch(
+            "source_adapters._GOOGLE_NEWS_DECODER_IMPORT_ERROR", "ImportError"
+        ), patch("source_adapters.requests.get", return_value=response):
+            with redirect_stdout(output):
+                results = adapter.resolve_item_urls(urls)
+
+        self.assertEqual(len(results), 2)
+        self.assertTrue(all(status == "unresolved_google_news_link" for _, status in results))
+        self.assertIn("decoder unavailable (import_error=ImportError)", output.getvalue())
+        self.assertIn("mode=unavailable", output.getvalue())
+        self.assertIn("http_fallbacks=2", output.getvalue())
 
     def test_google_news_decoder_batch_falls_back_for_only_failed_items(self):
         adapter = build_adapters(["https://news.google.com/rss/search?q=test"])[0]

@@ -22,8 +22,11 @@ import requests
 
 try:
     from googlenewsdecoder import gnewsdecoder as _decode_google_news
-except ImportError:  # Keep ordinary RSS sources functional if the optional decoder is unavailable.
+except ImportError as exc:  # Keep ordinary RSS sources functional if the optional decoder is unavailable.
     _decode_google_news = None
+    _GOOGLE_NEWS_DECODER_IMPORT_ERROR = type(exc).__name__
+else:
+    _GOOGLE_NEWS_DECODER_IMPORT_ERROR = None
 
 
 def utc_now() -> str:
@@ -1002,13 +1005,18 @@ class GoogleNewsRSSAdapter(RSSSourceAdapter):
         if not batch_indices:
             return [result or (None, "invalid_url") for result in results]
 
-        # The pinned decoder explicitly preserves one result per input in order.
-        # Custom sessions stay on the old per-link path so tests can control all HTTP I/O.
+        # The pinned decoder preserves one result per input in order and
+        # batches the final batchexecute POST. Keep fallback use measurable so a
+        # missing/incompatible decoder never looks like an ordinary decode failure.
+        decoder_mode = "single_link"
+        decoder_resolved_count = 0
+        fallback_attempts = 0
         if (
             len(batch_urls) > 1
             and _decode_google_news is not None
             and session is requests
         ):
+            decoder_mode = "batch"
             decoded_batch: list[Any] | None = None
             try:
                 decoded = _decode_google_news(
@@ -1037,18 +1045,41 @@ class GoogleNewsRSSAdapter(RSSSourceAdapter):
                 if decoded_batch is not None:
                     resolved, status = self._safe_decoder_result(decoded_item)
                 if resolved:
+                    decoder_resolved_count += 1
                     results[index] = (resolved, status)
                 else:
+                    fallback_attempts += 1
                     results[index] = self._resolve_http_fallback(
                         normalized, timeout, user_agent, session
                     )
         else:
+            if len(batch_urls) > 1 and session is requests and _decode_google_news is None:
+                decoder_mode = "unavailable"
+                print(
+                    "Google News batch decoder unavailable "
+                    f"(import_error={_GOOGLE_NEWS_DECODER_IMPORT_ERROR or 'unknown'}); "
+                    "using redirect/canonical HTTP fallback."
+                )
+                fallback_attempts = len(batch_urls)
+            elif len(batch_urls) > 1:
+                decoder_mode = "per_link_fallback"
+                fallback_attempts = len(batch_urls)
             for index, normalized in zip(batch_indices, batch_urls):
                 results[index] = self.resolve_item_url(
                     normalized, timeout=timeout, user_agent=user_agent, session=session
                 )
 
-        return [result or (None, "invalid_url") for result in results]
+        final_results = [result or (None, "invalid_url") for result in results]
+        if len(batch_urls) > 1:
+            resolved_count = sum(1 for index in batch_indices if final_results[index][0])
+            print(
+                "Google News batch resolution: "
+                f"links={len(batch_urls)}; mode={decoder_mode}; "
+                f"decoder_resolved={decoder_resolved_count}; "
+                f"http_fallbacks={fallback_attempts}; final_resolved={resolved_count}; "
+                f"unresolved={len(batch_urls) - resolved_count}."
+            )
+        return final_results
 
 
 class HackalendarRSSAdapter(RSSSourceAdapter):
