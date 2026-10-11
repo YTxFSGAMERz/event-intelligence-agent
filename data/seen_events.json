@@ -21668,16 +21668,76 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "source_page_checked",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://xii.swamphacks.com/"
+        ],
+        "last_checked_at": "2026-10-11T12:14:08+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://xii.swamphacks.com/",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": "SwampHacks XII",
+        "last_check_error": null,
+        "last_check_duration_ms": 219,
+        "observed_facts": {
+          "page_role": "possible_event_page",
+          "page_title": "SwampHacks XII",
+          "description": "",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        }
       },
       "schema_version": 1,
       "id": "caa02a26b493dc4f0339",
@@ -22346,7 +22406,7 @@
       ]
     }
   },
-  "updated_utc": "2026-10-11T12:12:15+00:00",
+  "updated_utc": "2026-10-11T12:14:08+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -22379,7 +22439,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:12:14+00:00",
+      "last_skipped_at": "2026-10-11T12:14:08+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -22413,7 +22473,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:12:14+00:00",
+      "last_skipped_at": "2026-10-11T12:14:08+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -22447,7 +22507,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:12:14+00:00",
+      "last_skipped_at": "2026-10-11T12:14:08+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 6
     },
@@ -22481,7 +22541,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:12:14+00:00",
+      "last_skipped_at": "2026-10-11T12:14:08+00:00",
       "quality_rejected_count": 1,
       "quality_rule_version": 6
     },
@@ -22516,7 +22576,7 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_skipped_at": "2026-10-11T12:12:14+00:00",
+      "last_skipped_at": "2026-10-11T12:14:08+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -22552,7 +22612,7 @@
       "last_success_matching_items": 14,
       "last_success_new_items": 0,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-11T12:12:14+00:00",
+      "last_skipped_at": "2026-10-11T12:14:08+00:00",
       "quality_rejected_count": 0,
       "quality_rule_version": 6
     },
@@ -22588,7 +22648,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:12:14+00:00"
+      "last_skipped_at": "2026-10-11T12:14:08+00:00"
     },
     "9730b36bd7348d15": {
       "source_id": "9730b36bd7348d15",
@@ -22622,7 +22682,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:12:14+00:00"
+      "last_skipped_at": "2026-10-11T12:14:08+00:00"
     },
     "b3f5804da716f048": {
       "source_id": "b3f5804da716f048",
@@ -22656,7 +22716,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:12:14+00:00"
+      "last_skipped_at": "2026-10-11T12:14:08+00:00"
     },
     "f59e300665fae00d": {
       "source_id": "f59e300665fae00d",
@@ -22685,7 +22745,7 @@
       "matching_items": 20,
       "new_items": 1,
       "failure_streak": 0,
-      "last_skipped_at": "2026-10-11T12:12:14+00:00",
+      "last_skipped_at": "2026-10-11T12:14:08+00:00",
       "last_success_at": "2026-10-11T12:06:44+00:00",
       "last_success_items_seen": 20,
       "last_success_matching_items": 20,
@@ -22726,7 +22786,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:12:14+00:00"
+      "last_skipped_at": "2026-10-11T12:14:08+00:00"
     },
     "9b37a8e295affa8c": {
       "source_id": "9b37a8e295affa8c",
@@ -22760,7 +22820,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:12:14+00:00"
+      "last_skipped_at": "2026-10-11T12:14:08+00:00"
     },
     "8e0842c73fb362fb": {
       "source_id": "8e0842c73fb362fb",
@@ -22794,7 +22854,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:12:14+00:00"
+      "last_skipped_at": "2026-10-11T12:14:08+00:00"
     },
     "baec8f4645b19637": {
       "source_id": "baec8f4645b19637",
@@ -22828,7 +22888,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:12:14+00:00"
+      "last_skipped_at": "2026-10-11T12:14:08+00:00"
     },
     "9094d50190e1d4a7": {
       "source_id": "9094d50190e1d4a7",
@@ -22862,7 +22922,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:12:14+00:00"
+      "last_skipped_at": "2026-10-11T12:14:08+00:00"
     },
     "3181a5bfa4703f10": {
       "source_id": "3181a5bfa4703f10",
@@ -22896,7 +22956,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:12:14+00:00"
+      "last_skipped_at": "2026-10-11T12:14:08+00:00"
     },
     "7e8cfb2b3636b070": {
       "source_id": "7e8cfb2b3636b070",
@@ -22931,7 +22991,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:12:14+00:00"
+      "last_skipped_at": "2026-10-11T12:14:08+00:00"
     },
     "1960332d2712fbaf": {
       "source_id": "1960332d2712fbaf",
@@ -22953,7 +23013,7 @@
         "registrations_count",
         "thumbnail_url"
       ],
-      "pagination_mode": "public_api_default_open_hackathons_page",
+      "pagination_mode": "public_api_requested_page_size_50",
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
@@ -22971,7 +23031,7 @@
       "failure_streak": 0,
       "quality_rejected_count": 0,
       "quality_rule_version": 6,
-      "last_skipped_at": "2026-10-11T12:12:14+00:00"
+      "last_skipped_at": "2026-10-11T12:14:08+00:00"
     }
   }
 }
