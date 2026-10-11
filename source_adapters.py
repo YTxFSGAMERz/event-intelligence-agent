@@ -793,7 +793,7 @@ class DevpostHackathonsAPIAdapter(RSSSourceAdapter):
                 ] if isinstance(theme_rows, list) else []
                 participants = row.get("registrations_count")
                 thumbnail_raw = str(row.get("thumbnail_url") or "").strip()
-                thumbnail = normalize_image_url(thumbnail_raw, link) if thumbnail_raw else None
+                thumbnail = normalize_http_url(urljoin(link, thumbnail_raw)) if thumbnail_raw else None
 
                 facts = [
                     f"Status as displayed: {status.title()}",
