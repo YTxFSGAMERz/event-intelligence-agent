@@ -1556,6 +1556,24 @@ def verify_due_opportunities(pending_events: list[dict], seen: dict) -> int:
     return checked
 
 
+def format_source_health_summary(
+    source_name: str,
+    adapter_type: str,
+    entries: int,
+    matching: int,
+    quality_rejected: int,
+    queued: int,
+    duration_ms: int,
+) -> str:
+    """Produce one grep-friendly source-health row for GitHub Actions logs."""
+    return (
+        f"Source health: success; source={source_name!r}; adapter={adapter_type}; "
+        f"entries={int(entries)}; matching={int(matching)}; "
+        f"quality_rejected={int(quality_rejected)}; queued={int(queued)}; "
+        f"duration={int(duration_ms)}ms"
+    )
+
+
 def main() -> int:
     sources = read_sources()
     state = read_state()
@@ -1804,11 +1822,15 @@ def main() -> int:
             health_record["quality_rejected_count"] = quality_rejected_count
             health_record["quality_rule_version"] = DISCOVERY_QUALITY_RULE_VERSION
             source_health[config.source_id] = health_record
-            print(
-                f"Source health: success; entries={feed_result.item_count}; "
-                f"matching={matching_count}; quality_rejected={quality_rejected_count}; "
-                f"queued={queued_count}; duration={feed_result.duration_ms}ms"
-            )
+            print(format_source_health_summary(
+                config.name,
+                config.adapter_type,
+                feed_result.item_count,
+                matching_count,
+                quality_rejected_count,
+                queued_count,
+                feed_result.duration_ms,
+            ))
         except Exception as exc:
             feed_errors += 1
             source_health[config.source_id] = source_health_failure(

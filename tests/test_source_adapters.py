@@ -62,9 +62,10 @@ class SourceAdapterTests(unittest.TestCase):
         devfolio_catalogue = "https://devfolio.co/hackathons"
         devpost_api = "https://devpost.com/api/hackathons"
         google_developers = "https://blog.google/technology/developers/rss/"
-        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, unstop_hackathons, unstop_internships, unstop_competitions, unstop_scholarships, devfolio_catalogue, devpost_api, google_developers, google])
+        aws_developers = "https://aws.amazon.com/blogs/developer/feed/"
+        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, unstop_hackathons, unstop_internships, unstop_competitions, unstop_scholarships, devfolio_catalogue, devpost_api, google_developers, aws_developers, google])
 
-        self.assertEqual(len(adapters), 14)
+        self.assertEqual(len(adapters), 15)
         self.assertIsInstance(adapters[0], source_adapters.GoogleNewsRSSAdapter)
         self.assertIsInstance(adapters[1], source_adapters.HackalendarRSSAdapter)
         self.assertIsInstance(adapters[2], source_adapters.OfficialBlogRSSAdapter)
@@ -99,6 +100,9 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIsInstance(adapters[13], source_adapters.OfficialBlogRSSAdapter)
         self.assertEqual(adapters[13].config.adapter_type, "official_blog_rss")
         self.assertEqual(adapters[13].config.name, "Google Developers Blog · RSS")
+        self.assertIsInstance(adapters[14], source_adapters.OfficialBlogRSSAdapter)
+        self.assertEqual(adapters[14].config.adapter_type, "official_blog_rss")
+        self.assertEqual(adapters[14].config.name, "AWS Developer Blog · RSS")
         self.assertEqual(adapters[5].config.pagination_mode, "portal_scheme_list_current_year")
         self.assertEqual(adapters[1].config.access_method, "public_hackalendar_rss")
         self.assertEqual(adapters[1].config.pagination_mode, "catalogue_feed_upcoming_events")
@@ -334,6 +338,7 @@ class SourceAdapterTests(unittest.TestCase):
         unstop = build_source_config("https://unstop.com/compete/amp")
         devpost = build_source_config("https://devpost.com/api/hackathons")
         google_developers = build_source_config("https://blog.google/technology/developers/rss/")
+        aws_developers = build_source_config("https://aws.amazon.com/blogs/developer/feed/")
         self.assertEqual(devfolio.adapter_type, "devfolio_html")
         self.assertEqual(devfolio.access_method, "public_devfolio_explore_html")
         self.assertEqual(nsp.adapter_type, "nsp_scholarships_html")
@@ -348,6 +353,9 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(google_developers.name, "Google Developers Blog · RSS")
         self.assertEqual(google_developers.access_method, "public_official_blog_rss")
         self.assertIn("author", google_developers.expected_fields)
+        self.assertEqual(aws_developers.adapter_type, "official_blog_rss")
+        self.assertEqual(aws_developers.name, "AWS Developer Blog · RSS")
+        self.assertEqual(aws_developers.access_method, "public_official_blog_rss")
 
     def test_devfolio_parser_keeps_open_and_upcoming_cards_but_ignores_past(self):
         html = b"""<!doctype html><html><body>

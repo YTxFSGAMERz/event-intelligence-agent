@@ -50,3 +50,6 @@ https://devpost.com/api/hackathons
 
 # Official Google Developers Blog RSS: direct developer tooling, AI and platform announcements.
 https://blog.google/technology/developers/rss/
+
+# Official AWS Developer Blog RSS; discovery only, with normal keyword/quality filtering.
+https://aws.amazon.com/blogs/developer/feed/

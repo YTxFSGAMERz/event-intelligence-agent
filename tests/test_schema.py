@@ -15,6 +15,7 @@ from main import (
     legacy_resolution_priority,
     remember_source_alias,
     source_observed_facts,
+    format_source_health_summary,
 )
 
 
@@ -107,6 +108,15 @@ class OpportunitySchemaTests(unittest.TestCase):
         }, UNKNOWN_DEADLINE_TEXT)
         self.assertEqual(event_label, "EVENT DATES · UNVERIFIED")
         self.assertEqual(event_value, "Nov 14 - 15, 2026")
+
+    def test_source_health_summary_identifies_feed_and_counts_on_one_line(self):
+        line = format_source_health_summary(
+            "Google Developers Blog · RSS", "official_blog_rss", 20, 0, 0, 0, 264
+        )
+        self.assertIn("source='Google Developers Blog · RSS'", line)
+        self.assertIn("adapter=official_blog_rss", line)
+        self.assertIn("entries=20; matching=0; quality_rejected=0; queued=0", line)
+        self.assertTrue(line.endswith("duration=264ms"))
 
     def test_devpost_listing_observations_remain_unverified(self):
         observed = source_observed_facts({

@@ -25,6 +25,7 @@ Configured URLs in `sources.txt` are routed through the adapter registry in `sou
   Calendar schedule/location text is stored under `source_observed` and shown as unverified listing information; it is never promoted to canonical event dates or verified location until the organizer page confirms it.
 - **GitHub Blog RSS:** recognized as a named official-blog feed.
 - **Google Developers Blog RSS:** a direct publisher feed for developer tools, AI and platform announcements. It is treated as an official blog source, not as proof that every post represents a student opportunity; the normal keyword and quality gates still apply.
+- **AWS Developer Blog RSS:** a direct publisher-managed feed for AWS developer tools, SDKs, frameworks and platform news. Only entries that pass the opportunity matcher and quality gate can become alerts.
 - **Generic RSS/Atom:** shared fetching and parsing for other configured public feeds.
 
 Each configured URL receives a stable source ID and a source-health record in `data/seen_events.json`. Health includes the access method, expected feed fields, pagination model, request timeout, minimum polling interval, rate-limit policy, last attempt and successful fetch, status, duration, entry count, matching count, queued count, and failure streak. A failed run retains the last successful timestamp and last successful counts. GitHub Actions merges these health records alongside the deduplication records when persisting state.
