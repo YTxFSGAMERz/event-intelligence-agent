@@ -596,6 +596,84 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(skipped["timeout_seconds"], 10)
         self.assertEqual(skipped["minimum_interval_seconds"], 600)
 
+    def test_google_news_decoder_batch_preserves_input_order(self):
+        adapter = build_adapters(["https://news.google.com/rss/search?q=test"])[0]
+        urls = [
+            "https://news.google.com/rss/articles/article-one?oc=5",
+            "https://news.google.com/rss/articles/article-two?oc=5",
+        ]
+        decoded = [
+            {"success": True, "decoded_url": "https://publisher.example/one"},
+            {"success": True, "decoded_url": "https://publisher.example/two"},
+        ]
+
+        with patch("source_adapters._decode_google_news", return_value=decoded) as decoder:
+            results = adapter.resolve_item_urls(urls, timeout=7)
+
+        self.assertEqual(
+            results,
+            [
+                ("https://publisher.example/one", "decoder_resolved"),
+                ("https://publisher.example/two", "decoder_resolved"),
+            ],
+        )
+        decoder.assert_called_once_with(
+            [
+                "https://news.google.com/rss/articles/article-one?oc=5",
+                "https://news.google.com/rss/articles/article-two?oc=5",
+            ],
+            timeout=7,
+            interval=1,
+        )
+
+    def test_google_news_decoder_batch_falls_back_for_only_failed_items(self):
+        adapter = build_adapters(["https://news.google.com/rss/search?q=test"])[0]
+        urls = [
+            "https://news.google.com/rss/articles/article-one?oc=5",
+            "https://news.google.com/rss/articles/article-two?oc=5",
+        ]
+        decoded = [
+            {"success": True, "decoded_url": "https://publisher.example/one"},
+            {"success": False, "message": "Google rate limit"},
+        ]
+        response = FakeResponse(
+            urls[1],
+            b'<html><head><link rel="canonical" href="https://publisher.example/two"></head><body>x</body></html>',
+        )
+
+        with patch("source_adapters._decode_google_news", return_value=decoded), patch(
+            "source_adapters.requests.get", return_value=response
+        ) as get:
+            results = adapter.resolve_item_urls(urls)
+
+        self.assertEqual(results[0], ("https://publisher.example/one", "decoder_resolved"))
+        self.assertEqual(results[1], ("https://publisher.example/two", "canonical_tag_resolved"))
+        get.assert_called_once()
+        self.assertTrue(response.closed)
+
+    def test_url_resolution_budget_batches_legacy_and_preserves_reserved_capacity(self):
+        adapter = build_adapters(["https://news.google.com/rss/search?q=test"])[0]
+        budget = source_adapters.URLResolutionBudget(max_total=3, max_legacy=2)
+        session = FakeSession(FakeResponse("https://publisher.example/resolved"))
+
+        results = budget.resolve_many(
+            adapter,
+            [
+                "https://news.google.com/rss/articles/legacy-one",
+                "https://news.google.com/rss/articles/legacy-two",
+                "https://news.google.com/rss/articles/legacy-three",
+            ],
+            session=session,
+            legacy=True,
+        )
+
+        self.assertEqual(results[0], ("https://publisher.example/resolved", "redirect_resolved"))
+        self.assertEqual(results[1], ("https://publisher.example/resolved", "redirect_resolved"))
+        self.assertEqual(results[2], (None, "legacy_resolution_budget_deferred"))
+        self.assertEqual(budget.used_total, 2)
+        self.assertEqual(budget.used_legacy, 2)
+        self.assertEqual(len(session.calls), 2)
+
     def test_url_resolution_budget_bounds_requests_and_reserves_new_items(self):
         adapter = build_adapters(["https://news.google.com/rss/search?q=test"])[0]
         budget = source_adapters.URLResolutionBudget(max_total=2, max_legacy=1)

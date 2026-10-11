@@ -1609,9 +1609,13 @@ def main() -> int:
     if not google_news_source_due:
         unresolved_records = []
         print("Legacy URL backfill skipped: Google News feeds are inside the minimum poll interval.")
+    legacy_slots = min(
+        max(0, resolution_budget.max_total - resolution_budget.used_total),
+        max(0, resolution_budget.max_legacy - resolution_budget.used_legacy),
+    )
+    legacy_candidates: list[dict] = []
     for existing_id, existing in unresolved_records:
-        if (resolution_budget.used_total >= resolution_budget.max_total
-                or resolution_budget.used_legacy >= resolution_budget.max_legacy):
+        if len(legacy_candidates) >= legacy_slots:
             break
         if not isinstance(existing, dict) or existing.get("canonical_url"):
             continue
@@ -1628,22 +1632,41 @@ def main() -> int:
         adapter = adapters_by_url.get(source_url)
         if adapter is None or adapter.config.adapter_type != "google_news_rss":
             continue
-        resolved, resolution_status = resolution_budget.resolve(
-            adapter, discovered_url, timeout=adapter.config.timeout_seconds,
-            user_agent=USER_AGENT, legacy=True
+        legacy_candidates.append({
+            "event_id": existing_id,
+            "record": existing,
+            "url": discovered_url,
+            "attempts": attempts,
+            "adapter": adapter,
+        })
+
+    if legacy_candidates:
+        # Batch legacy Google News wrappers to reduce repeated decoder POSTs.
+        # The pinned decoder maps one result to each input URL in input order.
+        batch_adapter = legacy_candidates[0]["adapter"]
+        timeout = min(candidate["adapter"].config.timeout_seconds for candidate in legacy_candidates)
+        legacy_results = resolution_budget.resolve_many(
+            batch_adapter,
+            [candidate["url"] for candidate in legacy_candidates],
+            timeout=timeout,
+            user_agent=USER_AGENT,
+            legacy=True,
         )
-        existing["resolution_attempts"] = attempts + 1
-        existing["last_resolution_attempt_at"] = now_iso()
-        existing["resolution_status"] = resolution_status
-        if resolved:
-            existing["canonical_url"] = clean_url(resolved)
-            existing["url"] = clean_url(resolved)
-            print(f"Resolved legacy Google News link for: {existing.get('title', existing_id)}")
-        else:
-            print(
-                f"Could not resolve legacy Google News link "
-                f"({existing.get('title', existing_id)}): {resolution_status}"
-            )
+        for candidate, (resolved, resolution_status) in zip(legacy_candidates, legacy_results):
+            existing_id = candidate["event_id"]
+            existing = candidate["record"]
+            existing["resolution_attempts"] = candidate["attempts"] + 1
+            existing["last_resolution_attempt_at"] = now_iso()
+            existing["resolution_status"] = resolution_status
+            if resolved:
+                existing["canonical_url"] = clean_url(resolved)
+                existing["url"] = clean_url(resolved)
+                print(f"Resolved legacy Google News link for: {existing.get('title', existing_id)}")
+            else:
+                print(
+                    f"Could not resolve legacy Google News link "
+                    f"({existing.get('title', existing_id)}): {resolution_status}"
+                )
 
     for adapter in adapters:
         config = adapter.config
