@@ -26,7 +26,7 @@ class DiscoveryQualityBackfillTests(unittest.TestCase):
         self.assertEqual(stats["flagged"], 1)
         self.assertFalse(seen["legacy-roundup"]["discovery_quality"]["accepted"])
         self.assertEqual(seen["legacy-roundup"]["discovery_quality"]["status"], "roundup_or_listicle")
-        self.assertEqual(seen["legacy-roundup"]["discovery_quality"]["rule_version"], 6
+        self.assertEqual(seen["legacy-roundup"]["discovery_quality"]["rule_version"], 6)
         self.assertIn("quality_checked_at_utc", seen["legacy-roundup"])
 
     def test_officially_verified_record_cannot_be_hidden_by_headline_heuristic(self):
