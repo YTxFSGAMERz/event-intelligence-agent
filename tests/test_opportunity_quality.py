@@ -94,7 +94,7 @@ class OpportunityQualityTests(unittest.TestCase):
         )
         self.assertTrue(result["accepted"])
         self.assertEqual(result["status"], "specific_opportunity")
-        self.assertEqual(result["rule_version"], 6
+        self.assertEqual(result["rule_version"], 6)
 
     def test_keeps_named_nsp_scheme_with_portal_deadline(self):
         result = assess_discovery_quality(
@@ -105,7 +105,7 @@ class OpportunityQualityTests(unittest.TestCase):
         )
         self.assertTrue(result["accepted"])
         self.assertEqual(result["status"], "specific_opportunity")
-        self.assertEqual(result["rule_version"], 6
+        self.assertEqual(result["rule_version"], 6)
 
     def test_keeps_named_devfolio_open_hackathon(self):
         result = assess_discovery_quality(
@@ -116,7 +116,7 @@ class OpportunityQualityTests(unittest.TestCase):
         )
         self.assertTrue(result["accepted"])
         self.assertEqual(result["status"], "specific_opportunity")
-        self.assertEqual(result["rule_version"], 6
+        self.assertEqual(result["rule_version"], 6)
 
     def test_keeps_named_unstop_platform_opportunity_without_event_type_in_title(self):
         result = assess_discovery_quality(
@@ -127,7 +127,7 @@ class OpportunityQualityTests(unittest.TestCase):
         )
         self.assertTrue(result["accepted"])
         self.assertEqual(result["status"], "specific_opportunity")
-        self.assertEqual(result["rule_version"], 6
+        self.assertEqual(result["rule_version"], 6)
 
     def test_keeps_named_devpost_platform_hackathon_without_type_in_title(self):
         result = assess_discovery_quality(
@@ -148,7 +148,7 @@ class OpportunityQualityTests(unittest.TestCase):
             ["hackathons_buildathons"],
         )
         self.assertTrue(result["accepted"])
-        self.assertEqual(result["rule_version"], 6
+        self.assertEqual(result["rule_version"], 6)
         self.assertTrue(result["reason"])
         self.assertIn("matched_categories", result)
 
