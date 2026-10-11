@@ -125,7 +125,7 @@ jobs:
               print("Dashboard did not return an HTML page.", file=sys.stderr)
               raise SystemExit(1)
 
-          expected_build = "2026-10-10-source-observed-sort-v1"
+          expected_build = "2026-10-11-devpost-evidence-v1"
           marker = f'<meta name="event-intel-dashboard-version" content="{expected_build}">'
           if marker.lower() not in body:
               print(

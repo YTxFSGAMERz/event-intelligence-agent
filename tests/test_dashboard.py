@@ -125,9 +125,27 @@ class DashboardContractTests(unittest.TestCase):
 
     def test_dashboard_has_a_build_marker_for_stale_deployment_checks(self):
         self.assertIn(
-            '<meta name="event-intel-dashboard-version" content="2026-10-10-source-observed-sort-v1">',
+            '<meta name="event-intel-dashboard-version" content="2026-10-11-devpost-evidence-v1">',
             self.html,
         )
+
+    def test_devpost_submission_details_render_as_unverified_and_export(self):
+        for marker in (
+            "function devpostListingData(e)",
+            "submissionPeriod",
+            "Submission period · Devpost listing",
+            "Submission countdown · Devpost listing",
+            "Prize shown on Devpost listing",
+            "Themes shown on Devpost listing · unverified",
+            "Registrations shown on Devpost listing · unverified",
+            "submission_period_as_listed:",
+            "submission_countdown_as_listed:",
+            "prize_as_listed:",
+            "themes_as_listed:",
+            "registrations_count_as_listed:",
+            "source.meaning==='submission period displayed by Devpost'",
+        ):
+            self.assertIn(marker, self.html)
 
     def test_dashboard_can_render_images_and_event_details(self):
         self.assertIn("media.source_image_url", self.html)
