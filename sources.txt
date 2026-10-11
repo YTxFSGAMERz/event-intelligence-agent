@@ -47,3 +47,6 @@ https://devfolio.co/hackathons
 
 # Public JSON endpoint exposed by Devpost's active hackathon listing; verify all details on each linked event page.
 https://devpost.com/api/hackathons
+
+# Official Google Developers Blog RSS: direct developer tooling, AI and platform announcements.
+https://blog.google/technology/developers/rss/

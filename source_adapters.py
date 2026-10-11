@@ -594,6 +594,8 @@ def _resolve_source_type(url: str) -> tuple[str, str]:
         else:
             label = "Google News RSS"
         return "google_news_rss", label
+    if host in {"blog.google", "www.blog.google"} and parts.path.rstrip("/").casefold() == "/technology/developers/rss":
+        return "official_blog_rss", "Google Developers Blog · RSS"
     if host in {"github.blog", "www.github.blog"} and parts.path.endswith("/feed/"):
         return "official_blog_rss", "GitHub Blog RSS"
     return "rss_atom", f"RSS/Atom · {host or 'unknown host'}"

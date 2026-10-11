@@ -61,9 +61,10 @@ class SourceAdapterTests(unittest.TestCase):
         unstop_scholarships = "https://unstop.com/scholarships/amp"
         devfolio_catalogue = "https://devfolio.co/hackathons"
         devpost_api = "https://devpost.com/api/hackathons"
-        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, unstop_hackathons, unstop_internships, unstop_competitions, unstop_scholarships, devfolio_catalogue, devpost_api, google])
+        google_developers = "https://blog.google/technology/developers/rss/"
+        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, unstop_hackathons, unstop_internships, unstop_competitions, unstop_scholarships, devfolio_catalogue, devpost_api, google_developers, google])
 
-        self.assertEqual(len(adapters), 13)
+        self.assertEqual(len(adapters), 14)
         self.assertIsInstance(adapters[0], source_adapters.GoogleNewsRSSAdapter)
         self.assertIsInstance(adapters[1], source_adapters.HackalendarRSSAdapter)
         self.assertIsInstance(adapters[2], source_adapters.OfficialBlogRSSAdapter)
@@ -95,6 +96,9 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIsInstance(adapters[12], source_adapters.DevpostHackathonsAPIAdapter)
         self.assertEqual(adapters[12].config.adapter_type, "devpost_api")
         self.assertEqual(adapters[12].config.name, "Devpost · Open Hackathons (JSON API)")
+        self.assertIsInstance(adapters[13], source_adapters.OfficialBlogRSSAdapter)
+        self.assertEqual(adapters[13].config.adapter_type, "official_blog_rss")
+        self.assertEqual(adapters[13].config.name, "Google Developers Blog · RSS")
         self.assertEqual(adapters[5].config.pagination_mode, "portal_scheme_list_current_year")
         self.assertEqual(adapters[1].config.access_method, "public_hackalendar_rss")
         self.assertEqual(adapters[1].config.pagination_mode, "catalogue_feed_upcoming_events")
@@ -329,6 +333,7 @@ class SourceAdapterTests(unittest.TestCase):
         nsp = build_source_config("https://scholarships.gov.in/All-Scholarships")
         unstop = build_source_config("https://unstop.com/compete/amp")
         devpost = build_source_config("https://devpost.com/api/hackathons")
+        google_developers = build_source_config("https://blog.google/technology/developers/rss/")
         self.assertEqual(devfolio.adapter_type, "devfolio_html")
         self.assertEqual(devfolio.access_method, "public_devfolio_explore_html")
         self.assertEqual(nsp.adapter_type, "nsp_scholarships_html")
@@ -339,6 +344,10 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(devpost.access_method, "public_devpost_json_api")
         self.assertEqual(devpost.pagination_mode, "public_api_page_size_50_max_3_pages")
         self.assertIn("theme_names", devpost.expected_fields)
+        self.assertEqual(google_developers.adapter_type, "official_blog_rss")
+        self.assertEqual(google_developers.name, "Google Developers Blog · RSS")
+        self.assertEqual(google_developers.access_method, "public_official_blog_rss")
+        self.assertIn("author", google_developers.expected_fields)
 
     def test_devfolio_parser_keeps_open_and_upcoming_cards_but_ignores_past(self):
         html = b"""<!doctype html><html><body>
