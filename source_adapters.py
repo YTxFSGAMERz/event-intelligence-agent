@@ -7,10 +7,12 @@ or deadline have been confirmed by the organizer.
 from __future__ import annotations
 
 import hashlib
+import json
 import re
 import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
+from html import unescape
 from html.parser import HTMLParser
 from typing import Any
 from urllib.parse import parse_qs, urljoin, urlsplit, urlunsplit
@@ -543,6 +545,8 @@ def _resolve_source_type(url: str) -> tuple[str, str]:
     parts = urlsplit(url)
     if host in {"hackalendar.com", "www.hackalendar.com"} and parts.path.rstrip("/") == "/feed.xml":
         return "hackalendar_rss", "Hackalendar · Upcoming Hackathons"
+    if host in {"devpost.com", "www.devpost.com"} and parts.path.rstrip("/").lower() == "/api/hackathons":
+        return "devpost_api", "Devpost · Open Hackathons (JSON API)"
     if host in {"devfolio.co", "www.devfolio.co"} and parts.path.rstrip("/").lower() in {"/explore", "/hackathons"}:
         path = parts.path.rstrip("/").lower()
         if path == "/hackathons":
@@ -612,6 +616,10 @@ def build_source_config(url: str) -> SourceConfig:
         expected_fields = ("title", "link", "summary", "event_date_text", "calendar_year", "location_text")
         pagination_mode = "official_calendar_upcoming_section"
         access_method = "public_official_mlh_events_html"
+    elif adapter_type == "devpost_api":
+        expected_fields = ("title", "link", "summary", "listing_status", "submission_period_dates", "time_left_to_submission", "location_text", "organization_name", "prize_text", "theme_names", "registrations_count", "thumbnail_url")
+        pagination_mode = "public_api_default_open_hackathons_page"
+        access_method = "public_devpost_json_api"
     elif adapter_type == "devfolio_html":
         expected_fields = ("title", "link", "summary", "listing_status", "event_date_text", "application_open_date_text", "format_text")
         pagination_mode = "platform_open_upcoming_sections"
@@ -682,6 +690,161 @@ class RSSSourceAdapter:
         """Return a normalized direct link; specialized adapters may override this."""
         normalized = normalize_http_url(item_url)
         return (normalized, "direct_link") if normalized else (None, "invalid_url")
+
+
+class DevpostHackathonsAPIAdapter(RSSSourceAdapter):
+    """Consume the public JSON listing exposed by Devpost's active hackathon catalogue.
+
+    The endpoint is public, but it is not treated as an organizer-verification API.
+    Only public open/upcoming entries with safe Devpost event URLs are emitted.
+    """
+
+    MAX_PAYLOAD_BYTES = 3_000_000
+    ACTIVE_STATES = {"open", "upcoming"}
+
+    def fetch(
+        self,
+        timeout: int = 10,
+        user_agent: str = "EventIntelligenceAgent/0.2 (personal event research; respectful listing polling)",
+        session: Any = requests,
+    ) -> FeedResult:
+        started = time.monotonic()
+        fetched_at = utc_now()
+        response = session.get(
+            self.config.url,
+            allow_redirects=True,
+            timeout=timeout,
+            headers={"User-Agent": user_agent, "Accept": "application/json"},
+            stream=True,
+        )
+        try:
+            response.raise_for_status()
+            chunks: list[bytes] = []
+            size = 0
+            for chunk in response.iter_content(chunk_size=8192):
+                if not chunk:
+                    continue
+                size += len(chunk)
+                if size > self.MAX_PAYLOAD_BYTES:
+                    raise RuntimeError("Devpost API response exceeded the 3 MB safety limit")
+                chunks.append(chunk)
+
+            raw_payload = b"".join(chunks).decode(
+                getattr(response, "encoding", None) or "utf-8", errors="replace"
+            )
+            try:
+                payload = json.loads(raw_payload)
+            except json.JSONDecodeError:
+                raise RuntimeError("Devpost API returned invalid JSON") from None
+            if not isinstance(payload, dict) or not isinstance(payload.get("hackathons"), list):
+                root_keys = sorted(payload.keys())[:12] if isinstance(payload, dict) else []
+                raise RuntimeError(
+                    f"Devpost API response did not contain a hackathons list; root_keys={root_keys}"
+                )
+
+            entries: list[dict] = []
+            for row in payload["hackathons"]:
+                if not isinstance(row, dict):
+                    continue
+                title = re.sub(r"\s+", " ", str(row.get("title") or "")).strip()
+                status = str(row.get("open_state") or "").strip().casefold()
+                if not title or status not in self.ACTIVE_STATES or row.get("invite_only") is True:
+                    continue
+
+                link = normalize_http_url(str(row.get("url") or ""))
+                if not link:
+                    continue
+                parts = urlsplit(link)
+                host = (parts.hostname or "").casefold()
+                if (
+                    parts.scheme.casefold() != "https"
+                    or (host != "devpost.com" and not host.endswith(".devpost.com"))
+                    or parts.username
+                    or parts.password
+                ):
+                    continue
+                try:
+                    if parts.port not in (None, 443):
+                        continue
+                except ValueError:
+                    continue
+
+                location_data = row.get("displayed_location")
+                if isinstance(location_data, dict):
+                    location = re.sub(r"\s+", " ", str(location_data.get("location") or "")).strip()
+                else:
+                    location = re.sub(r"\s+", " ", str(location_data or "")).strip()
+
+                submission_period = re.sub(
+                    r"\s+", " ", str(row.get("submission_period_dates") or "")
+                ).strip()
+                time_left = re.sub(
+                    r"\s+", " ", str(row.get("time_left_to_submission") or "")
+                ).strip()
+                organizer = re.sub(r"\s+", " ", str(row.get("organization_name") or "")).strip()
+                prize = re.sub(
+                    r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", str(row.get("prize_amount") or "")))
+                ).strip()
+                theme_rows = row.get("themes")
+                theme_names = [
+                    re.sub(r"\s+", " ", str(theme.get("name") or "")).strip()
+                    for theme in theme_rows
+                    if isinstance(theme, dict) and str(theme.get("name") or "").strip()
+                ] if isinstance(theme_rows, list) else []
+                participants = row.get("registrations_count")
+                thumbnail_raw = str(row.get("thumbnail_url") or "").strip()
+                thumbnail = normalize_image_url(thumbnail_raw, link) if thumbnail_raw else None
+
+                facts = [
+                    f"Status as displayed: {status.title()}",
+                    f"Submission period as displayed: {submission_period}" if submission_period else "",
+                    f"Time left to submission as displayed: {time_left}" if time_left else "",
+                    f"Location as displayed: {location}" if location else "",
+                    f"Host as listed: {organizer}" if organizer else "",
+                    f"Prize as displayed: {prize}" if prize else "",
+                    f"Themes as listed: {', '.join(theme_names)}" if theme_names else "",
+                    f"Registrations shown: {participants}" if participants is not None else "",
+                ]
+                summary = (
+                    "Devpost public hackathon listing; discovery evidence only, not official organizer "
+                    "verification. " + ". ".join(fact for fact in facts if fact) + ". "
+                    "Confirm current eligibility, submission timing, prize conditions and rules on the linked event page."
+                )
+                entries.append({
+                    "title": title[:180],
+                    "link": link,
+                    "summary": summary,
+                    "listing_status": status.title(),
+                    "submission_period_dates": submission_period or None,
+                    "time_left_to_submission": time_left or None,
+                    "location_text": location or None,
+                    "organization_name": organizer or None,
+                    "prize_text": prize or None,
+                    "theme_names": theme_names,
+                    "registrations_count": participants,
+                    "thumbnail_url": thumbnail,
+                    "media_thumbnail": [{"url": thumbnail}] if thumbnail else [],
+                    "source_listing": "Devpost public hackathons API",
+                    "invite_only": False,
+                })
+
+            if not entries:
+                meta = payload.get("meta") if isinstance(payload.get("meta"), dict) else {}
+                raise RuntimeError(
+                    "Devpost API returned no active public hackathons with safe event URLs; "
+                    f"reported_total={meta.get('total_count')!r}"
+                )
+            return FeedResult(
+                entries=entries,
+                status="success",
+                item_count=len(entries),
+                duration_ms=round((time.monotonic() - started) * 1000),
+                fetched_at_utc=fetched_at,
+            )
+        finally:
+            closer = getattr(response, "close", None)
+            if callable(closer):
+                closer()
 
 
 class GoogleNewsRSSAdapter(RSSSourceAdapter):
@@ -1159,6 +1322,7 @@ class GenericRSSAdapter(RSSSourceAdapter):
 
 
 ADAPTER_REGISTRY: dict[str, type[RSSSourceAdapter]] = {
+    "devpost_api": DevpostHackathonsAPIAdapter,
     "google_news_rss": GoogleNewsRSSAdapter,
     "hackalendar_rss": HackalendarRSSAdapter,
     "official_blog_rss": OfficialBlogRSSAdapter,

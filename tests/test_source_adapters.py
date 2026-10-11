@@ -1,3 +1,4 @@
+import json
 import unittest
 from contextlib import redirect_stdout
 from io import StringIO
@@ -59,9 +60,10 @@ class SourceAdapterTests(unittest.TestCase):
         unstop_competitions = "https://unstop.com/competitions/amp"
         unstop_scholarships = "https://unstop.com/scholarships/amp"
         devfolio_catalogue = "https://devfolio.co/hackathons"
-        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, unstop_hackathons, unstop_internships, unstop_competitions, unstop_scholarships, devfolio_catalogue, google])
+        devpost_api = "https://devpost.com/api/hackathons"
+        adapters = build_adapters([google, hackalendar, blog, mlh, devfolio, nsp, unstop, unstop_hackathons, unstop_internships, unstop_competitions, unstop_scholarships, devfolio_catalogue, devpost_api, google])
 
-        self.assertEqual(len(adapters), 12)
+        self.assertEqual(len(adapters), 13)
         self.assertIsInstance(adapters[0], source_adapters.GoogleNewsRSSAdapter)
         self.assertIsInstance(adapters[1], source_adapters.HackalendarRSSAdapter)
         self.assertIsInstance(adapters[2], source_adapters.OfficialBlogRSSAdapter)
@@ -90,6 +92,9 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(adapters[10].config.name, "Unstop · Scholarships")
         self.assertIsInstance(adapters[11], source_adapters.DevfolioExploreHTMLAdapter)
         self.assertEqual(adapters[11].config.name, "Devfolio · Hackathons Catalogue")
+        self.assertIsInstance(adapters[12], source_adapters.DevpostHackathonsAPIAdapter)
+        self.assertEqual(adapters[12].config.adapter_type, "devpost_api")
+        self.assertEqual(adapters[12].config.name, "Devpost · Open Hackathons (JSON API)")
         self.assertEqual(adapters[5].config.pagination_mode, "portal_scheme_list_current_year")
         self.assertEqual(adapters[1].config.access_method, "public_hackalendar_rss")
         self.assertEqual(adapters[1].config.pagination_mode, "catalogue_feed_upcoming_events")
@@ -97,6 +102,72 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIn("Devpost", build_source_config(
             "https://news.google.com/rss/search?q=site%3Adevpost.com%2Fhackathons"
         ).name)
+
+    def test_devpost_api_parses_only_public_open_and_upcoming_entries(self):
+        payload = {
+            "hackathons": [
+                {
+                    "id": 30790,
+                    "title": "Nebius x NVIDIA Global AI Hackathon",
+                    "displayed_location": {"icon": "globe", "location": "Online"},
+                    "open_state": "open",
+                    "url": "https://nebiusglobalaihackathon.devpost.com/",
+                    "time_left_to_submission": "20 days left",
+                    "submission_period_dates": "Aug 26 - Oct 30, 2026",
+                    "themes": [{"name": "Machine Learning/AI"}, {"name": "Beginner Friendly"}],
+                    "prize_amount": "$<span data-currency-value>50,000</span>",
+                    "registrations_count": 20810,
+                    "organization_name": "nebius",
+                    "invite_only": False,
+                    "thumbnail_url": "//cdn.example.test/thumb.png",
+                },
+                {
+                    "id": 30447,
+                    "title": "Build With AI: Basics",
+                    "displayed_location": {"location": "Online"},
+                    "open_state": "upcoming",
+                    "url": "https://learn-ai-basics.devpost.com/",
+                    "time_left_to_submission": "16 days left",
+                    "submission_period_dates": "Sep 22 - Oct 26, 2026",
+                    "themes": [{"name": "Education"}],
+                    "prize_amount": "$2,500",
+                    "registrations_count": 3008,
+                    "organization_name": "Devpost",
+                    "invite_only": False,
+                },
+                {"id": 3, "title": "Ended Hackathon", "open_state": "ended", "url": "https://ended.devpost.com/"},
+                {"id": 4, "title": "Private Hackathon", "open_state": "open", "url": "https://private.devpost.com/", "invite_only": True},
+                {"id": 5, "title": "External Link Event", "open_state": "open", "url": "https://outside.example.com/event"},
+            ],
+            "meta": {"total_count": 5, "per_page": 9},
+        }
+        adapter = build_adapters(["https://devpost.com/api/hackathons"])[0]
+        response = FakeResponse("https://devpost.com/api/hackathons", json.dumps(payload).encode("utf-8"))
+        result = adapter.fetch(session=FakeSession(response))
+
+        self.assertEqual(result.status, "success")
+        self.assertEqual(result.item_count, 2)
+        self.assertEqual(
+            [item["title"] for item in result.entries],
+            ["Nebius x NVIDIA Global AI Hackathon", "Build With AI: Basics"],
+        )
+        self.assertEqual(result.entries[0]["link"], "https://nebiusglobalaihackathon.devpost.com")
+        self.assertEqual(result.entries[0]["listing_status"], "Open")
+        self.assertEqual(result.entries[0]["time_left_to_submission"], "20 days left")
+        self.assertEqual(result.entries[0]["submission_period_dates"], "Aug 26 - Oct 30, 2026")
+        self.assertIn("50,000", result.entries[0]["prize_text"])
+        self.assertEqual(result.entries[0]["theme_names"], ["Machine Learning/AI", "Beginner Friendly"])
+        self.assertEqual(result.entries[0]["thumbnail_url"], "https://cdn.example.test/thumb.png")
+        self.assertEqual(result.entries[0]["media_thumbnail"][0]["url"], "https://cdn.example.test/thumb.png")
+        self.assertIn("not official organizer verification", result.entries[0]["summary"])
+        self.assertTrue(response.closed)
+
+    def test_devpost_api_fails_closed_if_payload_shape_changes(self):
+        adapter = build_adapters(["https://devpost.com/api/hackathons"])[0]
+        response = FakeResponse("https://devpost.com/api/hackathons", b'{"events": []}')
+        with self.assertRaisesRegex(RuntimeError, "hackathons list"):
+            adapter.fetch(session=FakeSession(response))
+        self.assertTrue(response.closed)
 
     def test_unstop_parser_keeps_current_detail_links_and_skips_expired_or_external_links(self):
         html = b"""<!doctype html><html><body>
@@ -183,16 +254,21 @@ class SourceAdapterTests(unittest.TestCase):
             adapter.fetch(session=session)
         self.assertTrue(response.closed)
 
-    def test_registry_classifies_direct_devfolio_and_nsp_sources(self):
+    def test_registry_classifies_direct_devfolio_nsp_and_devpost_sources(self):
         devfolio = build_source_config("https://devfolio.co/explore")
         nsp = build_source_config("https://scholarships.gov.in/All-Scholarships")
         unstop = build_source_config("https://unstop.com/compete/amp")
+        devpost = build_source_config("https://devpost.com/api/hackathons")
         self.assertEqual(devfolio.adapter_type, "devfolio_html")
         self.assertEqual(devfolio.access_method, "public_devfolio_explore_html")
         self.assertEqual(nsp.adapter_type, "nsp_scholarships_html")
         self.assertEqual(nsp.access_method, "public_official_nsp_scholarship_html")
         self.assertEqual(unstop.adapter_type, "unstop_html")
         self.assertEqual(unstop.access_method, "public_unstop_html_listing")
+        self.assertEqual(devpost.adapter_type, "devpost_api")
+        self.assertEqual(devpost.access_method, "public_devpost_json_api")
+        self.assertEqual(devpost.pagination_mode, "public_api_default_open_hackathons_page")
+        self.assertIn("theme_names", devpost.expected_fields)
 
     def test_devfolio_parser_keeps_open_and_upcoming_cards_but_ignores_past(self):
         html = b"""<!doctype html><html><body>
