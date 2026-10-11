@@ -618,7 +618,7 @@ def build_source_config(url: str) -> SourceConfig:
         access_method = "public_official_mlh_events_html"
     elif adapter_type == "devpost_api":
         expected_fields = ("title", "link", "summary", "listing_status", "submission_period_dates", "time_left_to_submission", "location_text", "organization_name", "prize_text", "theme_names", "registrations_count", "thumbnail_url")
-        pagination_mode = "public_api_default_open_hackathons_page"
+        pagination_mode = "public_api_requested_page_size_50"
         access_method = "public_devpost_json_api"
     elif adapter_type == "devfolio_html":
         expected_fields = ("title", "link", "summary", "listing_status", "event_date_text", "application_open_date_text", "format_text")
@@ -712,6 +712,7 @@ class DevpostHackathonsAPIAdapter(RSSSourceAdapter):
         fetched_at = utc_now()
         response = session.get(
             self.config.url,
+            params={"per_page": 50},
             allow_redirects=True,
             timeout=timeout,
             headers={"User-Agent": user_agent, "Accept": "application/json"},

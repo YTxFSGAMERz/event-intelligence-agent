@@ -143,8 +143,10 @@ class SourceAdapterTests(unittest.TestCase):
         }
         adapter = build_adapters(["https://devpost.com/api/hackathons"])[0]
         response = FakeResponse("https://devpost.com/api/hackathons", json.dumps(payload).encode("utf-8"))
-        result = adapter.fetch(session=FakeSession(response))
+        session = FakeSession(response)
+        result = adapter.fetch(session=session)
 
+        self.assertEqual(session.calls[0][1].get("params"), {"per_page": 50})
         self.assertEqual(result.status, "success")
         self.assertEqual(result.item_count, 2)
         self.assertEqual(
@@ -267,7 +269,7 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertEqual(unstop.access_method, "public_unstop_html_listing")
         self.assertEqual(devpost.adapter_type, "devpost_api")
         self.assertEqual(devpost.access_method, "public_devpost_json_api")
-        self.assertEqual(devpost.pagination_mode, "public_api_default_open_hackathons_page")
+        self.assertEqual(devpost.pagination_mode, "public_api_requested_page_size_50")
         self.assertIn("theme_names", devpost.expected_fields)
 
     def test_devfolio_parser_keeps_open_and_upcoming_cards_but_ignores_past(self):
