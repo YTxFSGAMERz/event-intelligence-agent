@@ -164,6 +164,31 @@ class SourceAdapterTests(unittest.TestCase):
         self.assertIn("not official organizer verification", result.entries[0]["summary"])
         self.assertTrue(response.closed)
 
+    def test_devpost_api_parses_fifty_entries_without_truncating(self):
+        payload = {
+            "hackathons": [
+                {
+                    "title": f"Student AI Hackathon {index:02d}",
+                    "open_state": "open",
+                    "url": f"https://student-ai-{index:02d}.devpost.com/",
+                    "submission_period_dates": "Oct 1 - Oct 30, 2026",
+                    "time_left_to_submission": "10 days left",
+                    "invite_only": False,
+                }
+                for index in range(50)
+            ],
+            "meta": {"total_count": 14033, "per_page": 50},
+        }
+        adapter = build_adapters(["https://devpost.com/api/hackathons"])[0]
+        response = FakeResponse("https://devpost.com/api/hackathons", json.dumps(payload).encode("utf-8"))
+        result = adapter.fetch(session=FakeSession(response))
+
+        self.assertEqual(result.status, "success")
+        self.assertEqual(result.item_count, 50)
+        self.assertEqual(result.entries[0]["title"], "Student AI Hackathon 00")
+        self.assertEqual(result.entries[-1]["title"], "Student AI Hackathon 49")
+        self.assertTrue(response.closed)
+
     def test_devpost_api_fails_closed_if_payload_shape_changes(self):
         adapter = build_adapters(["https://devpost.com/api/hackathons"])[0]
         response = FakeResponse("https://devpost.com/api/hackathons", b'{"events": []}')
