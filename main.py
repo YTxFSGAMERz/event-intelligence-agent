@@ -17,8 +17,9 @@ import requests
 
 from page_verification import VerificationBudget, verification_is_due, verify_opportunity_page
 from opportunity_quality import RULE_VERSION as DISCOVERY_QUALITY_RULE_VERSION, assess_discovery_quality
-from source_adapters import (URLResolutionBudget, build_adapters, should_poll_source,
-                             source_health_failure, source_health_skipped, source_health_success)
+from source_adapters import (FeedResult, RSSSourceAdapter, URLResolutionBudget, build_adapters,
+                             should_poll_source, source_health_failure, source_health_skipped,
+                             source_health_success)
 
 ROOT = Path(__file__).resolve().parent
 SOURCES_FILE = ROOT / "sources.txt"
@@ -1574,6 +1575,27 @@ def format_source_health_summary(
     )
 
 
+def fetch_feed_with_transient_retry(
+    adapter: RSSSourceAdapter,
+    *,
+    timeout: int,
+    user_agent: str,
+    retry_budget: dict[str, bool],
+) -> FeedResult:
+    """Retry one timeout/connection failure per workflow run; never retry parse/HTTP errors."""
+    try:
+        return adapter.fetch(timeout=timeout, user_agent=user_agent)
+    except (requests.Timeout, requests.ConnectionError) as exc:
+        if retry_budget.get("used", False):
+            raise
+        retry_budget["used"] = True
+        print(
+            f"Transient network failure for {adapter.config.name}: {type(exc).__name__}; "
+            "retrying once (shared run-level retry budget)."
+        )
+        return adapter.fetch(timeout=timeout, user_agent=user_agent)
+
+
 def main() -> int:
     sources = read_sources()
     state = read_state()
@@ -1686,6 +1708,10 @@ def main() -> int:
                     f"({existing.get('title', existing_id)}): {resolution_status}"
                 )
 
+    # Allow at most one additional network attempt across all feeds in this run.
+    # This handles an isolated timeout without doubling the scan duration during an outage.
+    transient_fetch_retry_budget = {"used": False}
+
     for adapter in adapters:
         config = adapter.config
         source = config.url
@@ -1706,7 +1732,12 @@ def main() -> int:
         print(f"Checking {config.name} [{config.adapter_type}]: {source}")
 
         try:
-            feed_result = adapter.fetch(timeout=config.timeout_seconds, user_agent=USER_AGENT)
+            feed_result = fetch_feed_with_transient_retry(
+                adapter,
+                timeout=config.timeout_seconds,
+                user_agent=USER_AGENT,
+                retry_budget=transient_fetch_retry_budget,
+            )
             for entry in feed_result.entries:
                 title = str(entry.get("title", "Untitled event")).strip()
                 discovered_link = str(entry.get("link", "")).strip()

@@ -1,5 +1,6 @@
 import unittest
-
+import requests
+from types import SimpleNamespace
 from datetime import datetime, timezone
 
 from main import (
@@ -16,6 +17,7 @@ from main import (
     remember_source_alias,
     source_observed_facts,
     format_source_health_summary,
+    fetch_feed_with_transient_retry,
 )
 
 
@@ -108,6 +110,82 @@ class OpportunitySchemaTests(unittest.TestCase):
         }, UNKNOWN_DEADLINE_TEXT)
         self.assertEqual(event_label, "EVENT DATES · UNVERIFIED")
         self.assertEqual(event_value, "Nov 14 - 15, 2026")
+
+    def test_transient_source_timeout_retries_once_and_uses_shared_budget(self):
+        class FlakyAdapter:
+            config = SimpleNamespace(name="MLH · Upcoming Events")
+
+            def __init__(self):
+                self.calls = 0
+
+            def fetch(self, **kwargs):
+                self.calls += 1
+                if self.calls == 1:
+                    raise requests.ReadTimeout("simulated transient timeout")
+                return FeedResult(
+                    entries=[],
+                    status="success",
+                    item_count=0,
+                    duration_ms=25,
+                    fetched_at_utc="2026-10-11T00:00:00+00:00",
+                )
+
+        adapter = FlakyAdapter()
+        retry_budget = {"used": False}
+        result = fetch_feed_with_transient_retry(
+            adapter,
+            timeout=10,
+            user_agent="unit-test",
+            retry_budget=retry_budget,
+        )
+
+        self.assertEqual(adapter.calls, 2)
+        self.assertTrue(retry_budget["used"])
+        self.assertEqual(result.status, "success")
+
+    def test_transient_source_retry_budget_prevents_repeated_retries(self):
+        class AlwaysTimeoutAdapter:
+            config = SimpleNamespace(name="MLH · Upcoming Events")
+
+            def __init__(self):
+                self.calls = 0
+
+            def fetch(self, **kwargs):
+                self.calls += 1
+                raise requests.ReadTimeout("simulated persistent timeout")
+
+        adapter = AlwaysTimeoutAdapter()
+        with self.assertRaises(requests.ReadTimeout):
+            fetch_feed_with_transient_retry(
+                adapter,
+                timeout=10,
+                user_agent="unit-test",
+                retry_budget={"used": True},
+            )
+        self.assertEqual(adapter.calls, 1)
+
+    def test_non_network_adapter_error_is_not_retried(self):
+        class ParserFailureAdapter:
+            config = SimpleNamespace(name="MLH · Upcoming Events")
+
+            def __init__(self):
+                self.calls = 0
+
+            def fetch(self, **kwargs):
+                self.calls += 1
+                raise RuntimeError("listing markup changed")
+
+        adapter = ParserFailureAdapter()
+        retry_budget = {"used": False}
+        with self.assertRaisesRegex(RuntimeError, "listing markup changed"):
+            fetch_feed_with_transient_retry(
+                adapter,
+                timeout=10,
+                user_agent="unit-test",
+                retry_budget=retry_budget,
+            )
+        self.assertEqual(adapter.calls, 1)
+        self.assertFalse(retry_budget["used"])
 
     def test_source_health_summary_identifies_feed_and_counts_on_one_line(self):
         line = format_source_health_summary(
