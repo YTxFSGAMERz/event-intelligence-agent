@@ -1,5 +1,6 @@
 import unittest
 import requests
+from source_adapters import FeedResult
 from types import SimpleNamespace
 from datetime import datetime, timezone
 
