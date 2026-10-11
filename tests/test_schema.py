@@ -8,6 +8,7 @@ from main import (
     find_existing_event_id,
     _verification_target,
     normalize_event_record,
+    _opportunity_card_schedule_field,
     normalize_unstop_display_title,
     normalize_state,
     normalize_title_key,
@@ -90,6 +91,22 @@ class OpportunitySchemaTests(unittest.TestCase):
         self.assertEqual(event["location"]["mode"], "unknown")
         self.assertEqual(event["travel_support"]["status"], "unknown")
         self.assertEqual(event["verification"]["status"], "unverified")
+
+    def test_devpost_submission_period_uses_its_own_card_label(self):
+        label, value = _opportunity_card_schedule_field({
+            "adapter_type": "devpost_api",
+            "source_listing_submission_period": "Aug 26 - Oct 30, 2026",
+        }, UNKNOWN_DEADLINE_TEXT)
+        self.assertEqual(label, "SUBMISSION PERIOD · UNVERIFIED")
+        self.assertEqual(value, "Aug 26 - Oct 30, 2026")
+
+        event_label, event_value = _opportunity_card_schedule_field({
+            "adapter_type": "devpost_api",
+            "event_schedule": "Nov 14 - 15, 2026",
+            "source_listing_submission_period": "Aug 26 - Oct 30, 2026",
+        }, UNKNOWN_DEADLINE_TEXT)
+        self.assertEqual(event_label, "EVENT DATES · UNVERIFIED")
+        self.assertEqual(event_value, "Nov 14 - 15, 2026")
 
     def test_devpost_listing_observations_remain_unverified(self):
         observed = source_observed_facts({

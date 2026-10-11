@@ -909,6 +909,26 @@ def telegram_api_call(token: str, method: str, payload: dict, files: dict | None
     return result
 
 
+def _opportunity_card_schedule_field(item: dict, deadline: str) -> tuple[str, str]:
+    """Choose a semantically accurate date label for the image card's left panel."""
+    event_schedule = re.sub(r"\s+", " ", str(item.get("event_schedule") or "")).strip()
+    submission_period = re.sub(
+        r"\s+", " ", str(item.get("source_listing_submission_period") or "")
+    ).strip()
+    reported_deadline = re.sub(
+        r"\s+", " ", str(item.get("reported_deadline") or "")
+    ).strip()
+    deadline_value = (deadline or "Not found — verify on official page")[:42]
+
+    if event_schedule:
+        return "EVENT DATES · UNVERIFIED", event_schedule[:42]
+    if submission_period:
+        return "SUBMISSION PERIOD · UNVERIFIED", submission_period[:42]
+    if reported_deadline:
+        return "REPORTED DEADLINE · VERIFY", reported_deadline[:42]
+    return "APPLICATION DEADLINE", deadline_value
+
+
 def generate_opportunity_card(item: dict, categories: list[str], deadline: str,
                               reg_status: str, primary: str | None = None) -> bytes:
     """Create a polished, readable PNG opportunity card when no source image exists."""
@@ -1016,29 +1036,21 @@ def generate_opportunity_card(item: dict, categories: list[str], deadline: str,
         draw.text((chip_x + 17, chip_y + 9), label_text, font=chip_font, fill=(133, 219, 238))
         chip_x += chip_width + 12
 
-    deadline_value = (deadline or "Not found — verify on official page")[:42]
     event_schedule = re.sub(r"\s+", " ", str(item.get("event_schedule") or "")).strip()
     event_location = re.sub(r"\s+", " ", str(item.get("event_location") or "")).strip()
-    reported_deadline = re.sub(r"\s+", " ", str(item.get("reported_deadline") or "")).strip()
+    left_label, left_value = _opportunity_card_schedule_field(item, deadline)
     status_value = (reg_status or "UNKNOWN")[:35]
     box_y = 464
     draw.rounded_rectangle((82, box_y, 580, 579), radius=20, fill=(18, 31, 61), outline=(42, 68, 111), width=1)
     draw.rounded_rectangle((604, box_y, 1117, 579), radius=20, fill=(18, 31, 61), outline=(42, 68, 111), width=1)
-    if event_schedule:
-        left_label = "EVENT DATES · UNVERIFIED"
-        left_value = event_schedule[:42]
-    elif reported_deadline:
-        left_label = "REPORTED DEADLINE · VERIFY"
-        left_value = reported_deadline[:42]
-    else:
-        left_label = "APPLICATION DEADLINE"
-        left_value = deadline_value
     draw.text((106, box_y + 18), left_label, font=section_font, fill=(125, 164, 205))
     draw.text((106, box_y + 52), left_value, font=value_font, fill=(246, 248, 255))
     draw.text((630, box_y + 18), "REGISTRATION STATUS", font=section_font, fill=(125, 164, 205))
     draw.text((630, box_y + 52), status_value, font=value_font, fill=(115, 235, 192) if status_value.startswith("OPEN") else (246, 248, 255))
     if event_location and item.get("adapter_type") == "devfolio_html":
         footer = "Listed format (unverified): " + event_location[:76]
+    elif event_location and item.get("adapter_type") == "devpost_api":
+        footer = "Listed location (unverified): " + event_location[:76]
     elif event_location and event_schedule:
         footer = "Listed location (unverified): " + event_location[:76]
     else:
@@ -1887,6 +1899,7 @@ def main() -> int:
                 item["source_listing_host"] = str(entry_metadata.get("organization_name") or "").strip()
                 themes = entry_metadata.get("theme_names")
                 item["source_listing_themes"] = themes if isinstance(themes, list) else []
+                item["event_location"] = str(entry_metadata.get("location_text") or "").strip()
             elif event.get("adapter_type") == "nsp_scholarships_html":
                 item["reported_deadline"] = str(entry_metadata.get("deadline_display") or entry_metadata.get("deadline_raw") or "").strip()
                 item["reported_deadline_source"] = "National Scholarship Portal listing"
