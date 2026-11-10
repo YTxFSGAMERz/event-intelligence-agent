@@ -843,7 +843,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T07:39:12+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "link_status": "REACHABLE",
@@ -2749,7 +2749,7 @@
       ],
       "primary_category": "scholarships_fellowships",
       "first_seen_utc": "2026-10-09T10:27:56+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -5927,7 +5927,7 @@
       ],
       "primary_category": "hackathons_buildathons",
       "first_seen_utc": "2026-10-09T18:00:46+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -9385,7 +9385,7 @@
         "official_verification_override": true
       },
       "first_seen_utc": "2026-10-10T14:57:47+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "CLOSED (official page)",
       "registration_status_evidence": "'dark' : 'light') : preferredTheme); })(); // https://gist.github.com/paulirish/1579671 (function() { var lastTime = 0; if (!window.requestAnimationFrame) { window.requestAnimationFrame = window['webkitRequestAnimationFrame']; window.cancelAnimationFrame = window['webkitCancelAni",
@@ -9843,7 +9843,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T14:57:55+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -10247,7 +10247,7 @@
         "official_verification_override": true
       },
       "first_seen_utc": "2026-10-10T15:21:46+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (official page)",
       "registration_status_evidence": "Please choose your desired ticket type: Hacker (Apply Now) ​ Require Approval Mentor (Invitation Only) ​ Require Approval Exclusively for our mentors, speakers, and partners Community Visitor Access the Demo Day on Sunday as an EDTH Community member and see what the hackathon tea",
@@ -10701,7 +10701,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T15:21:51+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -11105,7 +11105,7 @@
         "official_verification_override": true
       },
       "first_seen_utc": "2026-10-10T15:51:11+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -11910,7 +11910,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T15:51:22+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -12175,7 +12175,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T15:52:17+00:00",
-      "last_seen_utc": "2026-11-09T20:12:26+00:00",
+      "last_seen_utc": "2026-11-10T02:47:49+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -12551,7 +12551,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T16:01:25+00:00",
-      "last_seen_utc": "2026-11-09T20:12:26+00:00",
+      "last_seen_utc": "2026-11-10T02:47:49+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -12741,7 +12741,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T16:32:45+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -13761,7 +13761,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T16:33:07+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -13901,7 +13901,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T16:33:09+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -14494,7 +14494,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T17:26:04+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -14878,7 +14878,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T17:26:12+00:00",
-      "last_seen_utc": "2026-11-09T20:12:26+00:00",
+      "last_seen_utc": "2026-11-10T02:47:49+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -15214,7 +15214,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T17:26:19+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -16714,7 +16714,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T19:27:56+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -18232,7 +18232,7 @@
         ]
       },
       "first_seen_utc": "2026-10-10T22:53:30+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -19245,7 +19245,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T01:41:41+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -20672,7 +20672,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T07:53:23+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -20812,7 +20812,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T07:53:25+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -22375,7 +22375,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T12:07:26+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -23645,7 +23645,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T12:20:05+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -24190,7 +24190,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T14:20:18+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "apply now",
@@ -24486,7 +24486,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T14:20:22+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "apply now",
@@ -24652,7 +24652,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T14:20:23+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -25117,7 +25117,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T14:20:33+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -25539,7 +25539,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T14:33:36+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "apply now",
@@ -25689,7 +25689,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T14:33:38+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "apply now",
@@ -26123,7 +26123,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T14:33:48+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -27072,7 +27072,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T14:47:03+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "apply now",
@@ -27222,7 +27222,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T14:47:06+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "applications open",
@@ -27571,7 +27571,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T14:47:13+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -28197,7 +28197,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T19:13:24+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "applications open",
@@ -28365,7 +28365,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T19:13:25+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -28967,7 +28967,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T19:13:37+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -30015,7 +30015,7 @@
         ]
       },
       "first_seen_utc": "2026-10-11T22:59:32+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -30935,7 +30935,7 @@
         ]
       },
       "first_seen_utc": "2026-10-12T02:17:27+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -32119,7 +32119,7 @@
         ]
       },
       "first_seen_utc": "2026-10-12T09:26:29+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -32355,7 +32355,7 @@
         ]
       },
       "first_seen_utc": "2026-10-12T09:26:34+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -33185,7 +33185,7 @@
         ]
       },
       "first_seen_utc": "2026-10-12T19:15:56+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -33414,7 +33414,7 @@
         ]
       },
       "first_seen_utc": "2026-10-12T19:16:00+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -33806,7 +33806,7 @@
         ]
       },
       "first_seen_utc": "2026-10-13T01:26:55+00:00",
-      "last_seen_utc": "2026-11-09T20:12:25+00:00",
+      "last_seen_utc": "2026-11-10T02:47:48+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -34382,7 +34382,7 @@
         ]
       },
       "first_seen_utc": "2026-10-13T01:27:05+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -35838,7 +35838,7 @@
         ]
       },
       "first_seen_utc": "2026-10-13T08:20:38+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -36872,7 +36872,7 @@
         ]
       },
       "first_seen_utc": "2026-10-13T16:11:27+00:00",
-      "last_seen_utc": "2026-11-09T20:12:26+00:00",
+      "last_seen_utc": "2026-11-10T02:47:49+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -37138,7 +37138,7 @@
         ]
       },
       "first_seen_utc": "2026-10-13T16:11:34+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -38123,7 +38123,7 @@
         ]
       },
       "first_seen_utc": "2026-10-13T21:21:31+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -39699,7 +39699,7 @@
         ]
       },
       "first_seen_utc": "2026-10-14T00:31:45+00:00",
-      "last_seen_utc": "2026-11-09T20:12:24+00:00",
+      "last_seen_utc": "2026-11-10T02:47:47+00:00",
       "deadline": "October 31, 2026",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -40958,7 +40958,7 @@
         ]
       },
       "first_seen_utc": "2026-10-14T10:30:23+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -42755,7 +42755,7 @@
         ]
       },
       "first_seen_utc": "2026-10-14T15:25:58+00:00",
-      "last_seen_utc": "2026-11-09T09:42:52+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -42996,7 +42996,7 @@
         ]
       },
       "first_seen_utc": "2026-10-14T15:26:01+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -43300,7 +43300,7 @@
         ]
       },
       "first_seen_utc": "2026-10-14T19:38:19+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -43698,7 +43698,7 @@
         ]
       },
       "first_seen_utc": "2026-10-14T19:38:27+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -45214,7 +45214,7 @@
         ]
       },
       "first_seen_utc": "2026-10-15T00:54:29+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -46502,7 +46502,7 @@
         ]
       },
       "first_seen_utc": "2026-10-15T05:41:49+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -48523,7 +48523,7 @@
         ]
       },
       "first_seen_utc": "2026-10-15T15:16:27+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -50163,7 +50163,7 @@
         ]
       },
       "first_seen_utc": "2026-10-15T19:16:07+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -51644,7 +51644,7 @@
         ]
       },
       "first_seen_utc": "2026-10-16T00:40:39+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -54749,7 +54749,7 @@
         ]
       },
       "first_seen_utc": "2026-10-16T14:41:03+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -54935,7 +54935,7 @@
         ]
       },
       "first_seen_utc": "2026-10-16T14:41:05+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -57203,7 +57203,7 @@
         ]
       },
       "first_seen_utc": "2026-10-16T23:53:04+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -57832,7 +57832,7 @@
         ]
       },
       "first_seen_utc": "2026-10-16T23:53:15+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -58372,7 +58372,7 @@
         ]
       },
       "first_seen_utc": "2026-10-17T03:40:59+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -58847,7 +58847,7 @@
         ]
       },
       "first_seen_utc": "2026-10-17T03:41:12+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -59081,7 +59081,7 @@
         ]
       },
       "first_seen_utc": "2026-10-17T08:04:30+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -60247,7 +60247,7 @@
         ]
       },
       "first_seen_utc": "2026-10-17T12:09:53+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -60393,7 +60393,7 @@
         ]
       },
       "first_seen_utc": "2026-10-17T12:09:54+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -61293,7 +61293,7 @@
         ]
       },
       "first_seen_utc": "2026-10-17T15:37:14+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -62273,7 +62273,7 @@
         ]
       },
       "first_seen_utc": "2026-10-17T17:55:56+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -62987,7 +62987,7 @@
         ]
       },
       "first_seen_utc": "2026-10-17T20:22:32+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -63857,7 +63857,7 @@
         ]
       },
       "first_seen_utc": "2026-10-17T22:34:51+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -66534,7 +66534,7 @@
         ]
       },
       "first_seen_utc": "2026-10-18T09:10:52+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -67503,7 +67503,7 @@
         ]
       },
       "first_seen_utc": "2026-10-18T13:23:06+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -67755,7 +67755,7 @@
         ]
       },
       "first_seen_utc": "2026-10-18T13:23:12+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -68171,7 +68171,7 @@
         ]
       },
       "first_seen_utc": "2026-10-18T16:44:46+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -69463,7 +69463,7 @@
         ]
       },
       "first_seen_utc": "2026-10-18T19:00:45+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -70259,7 +70259,7 @@
         ]
       },
       "first_seen_utc": "2026-10-18T21:29:08+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -70676,7 +70676,7 @@
         ]
       },
       "first_seen_utc": "2026-10-18T21:29:15+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -71259,7 +71259,7 @@
         ]
       },
       "first_seen_utc": "2026-10-18T23:36:01+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -72351,7 +72351,7 @@
         ]
       },
       "first_seen_utc": "2026-10-19T01:41:03+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -73068,7 +73068,7 @@
         ]
       },
       "first_seen_utc": "2026-10-19T06:58:26+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -73214,7 +73214,7 @@
         ]
       },
       "first_seen_utc": "2026-10-19T06:58:28+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -74103,7 +74103,7 @@
         ]
       },
       "first_seen_utc": "2026-10-19T14:35:36+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -74249,7 +74249,7 @@
         ]
       },
       "first_seen_utc": "2026-10-19T14:35:38+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -75151,7 +75151,7 @@
         ]
       },
       "first_seen_utc": "2026-10-19T20:12:20+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -76013,7 +76013,7 @@
         ]
       },
       "first_seen_utc": "2026-10-19T23:48:35+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -76179,7 +76179,7 @@
         ]
       },
       "first_seen_utc": "2026-10-19T23:48:37+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -76629,7 +76629,7 @@
         ]
       },
       "first_seen_utc": "2026-10-19T23:48:48+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -77963,7 +77963,7 @@
         ]
       },
       "first_seen_utc": "2026-10-20T07:45:01+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -78361,7 +78361,7 @@
         ]
       },
       "first_seen_utc": "2026-10-20T07:45:18+00:00",
-      "last_seen_utc": "2026-11-09T09:42:52+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -79858,7 +79858,7 @@
         ]
       },
       "first_seen_utc": "2026-10-20T17:57:56+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -80494,7 +80494,7 @@
         ]
       },
       "first_seen_utc": "2026-10-20T21:31:49+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -81222,7 +81222,7 @@
         ]
       },
       "first_seen_utc": "2026-10-21T00:08:01+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -84346,7 +84346,7 @@
         ]
       },
       "first_seen_utc": "2026-10-21T14:43:15+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -85023,7 +85023,7 @@
         ]
       },
       "first_seen_utc": "2026-10-21T19:00:10+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "apply now",
@@ -85947,7 +85947,7 @@
         ]
       },
       "first_seen_utc": "2026-10-21T22:17:00+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "applications open",
@@ -87849,7 +87849,7 @@
         ]
       },
       "first_seen_utc": "2026-10-22T05:29:18+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -88597,7 +88597,7 @@
         ]
       },
       "first_seen_utc": "2026-10-22T10:34:02+00:00",
-      "last_seen_utc": "2026-11-09T02:05:06+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "applications open",
@@ -88763,7 +88763,7 @@
         ]
       },
       "first_seen_utc": "2026-10-22T10:34:03+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -89223,7 +89223,7 @@
         ]
       },
       "first_seen_utc": "2026-10-22T10:34:11+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -89527,7 +89527,7 @@
         ]
       },
       "first_seen_utc": "2026-10-22T15:39:20+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -89673,7 +89673,7 @@
         ]
       },
       "first_seen_utc": "2026-10-22T15:39:21+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -90614,7 +90614,7 @@
         ]
       },
       "first_seen_utc": "2026-10-22T19:32:11+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -91472,7 +91472,7 @@
         ]
       },
       "first_seen_utc": "2026-10-22T22:45:36+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -91618,7 +91618,7 @@
         ]
       },
       "first_seen_utc": "2026-10-22T22:45:37+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -92490,7 +92490,7 @@
         ]
       },
       "first_seen_utc": "2026-10-23T01:02:11+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -93486,7 +93486,7 @@
         ]
       },
       "first_seen_utc": "2026-10-23T06:01:49+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -99959,7 +99959,7 @@
         ]
       },
       "first_seen_utc": "2026-10-24T17:41:02+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "apply now",
@@ -103002,7 +103002,7 @@
         ]
       },
       "first_seen_utc": "2026-10-25T05:08:28+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -105954,7 +105954,7 @@
         ]
       },
       "first_seen_utc": "2026-10-25T22:26:29+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -106080,7 +106080,7 @@
         ]
       },
       "first_seen_utc": "2026-10-25T22:26:31+00:00",
-      "last_seen_utc": "2026-11-09T20:12:25+00:00",
+      "last_seen_utc": "2026-11-10T02:47:48+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -107926,7 +107926,7 @@
         ]
       },
       "first_seen_utc": "2026-10-26T11:18:08+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -108178,7 +108178,7 @@
         ]
       },
       "first_seen_utc": "2026-10-26T11:18:13+00:00",
-      "last_seen_utc": "2026-11-09T20:12:26+00:00",
+      "last_seen_utc": "2026-11-10T02:47:49+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -109727,7 +109727,7 @@
         ]
       },
       "first_seen_utc": "2026-10-26T21:49:16+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -110039,7 +110039,7 @@
         ]
       },
       "first_seen_utc": "2026-10-26T21:49:21+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -110220,7 +110220,7 @@
         ]
       },
       "first_seen_utc": "2026-10-27T00:57:05+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -111748,7 +111748,7 @@
         ]
       },
       "first_seen_utc": "2026-10-27T12:13:23+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -112535,7 +112535,7 @@
         ]
       },
       "first_seen_utc": "2026-10-27T18:06:20+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -113468,7 +113468,7 @@
         ]
       },
       "first_seen_utc": "2026-10-27T22:10:04+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -113746,7 +113746,7 @@
         ]
       },
       "first_seen_utc": "2026-10-27T22:10:08+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "applications open",
@@ -113896,7 +113896,7 @@
         ]
       },
       "first_seen_utc": "2026-10-27T22:10:13+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "applications open",
@@ -114707,7 +114707,7 @@
         ]
       },
       "first_seen_utc": "2026-10-28T01:23:54+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "applications open",
@@ -115688,7 +115688,7 @@
         ]
       },
       "first_seen_utc": "2026-10-28T07:13:23+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -117386,7 +117386,7 @@
         ]
       },
       "first_seen_utc": "2026-10-28T19:32:59+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -117700,7 +117700,7 @@
         ]
       },
       "first_seen_utc": "2026-10-28T19:33:04+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -118956,7 +118956,7 @@
         ]
       },
       "first_seen_utc": "2026-10-29T02:51:34+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -119082,7 +119082,7 @@
         ]
       },
       "first_seen_utc": "2026-10-29T02:51:38+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -119879,7 +119879,7 @@
         ]
       },
       "first_seen_utc": "2026-10-29T09:38:55+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -120045,7 +120045,7 @@
         ]
       },
       "first_seen_utc": "2026-10-29T09:38:57+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -120297,7 +120297,7 @@
         ]
       },
       "first_seen_utc": "2026-10-29T09:39:03+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -120485,7 +120485,7 @@
         ]
       },
       "first_seen_utc": "2026-10-29T09:39:07+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -120776,7 +120776,7 @@
         ]
       },
       "first_seen_utc": "2026-10-29T16:25:44+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -121030,7 +121030,7 @@
         ]
       },
       "first_seen_utc": "2026-10-29T16:25:51+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -121737,7 +121737,7 @@
         ]
       },
       "first_seen_utc": "2026-10-29T21:21:00+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -122558,7 +122558,7 @@
         ]
       },
       "first_seen_utc": "2026-10-30T01:17:14+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -122850,7 +122850,7 @@
         ]
       },
       "first_seen_utc": "2026-10-30T01:17:18+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -123430,7 +123430,7 @@
         ]
       },
       "first_seen_utc": "2026-10-30T07:18:22+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -123596,7 +123596,7 @@
         ]
       },
       "first_seen_utc": "2026-10-30T07:18:23+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -124565,7 +124565,7 @@
         ]
       },
       "first_seen_utc": "2026-10-30T19:37:30+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -124691,7 +124691,7 @@
         ]
       },
       "first_seen_utc": "2026-10-30T19:37:31+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -125255,7 +125255,7 @@
         ]
       },
       "first_seen_utc": "2026-10-30T19:37:43+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -125609,7 +125609,7 @@
         ]
       },
       "first_seen_utc": "2026-10-30T23:14:06+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -126570,7 +126570,7 @@
         ]
       },
       "first_seen_utc": "2026-10-31T02:30:48+00:00",
-      "last_seen_utc": "2026-11-09T20:12:21+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -130227,7 +130227,7 @@
         ]
       },
       "first_seen_utc": "2026-11-01T08:08:34+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -130869,7 +130869,7 @@
         ]
       },
       "first_seen_utc": "2026-11-01T08:08:50+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -131221,7 +131221,7 @@
         ]
       },
       "first_seen_utc": "2026-11-01T15:06:49+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -131677,7 +131677,7 @@
         ]
       },
       "first_seen_utc": "2026-11-01T15:06:57+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -132074,7 +132074,7 @@
         ]
       },
       "first_seen_utc": "2026-11-01T19:38:39+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -132805,7 +132805,7 @@
         ]
       },
       "first_seen_utc": "2026-11-01T23:05:54+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -133323,7 +133323,7 @@
         ]
       },
       "first_seen_utc": "2026-11-01T23:06:07+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -134825,7 +134825,7 @@
         ]
       },
       "first_seen_utc": "2026-11-02T20:06:34+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -135077,7 +135077,7 @@
         ]
       },
       "first_seen_utc": "2026-11-02T20:06:40+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -135457,7 +135457,7 @@
         ]
       },
       "first_seen_utc": "2026-11-03T02:16:33+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -135603,7 +135603,7 @@
         ]
       },
       "first_seen_utc": "2026-11-03T02:16:35+00:00",
-      "last_seen_utc": "2026-11-09T20:12:22+00:00",
+      "last_seen_utc": "2026-11-10T02:47:44+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -136509,7 +136509,7 @@
         ]
       },
       "first_seen_utc": "2026-11-03T09:43:18+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "on 16",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -137257,7 +137257,7 @@
         ]
       },
       "first_seen_utc": "2026-11-03T17:23:01+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -137445,7 +137445,7 @@
         ]
       },
       "first_seen_utc": "2026-11-03T17:23:02+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -138619,7 +138619,7 @@
         ]
       },
       "first_seen_utc": "2026-11-04T02:39:05+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -139175,7 +139175,7 @@
         ]
       },
       "first_seen_utc": "2026-11-04T09:52:58+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -140722,7 +140722,7 @@
         ]
       },
       "first_seen_utc": "2026-11-04T17:51:49+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -141074,7 +141074,7 @@
         ]
       },
       "first_seen_utc": "2026-11-04T23:25:30+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -142075,7 +142075,7 @@
         ]
       },
       "first_seen_utc": "2026-11-05T03:40:39+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -142344,7 +142344,7 @@
         ]
       },
       "first_seen_utc": "2026-11-05T11:34:44+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -142596,7 +142596,7 @@
         ]
       },
       "first_seen_utc": "2026-11-05T11:34:49+00:00",
-      "last_seen_utc": "2026-11-09T20:12:26+00:00",
+      "last_seen_utc": "2026-11-10T02:47:49+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -143305,7 +143305,7 @@
         ]
       },
       "first_seen_utc": "2026-11-05T18:58:08+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -143834,7 +143834,7 @@
         ]
       },
       "first_seen_utc": "2026-11-05T18:58:18+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -144469,7 +144469,7 @@
         ]
       },
       "first_seen_utc": "2026-11-06T00:04:56+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -145372,7 +145372,7 @@
         ]
       },
       "first_seen_utc": "2026-11-06T06:34:05+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -145749,7 +145749,7 @@
         ]
       },
       "first_seen_utc": "2026-11-06T14:36:46+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -146063,7 +146063,7 @@
         ]
       },
       "first_seen_utc": "2026-11-06T14:36:56+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -147443,7 +147443,7 @@
         ]
       },
       "first_seen_utc": "2026-11-07T00:19:39+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -149530,7 +149530,7 @@
         ]
       },
       "first_seen_utc": "2026-11-07T18:08:01+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -150225,7 +150225,7 @@
         ]
       },
       "first_seen_utc": "2026-11-07T21:49:04+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -151562,7 +151562,7 @@
         ]
       },
       "first_seen_utc": "2026-11-08T07:07:04+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -152853,7 +152853,7 @@
         ]
       },
       "first_seen_utc": "2026-11-08T18:53:53+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -153223,7 +153223,7 @@
         ]
       },
       "first_seen_utc": "2026-11-08T22:42:53+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -153711,7 +153711,7 @@
         ]
       },
       "first_seen_utc": "2026-11-09T02:05:15+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -153851,7 +153851,7 @@
         ]
       },
       "first_seen_utc": "2026-11-09T02:05:18+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -154220,7 +154220,7 @@
         ]
       },
       "first_seen_utc": "2026-11-09T09:43:16+00:00",
-      "last_seen_utc": "2026-11-09T20:12:30+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -154520,7 +154520,7 @@
         ]
       },
       "first_seen_utc": "2026-11-09T09:43:23+00:00",
-      "last_seen_utc": "2026-11-09T20:12:29+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "apply now",
@@ -154774,7 +154774,7 @@
         ]
       },
       "first_seen_utc": "2026-11-09T09:43:30+00:00",
-      "last_seen_utc": "2026-11-09T20:12:18+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -155014,7 +155014,7 @@
         ]
       },
       "first_seen_utc": "2026-11-09T09:43:32+00:00",
-      "last_seen_utc": "2026-11-09T20:12:19+00:00",
+      "last_seen_utc": "2026-11-10T02:47:41+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -155192,7 +155192,7 @@
         ]
       },
       "first_seen_utc": "2026-11-09T20:12:36+00:00",
-      "last_seen_utc": "2026-11-09T20:12:36+00:00",
+      "last_seen_utc": "2026-11-10T02:47:53+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -155342,7 +155342,7 @@
         ]
       },
       "first_seen_utc": "2026-11-09T20:12:42+00:00",
-      "last_seen_utc": "2026-11-09T20:12:42+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "apply now",
@@ -155492,7 +155492,7 @@
         ]
       },
       "first_seen_utc": "2026-11-09T20:12:46+00:00",
-      "last_seen_utc": "2026-11-09T20:12:46+00:00",
+      "last_seen_utc": "2026-11-10T02:47:52+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "OPEN (phrase detected)",
       "registration_status_evidence": "apply now",
@@ -155620,7 +155620,7 @@
         ]
       },
       "first_seen_utc": "2026-11-09T20:12:49+00:00",
-      "last_seen_utc": "2026-11-09T20:12:49+00:00",
+      "last_seen_utc": "2026-11-10T02:47:49+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -155746,7 +155746,7 @@
         ]
       },
       "first_seen_utc": "2026-11-09T20:12:52+00:00",
-      "last_seen_utc": "2026-11-09T20:12:52+00:00",
+      "last_seen_utc": "2026-11-10T02:47:50+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -155759,16 +155759,76 @@
       "deadline_status": "unknown",
       "opportunity_status": "unknown",
       "verification": {
-        "status": "unverified",
+        "status": "source_page_checked",
         "official_url": null,
-        "evidence_urls": [],
-        "last_checked_at": null,
+        "evidence_urls": [
+          "https://unstop.com/competitions/founders-odyssey-narsee-monjee-college-of-commerce-and-economics-mumbai-1803312"
+        ],
+        "last_checked_at": "2026-11-10T02:47:55+00:00",
         "deadline_checked_at": null,
         "eligibility_checked_at": null,
         "funding_checked_at": null,
         "notes": [
           "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
-        ]
+        ],
+        "version": 1,
+        "source_page_url": "https://unstop.com/competitions/founders-odyssey-narsee-monjee-college-of-commerce-and-economics-mumbai-1803312",
+        "official_link_candidate": null,
+        "official_link_reason": null,
+        "candidate_page_status": null,
+        "candidate_page_error": null,
+        "candidate_page_http_status": null,
+        "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
+        "last_check_error": null,
+        "last_check_duration_ms": 656,
+        "observed_facts": {
+          "page_role": "discovery_or_unrelated_page",
+          "page_title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
+          "description": "",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "unknown",
+          "registration_status_evidence": null,
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": null,
+          "deadline_status": "unknown",
+          "eligibility": {
+            "status": "unknown",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [],
+            "evidence_url": null
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        }
       },
       "schema_version": 1,
       "id": "2bbae0e14c7b7caa36ad",
@@ -155874,7 +155934,7 @@
         ]
       },
       "first_seen_utc": "2026-11-09T20:12:54+00:00",
-      "last_seen_utc": "2026-11-09T20:12:54+00:00",
+      "last_seen_utc": "2026-11-10T02:47:40+00:00",
       "deadline": "Not found — verify on official page",
       "registration_status": "UNKNOWN",
       "registration_status_evidence": "No explicit status phrase in feed item",
@@ -156073,9 +156133,1198 @@
       "resolved_urls": [
         "https://www.globalsouthopportunities.com/2026/11/09/grips-2"
       ]
+    },
+    "f3ca007c94ad64fd95d4": {
+      "title": "15000 CSS Battle Army Institute of Technology (AIT), Pune",
+      "summary": "Unstop public platform listing (hackathons). Listing text: hackathons 15000 CSS Battle Army Institute of Technology (AIT), Pune 68 Registered 3 months left All Posted 9 Nov'26, 09:49 AM IST 7616 Impressions. This is discovery evidence only; verify eligibility, dates, rewards and organizer rules on the linked opportunity page.",
+      "url": "https://unstop.com/hackathons/css-battle-solutions-2k27-army-institute-of-technology-ait-pune-1802090",
+      "image_url": "",
+      "source": "https://unstop.com/hackathons/amp",
+      "source_name": "Unstop · Hackathons",
+      "source_id": "8e0842c73fb362fb",
+      "adapter_type": "unstop_html",
+      "source_observed": {},
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "hackathons_buildathons"
+      ],
+      "primary_category": "hackathons_buildathons",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 6,
+        "title_signal": false,
+        "actionable_update": false,
+        "matched_categories": [
+          "hackathons_buildathons"
+        ]
+      },
+      "first_seen_utc": "2026-11-10T02:48:00+00:00",
+      "last_seen_utc": "2026-11-10T02:48:00+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://unstop.com/hackathons/css-battle-solutions-2k27-army-institute-of-technology-ait-pune-1802090",
+      "canonical_url": "https://unstop.com/hackathons/css-battle-solutions-2k27-army-institute-of-technology-ait-pune-1802090",
+      "source_feed_url": "https://unstop.com/hackathons/amp",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ]
+      },
+      "schema_version": 1,
+      "id": "f3ca007c94ad64fd95d4",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "8e0842c73fb362fb"
+      ],
+      "source_names": [
+        "Unstop · Hackathons"
+      ],
+      "source_feeds": [
+        "https://unstop.com/hackathons/amp"
+      ],
+      "discovered_urls": [
+        "https://unstop.com/hackathons/css-battle-solutions-2k27-army-institute-of-technology-ait-pune-1802090"
+      ],
+      "resolved_urls": [
+        "https://unstop.com/hackathons/css-battle-solutions-2k27-army-institute-of-technology-ait-pune-1802090"
+      ]
+    },
+    "968853e5b86afc30da17": {
+      "title": "AI for Medicine: A Global Student Hackathon on the Future of Care",
+      "summary": "Devpost public hackathon listing; discovery evidence only, not official organizer verification. Status as displayed: Open. Submission period as displayed: Nov 04 - Dec 04, 2026. Time left to submission as displayed: 25 days left. Location as displayed: Online. Host as listed: Open Health AI Collective. Prize as displayed: $ 0. Themes as listed: Beginner Friendly, Health, Machine Learning/AI. Registrations shown: 49. Confirm current eligibility, submission timing, prize conditions and rules on the linked event page.",
+      "url": "https://ai-for-medicine.devpost.com",
+      "image_url": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/788/362/datas/medium_square.png",
+      "source": "https://devpost.com/api/hackathons",
+      "source_name": "Devpost · Open Hackathons (JSON API)",
+      "source_id": "1960332d2712fbaf",
+      "adapter_type": "devpost_api",
+      "source_observed": {
+        "source_kind": "platform_listing",
+        "source_name": "Devpost · Open Hackathons (JSON API)",
+        "source_url": "https://devpost.com/api/hackathons",
+        "observed_at_utc": "2026-11-10T02:48:01+00:00",
+        "listing_status": "Open",
+        "schedule": {
+          "raw": "Nov 04 - Dec 04, 2026",
+          "confidence": "observed_unverified",
+          "meaning": "submission period displayed by Devpost"
+        },
+        "submission_countdown": {
+          "raw": "25 days left",
+          "confidence": "observed_unverified"
+        },
+        "location": {
+          "raw": "Online",
+          "mode": "remote",
+          "venue": null,
+          "city": null,
+          "region": null,
+          "country": null,
+          "country_code": null,
+          "confidence": "observed_unverified"
+        },
+        "organizer": {
+          "raw": "Open Health AI Collective",
+          "confidence": "observed_unverified"
+        },
+        "prize": {
+          "raw": "$ 0",
+          "confidence": "observed_unverified"
+        },
+        "themes": [
+          "Beginner Friendly",
+          "Health",
+          "Machine Learning/AI"
+        ],
+        "registrations_count": 49,
+        "thumbnail_url": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/788/362/datas/medium_square.png"
+      },
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "hackathons_buildathons"
+      ],
+      "primary_category": "hackathons_buildathons",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 6,
+        "title_signal": true,
+        "actionable_update": false,
+        "matched_categories": [
+          "hackathons_buildathons"
+        ]
+      },
+      "first_seen_utc": "2026-11-10T02:48:01+00:00",
+      "last_seen_utc": "2026-11-10T02:48:01+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://ai-for-medicine.devpost.com",
+      "canonical_url": "https://ai-for-medicine.devpost.com",
+      "source_feed_url": "https://devpost.com/api/hackathons",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ]
+      },
+      "schema_version": 1,
+      "id": "968853e5b86afc30da17",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/788/362/datas/medium_square.png",
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "1960332d2712fbaf"
+      ],
+      "source_names": [
+        "Devpost · Open Hackathons (JSON API)"
+      ],
+      "source_feeds": [
+        "https://devpost.com/api/hackathons"
+      ],
+      "discovered_urls": [
+        "https://ai-for-medicine.devpost.com"
+      ],
+      "resolved_urls": [
+        "https://ai-for-medicine.devpost.com"
+      ]
+    },
+    "6ebdb7c7dfaf1d51ade1": {
+      "title": "Alan x Qovery x AWS: AI Health Hack 2 — Paris, 28 Nov 2026",
+      "summary": " 28 Nov 2026  · Paris · In person Organiser: Alan Join 70 of the sharpest builders from Paris and beyond for a Saturday of building AI products that help people stay healthy.\n\nWhat to expect\n\nOn Saturday 28 November, we’re bringing together 70 builders for 12 hours in one room, to ship AI products for health.\n\nThere’s one main health track, plus side challenges.\n\nAt the end of the day, teams demo what they built to a jury.\n\nWhy participate\n\n- Work on real health problems with Alan’s engineering, product and medical teams beside you\n- Win prizes for the top teams\n- Breakfast, lunch, apéro and drinks after the demos, all on us\n- Spend a day with some of the best builders in Paris\n\nIn April, 400+ people applied for 70 spots. See what they built\n\nWho we’re looking for\n\n- Builders of any kind: engineers, designers, product people, and clinicians who code\n- People who ship, whether that’s side projects, a startup, an internal tool at work, or a past hackathon win\n- People who use AI to go from idea to working prototype in a day\n- Curiosity about health. No healthcare experience needed.\n- Come solo or as a team of up to 4.\n\nHow selection works\n\nSeats are limited and we select from the applications. We review them as they arrive, so applying early helps. Once accepted, you’ll be asked to confirm your spot.\n\n❗ Applications close at midday on Saturday 21 November.\n\nAbout Alan\n\nAlan is Europe’s leading health partner, on a mission to help people live in good health to 100. It brings insurance, prevention, care access and well-being together in one app.  Register on the organiser's own page ",
+      "url": "https://hackalendar.com/e/alan-qovery-aws-ai-health-hack-paris-2026",
+      "image_url": "https://hackalendar.com/cover/alan-qovery-aws-ai-health-hack-paris-2026-1bda7ca4d4d08fb9-800.webp",
+      "source": "https://hackalendar.com/feed.xml",
+      "source_name": "Hackalendar · Upcoming Hackathons",
+      "source_id": "7c33d1ecedb854aa",
+      "adapter_type": "hackalendar_rss",
+      "source_observed": {},
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "hackathons_buildathons",
+        "competitions_challenges"
+      ],
+      "primary_category": "hackathons_buildathons",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 6,
+        "title_signal": false,
+        "actionable_update": false,
+        "matched_categories": [
+          "hackathons_buildathons",
+          "competitions_challenges"
+        ]
+      },
+      "first_seen_utc": "2026-11-10T02:48:06+00:00",
+      "last_seen_utc": "2026-11-10T02:48:06+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://hackalendar.com/e/alan-qovery-aws-ai-health-hack-paris-2026",
+      "canonical_url": "https://hackalendar.com/e/alan-qovery-aws-ai-health-hack-paris-2026",
+      "source_feed_url": "https://hackalendar.com/feed.xml",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ]
+      },
+      "schema_version": 1,
+      "id": "6ebdb7c7dfaf1d51ade1",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": "https://hackalendar.com/cover/alan-qovery-aws-ai-health-hack-paris-2026-1bda7ca4d4d08fb9-800.webp",
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "7c33d1ecedb854aa"
+      ],
+      "source_names": [
+        "Hackalendar · Upcoming Hackathons"
+      ],
+      "source_feeds": [
+        "https://hackalendar.com/feed.xml"
+      ],
+      "discovered_urls": [
+        "https://hackalendar.com/e/alan-qovery-aws-ai-health-hack-paris-2026"
+      ],
+      "resolved_urls": [
+        "https://hackalendar.com/e/alan-qovery-aws-ai-health-hack-paris-2026"
+      ]
+    },
+    "26a1e86e2ac21b343771": {
+      "title": "Clash of Commits",
+      "summary": "Devfolio platform listing; not independently verified as an organizer page. Listing section: Open. Schedule/status as displayed: Starts 04/12/26. Format as displayed: Offline. Listing text: Hackathon Theme No Restrictions Offline Open Starts 04/12/26 Apply now. Confirm eligibility, exact timing, prizes and application rules on the event page.",
+      "url": "https://clash-of-commits.devfolio.co",
+      "image_url": "https://assets.devfolio.co/hackathons/2689d878c21e4cf1a61a50f5104587f0/assets/cover/916.png",
+      "source": "https://devfolio.co/explore",
+      "source_name": "Devfolio · Open & Upcoming Hackathons",
+      "source_id": "f59e300665fae00d",
+      "adapter_type": "devfolio_html",
+      "source_observed": {
+        "source_kind": "platform_listing",
+        "source_name": "Devfolio · Open & Upcoming Hackathons",
+        "source_url": "https://devfolio.co/explore",
+        "observed_at_utc": "2026-11-10T02:48:09+00:00",
+        "listing_status": "open",
+        "schedule": {
+          "raw": "04/12/26",
+          "confidence": "observed_unverified"
+        },
+        "application_open_date": {
+          "raw": null,
+          "confidence": "observed_unverified"
+        },
+        "location": {
+          "raw": "Offline",
+          "mode": "in_person",
+          "venue": null,
+          "city": null,
+          "region": null,
+          "country": null,
+          "country_code": null,
+          "confidence": "observed_unverified"
+        }
+      },
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "hackathons_buildathons"
+      ],
+      "primary_category": "hackathons_buildathons",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 6,
+        "title_signal": false,
+        "actionable_update": false,
+        "matched_categories": [
+          "hackathons_buildathons"
+        ]
+      },
+      "first_seen_utc": "2026-11-10T02:48:09+00:00",
+      "last_seen_utc": "2026-11-10T02:48:09+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "OPEN (phrase detected)",
+      "registration_status_evidence": "apply now",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://clash-of-commits.devfolio.co",
+      "canonical_url": "https://clash-of-commits.devfolio.co",
+      "source_feed_url": "https://devfolio.co/explore",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ]
+      },
+      "schema_version": 1,
+      "id": "26a1e86e2ac21b343771",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": "https://assets.devfolio.co/hackathons/2689d878c21e4cf1a61a50f5104587f0/assets/cover/916.png",
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "f59e300665fae00d"
+      ],
+      "source_names": [
+        "Devfolio · Open & Upcoming Hackathons"
+      ],
+      "source_feeds": [
+        "https://devfolio.co/explore"
+      ],
+      "discovered_urls": [
+        "https://clash-of-commits.devfolio.co"
+      ],
+      "resolved_urls": [
+        "https://clash-of-commits.devfolio.co"
+      ]
+    },
+    "3e4468bdb02b78e8fad2": {
+      "title": "GOA BUILDATHON 27",
+      "summary": "Devfolio platform listing; not independently verified as an organizer page. Listing section: Open. Schedule/status as displayed: Starts 16/01/27. Format as displayed: Offline. Listing text: Hackathon Theme No Restrictions Offline Open Starts 16/01/27 Apply now. Confirm eligibility, exact timing, prizes and application rules on the event page.",
+      "url": "https://goa-buildathon.devfolio.co",
+      "image_url": "https://assets.devfolio.co/hackathons/1c7af64a076f43d5a088b7b65ae793a3/assets/cover/623.png",
+      "source": "https://devfolio.co/hackathons",
+      "source_name": "Devfolio · Hackathons Catalogue",
+      "source_id": "7e8cfb2b3636b070",
+      "adapter_type": "devfolio_html",
+      "source_observed": {
+        "source_kind": "platform_listing",
+        "source_name": "Devfolio · Hackathons Catalogue",
+        "source_url": "https://devfolio.co/hackathons",
+        "observed_at_utc": "2026-11-10T02:48:12+00:00",
+        "listing_status": "open",
+        "schedule": {
+          "raw": "16/01/27",
+          "confidence": "observed_unverified"
+        },
+        "application_open_date": {
+          "raw": null,
+          "confidence": "observed_unverified"
+        },
+        "location": {
+          "raw": "Offline",
+          "mode": "in_person",
+          "venue": null,
+          "city": null,
+          "region": null,
+          "country": null,
+          "country_code": null,
+          "confidence": "observed_unverified"
+        }
+      },
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "hackathons_buildathons"
+      ],
+      "primary_category": "hackathons_buildathons",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 6,
+        "title_signal": true,
+        "actionable_update": false,
+        "matched_categories": [
+          "hackathons_buildathons"
+        ]
+      },
+      "first_seen_utc": "2026-11-10T02:48:12+00:00",
+      "last_seen_utc": "2026-11-10T02:48:12+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "OPEN (phrase detected)",
+      "registration_status_evidence": "apply now",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://goa-buildathon.devfolio.co",
+      "canonical_url": "https://goa-buildathon.devfolio.co",
+      "source_feed_url": "https://devfolio.co/hackathons",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ]
+      },
+      "schema_version": 1,
+      "id": "3e4468bdb02b78e8fad2",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": "https://assets.devfolio.co/hackathons/1c7af64a076f43d5a088b7b65ae793a3/assets/cover/623.png",
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "7e8cfb2b3636b070"
+      ],
+      "source_names": [
+        "Devfolio · Hackathons Catalogue"
+      ],
+      "source_feeds": [
+        "https://devfolio.co/hackathons"
+      ],
+      "discovered_urls": [
+        "https://goa-buildathon.devfolio.co"
+      ],
+      "resolved_urls": [
+        "https://goa-buildathon.devfolio.co"
+      ]
+    },
+    "71fa40921400433f3bd5": {
+      "title": "50000 Verilog Verse Indian Institute of Technology (IIT), Chennai",
+      "summary": "Unstop public platform listing (competitions). Listing text: competitions 50000 Verilog Verse Indian Institute of Technology (IIT), Chennai 30 days left Undergraduate Postgraduate +5 Posted 5 Nov'26, 09:24 PM IST 315 Impressions. This is discovery evidence only; verify eligibility, dates, rewards and organizer rules on the linked opportunity page.",
+      "url": "https://unstop.com/competitions/verilog-verse-shaastra-2027-indian-institute-of-technology-iit-chennai-1797256",
+      "image_url": "",
+      "source": "https://unstop.com/competitions/amp",
+      "source_name": "Unstop · Competitions",
+      "source_id": "9094d50190e1d4a7",
+      "adapter_type": "unstop_html",
+      "source_observed": {},
+      "resolution_status": "direct_link",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": null,
+      "categories": [
+        "competitions_challenges"
+      ],
+      "primary_category": "competitions_challenges",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 6,
+        "title_signal": false,
+        "actionable_update": false,
+        "matched_categories": [
+          "competitions_challenges"
+        ]
+      },
+      "first_seen_utc": "2026-11-10T02:48:16+00:00",
+      "last_seen_utc": "2026-11-10T02:48:16+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://unstop.com/competitions/verilog-verse-shaastra-2027-indian-institute-of-technology-iit-chennai-1797256",
+      "canonical_url": "https://unstop.com/competitions/verilog-verse-shaastra-2027-indian-institute-of-technology-iit-chennai-1797256",
+      "source_feed_url": "https://unstop.com/competitions/amp",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ]
+      },
+      "schema_version": 1,
+      "id": "71fa40921400433f3bd5",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "9094d50190e1d4a7"
+      ],
+      "source_names": [
+        "Unstop · Competitions"
+      ],
+      "source_feeds": [
+        "https://unstop.com/competitions/amp"
+      ],
+      "discovered_urls": [
+        "https://unstop.com/competitions/verilog-verse-shaastra-2027-indian-institute-of-technology-iit-chennai-1797256"
+      ],
+      "resolved_urls": [
+        "https://unstop.com/competitions/verilog-verse-shaastra-2027-indian-institute-of-technology-iit-chennai-1797256"
+      ]
+    },
+    "156898fb559cb160f9d3": {
+      "title": "Airtel Africa Foundation Tech Fellowship 2026/2027 Undergraduate Scholarship for young Nigerians. (Fully Funded) - Opportunities For Africans",
+      "summary": " Airtel Africa Foundation Tech Fellowship 2026/2027 Undergraduate Scholarship for young Nigerians. (Fully Funded)    Opportunities For Africans ",
+      "url": "https://www.opportunitiesforafricans.com/airtel-africa-foundation-tech-fellowship-2026-2027-undergraduate-scholarship",
+      "image_url": "https://www.opportunitiesforafricans.com/wp-content/uploads/2026/11/airtel-africa-foundation-tech-fellowship.jpg",
+      "source": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "source_name": "Google News · Funded travel",
+      "source_id": "7c5c4d34b1a8fdc9",
+      "adapter_type": "google_news_rss",
+      "source_observed": {},
+      "resolution_status": "decoder_resolved",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": "2026-11-10T02:48:18+00:00",
+      "categories": [
+        "funded_travel_abroad",
+        "scholarships_fellowships"
+      ],
+      "primary_category": "scholarships_fellowships",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 6,
+        "title_signal": true,
+        "actionable_update": false,
+        "matched_categories": [
+          "funded_travel_abroad",
+          "scholarships_fellowships"
+        ]
+      },
+      "first_seen_utc": "2026-11-10T02:48:18+00:00",
+      "last_seen_utc": "2026-11-10T02:48:18+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "REACHABLE",
+      "link_status_evidence": "HTTP 200",
+      "discovered_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPb1dXWVhUMDlhSjZPel83blU2dGwwRGlxdDlQbWlJUGk1QVRBZXJoMVBleTBqSl9Pel95X2NzUjJHbExGZFdGNDhsY2Y3SmV5X2N2VER5TXdQd19KblBScmlQYl9oNVFVdzk4THA2M2h1Snp3bFNoSHFOWU5QZWVNVms2cTdOQlE3MHhjNFZPc3FzR3R3WW5SWEM2TWpzWU5zdk1IaHFndURYVTJIOWtUVGJYVGNHQXBxc3c?oc=5",
+      "canonical_url": "https://www.opportunitiesforafricans.com/airtel-africa-foundation-tech-fellowship-2026-2027-undergraduate-scholarship",
+      "source_feed_url": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "official_link_candidate_found",
+        "official_url": null,
+        "evidence_urls": [
+          "https://www.opportunitiesforafricans.com/airtel-africa-foundation-tech-fellowship-2026-2027-undergraduate-scholarship/",
+          "https://apply.theafarainitiative.org/opportunities/airtel-africa-foundation-tech-scholarship-2026-2027-nigeria"
+        ],
+        "last_checked_at": "2026-11-10T02:47:54+00:00",
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ],
+        "version": 1,
+        "source_page_url": "https://www.opportunitiesforafricans.com/airtel-africa-foundation-tech-fellowship-2026-2027-undergraduate-scholarship/",
+        "official_link_candidate": "https://apply.theafarainitiative.org/opportunities/airtel-africa-foundation-tech-scholarship-2026-2027-nigeria",
+        "official_link_reason": "outbound_anchor:Apply Now for the 2026/2027 Airtel Africa Foundation Tech Fellowship; destination relevance/ownership not established",
+        "candidate_page_status": "success",
+        "candidate_page_error": null,
+        "candidate_page_http_status": 200,
+        "page_title": "Airtel Africa Foundation Tech Fellowship 2026/2027 Undergraduate Scholarship for young Nigerians. (Fully Funded) | Opportunities For Africans",
+        "last_check_error": null,
+        "last_check_duration_ms": 654,
+        "observed_facts": {
+          "page_role": "possible_event_page",
+          "page_title": "Airtel Africa Foundation Tech Fellowship 2026/2027 Undergraduate Scholarship for young Nigerians. (Fully Funded) | Opportunities For Africans",
+          "description": "Application Deadline: December 7, 2026. Applications are now open for the 2026/2027 Airtel Africa Foundation Tech Fellowship. The program is designed to support Nigerian students pursuing technology-related degree programmes at…",
+          "organizer": null,
+          "event_start_at": null,
+          "event_end_at": null,
+          "event_timezone": null,
+          "opportunity_status": "unknown",
+          "registration_status": "open",
+          "registration_status_evidence": "Apply Now for the 2026/2027 Airtel Africa Foundation Tech Fellowship For More Information: Visit the Official Webpage of the Airtel Africa Foundation Tech Fellowship (adsbygoogle = window.adsbygoogle || []).push({}); (adsbygoogle = window.adsbygoogle || []).push({}); (adsbygoogle",
+          "location": {
+            "raw": null,
+            "mode": "unknown",
+            "venue": null,
+            "city": null,
+            "region": null,
+            "country": null,
+            "country_code": null,
+            "remote_restrictions": []
+          },
+          "deadline": {
+            "raw": "December 7, 2026",
+            "normalized": "2026-12-07",
+            "precision": "date",
+            "snippet": "ts 0 Facebook Twitter Linkedin Whatsapp Email 55 (adsbygoogle = window.adsbygoogle || []).push({}); Application Deadline: December 7, 2026. Applications are now open for the 2026/2027 Airtel Africa Foundation Tech Fellowship . The program",
+            "source_url": "https://www.opportunitiesforafricans.com/airtel-africa-foundation-tech-fellowship-2026-2027-undergraduate-scholarship/"
+          },
+          "deadline_status": "unverified",
+          "eligibility": {
+            "status": "found",
+            "countries": [],
+            "education_levels": [],
+            "study_years": [],
+            "fields_of_study": [],
+            "age_min": null,
+            "age_max": null,
+            "requirements": [
+              "Eligibility (adsbygoogle = window.adsbygoogle || []).push({}); The 2026/2027 fellowship is open to students pursuing undergraduate degrees in the following fields: Computer Science Information Technology Cybersecurity Systems Engineering Software Engineering Other technology-related fields. Participating Universities The scholarship is available to"
+            ],
+            "evidence_url": "https://www.opportunitiesforafricans.com/airtel-africa-foundation-tech-fellowship-2026-2027-undergraduate-scholarship/"
+          },
+          "travel_support": {
+            "flight": "unknown",
+            "transport_reimbursement": "unknown",
+            "accommodation": "unknown",
+            "meals": "unknown",
+            "visa_support": "unknown",
+            "status": "unknown",
+            "conditions": [],
+            "maximum_amount": null,
+            "currency": null,
+            "evidence_url": null
+          },
+          "image_url": null
+        },
+        "fact_evidence": {
+          "registration_status": {
+            "value": "open",
+            "source_url": "https://www.opportunitiesforafricans.com/airtel-africa-foundation-tech-fellowship-2026-2027-undergraduate-scholarship/",
+            "method": "explicit_page_text",
+            "snippet": "Apply Now for the 2026/2027 Airtel Africa Foundation Tech Fellowship For More Information: Visit the Official Webpage of the Airtel Africa Foundation Tech Fellowship (adsbygoogle = window.adsbygoogle || []).push({}); (adsbygoogle = window.adsbygoogle || []).push({}); (adsbygoogle"
+          },
+          "eligibility": {
+            "value": "Eligibility (adsbygoogle = window.adsbygoogle || []).push({}); The 2026/2027 fellowship is open to students pursuing undergraduate degrees in the following fields: Computer Science Information Technology Cybersecurity Systems Engineering Software Engineering Other technology-related fields. Participating Universities The scholarship is available to",
+            "source_url": "https://www.opportunitiesforafricans.com/airtel-africa-foundation-tech-fellowship-2026-2027-undergraduate-scholarship/",
+            "method": "explicit_page_text",
+            "snippet": "Eligibility (adsbygoogle = window.adsbygoogle || []).push({}); The 2026/2027 fellowship is open to students pursuing undergraduate degrees in the following fields: Computer Science Information Technology Cybersecurity Systems Engineering Software Engineering Other technology-related fields. Participating Universities The scholarship is available to"
+          },
+          "application_deadline_raw": {
+            "value": "December 7, 2026",
+            "source_url": "https://www.opportunitiesforafricans.com/airtel-africa-foundation-tech-fellowship-2026-2027-undergraduate-scholarship/",
+            "method": "explicit_deadline_label",
+            "snippet": "ts 0 Facebook Twitter Linkedin Whatsapp Email 55 (adsbygoogle = window.adsbygoogle || []).push({}); Application Deadline: December 7, 2026. Applications are now open for the 2026/2027 Airtel Africa Foundation Tech Fellowship . The program"
+          }
+        }
+      },
+      "schema_version": 1,
+      "id": "156898fb559cb160f9d3",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": "https://www.opportunitiesforafricans.com/wp-content/uploads/2026/11/airtel-africa-foundation-tech-fellowship.jpg",
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "7c5c4d34b1a8fdc9"
+      ],
+      "source_names": [
+        "Google News · Funded travel"
+      ],
+      "source_feeds": [
+        "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen"
+      ],
+      "discovered_urls": [
+        "https://news.google.com/rss/articles/CBMiugFBVV95cUxPb1dXWVhUMDlhSjZPel83blU2dGwwRGlxdDlQbWlJUGk1QVRBZXJoMVBleTBqSl9Pel95X2NzUjJHbExGZFdGNDhsY2Y3SmV5X2N2VER5TXdQd19KblBScmlQYl9oNVFVdzk4THA2M2h1Snp3bFNoSHFOWU5QZWVNVms2cTdOQlE3MHhjNFZPc3FzR3R3WW5SWEM2TWpzWU5zdk1IaHFndURYVTJIOWtUVGJYVGNHQXBxc3c?oc=5"
+      ],
+      "resolved_urls": [
+        "https://www.opportunitiesforafricans.com/airtel-africa-foundation-tech-fellowship-2026-2027-undergraduate-scholarship"
+      ]
+    },
+    "e1540cb4809b454e77a9": {
+      "title": "BTech in Germany for Indian Students: Top Colleges, Fees, Eligibility & Scholarships - Shiksha.com",
+      "summary": " BTech in Germany for Indian Students: Top Colleges, Fees, Eligibility & Scholarships    Shiksha.com ",
+      "url": "https://www.shiksha.com/studyabroad/study-btech-in-germany-for-indian-students-articlepage-81733",
+      "image_url": "",
+      "source": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "source_name": "Google News · Scholarships",
+      "source_id": "56da5ebaefc91f25",
+      "adapter_type": "google_news_rss",
+      "source_observed": {},
+      "resolution_status": "decoder_resolved",
+      "resolution_attempts": 0,
+      "last_resolution_attempt_at": "2026-11-10T02:48:20+00:00",
+      "categories": [
+        "scholarships_fellowships"
+      ],
+      "primary_category": "scholarships_fellowships",
+      "discovery_quality": {
+        "accepted": true,
+        "status": "specific_opportunity",
+        "reason": "Headline identifies an opportunity or a curated event listing.",
+        "rule_version": 6,
+        "title_signal": true,
+        "actionable_update": false,
+        "matched_categories": [
+          "scholarships_fellowships"
+        ]
+      },
+      "first_seen_utc": "2026-11-10T02:48:20+00:00",
+      "last_seen_utc": "2026-11-10T02:48:20+00:00",
+      "deadline": "Not found — verify on official page",
+      "registration_status": "UNKNOWN",
+      "registration_status_evidence": "No explicit status phrase in feed item",
+      "link_status": "UNAVAILABLE",
+      "link_status_evidence": "HTTP 403",
+      "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNRTRpemxiYWYzak8wakZZZUhBWUxINzZHTklUS0p3WWdqN2hTam1ZWlJ1MHVuYi01b2c0TzVtSUZ6ckJFdGZuVjh6Y3ZhdWE4QTZ4SGVlSnRYZDJ2TE1ZNUcwUmg5RzZSSGxLTXhTTzdHMm1EczFZRnNSWmgySzdFcjBzYXhsTExiX3VOVmdNWmNMRTgtT2hKTGxqSDM?oc=5",
+      "canonical_url": "https://www.shiksha.com/studyabroad/study-btech-in-germany-for-indian-students-articlepage-81733",
+      "source_feed_url": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+      "application_deadline_raw": null,
+      "deadline_status": "unknown",
+      "opportunity_status": "unknown",
+      "verification": {
+        "status": "unverified",
+        "official_url": null,
+        "evidence_urls": [],
+        "last_checked_at": null,
+        "deadline_checked_at": null,
+        "eligibility_checked_at": null,
+        "funding_checked_at": null,
+        "notes": [
+          "Discovered via a feed; the resolved publisher page is not yet verified as the organizer's official page."
+        ]
+      },
+      "schema_version": 1,
+      "id": "e1540cb4809b454e77a9",
+      "organizer": null,
+      "application_open_at": null,
+      "application_deadline": null,
+      "deadline_timezone": null,
+      "event_start_at": null,
+      "event_end_at": null,
+      "event_timezone": null,
+      "date_precision": "unknown",
+      "location": {
+        "raw": null,
+        "mode": "unknown",
+        "venue": null,
+        "city": null,
+        "region": null,
+        "country": null,
+        "country_code": null,
+        "remote_restrictions": []
+      },
+      "eligibility": {
+        "status": "unknown",
+        "countries": [],
+        "education_levels": [],
+        "study_years": [],
+        "fields_of_study": [],
+        "age_min": null,
+        "age_max": null,
+        "requirements": [],
+        "evidence_url": null
+      },
+      "reward": {
+        "type": "unknown",
+        "amount_min": null,
+        "amount_max": null,
+        "currency": null,
+        "description": null,
+        "evidence_url": null
+      },
+      "travel_support": {
+        "status": "unknown",
+        "flight": "unknown",
+        "transport_reimbursement": "unknown",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "visa_support": "unknown",
+        "maximum_amount": null,
+        "currency": null,
+        "conditions": [],
+        "evidence_url": null
+      },
+      "media": {
+        "source_image_url": null,
+        "generated_image_url": null
+      },
+      "content_hash": null,
+      "last_material_change_at": null,
+      "source_ids": [
+        "56da5ebaefc91f25"
+      ],
+      "source_names": [
+        "Google News · Scholarships"
+      ],
+      "source_feeds": [
+        "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen"
+      ],
+      "discovered_urls": [
+        "https://news.google.com/rss/articles/CBMinAFBVV95cUxNRTRpemxiYWYzak8wakZZZUhBWUxINzZHTklUS0p3WWdqN2hTam1ZWlJ1MHVuYi01b2c0TzVtSUZ6ckJFdGZuVjh6Y3ZhdWE4QTZ4SGVlSnRYZDJ2TE1ZNUcwUmg5RzZSSGxLTXhTTzdHMm1EczFZRnNSWmgySzdFcjBzYXhsTExiX3VOVmdNWmNMRTgtT2hKTGxqSDM?oc=5"
+      ],
+      "resolved_urls": [
+        "https://www.shiksha.com/studyabroad/study-btech-in-germany-for-indian-students-articlepage-81733"
+      ]
     }
   },
-  "updated_utc": "2026-11-09T20:12:54+00:00",
+  "updated_utc": "2026-11-10T02:48:20+00:00",
   "schema_version": 1,
   "source_health": {
     "ecb5c0ef7187dfcb": {
@@ -156083,11 +157332,11 @@
       "name": "Google News · Devpost",
       "url": "https://news.google.com/rss/search?q=site%3Adevpost.com%2Fhackathons+hackathon+registration+prize+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "adapter_type": "google_news_rss",
-      "last_attempt_at": "2026-11-09T20:12:17+00:00",
-      "last_success_at": "2026-11-09T20:12:17+00:00",
+      "last_attempt_at": "2026-11-10T02:47:39+00:00",
+      "last_success_at": "2026-11-10T02:47:39+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 202,
+      "last_duration_ms": 288,
       "items_seen": 0,
       "matching_items": 0,
       "new_items": 0,
@@ -156117,17 +157366,17 @@
       "name": "Google News · MLH",
       "url": "https://news.google.com/rss/search?q=site%3Amlh.io+hackathon+student+registration+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "adapter_type": "google_news_rss",
-      "last_attempt_at": "2026-11-09T20:12:17+00:00",
-      "last_success_at": "2026-11-09T20:12:17+00:00",
+      "last_attempt_at": "2026-11-10T02:47:39+00:00",
+      "last_success_at": "2026-11-10T02:47:39+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 219,
-      "items_seen": 0,
-      "matching_items": 0,
+      "last_duration_ms": 305,
+      "items_seen": 1,
+      "matching_items": 1,
       "new_items": 0,
       "failure_streak": 0,
-      "last_success_items_seen": 0,
-      "last_success_matching_items": 0,
+      "last_success_items_seen": 1,
+      "last_success_matching_items": 1,
       "last_success_new_items": 0,
       "access_method": "public_google_news_rss",
       "expected_fields": [
@@ -156143,7 +157392,7 @@
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
       "last_skipped_at": "2026-10-11T14:36:34+00:00",
-      "quality_rejected_count": 0,
+      "quality_rejected_count": 1,
       "quality_rule_version": 6
     },
     "7c5c4d34b1a8fdc9": {
@@ -156151,11 +157400,11 @@
       "name": "Google News · Funded travel",
       "url": "https://news.google.com/rss/search?q=%22travel+grant%22+OR+%22fully+funded%22+student+technology+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "adapter_type": "google_news_rss",
-      "last_attempt_at": "2026-11-09T20:12:18+00:00",
-      "last_success_at": "2026-11-09T20:12:18+00:00",
+      "last_attempt_at": "2026-11-10T02:47:40+00:00",
+      "last_success_at": "2026-11-10T02:47:40+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 488,
+      "last_duration_ms": 371,
       "items_seen": 34,
       "matching_items": 33,
       "new_items": 1,
@@ -156185,18 +157434,18 @@
       "name": "Google News · Scholarships",
       "url": "https://news.google.com/rss/search?q=scholarship+deadline+student+India+when%3A30d&hl=en-IN&gl=IN&ceid=IN%3Aen",
       "adapter_type": "google_news_rss",
-      "last_attempt_at": "2026-11-09T20:12:18+00:00",
-      "last_success_at": "2026-11-09T20:12:18+00:00",
+      "last_attempt_at": "2026-11-10T02:47:40+00:00",
+      "last_success_at": "2026-11-10T02:47:40+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 324,
+      "last_duration_ms": 379,
       "items_seen": 34,
-      "matching_items": 28,
-      "new_items": 0,
+      "matching_items": 27,
+      "new_items": 1,
       "failure_streak": 0,
       "last_success_items_seen": 34,
-      "last_success_matching_items": 28,
-      "last_success_new_items": 0,
+      "last_success_matching_items": 27,
+      "last_success_new_items": 1,
       "access_method": "public_google_news_rss",
       "expected_fields": [
         "title",
@@ -156219,11 +157468,11 @@
       "name": "GitHub Blog RSS",
       "url": "https://github.blog/changelog/feed/",
       "adapter_type": "official_blog_rss",
-      "last_attempt_at": "2026-11-09T20:12:21+00:00",
-      "last_success_at": "2026-11-09T20:12:21+00:00",
+      "last_attempt_at": "2026-11-10T02:47:44+00:00",
+      "last_success_at": "2026-11-10T02:47:44+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 283,
+      "last_duration_ms": 92,
       "items_seen": 10,
       "matching_items": 0,
       "new_items": 0,
@@ -156269,17 +157518,17 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:20+00:00",
-      "last_success_at": "2026-11-09T20:12:20+00:00",
+      "last_attempt_at": "2026-11-10T02:47:42+00:00",
+      "last_success_at": "2026-11-10T02:47:42+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 1285,
-      "items_seen": 18,
-      "matching_items": 18,
-      "new_items": 0,
-      "last_success_items_seen": 18,
-      "last_success_matching_items": 18,
-      "last_success_new_items": 0,
+      "last_duration_ms": 1814,
+      "items_seen": 19,
+      "matching_items": 19,
+      "new_items": 1,
+      "last_success_items_seen": 19,
+      "last_success_matching_items": 19,
+      "last_success_new_items": 1,
       "failure_streak": 0,
       "last_skipped_at": "2026-10-11T14:36:34+00:00",
       "quality_rejected_count": 0,
@@ -156303,11 +157552,11 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:19+00:00",
-      "last_success_at": "2026-11-09T20:12:19+00:00",
+      "last_attempt_at": "2026-11-10T02:47:41+00:00",
+      "last_success_at": "2026-11-10T02:47:41+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 269,
+      "last_duration_ms": 205,
       "items_seen": 0,
       "matching_items": 0,
       "new_items": 0,
@@ -156337,11 +157586,11 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:19+00:00",
-      "last_success_at": "2026-11-09T20:12:19+00:00",
+      "last_attempt_at": "2026-11-10T02:47:41+00:00",
+      "last_success_at": "2026-11-10T02:47:41+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 274,
+      "last_duration_ms": 212,
       "items_seen": 0,
       "matching_items": 0,
       "new_items": 0,
@@ -156371,11 +157620,11 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:21+00:00",
-      "last_success_at": "2026-11-09T20:12:21+00:00",
+      "last_attempt_at": "2026-11-10T02:47:44+00:00",
+      "last_success_at": "2026-11-10T02:47:44+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 516,
+      "last_duration_ms": 548,
       "items_seen": 24,
       "matching_items": 24,
       "new_items": 0,
@@ -156406,18 +157655,18 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:22+00:00",
+      "last_attempt_at": "2026-11-10T02:47:44+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 314,
-      "items_seen": 20,
-      "matching_items": 20,
+      "last_duration_ms": 430,
+      "items_seen": 21,
+      "matching_items": 21,
       "new_items": 1,
       "failure_streak": 0,
       "last_skipped_at": "2026-10-11T14:36:34+00:00",
-      "last_success_at": "2026-11-09T20:12:22+00:00",
-      "last_success_items_seen": 20,
-      "last_success_matching_items": 20,
+      "last_success_at": "2026-11-10T02:47:44+00:00",
+      "last_success_items_seen": 21,
+      "last_success_matching_items": 21,
       "last_success_new_items": 1,
       "quality_rejected_count": 0,
       "quality_rule_version": 6
@@ -156441,11 +157690,11 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:22+00:00",
-      "last_success_at": "2026-11-09T20:12:22+00:00",
+      "last_attempt_at": "2026-11-10T02:47:45+00:00",
+      "last_success_at": "2026-11-10T02:47:45+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 2324,
+      "last_duration_ms": 2149,
       "items_seen": 24,
       "matching_items": 24,
       "new_items": 0,
@@ -156475,11 +157724,11 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:24+00:00",
-      "last_success_at": "2026-11-09T20:12:24+00:00",
+      "last_attempt_at": "2026-11-10T02:47:47+00:00",
+      "last_success_at": "2026-11-10T02:47:47+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 307,
+      "last_duration_ms": 999,
       "items_seen": 7,
       "matching_items": 7,
       "new_items": 0,
@@ -156509,11 +157758,11 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:25+00:00",
-      "last_success_at": "2026-11-09T20:12:25+00:00",
+      "last_attempt_at": "2026-11-10T02:47:48+00:00",
+      "last_success_at": "2026-11-10T02:47:48+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 732,
+      "last_duration_ms": 786,
       "items_seen": 5,
       "matching_items": 5,
       "new_items": 1,
@@ -156543,11 +157792,11 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:25+00:00",
-      "last_success_at": "2026-11-09T20:12:25+00:00",
+      "last_attempt_at": "2026-11-10T02:47:49+00:00",
+      "last_success_at": "2026-11-10T02:47:49+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 995,
+      "last_duration_ms": 512,
       "items_seen": 6,
       "matching_items": 6,
       "new_items": 0,
@@ -156577,11 +157826,11 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:26+00:00",
-      "last_success_at": "2026-11-09T20:12:26+00:00",
+      "last_attempt_at": "2026-11-10T02:47:49+00:00",
+      "last_success_at": "2026-11-10T02:47:49+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 993,
+      "last_duration_ms": 1318,
       "items_seen": 5,
       "matching_items": 5,
       "new_items": 1,
@@ -156611,11 +157860,11 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:28+00:00",
-      "last_success_at": "2026-11-09T20:12:28+00:00",
+      "last_attempt_at": "2026-11-10T02:47:51+00:00",
+      "last_success_at": "2026-11-10T02:47:51+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 1336,
+      "last_duration_ms": 1383,
       "items_seen": 5,
       "matching_items": 5,
       "new_items": 0,
@@ -156646,16 +157895,16 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:29+00:00",
-      "last_success_at": "2026-11-09T20:12:29+00:00",
+      "last_attempt_at": "2026-11-10T02:47:52+00:00",
+      "last_success_at": "2026-11-10T02:47:52+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 315,
-      "items_seen": 20,
-      "matching_items": 20,
+      "last_duration_ms": 378,
+      "items_seen": 21,
+      "matching_items": 21,
       "new_items": 1,
-      "last_success_items_seen": 20,
-      "last_success_matching_items": 20,
+      "last_success_items_seen": 21,
+      "last_success_matching_items": 21,
       "last_success_new_items": 1,
       "failure_streak": 0,
       "quality_rejected_count": 0,
@@ -156686,16 +157935,16 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:29+00:00",
-      "last_success_at": "2026-11-09T20:12:29+00:00",
+      "last_attempt_at": "2026-11-10T02:47:52+00:00",
+      "last_success_at": "2026-11-10T02:47:52+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 651,
-      "items_seen": 107,
-      "matching_items": 107,
+      "last_duration_ms": 822,
+      "items_seen": 106,
+      "matching_items": 106,
       "new_items": 1,
-      "last_success_items_seen": 107,
-      "last_success_matching_items": 107,
+      "last_success_items_seen": 106,
+      "last_success_matching_items": 106,
       "last_success_new_items": 1,
       "failure_streak": 0,
       "quality_rejected_count": 0,
@@ -156721,11 +157970,11 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:30+00:00",
-      "last_success_at": "2026-11-09T20:12:30+00:00",
+      "last_attempt_at": "2026-11-10T02:47:54+00:00",
+      "last_success_at": "2026-11-10T02:47:54+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 325,
+      "last_duration_ms": 220,
       "items_seen": 20,
       "matching_items": 0,
       "new_items": 0,
@@ -156756,11 +158005,11 @@
       "timeout_seconds": 10,
       "minimum_interval_seconds": 600,
       "rate_limit_policy": "minimum_poll_interval_enforced_by_agent",
-      "last_attempt_at": "2026-11-09T20:12:31+00:00",
-      "last_success_at": "2026-11-09T20:12:31+00:00",
+      "last_attempt_at": "2026-11-10T02:47:54+00:00",
+      "last_success_at": "2026-11-10T02:47:54+00:00",
       "last_status": "success",
       "last_error": null,
-      "last_duration_ms": 222,
+      "last_duration_ms": 241,
       "items_seen": 20,
       "matching_items": 0,
       "new_items": 0,
